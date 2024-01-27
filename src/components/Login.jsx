@@ -1,3 +1,3 @@
-export default function component() {
+export default function Login() {
     return <></>
 }
