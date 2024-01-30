@@ -91,9 +91,9 @@ async function makePayment(productDetails) {
                 alert(response.razorpay_signature)
             },
             prefill: {
-                //     name: 'CONTEXT_NAME', // TODO: get these fron context in the environment
-                //     email: 'CONTEXT_EMAIL', // TODO: get these fron context in the environment
-                //     contact: 'CONTEXT_MOBILE_NUMBER', // TODO: get these fron context in the environment
+                name: 'CONTEXT_NAME', // TODO: get these fron context in the environment
+                email: 'CONTEXT_EMAIL', // TODO: get these fron context in the environment
+                contact: 'CONTEXT_MOBILE_NUMBER', // TODO: get these fron context in the environment
             },
             notes: {
                 address:
