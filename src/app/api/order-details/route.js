@@ -30,14 +30,13 @@ export async function POST(request) {
     try {
         const order = await razorpay.orders.create(options)
 
-        const responseBody = {
+        const orderDetails = {
             order_id: order.id,
             amount: order.amount,
-            description: order.description,
             currency: order.currency,
         }
-
-        return NextResponse.json(responseBody, { status: 200 })
+        console.log(orderDetails)
+        return NextResponse.json({ orderDetails }, { status: 200 })
     } catch (error) {
         return NextResponse.json(
             { error: 'Could not create order.' },
