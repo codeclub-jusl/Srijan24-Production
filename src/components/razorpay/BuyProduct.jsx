@@ -116,21 +116,28 @@ async function makePayment(productDetails) {
         return
     }
 }
-const BuyProduct = () => {
+
+/**
+ *
+ * @param {Object} props
+ * @param {"tshirt"} props.type
+ * @param {"S" | "M" | "L" | "XL" | "2XL" | "3XL" | undefined} props.size
+ * @param {"black" | "white"} props.baseColor
+ * @returns {Element}
+ */
+const BuyProduct = props => {
     const [isLoading, setIsLoading] = useState(false)
 
     return (
         <>
             <Suspense fallback={<Loading />}>
-                <h1>Randomly shop anything you like, who cares?</h1>
-                <div className='flex flex-col items-center justify-center mt-[100px]'>
-                    <h1 className='text-2xl'>Razor</h1>
+                <div className='flex flex-col items-center justify-center'>
                     <button
                         onClick={() => {
                             makePayment({
-                                type: 'tshirt',
-                                size: 'M',
-                                baseColor: 'black',
+                                type: props.type,
+                                size: props.size,
+                                baseColor: props.baseColor,
                             })
                         }}
                         disabled={isLoading}
