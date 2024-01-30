@@ -1,5 +1,5 @@
 'use client'
-import React, { Suspense } from 'react'
+import React, { Suspense, useState } from 'react'
 import Loading from '@/components/Login'
 
 /**
@@ -25,7 +25,7 @@ function loadScript(src) {
             resolve(false)
         }
 
-        document.appendChild(script)
+        document.body.appendChild(script)
     })
 }
 
@@ -57,23 +57,29 @@ async function makePayment(productDetails) {
     }
 
     try {
-        const dataExtractionURL = new URL('/api/order-details')
+        const dataExtractionURL = '/api/order-details'
+
         // Register order and bring payment details from the backend server.
         const res = await fetch(dataExtractionURL, {
             method: 'POST',
             body: JSON.stringify(productDetails),
         })
 
-        const { order } = await res.json()
+        const { orderDetails } = await res.json()
+
+        if (!orderDetails) {
+            console.log(orderDetails)
+            throw new Error('Order could not be created.')
+        }
 
         // console.log(order.id)
 
         const options = {
             key: RAZORPAY_API_KEY,
             name: 'Srijan 2024',
-            currency: order.currency,
-            amount: order.amount,
-            order_id: order.order_id,
+            currency: orderDetails.currency,
+            amount: orderDetails.amount,
+            order_id: orderDetails.order_id,
             description: 'Understanding RazorPay Integration',
             // image: logoBase64,
 
@@ -85,17 +91,17 @@ async function makePayment(productDetails) {
                 alert(response.razorpay_signature)
             },
             prefill: {
-                name: 'CONTEXT_NAME', // TODO: get these fron context in the environment
-                email: 'CONTEXT_EMAIL', // TODO: get these fron context in the environment
-                contact: 'CONTEXT_MOBILE_NUMBER', // TODO: get these fron context in the environment
+                //     name: 'CONTEXT_NAME', // TODO: get these fron context in the environment
+                //     email: 'CONTEXT_EMAIL', // TODO: get these fron context in the environment
+                //     contact: 'CONTEXT_MOBILE_NUMBER', // TODO: get these fron context in the environment
             },
             notes: {
                 address:
                     'Plot No.8, B-73-80, Salt Lake Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal 700098',
             },
-            theme: {
-                color: '#3399cc',
-            },
+            // theme: {
+            //     color: '#3399cc',
+            // },
         }
 
         const paymentObject = new window.Razorpay(options)
