@@ -68,6 +68,43 @@ async function makePayment(productDetails) {
 
         // console.log(order.id)
 
+        const options = {
+            key: RAZORPAY_API_KEY,
+            name: 'Srijan 2024',
+            currency: order.currency,
+            amount: order.amount,
+            order_id: order.order_id,
+            description: 'Understanding RazorPay Integration',
+            // image: logoBase64,
+
+            // implement using web hook at razorpay
+            handler: async function (response) {
+                // Validate payment at server - using webhooks is a better idea.
+                alert(response.razorpay_payment_id)
+                alert(response.razorpay_order_id)
+                alert(response.razorpay_signature)
+            },
+            prefill: {
+                name: 'CONTEXT_NAME', // TODO: get these fron context in the environment
+                email: 'CONTEXT_EMAIL', // TODO: get these fron context in the environment
+                contact: 'CONTEXT_MOBILE_NUMBER', // TODO: get these fron context in the environment
+            },
+            notes: {
+                address:
+                    'Plot No.8, B-73-80, Salt Lake Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal 700098',
+            },
+            theme: {
+                color: '#3399cc',
+            },
+        }
+
+        const paymentObject = new window.Razorpay(options)
+
+        paymentObject.on('payment.failed', function (response) {
+            alert('Payment failed. Please try again. Contact support for help')
+        })
+
+        paymentObject.open()
     } catch (error) {
         alert('Order could not created. Please try again.' + error)
         return
