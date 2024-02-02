@@ -1,0 +1,60 @@
+/* Timeline.css */
+
+.timeline-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background:#030022;
+  }
+  
+  
+.timeline-container svg{
+  max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+   
+}
+
+.timeline-container svg g{
+  stroke:#3D019F;
+}
+
+.timeline-container svg circle{
+  fill:#0995FD;
+}
+
+
+.timeline-container svg .inner-circle{
+  z-index:999;
+  fill:white;
+
+
+}
+
+
+
+.timeline-container svg text{
+  font-family:"Montserrat";
+}
+
+
+.timeline-container svg .date-event{
+  font-size:2em;
+}
+
+.timeline-container svg .title-event{
+  font-size:1.5em;
+  font-weight:600;
+}
+
+
+.timeline-container svg .desc-event{
+font-size:.9em;
+font-weight:400;
+}
