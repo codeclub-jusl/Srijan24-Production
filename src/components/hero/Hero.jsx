@@ -1,20 +1,21 @@
 import React from 'react'
-
+import './style.css'
 const Hero = () => {
-  return (
-    <div className='container'>
-        <div className="w-[307px] h-[378px] bg-zinc-300 rounded-tl-[175px] rounded-tr-[175px]">
-        <img className="w-[268.10px] h-[116px]" src="https://via.placeholder.com/268x116" />
+    return (
+        <div className='container'>
+            <div className=''>
+                <div className='circle'>
+                    <img src='../../../public/assets/Vector.png' alt='' />
+                </div>
+                <div className='events'>
+                    <div className='explore'>Explore our</div>
+                    <div></div>
+                    <div className='explore2'>events</div>
+                </div>
             </div>
-            <div className="w-[307px] h-[286.05px] bg-zinc-300 rounded-full" >
-            <div className="w-[280px] h-[280px] bg-gradient-to-b from-indigo-700 to-violet-900 rounded-full shadow-inner" >
-                //Image
-                //124vh is the height of the page
-
-                </div>
-                </div>
-    </div>
-  )
+            <div className=''></div>
+        </div>
+    )
 }
 
 export default Hero
