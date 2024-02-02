@@ -16,7 +16,11 @@
     "razorpay": "^2.9.2",
     "react": "^18",
     "react-dom": "^18",
+<<<<<<< HEAD
     "react-spring": "^9.7.3"
+=======
+    "react-icons": "^5.0.1"
+>>>>>>> 810d0c171abedebe7d2c6c4760c25174986561c3
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

@@ -7,7 +7,12 @@ export default function Home() {
 
   return (
     <>
+<<<<<<< HEAD
        <Timeline />
+=======
+      <Navbar/>
+      <Cards />
+>>>>>>> 810d0c171abedebe7d2c6c4760c25174986561c3
     </>
   );
 }
