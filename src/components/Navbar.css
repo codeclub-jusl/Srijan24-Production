@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+.header-text{
+    font-family:Raleway;
+}
+.login-text{
+    font-family: Montserrat;
+    font-weight: 600;
+}
