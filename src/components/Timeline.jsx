@@ -51,7 +51,7 @@ const Timeline = () => {
   <text x="492" y="350"   fill="white" textAnchor="middle" className="title-event">Workshops</text>
 
   <text x="492" y="384"  fill="white" textAnchor="middle" className="desc-event">sit amet, consectetur  </text>
-  <text x="492" y="406"  fill="white" textAnchor="middle" cassName="desc-event">adipiscingelit, sed do eiusmod</text>
+  <text x="492" y="406"  fill="white" textAnchor="middle" className="desc-event">adipiscingelit, sed do eiusmod</text>
 
 
   <text x="835" y="578"    fill="white"  textAnchor="middle" className="date-event">5.7.16</text>
