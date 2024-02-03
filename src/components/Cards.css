@@ -5,11 +5,7 @@
 .wrapper-container{
     font-family: 'Montserrat', sans-serif;
     background: #030022;
-<<<<<<< HEAD
-    min-height:100vh;
-=======
     /* height:100vh; */
->>>>>>> 810d0c171abedebe7d2c6c4760c25174986561c3
 }
 
 .card-title h3 {

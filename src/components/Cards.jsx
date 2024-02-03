@@ -5,27 +5,46 @@ import "./Cards.css";
 const Cards = () => {
   const [activeCard, setActiveCard] = useState(null);
 
-  const handleCardClick = (card) => {
+  const handleCardHover = (card) => {
     setActiveCard(card);
   };
 
+  const handleCardLeave = () => {
+    setActiveCard(null);
+  };
 
   return (
     <div className="wrapper-container">
-    <div className="wrapper">
-      <div className={`card ${activeCard === 1 ? "active" : ""}`} onClick={() => handleCardClick(1)}>
-        <h3 className="card-title">Campus Ambassador</h3>
+      <div className="wrapper">
+        <div
+          className={`card ${activeCard === 1 ? "active" : ""}`}
+          onMouseEnter={() => handleCardHover(1)}
+          onMouseLeave={handleCardLeave}
+        >
+          <h3 className="card-title">Campus Ambassador</h3>
+        </div>
+        <div
+          className={`card ${activeCard === 2 ? "active" : ""}`}
+          onMouseEnter={() => handleCardHover(2)}
+          onMouseLeave={handleCardLeave}
+        >
+          <h3 className="card-title">Events</h3>
+        </div>
+        <div
+          className={`card ${activeCard === 3 ? "active" : ""}`}
+          onMouseEnter={() => handleCardHover(3)}
+          onMouseLeave={handleCardLeave}
+        >
+          <h3 className="card-title">Merchandise</h3>
+        </div>
+        <div
+          className={`card ${activeCard === 4 ? "active" : ""}`}
+          onMouseEnter={() => handleCardHover(4)}
+          onMouseLeave={handleCardLeave}
+        >
+          <h3 className="card-title">Workshops</h3>
+        </div>
       </div>
-      <div className={`card ${activeCard === 2 ? "active" : ""}`} onClick={() => handleCardClick(2)}>
-        <h3 className="card-title">Events</h3>
-      </div>
-      <div className={`card ${activeCard === 3 ? "active" : ""}`} onClick={() => handleCardClick(3)}>
-        <h3 className="card-title">Merchandise</h3>
-      </div>
-      <div className={`card ${activeCard === 4 ? "active" : ""}`} onClick={() => handleCardClick(4)}>
-        <h3 className="card-title">Workshops</h3>
-      </div>
-    </div>
     </div>
   );
 };
