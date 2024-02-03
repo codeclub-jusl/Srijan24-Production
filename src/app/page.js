@@ -9,8 +9,9 @@ export default function Home() {
 
   return (
     <>
-       {/* <Timeline /> */}
-       {/* <Gallery/> */}
+       <Navbar/>
+       <Timeline />
+       <Gallery/>
        <About/>
     </>
   );
