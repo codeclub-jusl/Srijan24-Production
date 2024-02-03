@@ -43,6 +43,9 @@
     width: auto;
     height: 100%;
 }
+.icon{
+    z-index: 2;
+}
 /* img {
     position: absolute;
     top: 24.756875rem;
