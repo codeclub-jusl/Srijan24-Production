@@ -15,14 +15,7 @@
   }
   
   svg.squiggle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
     height: 120vh;
-    z-index: 1;
-    overflow-x:hidden;
-
 }
 
 .timeline-container svg.squiggle g{
