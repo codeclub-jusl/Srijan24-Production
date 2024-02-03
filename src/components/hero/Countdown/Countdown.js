@@ -22,25 +22,32 @@ const Countdown = () => {
   const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
   return (
-    <div className="my-2 py-1 grid grid-flow-col gap-1 md:gap-5 text-center auto-cols-max">
-      <div className="flex flex-col p-2 md:p-4 bg-#6100FF rounded-box text-neutral-content">
-        <span className="countdown text-4xl md:text-5xl">{days}</span>
-        Days
+    <div className="py-6 sm:py-8 lg:py-12">
+  <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:gap-8">
+      <div className="flex flex-col items-center justify-center rounded-lg bg-#6100FF p-4 lg:p-8">
+        <div className="text-xl font-bold text-gray-100 sm:text-2xl md:text-3xl">{days}</div>
+        <div className="text-sm font-semibold sm:text-base">Days</div>
       </div>
-      <div className="flex flex-col p-2 md:p-4 bg-#6100FF rounded-box text-neutral-content">
-        <span className="countdown text-4xl md:text-5xl">{hours}</span>
-        Hours
+
+      <div className="flex flex-col items-center justify-center rounded-lg bg-#6100FF p-4 md:p-8">
+        <div className="text-xl font-bold text-gray-100 sm:text-2xl md:text-3xl">{hours}</div>
+        <div className="text-sm font-semibold sm:text-base">Hours</div>
       </div>
-      <div className="flex flex-col p-2 md:p-4 bg-#6100FF rounded-box text-neutral-content">
-        <span className="countdown text-4xl md:text-5xl">{minutes}</span>
-        Min
+
+      <div className="flex flex-col items-center justify-center rounded-lg bg-#6100FF p-4 md:p-8">
+        <div className="text-xl font-bold text-gray-100 sm:text-2xl md:text-3xl">{minutes}</div>
+        <div className="text-sm font-semibold sm:text-base">Minutes</div>
       </div>
-      <div className="flex flex-col p-2 md:p-4 bg-#6100FF rounded-box text-neutral-content">
-        <span className="countdown text-4xl md:text-5xl">{seconds}</span>
-        Seconds
+
+      <div className="flex flex-col items-center justify-center rounded-lg bg-#6100FF p-4 md:p-8">
+        <div className="text-xl font-bold text-gray-100 sm:text-2xl md:text-3xl">{seconds}</div>
+        <div className="text-sm font-semibold sm:text-base">Seconds</div>
       </div>
     </div>
-  );
-};
+   </div>
+  </div>
+  )
+}
 
 export default Countdown;
