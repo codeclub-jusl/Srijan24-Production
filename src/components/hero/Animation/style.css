@@ -5,12 +5,12 @@
 }
 
 .home{
-	height: 100vh;
+	/* height: 100vh; */
 	background-size: cover;
 	background-position: center;
 	display: flex;
 	flex-wrap: wrap;
-	padding:50px 15px;
+	padding:10px 15px;
 	position: relative;
 }
 .home::before{
