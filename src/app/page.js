@@ -6,9 +6,11 @@ import Countdown from '@/components/hero/Countdown/Countdown'
 export default function Home() {
     return (
         <>
+        <main>
             <Hero />
-            <Cards />
+            {/* <Cards /> */}
             <Footer />
+        </main>
         </>
     )
 }

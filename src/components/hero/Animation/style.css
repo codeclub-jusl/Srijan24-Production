@@ -43,6 +43,34 @@
 .home .home-text p span.text-out{
    animation: textOut .3s ease;
 }
+.manage{
+	background: linear-gradient(45deg, #6100FF 100%, #00E0FF 100%, #FF0099 100%);
+	background-clip: text;
+	color: transparent;
+}
+.codin{
+	background: linear-gradient(45deg, #6100FF 100%, #D907FF 100%, #F4E2FF 100%);
+	background-clip: text;
+	color: transparent;
+}
+.fin{
+	background: linear-gradient(180deg, #FF0099 100%, #6100FF 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+.game{
+	background: linear-gradient(45deg, #FF0099 100%, #00E0FF 100%, #6100FF 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+.robo{
+	background: linear-gradient(45deg, #FBFBFB 100%, #9747FF 100%, #5600E1 100%);
+	background-clip: text;
+	color: transparent;
+
+}
 @keyframes textIn{
    0%{
 	   transform: translateY(100%);
