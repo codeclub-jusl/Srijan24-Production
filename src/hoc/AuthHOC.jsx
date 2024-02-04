@@ -1,3 +1,5 @@
+'use client'
+
 import { auth, db } from '@/firebase/config'
 import { loginUser } from '@/store/userSlice'
 import { doc, getDoc } from 'firebase/firestore'
@@ -9,7 +11,7 @@ const AuthHOC = Component => {
     return () => {
         const router = useRouter()
         const dispatch = useDispatch()
-        // const [user, setUser] = useState();
+        const [user, setUser] = useState(null)
 
         useEffect(() => {
             const unsubscribe = auth.onAuthStateChanged(async authUser => {
@@ -19,6 +21,11 @@ const AuthHOC = Component => {
 
                     if (userSnap.exists()) {
                         const userData = userSnap.data()
+
+                        setUser({
+                            ...userData,
+                            emailVerified: authUser.emailVerified,
+                        })
 
                         dispatch(
                             loginUser({
@@ -38,6 +45,10 @@ const AuthHOC = Component => {
 
             return () => unsubscribe()
         }, [router])
+
+        if (!user) {
+            return null
+        }
 
         // const user = useSelector(state => state.userReducer.user)
         // if (!user || !user.emailVerified) {
