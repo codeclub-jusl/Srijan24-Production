@@ -51,3 +51,18 @@
     top: 24.756875rem;
     left: 38.979375rem;
 } */
+.image-container {
+    position: relative;
+}
+
+.base-image {
+    width: 100%;
+}
+
+.overlay-image {
+    width: 100%;
+    position: absolute;
+    top: 2%; 
+    left: 0.1rem; 
+    z-index: 1; 
+}
