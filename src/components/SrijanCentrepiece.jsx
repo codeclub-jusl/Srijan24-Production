@@ -10,15 +10,20 @@ const SrijanCentrepiece = () => {
     return (
         <div className='flex flex-col items-center'>
             <div id='subtract' className='flex flex-col items-center'>
-                <Image src={subtract} />
+                <Image alt='subtract' src={subtract} />
 
                 <div id='srijan-logo-black'>
-                    <Image className='invert-colors' src={srijanLogoBlack} />
+                    <Image
+                        alt='srijanlogo'
+                        className='invert-colors'
+                        src={srijanLogoBlack}
+                    />
                 </div>
             </div>
             <div id='black-srijan-round' className='circle'>
                 <Image
                     className='invert-colors w-full h-full'
+                    alt='Srijan Logo Black Round'
                     src={blackSrijanRound}
                 />
             </div>

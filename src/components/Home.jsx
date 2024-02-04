@@ -10,6 +10,7 @@ import backgroundStars from '../assets/backgroundStars.png'
 import SrijanCentrepiece from './SrijanCentrepiece'
 import mascotfront from '../assets/mascot-front.png'
 import './Home.css'
+import Countdown from './Countdown'
 const Home = () => {
     return (
         <div>
@@ -18,7 +19,7 @@ const Home = () => {
                     id='background-stars'
                     className='flex justify-center items-center'
                 >
-                    <Image src={backgroundStars} />
+                    <Image alt='backgroudn-stars' src={backgroundStars} />
                 </div>
                 <div id='header-text'>
                     Techno Management Fest of <br /> Jadavpur University
@@ -26,20 +27,24 @@ const Home = () => {
                 <div id='login-button'>
                     <LoginButton id='login-button' />
                 </div>
+                
                 <div id='saturn-left'>
-                    <Image src={saturnLeft} />
+                    <Image alt='saturn-left' src={saturnLeft} />
                 </div>
                 <div id='saturn-right'>
-                    <Image src={saturnRight} />
+                    <Image alt='saturn-right' src={saturnRight} />
                 </div>
 
                 <div id='small-saturn'>
-                    <Image src={smallSaturn} />
+                    <Image alt='small-saturn' src={smallSaturn} />
                 </div>
 
                 <div id='srijan-centrepiece'>
                     <SrijanCentrepiece />
                 </div>
+            </div>
+            <div id='countdown'>
+                <Countdown />
             </div>
 
             <div
@@ -58,13 +63,13 @@ const Home = () => {
                     </p>
                 </div>
                 <div id='mascot-front'>
-                    <Image src={mascotfront} />
+                    <Image alt='mascot-front' src={mascotfront} />
                 </div>
                 <div id='valley-with-drops'>
-                    <Image src={valleyWithDrops} />
+                    <Image alt='valley-with-drops' src={valleyWithDrops} />
                 </div>
                 <div id='cybercity-outline'>
-                    <Image src={cybercityOutline} />
+                    <Image alt='cybercity-outline' src={cybercityOutline} />
                 </div>
             </div>
         </div>

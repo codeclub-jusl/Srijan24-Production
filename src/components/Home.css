@@ -104,6 +104,7 @@ body {
     width: 20%;
 }
 #mascot-intro {
+    margin-top: 4vw;
     font-size: 2vw;
 }
 #mascot-desc {
