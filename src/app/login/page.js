@@ -2,15 +2,65 @@
 import { useState, useEffect } from 'react';
 import Svg_Login from '@/components/Svg_Login';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth, db } from '@/firebase/config';
+import { doc, getDoc } from 'firebase/firestore';
+import { loginUser } from '@/store/userSlice';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import GoogleSignIn from '@/components/GoogleSignIn';
+import ResetPassword from '@/components/ResetPassword';
+import { notification } from 'antd';
+
 export default function Login() {
+    const router = useRouter();
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.userReducer.user);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
     const [botState, setBotState] = useState('surprised');
-    const [robotActive, setRobotActive] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
+    const [robotActive, setRobotActive] = useState(true);
     const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
+    const [showResetModal,setShowResetModal]=useState(false);
+
     useEffect(() => {
+        if(user && user.emailVerified) {
+            // notification['success']({
+            //     message: `Logged in as ${userData.email}`,
+            //     duration: 2
+            // })
+            router.push("/dashboard");
+        }
+
+        // auth.onAuthStateChanged(handleAuthStateChanged);
+        auth.onAuthStateChanged(async (authUser) => {
+            if(authUser && authUser.emailVerified) {
+                const userRef = doc(db, "users", authUser.email);
+                const userSnap = await getDoc(userRef);
+
+                if(userSnap.exists()) {
+                    const userData = userSnap.data();
+
+                    // notification['success']({
+                    //     message: `Logged in as ${userData.email}`,
+                    //     duration: 2
+                    // })
+
+                    dispatch(loginUser({
+                        ...userData,
+                        emailVerified: authUser.emailVerified,
+                    }));
+
+                    // console.log("log in");
+
+                    router.push("/dashboard");
+                }
+            }
+        })
+
         const handleResize = () => {
             const mobile = window.innerWidth <= 600;
             setIsMobile(mobile);
@@ -23,30 +73,74 @@ export default function Login() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    const validateEmail = () => {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(email)) {
-            setEmailError(true);
-            setBotState('sad');
-        } else {
-            setEmailError(false);
-            setBotState('happy');
-        }
-    };
 
-    const validatePassword = () => {
-        if (password.length < 8) {
-            setPasswordError(true);
-            setBotState('sad');
+    // const validateEmail = () => {
+    //     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     if (!re.test(email)) {
+    //         setEmailError(true);
+    //         setBotState('sad');
+    //     } else {
+    //         setEmailError(false);
+    //         setBotState('happy');
+    //     }
+    // };
+
+    // const validatePassword = () => {
+    //     if (password.length < 8) {
+    //         setPasswordError(true);
+    //         setBotState('sad');
+    //     } else {
+    //         setPasswordError(false);
+    //         setBotState('happy');
+    //     }
+    // };
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+
+        // validateEmail();
+        // validatePassword();
+
+        const userRef = doc(db, "users", email);
+        const userSnap = await getDoc(userRef);
+
+        if(userSnap.exists()) {
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredentials) => {
+                    if(!userCredentials.user.emailVerified) {
+                        // alert("Please verify your email before logging in.")
+                        setBotState('sad');
+                        notification['error']({
+                            message: `Please verify your email before logging in.`,
+                            duration: 3
+                        })
+
+                        return signOut(auth).then(() => {}).catch((err) => {console.log(err);})
+                    } else {
+                        setBotState('happy');
+                        notification['success']({
+                            message: `Logged in successfully`,
+                            duration: 3
+                        })
+                    }
+                })
+                .catch((err) => {
+                    setBotState('sad');
+                    notification['error']({
+                        message: `Invalid credentials`,
+                        duration: 3
+                    })
+                    // console.log(err);
+                })
         } else {
-            setPasswordError(false);
-            setBotState('happy');
+            // alert("Email is not registered.")
+            setBotState('sad');
+            notification['error']({
+                message: `Email is not registered.`,
+                duration: 3
+            })
         }
-    };
-    const handleClick = () => {
-        validateEmail();
-        validatePassword();
-        console.log('Form submitted');
+        
     };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#916bcf] to-[#ff3ab0]">
@@ -69,20 +163,21 @@ export default function Login() {
                     </div>
                     <div className="flex justify-center mb-2 w-full py-4 items-center text-center">
 
-                        <span className="font-bold text-md text-[#3c0b3a]">Forgot password</span>
+                        <span className="font-bold text-md text-[#3c0b3a] cursor-pointer" onClick={()=>setShowResetModal(true)}>Forgot password</span>
                     </div>
                     <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick} disabled={!robotActive}>
-                        Sign in
+                        Log in
                     </button>
-                    <button
+                    {/* <button
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}
                     >
                         <img src="/images/google.png" alt="img" className="w-6 h-6 inline mr-2" />
                         Sign in with Google
-                    </button>
+                    </button> */}
+                    <GoogleSignIn robotActive={robotActive} />
                     <div className="text-center text-white">
                         Dont' have an account? &nbsp;
-                        <Link href="/signup"><span className="font-bold text-[#3c0b3a]">Sign up for free</span></Link>
+                        <Link href="/signup"><span className="font-bold text-[#3c0b3a]">Sign Up here</span></Link>
                     </div>
                 </div>
                 {!isMobile && (
@@ -90,6 +185,7 @@ export default function Login() {
                         <Svg_Login botState={botState} robotActive={robotActive} setRobotActive={setRobotActive} />
                     </div>
                 )}
+                <ResetPassword isVisible={showResetModal} onClose={()=>setShowResetModal(false)} />
             </div>
         </div>
     );
