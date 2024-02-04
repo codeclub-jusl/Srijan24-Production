@@ -106,16 +106,19 @@ body {
 #mascot-intro {
     margin-top: 4vw;
     font-size: 2vw;
+    z-index: 2;
 }
 #mascot-desc {
     margin-top: 0.5vw;
     font-size: 1vw;
+    z-index: 2;
 }
 @media (max-width: 768px) {
     #mascot-front {
         width: 40%;
     }
     #mascot-intro {
+        margin-top: 0;
         font-size: 1.5rem;
     }
     #mascot-desc {

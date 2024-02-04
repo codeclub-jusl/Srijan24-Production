@@ -133,7 +133,7 @@ var FlipDown = function () {
 
       this.element.appendChild(this._createRotorGroup(dayRotors, 0));
       var count = dayRotorCount;
-
+      // change here for the number of rotors)
       for (var i = 0; i < 3; i++) {
         var otherRotors = [];
 
@@ -276,10 +276,8 @@ function appendChildren(parent, children) {
     parent.appendChild(el);
   });
 }
-// document.addEventListener('DOMContentLoaded', () => {
 
-// });
-var date21032024 = new Date(2024, 3, 21).getTime() / 1000
+var date21032024 = new Date(2024, 2, 21).getTime() / 1000
 
 var flipdown = new FlipDown(date21032024).start()
 document.getElementById('flipdown').classList.toggle('flipdown__theme-light');
