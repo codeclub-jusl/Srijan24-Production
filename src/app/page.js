@@ -7,9 +7,8 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <Countdown />
-            {/* <Cards /> */}
-            {/* <Footer /> */}
+            <Cards />
+            <Footer />
         </>
     )
 }

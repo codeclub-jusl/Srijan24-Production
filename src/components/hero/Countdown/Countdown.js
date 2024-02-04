@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
 const Countdown = () => {
-  const targetDate = new Date('2024-03-21T10:00:00');
+  const targetDate = new Date('2024-03-21T00:00:00');
   const [timeRemaining, setTimeRemaining] = useState(
     targetDate.getTime() - new Date().getTime()
   );

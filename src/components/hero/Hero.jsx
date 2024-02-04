@@ -1,15 +1,14 @@
 import React from 'react'
 import './style.css'
-import Image from 'next/image'
 import TextAnimation from './Animation/TextAnimation'
 import Countdown from './Countdown/Countdown'
 const Hero = () => {
     return (
         <>
-            <div className='pb-6 sm:pb-8 lg:pb-12'>
-                <div className='mx-auto max-w-screen-2xl px-4 md:px-8'>
+            <div className='pb-6 sm:pb-4 lg:pb-6'>
+                <div className='mx-auto max-w-screen-2xl px-4 md:px-4'>
                     <section className='flex flex-col items-center'>
-                        <div className='flex max-w-xl flex-col items-center pb-16 pt-8 lg:pb-2 lg:pt-32'>
+                        <div className='flex max-w-xl flex-col items-center pb-1 pt-8 lg:pb-2 lg:pt-32'>
                             <div className='image-container text-center mb-1 md:mb-1'>
                                 <img
                                     src='/assets/Subtract.png'
@@ -31,22 +30,10 @@ const Hero = () => {
                                     />
                                 </div>
                             </div>
-
-                            <h1 className='mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl'>
-                                Explore Our
-                            </h1>
                             <TextAnimation />
-                            <h2 className='mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl'>
-                                events
-                            </h2>
-                            <a
-                                href='#'
-                                className='inline-block text-orange-200:rose:600 md:text-base'
-                            >
-                                21st March-24th March
-                            </a>
+                            <h2 className="mb-6 text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl">21st March-24th March</h2>
                         </div>
-                        {/* <Countdown /> */}
+                        <Countdown />
                     </section>
                 </div>
             </div>

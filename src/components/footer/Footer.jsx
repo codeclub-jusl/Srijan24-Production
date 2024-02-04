@@ -3,14 +3,14 @@ import React from 'react'
 const Footer = () => {
     return (
         <>
-            <div className="bg-gray-900">
+            <div className="bg-[#1d1148]">
   <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
     <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
       <div className="col-span-full lg:col-span-2">
         {/* logos */}
         <div className="mb-4 lg:-mt-2">
           <a href="/" className="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl" aria-label="logo">
-           <img src='./assets/Srijan logo.png' alt='' height={20} width={30}/>
+           <img src='./assets/Srijan logo.png' alt='' height={100} width={80}/>
             Srijan 2024
           </a>
         </div>
