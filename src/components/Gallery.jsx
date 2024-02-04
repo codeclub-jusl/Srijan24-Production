@@ -32,94 +32,33 @@ const Gallery = () => {
 
     return (
         <div className="outer-container-scroll" data-direction="right" data-speed="fast">
+          <h1 className="gallery-text">GALLERY</h1>
         <div className="scroller" data-direction="right" data-speed="fast">
         <div className="scroller__inner">
          
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
+          <img className="item first big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/1.jpg" />
+          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/2.jpg"/>
         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
+          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/3.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery"  src="./images/Galleria/4.jpg"/>
        
         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/39574/flower-exotic-colorful-pink-39574.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/217114/pexels-photo-217114.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
+          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/5.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/6.jpg"/>
+          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/7.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/8.jpg"/>
+
+          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/9.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/10.jpg"/>
+          <img className="item first big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/11.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/12.jpg"/>
+
+          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/13.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery"  src="./images/Galleria/14.jpg"/>
+          <img className="item first big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/15.jpg"/>
+          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/17.jpg"/>
         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/16796363/pexels-photo-16796363/free-photo-of-pic-du-midi-de-bigorre-in-pyrenees.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
           
-
-
-
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-       
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/39574/flower-exotic-colorful-pink-39574.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/217114/pexels-photo-217114.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/16796363/pexels-photo-16796363/free-photo-of-pic-du-midi-de-bigorre-in-pyrenees.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-         
-
-
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-       
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/39574/flower-exotic-colorful-pink-39574.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/217114/pexels-photo-217114.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/16796363/pexels-photo-16796363/free-photo-of-pic-du-midi-de-bigorre-in-pyrenees.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-
-
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-       
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/39574/flower-exotic-colorful-pink-39574.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/217114/pexels-photo-217114.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-        
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/994234/pexels-photo-994234.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/16796363/pexels-photo-16796363/free-photo-of-pic-du-midi-de-bigorre-in-pyrenees.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item first big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://www.w3schools.com/w3css/img_lights.jpg")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-         
-          <a className="item big object-cover w-full h-full" data-fancybox="gallery" style={{background:'url("https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
-          <a className="item object-cover w-full h-full" data-fancybox="gallery"  style={{background:'url("https://images.pexels.com/photos/919278/pexels-photo-919278.jpeg?auto=compress&cs=tinysrgb&w=600")'}}></a>
         </div>
       </div>
       </div>

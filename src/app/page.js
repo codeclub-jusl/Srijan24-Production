@@ -15,8 +15,10 @@ export default function Home() {
           <Image src={about} fill className='relative object-cover' />
         </div>
        <Navbar/>
-       <Gallery/>
+      
        <About/>
+       <Cards />
+       <Gallery />
        <Timeline />
     </>
   );

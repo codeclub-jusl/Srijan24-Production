@@ -50,7 +50,7 @@
     margin: 0; 
     color:white;
 }
-.card.active {
+.card:hover {
     background: linear-gradient(to bottom,#9344FB,#3D049F);
     transition: transform 0.3s cubic-bezier(0, -2, 0, 1.86);
     transform: scale(1.12);
