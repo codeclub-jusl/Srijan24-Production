@@ -5,7 +5,7 @@ import Countdown from './Countdown/Countdown'
 const Hero = () => {
     return (
         <>
-            <div className='pb-6 sm:pb-4 lg:pb-6'>
+            <div className='pb-2 sm:pb-3 lg:pb-4'>
                 <div className='mx-auto max-w-screen-2xl px-4 md:px-4'>
                     <section className='flex flex-col items-center'>
                         <div className='flex max-w-xl flex-col items-center pb-1 pt-8 lg:pb-2 lg:pt-32'>
@@ -25,8 +25,8 @@ const Hero = () => {
                                         className='lo'
                                         src='/assets/Vector.png'
                                         alt=''
-                                        width={193.93}
-                                        height={194.09}
+                                        width={173.93}
+                                        height={174.09}
                                     />
                                 </div>
                             </div>
