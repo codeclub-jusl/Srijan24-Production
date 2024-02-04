@@ -1,16 +1,13 @@
 import Image from 'next/image'
 import './About.css'
-import about from '../../public/images/about/about.png'
+import about from '../../../public/images/about/about.png'
+import mobile from '../../../public/images/about/mobile.jpg'
 
 const About = () => {
     return (
         <section className='about w-full h-fit sm:h-screen'>
-            <div className='w-full h-screen bg-[#030022] fixed sm:absolute -z-10'>
-                <Image
-                    src={about}
-                    fill
-                    className='fixed sm:relative object-cover'
-                />
+            <div className='w-full h-screen bg-[#030022] absolute -z-10'>
+                <Image src={about} fill className='relative object-cover' />
             </div>
             <div className='about_content w-full h-full relative -z-0 text-white p-12 sm:p-[120px] flex flex-col justify-center gap-12'>
                 <h1 className='relative text-4xl sm:text-5xl font-normal'>
