@@ -1,4 +1,4 @@
-$square-size: 180px;
+$square-size: 22vh;
 
 
 .outer-container-scroll {
@@ -28,6 +28,8 @@ $square-size: 180px;
 
 .item {
 
+    border-radius: 5px;
+  
 
     &.big {
         grid-column-end: span 2;
