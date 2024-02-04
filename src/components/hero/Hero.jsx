@@ -111,7 +111,7 @@ const Hero = () => {
                                 </div>
                             </div>
                             <TextAnimation />
-                            <h2 className='mb-6 text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl'>
+                            <h2 className='mb-6 text-center text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl'>
                                 21st March-24th March
                             </h2>
                         </div>
