@@ -1,5 +1,6 @@
 $square-size: 22vh;
 $square-size-new: 18vh;
+$square-size-new-mobile: 16vh;
 
 .outer-container-scroll {
     display: grid;
@@ -36,6 +37,10 @@ $square-size-new: 18vh;
         grid-row-end: span 2;
     }
 
+    &:not(.big) {
+        grid-column-end: span 2;
+        grid-row-end: span 1;
+    }
 
 }
 
@@ -57,7 +62,7 @@ $square-size-new: 18vh;
 }
 
 .scroller[data-speed="fast"] {
-    --_animation-duration: 80s;
+    --_animation-duration: 40s;
 }
 
 
@@ -83,17 +88,23 @@ $square-size-new: 18vh;
         grid-auto-flow: column dense;
         grid-template-rows: repeat(4, #{$square-size-new});
         grid-template-columns: 1px;
-        grid-auto-columns: $square-size-new;
-        grid-gap: 10px;
+        grid-auto-columns: $square-size-new-mobile;
+        grid-gap: 15px;
     }
 
     .scroller[data-animated="true"] {
         overflow: hidden;
         -webkit-mask: linear-gradient(90deg,
                 transparent,
-                white 20%,
-                white 80%,
+                white 5%,
+                white 95%,
                 transparent);
         mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
     }
+
+
+    .scroller[data-speed="fast"] {
+        --_animation-duration: 30s;
+    }
+
 }
