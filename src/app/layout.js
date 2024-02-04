@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
     title: 'Srijan 24',
-    description:
-        'Official Website for Srijan 2024 - The Annual Techno-Management Fest Jadavpur University',
+    description: 'Official Website for Srijan 2024 - The Annual Techno-Management Fest Jadavpur University',
+    metadataBase: new URL('https://srijanju.in/'),
 }
 
 export default function RootLayout({ children }) {
