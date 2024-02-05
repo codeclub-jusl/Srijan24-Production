@@ -89,7 +89,7 @@ const Hero = () => {
                 <div className='mx-auto max-w-screen-2xl px-4 md:px-4'>
                     <section className='flex flex-col items-center'>
                         <div className='flex max-w-xl flex-col items-center pb-1 pt-2 lg:pb-2 lg:pt-16'>
-                            <div className='relative h-full text-center mb-1 md:mb-1'>
+                            <div className='ml-2 relative h-full justify-center mb-1 md:mb-1'>
                                 <img
                                     src='/assets/Subtract.png'
                                     alt=''
@@ -105,8 +105,8 @@ const Hero = () => {
                                         className='lo'
                                         src='/assets/Vector.png'
                                         alt=''
-                                        width={173.93}
-                                        height={174.09}
+                                        width={93.93}
+                                        height={94.09}
                                     />
                                 </div>
                             </div>

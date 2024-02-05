@@ -46,16 +46,16 @@ const TextAnimation = () => {
         <div className="container">
           <div className="row">
             <div className="home-text">
-              <h1 className='mb-4 text-4xl font-bold text-white sm:text-5xl md:mb-12'>Explore Our</h1>
+              <h1 className='mb-4 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Explore Our</h1>
               <p className="animate-text" ref={animateTextRef}>
-                <span className='mb-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>30+</span>
-                <span className='mb-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] sm:text-5xl md:mb-12 md:text-6xl'>Management</span>
-                <span className='mb-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] sm:text-5xl md:mb-12 md:text-6xl'>Coding</span>
-                <span className='mb-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>Finance</span>
-                <span className='mb-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] sm:text-5xl md:mb-12 md:text-6xl'>Gaming</span>
-                <span className='mb-8 text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] sm:text-5xl md:mb-12 md:text-6xl'>Robotics</span>
+                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>30+</span>
+                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] sm:text-5xl md:mb-12 md:text-6xl'>Management</span>
+                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] sm:text-5xl md:mb-12 md:text-6xl'>Coding</span>
+                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>Finance</span>
+                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] sm:text-5xl md:mb-12 md:text-6xl'>Gaming</span>
+                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] sm:text-5xl md:mb-12 md:text-6xl'>Robotics</span>
               </p>
-              <h2 className='mb-2 text-4xl font-bold text-white sm:text-5xl md:mb-12'>events</h2>
+              <h2 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12'>events</h2>
             </div>
           </div>
         </div>
