@@ -34,3 +34,14 @@
 .about{
     background: url("/images/about/about.png");
 }
+
+@media (max-width: 950px){
+    .mascotGap{
+        margin-bottom: 600px;
+    }
+}
+@media (max-width: 775px){
+    .mascotGap{
+        margin-bottom: 500px;
+    }
+}

@@ -8,10 +8,12 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import valleyWithDrops from '../../assets/valleyWithDrops.png'
 import cybercityOutline from '../../assets/cybercityOutline.png'
-import mascotfront from '../../assets/mascot-front.png'
+// import mascotfront from '../../assets/mascot-front.png'
+import mascotfront from '../../assets/mascot-front2.png'
 import './../Home.css'
 import Image from 'next/image'
 import Countdown from '../Countdown'
+import { ReactTyped } from 'react-typed'
 
 const Hero = () => {
     const planet1 = useRef(null)
@@ -20,7 +22,7 @@ const Hero = () => {
     const shootingStar2 = useRef(null)
     const ufo = useRef(null)
     const trigger = useRef(null)
-    const mascot = useRef(null);
+    const mascot = useRef(null)
 
     gsap.registerPlugin(ScrollTrigger)
 
@@ -120,7 +122,6 @@ const Hero = () => {
                 ref={planet2}
             />
 
-
             {/* right shooting star ----------- */}
             {/* <img
                 src='/assets/shootingstar.png'
@@ -158,14 +159,12 @@ const Hero = () => {
                                             className='base-image'
                                         />
 
-
                                         {/* srijan text logo in red ------- */}
                                         <img
                                             src='/assets/Srijan logo.png'
                                             alt=''
                                             className='overlay-image'
                                         />
-                                        
                                     </div>
                                     <div className='circle'>
                                         {/* srijan circular logo ------- */}
@@ -178,7 +177,7 @@ const Hero = () => {
                                         />
                                     </div>
                                 </div>
-                                
+
                                 {/* <div className='circle'>
                                     <img
                                         className='lo'
@@ -191,7 +190,7 @@ const Hero = () => {
                             </div>
 
                             <TextAnimation />
-                            
+
                             <h2 className='mb-6 text-center text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl srijanDate'>
                                 21st March - 24th March
                             </h2>
@@ -199,7 +198,6 @@ const Hero = () => {
                         <Countdown />
                     </section>
                 </div>
-
 
                 {/* mascott --------------------- */}
                 <div
@@ -214,38 +212,58 @@ const Hero = () => {
                             className='flex text-white text-4xl font-bold'
                             id='mascot-intro'
                         >
-                            Hey there! I am Kalpana
+                            {/* <ReactTyped
+                                strings={[
+                                    "Hey, Welcome to Srijan'24",
+                                    'I am Kalpana...',
+                                    '',
+                                ]}
+                                typeSpeed={100}
+                                backSpeed={60}
+                                loop
+                                className='mascotTyping'
+                            /> */}
                         </h1>
                         <p
                             className='text-white text-lg flex mascot-desc'
                             id='mascot-desc'
                         >
-                            Your smart assistant for Srijan'24
+                            {/* Your smart assistant for Srijan'24 */}
                         </p>
                     </div>
                     <div id='mascot-front'>
-                        <Image alt='mascot-front' src={mascotfront} width={100} height={100} className='mascot absolute top-[40%]' ref={mascot}/>
+                            <ReactTyped
+                                strings={[
+                                    "Hey, Welcome to Srijan'24",
+                                    'I am Kalpana...',
+                                    'Are you guys excited?',
+                                ]}
+                                typeSpeed={100}
+                                backSpeed={60}
+                                loop
+                                className='mascotTyping'
+                            />
+                        <Image
+                            alt='mascot-front'
+                            src={mascotfront}
+                            width={100}
+                            height={100}
+                            className='mascot absolute top-[40%]'
+                            ref={mascot}
+                        />
                     </div>
                     <div id='valley-with-drops'>
-                        <Image alt='valley-with-drops' src={valleyWithDrops} className='valleyImage'/>
+                        <Image
+                            alt='valley-with-drops'
+                            src={valleyWithDrops}
+                            className='valleyImage'
+                        />
                     </div>
                     <div id='cybercity-outline'>
                         <Image alt='cybercity-outline' src={cybercityOutline} />
                     </div>
                 </div>
             </div>
-            <section className='shootingStars'>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </section>
         </section>
     )
 }

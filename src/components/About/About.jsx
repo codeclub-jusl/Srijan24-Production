@@ -15,6 +15,7 @@ const About = () => {
                 &emsp;It has provided research and policy support for state and national governments and international bodies, and conventional and non-conventional technological development for society. The University has produced notable alumni who have made significant contributions to academia and the corporate world.<br/>
                 &emsp;The university's commitment to research, innovation, community engagement, its legendary network of alumnus from that very spring of its establishment, and its unwavering contribution to imparting knowledge to curious minds and fostering refined taste of culture and technology has marked its with a distinguished reputation not only in the Indian subcontinent but also at an international level....
                 </p>
+                <br />
                 <h1 className='relative text-4xl sm:text-5xl font-normal aboutTitle'>
                     About <span className='font-semibold aboutTitleName'>Srijan</span>
                 </h1>
