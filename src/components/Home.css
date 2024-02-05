@@ -104,6 +104,11 @@ body {
     z-index: 2;
     width: 20%;
 }
+.mascot{
+    width: 220px;
+    height: 220px;
+}
+
 #mascot-intro {
     margin-top: 4vw;
     font-size: 2vw;
@@ -114,9 +119,14 @@ body {
     font-size: 1vw;
     z-index: 2;
 }
+
+
 @media (max-width: 768px) {
     #mascot-front {
         width: 40%;
+        left: 8%;
+        right: 0;
+        margin: auto;
     }
     #mascot-intro {
         margin-top: 0;
@@ -125,4 +135,38 @@ body {
     #mascot-desc {
         font-size: 1rem;
     }
+    .mascotContainer{
+        margin-top: 100px;
+    }
 }
+@media (max-width: 550px) {
+    #mascot-front {
+        width: 40%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    #mascot-intro {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    #mascot-desc {
+        font-size: 1rem;
+    }
+    .valleyImage{
+        height: 300px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(173, 173, 173);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(134, 134, 134);
+  }

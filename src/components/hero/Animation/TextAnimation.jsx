@@ -55,7 +55,7 @@ const TextAnimation = () => {
                 <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] sm:text-5xl md:mb-12 md:text-6xl'>Gaming</span>
                 <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] sm:text-5xl md:mb-12 md:text-6xl'>Robotics</span>
               </p>
-              <h2 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12'>events</h2>
+              <h2 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Events</h2>
             </div>
           </div>
         </div>

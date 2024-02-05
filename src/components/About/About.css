@@ -3,3 +3,31 @@
 .about_content{
     font-family: 'Montserrat', sans-serif;
 }
+.aboutTitleName{
+    font-weight: 800 !important;
+}
+.aboutText{
+    font-size: 1rem;
+    line-height: 25px;
+}
+.aboutContainer{
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static !important;
+}
+.mascotGap{
+    margin-bottom: 700px;
+}
+.aboutBg{
+    /* margin-top: 150vh; */
+    /* position: absolute; */
+    top: 0;
+    bottom: 0;
+}
+@media (max-width: 580px){
+    .aboutTitle{
+        font-size: 2rem;
+    }
+}
