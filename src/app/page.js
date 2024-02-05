@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import Navbar from "@/components/Navbar/Navbar";
 import Cards from "@/components/Cards/Cards";
@@ -10,18 +11,26 @@ import Image from 'next/image';
 import Countdown from '@/components/hero/Countdown/Countdown'
 import Footer from '@/components/footer/Footer'
 import Hero from '@/components/hero/Hero'
-export default function Home() {
+import Home from "@/components/Home";
+export default () => {
 
   return (
     <>
-       <div className='w-full h-screen bg-[#030022] fixed -z-10'>
-          <Image src={about} fill className='relative object-cover' />
-        </div>
-       <Navbar/>
-      
-       <About/>
-       <Cards />
-       <Gallery />
-       <Timeline />
+      {/* <Home /> */}
+
+      <div className='w-full h-screen bg-[#030022] fixed -z-10'>
+        <Image src={about} fill className='relative object-cover' />
+      </div>
+      <Navbar />
+
+      <About />
+      <Cards />
+      <Gallery />
+      <Timeline />
+
+
+
+
     </>
   );
+}
