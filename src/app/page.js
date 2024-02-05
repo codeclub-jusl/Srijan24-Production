@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from "@/components/Navbar/Navbar";
 import Cards from "@/components/Cards/Cards";
@@ -6,7 +7,9 @@ import Gallery from '@/components/Gallery';
 import About from '@/components/About/About';
 import about from "../../public/images/about/about.png"
 import Image from 'next/image';
-
+import Countdown from '@/components/hero/Countdown/Countdown'
+import Footer from '@/components/footer/Footer'
+import Hero from '@/components/hero/Hero'
 export default function Home() {
 
   return (
@@ -22,4 +25,3 @@ export default function Home() {
        <Timeline />
     </>
   );
-}

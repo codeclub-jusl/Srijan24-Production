@@ -2,7 +2,20 @@
 import { useState, useEffect } from 'react';
 import Svg_Login from '@/components/Svg_Login';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { auth, db } from '@/firebase/config';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '@/store/userSlice';
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import GoogleSignIn from '@/components/GoogleSignIn';
+import { notification } from 'antd';
+
 export default function SignUp() {
+    const router = useRouter();
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.userReducer.user);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -13,12 +26,50 @@ export default function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+    const [passwordMatchError, setPasswordMatchError] = useState(false);
     const [phoneError, setPhoneError] = useState(false);
     const [botState, setBotState] = useState('surprised');
-    const [robotActive, setRobotActive] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
+    const [robotActive, setRobotActive] = useState(true);
     const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
     const [step, setStep] = useState(1);
+
     useEffect(() => {
+        if(user && user.emailVerified) {
+            // notification['success']({
+            //     message: `Logged in as ${userData.email}`,
+            //     duration: 2
+            // })
+            router.push("/dashboard");
+        }
+
+        auth.onAuthStateChanged(async (authUser) => {
+            if(authUser && authUser.emailVerified) {
+                const userRef = doc(db, "users", authUser.email);
+                const userSnap = await getDoc(userRef);
+                
+                if(userSnap.exists()) {
+                    const userData = userSnap.data();
+
+                    // notification['success']({
+                    //     message: `Logged in as ${userData.email}`,
+                    //     duration: 2
+                    // })
+
+                    dispatch(loginUser({
+                        ...userData,
+                        emailVerified: authUser.emailVerified,
+                    }));
+
+                    // console.log("sign up");
+
+                    router.push("/dashboard");
+                }
+
+            }
+        });
+
+        // auth.onAuthStateChanged(handleAuthStateChanged);
+
         const handleResize = () => {
             const mobile = window.innerWidth <= 600;
             setIsMobile(mobile);
@@ -31,14 +82,26 @@ export default function SignUp() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
     useEffect(() => {
-        const hasErrors = emailError || passwordError || phoneError;
+        if(user && user.emailVerified) {
+            router.push("/dashboard");
+        }
+    }, [user]);
+
+    useEffect(() => {
+        const hasErrors = emailError || passwordError || phoneError || passwordMatchError;
         if (hasErrors) {
             setBotState('sad');
         } else {
             setBotState('bot-surprised');
         }
-    }, [emailError, passwordError, phoneError]);
+    }, [emailError, passwordError, passwordMatchError, phoneError]);
+
+    useEffect(() => {
+        validatePasswordMatch();
+    }, [confirmPassword])
+
     const validateEmail = () => {
         const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(email)) {
@@ -47,12 +110,21 @@ export default function SignUp() {
             setEmailError(false);
         }
     };
+
     const validatePassword = () => {
         const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$&*]).{8,}$/;
         if (!passwordRegex.test(password)) {
             setPasswordError(true);
         } else {
             setPasswordError(false);
+        }
+    };
+
+    const validatePasswordMatch = () => {
+        if(password !== confirmPassword) {
+            setPasswordMatchError(true);
+        } else {
+            setPasswordMatchError(false);
         }
     };
 
@@ -77,21 +149,75 @@ export default function SignUp() {
     };
 
     const handleClick = () => {
+        console.log("clicked");
+
         validateEmail();
         validatePassword();
+        validatePasswordMatch();
         validatePhone();
-        const hasErrors = emailError || passwordError || phoneError;
+
+        // console.log(passwordMatchError);
+
+        const hasErrors = emailError || passwordError || passwordMatchError || phoneError;
+
+        // console.log(hasErrors);
+
         if (hasErrors) {
             setBotState('sad');
         } else {
             setBotState('happy');
+
+            // console.log("clicked");
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(async (userCredentials) => {
+                    notification['success']({
+                        message: `Registered successfully`,
+                        duration: 3,
+                    })
+
+                    await setDoc(doc(db, "users", userCredentials.user.email),  {
+                        name,
+                        email,
+                        phone,
+                        college,
+                        dept,
+                        year,
+                    });
+
+                    await sendEmailVerification(auth.currentUser).then(() => {
+                        router.push("/emailVerification");
+                    });
+
+                    setName("");
+                    setEmail("");
+                    setPhone("");
+                    setCollege("");
+                    setDept("");
+                    setYear("");
+                    setPassword("");
+                    setConfirmPassword("");
+                    setEmailError(false);
+                    setPasswordError(false);
+                    setPasswordMatchError(false);
+                    setPhoneError(false);
+                })
+                .catch((err) => {
+                    // console.log(err);
+                    notification['error']({
+                        message: `Email already registered`,
+                        duration: 3
+                    })
+                });
         }
-        if (!passwordError && password === confirmPassword) {
-            console.log('Form submitted');
-        }
-        else
-            return;
+
+        // if (!passwordError && !passwordMatchError) {
+        //     console.log('Form submitted');
+        // }
+        // else
+        //     return;
     };
+
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#916bcf] to-[#ff3ab0]">
             <div className="relative h-[80vh] flex flex-col m-6 space-y-8 bg-[#2e0d36] bg-opacity-60 shadow-2xl rounded-2xl md:flex-row md:space-y-0">
@@ -118,7 +244,7 @@ export default function SignUp() {
                                 {phoneError && <span className="text-red-500 text-xs">*Invalid Phone Number</span>}
                             </div>
                             <div className='flex items-center justify-center'>
-                                <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={prevStep}>Back</button>
+                                {/* <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={prevStep}>Back</button> */}
                                 <span className='mx-2 mb-4 text-white'>Step {step}</span>
                                 <button className='rounded-full bg-[#f5c9ff] p-2 mx-2 mb-4' onClick={nextStep}>Next</button>
                             </div>
@@ -160,28 +286,30 @@ export default function SignUp() {
                                 {passwordError && <span className="text-red-500 text-xs">*Invalid Password</span>}
                             </div>
                             <div className="relative py-4">
-                                <input type="password" value={confirmPassword} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' disabled={!robotActive} onChange={(e) => setConfirmPassword(e.target.value)} />
+                                <input type="password" value={confirmPassword} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' disabled={!robotActive} onChange={(e) => {setConfirmPassword(e.target.value); }} />
                                 <label htmlFor="year" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Confirm Password</label>
+                                {passwordMatchError && <span className="text-red-500 text-xs">*Confirm password don't match</span>}
                             </div>
                             <div className='flex items-center justify-center'>
                                 <button className='rounded-full bg-[#f5c9ff] p-2 mx-2 mb-4' onClick={prevStep}>Back</button>
                                 <span className='mx-2 mb-4 text-white'>Step {step}</span>
-                                <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={nextStep}>Next</button>
+                                {/* <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={nextStep}>Next</button> */}
                             </div>
                             <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick} disabled={!robotActive}>
-                                Sign in
+                                Sign Up
                             </button>
                         </div>
                     )}
-                    <button
+                    {/* <button
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}
                     >
                         <img src="/images/google.png" alt="img" className="w-6 h-6 inline mr-2" />
                         Sign in with Google
-                    </button>
+                    </button> */}
+                    <GoogleSignIn robotActive={robotActive} />
                     <div className="text-center text-white">
                         Already having an account? &nbsp;
-                        <Link href="/login"><span className="font-bold text-[#3c0b3a]">Login here</span></Link>
+                        <Link href="/login"><span className="font-bold text-[#3c0b3a]">Log In here</span></Link>
                     </div>
                 </div>
                 {!isMobile && (

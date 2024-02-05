@@ -1,0 +1,90 @@
+.container{
+	max-width: 1170px;
+	width: 100%;
+	margin:auto;
+}
+
+.home{
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-wrap: wrap;
+	padding:50px 15px;
+	position: relative;
+}
+.home::before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.home .home-text{
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+.home .home-text p{
+   margin:0;
+   overflow: hidden;
+}
+.home .home-text p span{
+   display: none;
+}
+
+.home .home-text p span.text-in{
+   display: block;
+   animation: textIn .3s ease;
+}
+.home .home-text p span.text-out{
+   animation: textOut .3s ease;
+}
+.manage{
+	background: linear-gradient(45deg, #6100FF 100%, #00E0FF 100%, #FF0099 100%);
+	background-clip: text;
+	color: transparent;
+}
+.codin{
+	background: linear-gradient(45deg, #6100FF 100%, #D907FF 100%, #F4E2FF 100%);
+	background-clip: text;
+	color: transparent;
+}
+.fin{
+	background: linear-gradient(180deg, #FF0099 100%, #6100FF 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+.game{
+	background: linear-gradient(45deg, #FF0099 100%, #00E0FF 100%, #6100FF 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+.robo{
+	background: linear-gradient(45deg, #FBFBFB 100%, #9747FF 100%, #5600E1 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+@keyframes textIn{
+   0%{
+	   transform: translateY(100%);
+   }
+   100%{
+	   transform: translateY(0%);
+   }
+}
+@keyframes textOut{
+   0%{
+	   transform: translateY(0%);
+   }
+   100%{
+	   transform: translateY(-100%);
+
+   }
+}
