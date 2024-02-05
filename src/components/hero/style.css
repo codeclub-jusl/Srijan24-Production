@@ -1,47 +1,17 @@
 .circle {
-    width: 16.40875rem;
-    height: 16.40875rem;
+    width: 14.40875rem;
+    height: 14.40875rem;
     background-image: linear-gradient(180deg, #1300ea 0%, #3a0a88 100%);
     border-radius: 50%;
     position: relative;
     top: -7.353125rem;
-    left: 1.810625rem;
-}
-.explore {
-    width: 21.8125rem;
-    height: 4.5625rem;
-    position: relative;
-    text-align: center;
-    font-weight: 500;
-    font-size: 3.750625rem;
-    line-height: 4.571875rem;
-    margin: auto;
-}
-.explore2 {
-    width: 21.8125rem;
-    height: 4.5625rem;
-    position: relative;
-    bottom: -5.1875rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: 3.750625rem;
-    line-height: 4.571875rem;
-    margin: auto;
-}
-.events {
-    position: absolute;
-    width: 44.625rem;
-    height: 14.115rem;
-    top: 41.048125rem;
-    left: 22.6875rem;
-    border: 2px solid black;
+    left: 2.010625rem;
 }
 .lo {
     position: relative;
-    top: 11%;
-    left: 10%;
+    top: 7.5%;
+    left: 7%;
     width: auto;
-    height: 80%;
 }
 .icon {
     z-index: 2;
@@ -57,13 +27,14 @@
 }
 
 .base-image {
-    width: 100%;
+    width: 90%;
+    height: 42%;
 }
 
 .overlay-image {
-    width: 100%;
+    width: 95%;
     position: absolute;
-    top: 2%;
-    left: 2%;
+    top: 0.1%;
+    left: -1%;
     z-index: 1;
 }
