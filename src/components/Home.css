@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body {
-    background-color: rgb(35, 30, 60);
+    /* background-color: rgb(35, 30, 60); */
+    background-color: rgb(2, 0, 34);
 }
 
 #top {

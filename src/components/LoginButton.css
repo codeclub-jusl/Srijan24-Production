@@ -1,9 +1,8 @@
-
-
-  .sheared-button {
+.sheared-button {
     border-radius: 0.5 rem;
-    transform: skewX(15deg); 
+    transform: skewX(15deg);
 
     display: inline-block;
-    background-color: black;
-  }
+
+    background-color: #2d2448;
+}
