@@ -1,6 +1,7 @@
 "use client"
 import React, {useEffect} from 'react'
 import "./Galleria.scss"
+import Image from 'next/image'
 
 const Gallery = () => {
 
@@ -31,34 +32,32 @@ const Gallery = () => {
    
 
     return (
-        <div className="outer-container-scroll" data-direction="right" data-speed="fast">
+        <div className="outer-container-scroll galleryContainer" data-direction="right" data-speed="fast">
           <h1 className="gallery-text">GALLERY</h1>
         <div className="scroller" data-direction="right" data-speed="fast">
-        <div className="scroller__inner">
-         
-          <img className="item first big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/1.jpg" />
-          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/2.jpg"/>
         
-          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/3.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery"  src="./images/Galleria/4.jpg"/>
+        <div className="scroller__inner">
+          <Image className="item first big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/1.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/2.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+        
+          <Image className="item big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/3.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery"  src="/images/Galleria/4.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
        
         
-          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/5.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/6.jpg"/>
-          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/7.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/8.jpg"/>
+          <Image className="item big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/5.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/6.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/7.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/8.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
 
-          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/9.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/10.jpg"/>
-          <img className="item first big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/11.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/12.jpg"/>
-
-          <img className="item big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/13.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery"  src="./images/Galleria/14.jpg"/>
-          <img className="item first big object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/15.jpg"/>
-          <img className="item object-cover w-full h-full" data-fancybox="gallery" src="./images/Galleria/17.jpg"/>
-        
+          <Image className="item big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/9.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/10.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item first big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/11.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/12.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
           
+          <Image className="item big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/13.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery"  src="/images/Galleria/14.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item first big object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/15.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
+          <Image className="item object-cover w-full h-full" data-fancybox="gallery" src="/images/Galleria/17.jpg" width={150} height={100} alt='gallery' draggable={false} placeholder='blur' blurDataURL='/images/blur.jpg'/>
         </div>
       </div>
       </div>

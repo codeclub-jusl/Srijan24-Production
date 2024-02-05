@@ -31,3 +31,6 @@
         font-size: 2rem;
     }
 }
+.about{
+    background: url("/images/about/about.png");
+}

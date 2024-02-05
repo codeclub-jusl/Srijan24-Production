@@ -1,26 +1,32 @@
-"use client";
-import React, { useState } from "react";
 import "./Cards.css";
+import Image from "next/image";
 
-const Cards = () => {
- return (
-    <div className="wrapper-container">
-      <div className="wrapper">
-        <div className="card">
-          <h3 className="card-title">Campus Ambassador</h3>
+export default function Cards(){
+  return (
+    <>
+      <div className="cardsContainer">
+        <div className="cardBox disabledCard">
+          <Image src={"/images/Galleria/1.jpg"} height={100} width={100} alt="cardImage" className="cardImage"/>
+          <p>Campus Ambassador</p>
+          <div className="lockedCard">Locked</div>
         </div>
-        <div className="card">
-          <h3 className="card-title">Events</h3>
+        <div className="cardBox disabledCard">
+          <Image src={"/images/Galleria/1.jpg"} height={100} width={100} alt="cardImage" className="cardImage"/>
+          <p>Events</p>
+          <div className="lockedCard">Locked</div>
         </div>
-        <div className="card">
-          <h3 className="card-title">Merchandise</h3>
+        <div className="cardBox disabledCard">
+          <Image src={"/images/Galleria/1.jpg"} height={100} width={100} alt="cardImage" className="cardImage"/>
+          <p>Merchandise</p>
+          <div className="lockedCard">Locked</div>
         </div>
-        <div className="card">
-          <h3 className="card-title">Workshops</h3>
+        <div className="cardBox disabledCard">
+          <Image src={"/images/Galleria/1.jpg"} height={100} width={100} alt="cardImage" className="cardImage"/>
+          <p>Workshop</p>
+          <div className="lockedCard">Locked</div>
         </div>
+
       </div>
-    </div>
-  );
-};
-
-export default Cards;
+    </>
+  )
+}

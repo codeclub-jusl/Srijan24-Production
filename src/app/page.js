@@ -23,9 +23,9 @@ export default () => {
       </div> */}
 
       {/* <Navbar /> */}
-      {/* <Cards /> */}
+      <Cards />
+      <Gallery />
       <About />
-      {/* <Gallery /> */}
       {/* <Timeline /> */}
       <Footer/>
     </>
