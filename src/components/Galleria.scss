@@ -126,3 +126,8 @@ $square-size-new-mobile: 16vh;
     padding: 30px;
     margin-top: 30px;
 }
+@media (max-width: 500px){
+    .galleryContainer{
+        padding: 30px 10px;
+    }
+}

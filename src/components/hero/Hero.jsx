@@ -18,8 +18,8 @@ import { ReactTyped } from 'react-typed'
 const Hero = () => {
     const planet1 = useRef(null)
     const planet2 = useRef(null)
-    const shootingStar1 = useRef(null)
-    const shootingStar2 = useRef(null)
+    // const shootingStar1 = useRef(null)
+    // const shootingStar2 = useRef(null)
     const ufo = useRef(null)
     const trigger = useRef(null)
     const mascot = useRef(null)
@@ -74,52 +74,61 @@ const Hero = () => {
                 markers: false,
             },
         })
-        gsap.to(shootingStar1.current, {
-            top: '65%',
-            translateX: -30,
-            scrollTrigger: {
-                trigger: shootingStar1.current,
-                start: 'top 60%',
-                end: 'bottom 10%',
-                scrub: 1,
-                markers: false,
-            },
-        })
-        gsap.to(shootingStar2.current, {
-            top: '60%',
-            translateX: -30,
-            scrollTrigger: {
-                trigger: shootingStar2.current,
-                start: 'top 60%',
-                end: 'bottom 10%',
-                scrub: 1,
-                markers: false,
-            },
-        })
+        // gsap.to(shootingStar1.current, {
+        //     top: '65%',
+        //     translateX: -30,
+        //     scrollTrigger: {
+        //         trigger: shootingStar1.current,
+        //         start: 'top 60%',
+        //         end: 'bottom 10%',
+        //         scrub: 1,
+        //         markers: false,
+        //     },
+        // })
+        // gsap.to(shootingStar2.current, {
+        //     top: '60%',
+        //     translateX: -30,
+        //     scrollTrigger: {
+        //         trigger: shootingStar2.current,
+        //         start: 'top 60%',
+        //         end: 'bottom 10%',
+        //         scrub: 1,
+        //         markers: false,
+        //     },
+        // })
     })
 
     return (
         <section className='bg-[#030022] relative' ref={trigger}>
-            <img
+            <Image
                 src='/assets/star.png'
                 alt=''
                 className='absolute h-full w-full'
+                draggable={false}
+                width={1000}
+                height={1000}
             />
 
             {/* left planet -------------*/}
-            <img
+            <Image
                 src='/assets/hero-planet1.png'
                 alt=''
                 className='md:block absolute top-[35%] left-10 leftPlanet'
                 ref={planet1}
+                draggable={false}
+                width={500}
+                height={500}
             />
 
             {/* right planet ------------ */}
-            <img
+            <Image
                 src='/assets/hero-planet2.png'
                 alt=''
                 className='md:block absolute top-[20%] right-24 rightPlanet'
                 ref={planet2}
+                draggable={false}
+                width={500}
+                height={500}
             />
 
             {/* right shooting star ----------- */}
@@ -153,27 +162,34 @@ const Hero = () => {
                                 {/* srijan red base subtract -------- */}
                                 <div className='redParentBase'>
                                     <div className='redBase'>
-                                        <img
+                                        <Image
                                             src='/assets/Subtract.png'
                                             alt=''
                                             className='base-image'
+                                            draggable={false}
+                                            width={500}
+                                            height={500}
                                         />
 
                                         {/* srijan text logo in red ------- */}
-                                        <img
+                                        <Image
                                             src='/assets/Srijan logo.png'
                                             alt=''
                                             className='overlay-image'
+                                            draggable={false}
+                                            width={500}
+                                            height={500}
                                         />
                                     </div>
                                     <div className='circle'>
                                         {/* srijan circular logo ------- */}
-                                        <img
+                                        <Image
                                             className='lo'
                                             src='/assets/Vector.png'
                                             alt=''
                                             width={100}
                                             height={100}
+                                            draggable={false}
                                         />
                                     </div>
                                 </div>
@@ -250,6 +266,7 @@ const Hero = () => {
                             height={100}
                             className='mascot absolute top-[40%]'
                             ref={mascot}
+                            draggable={false}
                         />
                     </div>
                     <div id='valley-with-drops'>
@@ -257,10 +274,11 @@ const Hero = () => {
                             alt='valley-with-drops'
                             src={valleyWithDrops}
                             className='valleyImage'
+                            draggable={false}
                         />
                     </div>
                     <div id='cybercity-outline'>
-                        <Image alt='cybercity-outline' src={cybercityOutline} />
+                        <Image alt='cybercity-outline' src={cybercityOutline} draggable={false}/>
                     </div>
                 </div>
             </div>
