@@ -1,11 +1,39 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import './Footer.css'
 import Image from 'next/image'
 import { ReactTyped } from 'react-typed'
+import { notification } from 'antd'
+import { doc, setDoc } from 'firebase/firestore'
+import { db } from '@/firebase/config'
 
 const Footer = () => {
+    const [email, setEmail] = useState('');
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+
+        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(email)) {
+            notification['error']({
+                message: `Invalid email`,
+                duration: 3
+            })
+        } else {
+            await setDoc(doc(db, "subscribers", email), {
+                email,
+            })
+
+            notification['success']({
+                message: `Successfully subscribed to Srijan'24 Newsletter`,
+                duration: 3
+            })
+
+            setEmail('');
+        }
+    }
+
     return (
         <>
             <div className='footerContainer'>
@@ -116,9 +144,9 @@ const Footer = () => {
                                     attr='placeholder'
                                     loop
                                 >
-                                    <input type='text' />
+                                    <input type='text' value={email} onChange={(e) => {setEmail(e.target.value); }} />
                                 </ReactTyped>
-                                <button>Subscribe</button>
+                                <button onClick={handleClick}>Subscribe</button>
                             </div>
                             <p>
                                 * will send you updates when new things will be
@@ -141,9 +169,9 @@ const Footer = () => {
                                 attr='placeholder'
                                 loop
                             >
-                                <input type='text' />
+                                <input type='text' value={email} onChange={(e) => {setEmail(e.target.value); }} />
                             </ReactTyped>
-                            <button>Subscribe</button>
+                            <button onClick={handleClick}>Subscribe</button>
                         </div>
                         <p>
                             * will send you updates when new things will be
