@@ -1,13 +1,12 @@
 {
     "theme_color": "#490791",
-    "background_color": "#101010",
-    "display": "standalone",
+    "background_color": "#490791",
+    "display": "browser",
     "scope": "/",
     "start_url": "/",
     "name": "Srijan24",
     "short_name": "Srijan24",
     "description": "The Annual Techno-Management Fest of Jadavpur University",
-    "orientation": "portrait-primary",
     "icons": [
         {
             "src": "/icon-192x192.png",
