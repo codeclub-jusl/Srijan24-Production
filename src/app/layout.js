@@ -9,7 +9,8 @@ export const metadata = {
     title: "SRIJAN'24 | Jadavpur University",
     description:
         "Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University",
-    metadataBase: new URL('https://srijanju.in/'),
+    metadataBase: new URL('https://srijanju.in'),
+    manifest: "/manifest.json",
 }
 
 export default function RootLayout({ children }) {
@@ -25,7 +26,6 @@ export default function RootLayout({ children }) {
                     content='srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan24, techfest, ai, management, jadavpur university'
                 />
                 <meta name='author' content='FETSU' />
-                <link rel="manifest" href="https://srijan24.vercel.app/manifest.json" />
 
                 <meta property='og:locale' content='en_US' />
                 <meta property='og:type' content='article' />

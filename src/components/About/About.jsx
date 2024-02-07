@@ -30,7 +30,7 @@ const About = () => {
                 Join us at <b className='yellowColor'>Jadavpur University</b> to engage in <b className='yellowColor'>35+</b> events ranging from coding competitions, b plan competitions, case studies, equity research events, robotics based competitions, web design, rap battles, treasure hunt and many more to have an experience of a lifetime.<br/>
                 We also organise: <br/>
                 <b className='yellowColor'>F5 talk show</b> series where in we host renowned personalities and have hosted <b className='yellowColor'>Aman Dhattarwal</b> (<span className='startupName'>Apna College</span>), <b className='yellowColor'>Raj Vikramaditya</b> (<span className='startupName'>Striver, Take U Forward</span>) and many others in the past.
-                <br/>Comedy Nights, we have previously hosted <b className='yellowColor'>Rahul Subramanian</b>, <b className='yellowColor'>Anirban Dasgupta</b> and others. Band Night, DJ Night
+                <br/>Comedy Nights, we have previously hosted <b className='yellowColor'>Rahul Subramanian</b>, <b className='yellowColor'>Anirban Dasgupta</b> and mesmerizing <b className='yellowColor'>DJ nights</b> and soul-stirring <b className='yellowColor'>Band Performances</b> of the best of the bands, creating unforgettable evenings of music and dance.
                 </p>
                 <p className='queryText'>For any queries reach out to <b className='orangeColor'>Bitan Banerjee</b> (<a href='mailto:bbanerjeeagp@gmail.com' className='queryMail'>bbanerjeeagp@gmail.com</a>) or <b className='orangeColor'>Harsham Mishra</b> (<a href='mailto:harsham.jitendra@gmail.com' className='queryMail'>harsham.jitendra@gmail.com</a>)</p>
             </div>
