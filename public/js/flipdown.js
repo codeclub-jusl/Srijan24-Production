@@ -1,4 +1,4 @@
-console.log('flipdown.js loaded');
+// console.log('flipdown.js loaded');
 "use strict";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -47,7 +47,7 @@ var FlipDown = function () {
 
     this._setOptions();
 
-    console.log("FlipDown ".concat(this.version, " (Theme: ").concat(this.opts.theme, ")"));
+    // console.log("FlipDown ".concat(this.version, " (Theme: ").concat(this.opts.theme, ")"));
   }
 
   _createClass(FlipDown, [{

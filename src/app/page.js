@@ -17,12 +17,6 @@ export default () => {
     <>
       <Hero/>
       <div className='mascotGap'/>
-
-      {/* <div className='w-full h-screen bg-[#030022] fixed -z-10 aboutBg'>
-        <Image src={about} fill className='relative object-cover' />
-      </div> */}
-
-      {/* <Navbar /> */}
       <Cards />
       <Gallery />
       <About />

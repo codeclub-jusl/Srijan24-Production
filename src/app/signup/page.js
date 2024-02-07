@@ -149,7 +149,7 @@ export default function SignUp() {
     };
 
     const handleClick = () => {
-        console.log("clicked");
+        // console.log("clicked");
 
         validateEmail();
         validatePassword();

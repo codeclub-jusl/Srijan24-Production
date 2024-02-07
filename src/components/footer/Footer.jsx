@@ -7,6 +7,7 @@ import { ReactTyped } from 'react-typed'
 import { notification } from 'antd'
 import { doc, setDoc } from 'firebase/firestore'
 import { db } from '@/firebase/config'
+import { IoMdMail } from "react-icons/io";
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -39,14 +40,14 @@ const Footer = () => {
             <div className='footerContainer'>
                 <div className='footerUpper'>
                     <div className='footerLeft'>
-                        <div className='clubLogo clubLogo1'>
+                        <div className='footerLeftLogos'>
                             <Image
                                 src='/assets/Vector.png'
                                 alt='logo'
                                 height={70}
                                 width={70}
                                 draggable={false}
-                                className='clubLogo'
+                                className='clubLogo clubLogo1'
                             />
                             <Image
                                 src='/assets/julogo.png'
@@ -124,15 +125,16 @@ const Footer = () => {
                         </div>
                         <div className='footerColumn'>
                             <div className='footerHeading'>LEGAL</div>
-                            <a href='/pdf/Srijan_Privacy_Policy.pdf' target='_blank'>Privacy Policy</a>
-                            <a href='/pdf/Srijan_Terms_and_Conditions.pdf' target='_blank'>Terms & Conditions</a>
+                            <a href='/pdf/Srijan_Privacy_Policy.pdf' target='_blank'>Privacy</a>
+                            <a href='/pdf/Srijan_Terms_and_Conditions.pdf' target='_blank'>Terms</a>
+                            <a href='/pdf/Srijan_Refund_and_Cancellation.pdf' target='_blank'>Refund</a>
                             <a href='/pdf/Srijan_Sponsorship_Brochure.pdf' target='_blank'>Sponsorship</a>
                         </div>
                     </div>
 
                     <div className='footerBottom'>
                         <div className='newsLetter'>
-                            <h2>Subscribe to Srijan'24</h2>
+                            <h2>Join our Newsletter</h2>
                             <div className='newsLetterForm'>
                                 <ReactTyped
                                     strings={[
@@ -149,7 +151,7 @@ const Footer = () => {
                                 <button onClick={handleClick}>Subscribe</button>
                             </div>
                             <p>
-                                * will send you updates when new things will be
+                                * will send you updates when new features will be
                                 unlocked
                             </p>
                         </div>

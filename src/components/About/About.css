@@ -32,14 +32,13 @@
     line-height: 25px;
 }
 .aboutContainer{
-    border: 2px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     position: static !important;
 }
 .mascotGap{
-    margin-bottom: 700px;
+    margin-bottom: 800px;
 }
 .aboutBg{
     /* margin-top: 150vh; */
@@ -54,14 +53,29 @@
 }
 .about{
     background: url("/images/about/about.png");
+    position: relative;
 }
 .yellowColor{
     color: rgb(220, 197, 52);
     font-size: 1.1rem;
 }
+.orangeColor{
+    color: orange;
+}
 .startupName{
     color:  rgb(214, 194, 46);
     font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+}
+.queryText{
+    color: white;
+    text-align: center;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+.queryMail{
+    color:  rgb(214, 194, 46);
     font-family: 'Barlow', sans-serif;
 }
 

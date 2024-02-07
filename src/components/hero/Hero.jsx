@@ -5,7 +5,8 @@ import { useRef, useEffect } from 'react'
 import './style.css'
 import TextAnimation from './Animation/TextAnimation'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import valleyWithDrops from '../../assets/valleyWithDrops.png'
 import cybercityOutline from '../../assets/cybercityOutline.png'
 // import mascotfront from '../../assets/mascot-front.png'
@@ -15,7 +16,9 @@ import Image from 'next/image'
 import Countdown from '../Countdown'
 import { ReactTyped } from 'react-typed'
 
+
 const Hero = () => {
+    gsap.registerPlugin(ScrollTrigger)
     const planet1 = useRef(null)
     const planet2 = useRef(null)
     // const shootingStar1 = useRef(null)
@@ -24,7 +27,6 @@ const Hero = () => {
     const trigger = useRef(null)
     const mascot = useRef(null)
 
-    gsap.registerPlugin(ScrollTrigger)
 
     useEffect(() => {
         gsap.to(planet1.current, {
@@ -57,7 +59,7 @@ const Hero = () => {
             top: '80%',
             scrollTrigger: {
                 trigger: ufo.current,
-                start: 'top 60%',
+                start: 'top 40%',
                 end: 'bottom 10%',
                 scrub: 1,
                 markers: false,
@@ -262,8 +264,8 @@ const Hero = () => {
                         <Image
                             alt='mascot-front'
                             src={mascotfront}
-                            width={100}
-                            height={100}
+                            width={500}
+                            height={500}
                             className='mascot absolute top-[40%]'
                             ref={mascot}
                             draggable={false}
