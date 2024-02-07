@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
                     content='srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan24, techfest, ai, management, jadavpur university'
                 />
                 <meta name='author' content='FETSU' />
-                <link rel="manifest" href="manifest.json" />
+                <link rel="manifest" href="https://srijan24.vercel.app/manifest.json" />
 
                 <meta property='og:locale' content='en_US' />
                 <meta property='og:type' content='article' />
