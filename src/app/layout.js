@@ -43,11 +43,11 @@ export default function RootLayout({ children }) {
                     property='og:site_name'
                     content="SRIJAN'24 | Jadavpur University"
                 />
-                {/* <meta
+                <meta
                     property="og:image"
                     itemProp="image"
-                    content="https://srijanju.in/preview.png"
-                /> */}
+                    content="https://srijan24.vercel.app/website_preview.png"
+                />
                 <link
                     rel='shortcut icon'
                     href='favicon.ico'
