@@ -11,6 +11,7 @@ import { IoMdMail } from "react-icons/io";
 
 const Footer = () => {
     const [email, setEmail] = useState('');
+    const [buttonText, setButtonText] = useState("Subscribe");
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -22,6 +23,8 @@ const Footer = () => {
                 duration: 3
             })
         } else {
+            setButtonText("Subscribing...");
+
             await setDoc(doc(db, "subscribers", email), {
                 email,
             })
@@ -32,6 +35,8 @@ const Footer = () => {
             })
 
             setEmail('');
+
+            setButtonText("Subscribe");
         }
     }
 
@@ -148,7 +153,7 @@ const Footer = () => {
                                 >
                                     <input type='text' value={email} onChange={(e) => {setEmail(e.target.value); }} />
                                 </ReactTyped>
-                                <button onClick={handleClick}>Subscribe</button>
+                                <button onClick={handleClick}>{buttonText}</button>
                             </div>
                             <p>
                                 * will send you updates when new features will be
@@ -159,7 +164,7 @@ const Footer = () => {
                 </div>
                 <div className='footerBottom2'>
                     <div className='newsLetter'>
-                        <h2>Subscribe to Srijan'24</h2>
+                        <h2>Join our Newsletter</h2>
                         <div className='newsLetterForm'>
                             <ReactTyped
                                 strings={[
@@ -173,7 +178,7 @@ const Footer = () => {
                             >
                                 <input type='text' value={email} onChange={(e) => {setEmail(e.target.value); }} />
                             </ReactTyped>
-                            <button onClick={handleClick}>Subscribe</button>
+                            <button onClick={handleClick}>{buttonText}</button>
                         </div>
                         <p>
                             * will send you updates when new things will be
