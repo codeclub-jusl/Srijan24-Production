@@ -11,6 +11,7 @@ import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import GoogleSignIn from '@/components/GoogleSignIn';
 import ResetPassword from '@/components/ResetPassword';
 import { notification } from 'antd';
+import BeatLoader from "react-spinners/BeatLoader";
 
 export default function Login() {
     const router = useRouter();
@@ -25,6 +26,7 @@ export default function Login() {
     const [robotActive, setRobotActive] = useState(true);
     const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 600 : false);
     const [showResetModal,setShowResetModal]=useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if(user && user.emailVerified) {
@@ -37,6 +39,8 @@ export default function Login() {
 
         // auth.onAuthStateChanged(handleAuthStateChanged);
         auth.onAuthStateChanged(async (authUser) => {
+            setLoading(true);
+
             if(authUser && authUser.emailVerified) {
                 const userRef = doc(db, "users", authUser.email);
                 const userSnap = await getDoc(userRef);
@@ -59,6 +63,8 @@ export default function Login() {
                     router.push("/dashboard");
                 }
             }
+
+            setLoading(false);
         })
 
         const handleResize = () => {
@@ -98,52 +104,63 @@ export default function Login() {
     const handleClick = async (e) => {
         e.preventDefault();
 
+        setLoading(true);
+
         // validateEmail();
         // validatePassword();
-
-        const userRef = doc(db, "users", email);
-        const userSnap = await getDoc(userRef);
-
-        if(userSnap.exists()) {
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredentials) => {
-                    if(!userCredentials.user.emailVerified) {
-                        // alert("Please verify your email before logging in.")
-                        setBotState('sad');
-                        notification['error']({
-                            message: `Please verify your email before logging in.`,
-                            duration: 3
-                        })
-
-                        return signOut(auth).then(() => {}).catch((err) => {console.log(err);})
-                    } else {
-                        setBotState('happy');
-                        notification['success']({
-                            message: `Logged in successfully`,
-                            duration: 3
-                        })
-                    }
-                })
-                .catch((err) => {
-                    setBotState('sad');
-                    notification['error']({
-                        message: `Invalid credentials`,
-                        duration: 3
-                    })
-                    // console.log(err);
-                })
-        } else {
-            // alert("Email is not registered.")
-            setBotState('sad');
+        if(email.trim().length === 0) {
             notification['error']({
-                message: `Email is not registered.`,
+                message: `Invalid credentials`,
                 duration: 3
             })
+        } else {
+            const userRef = doc(db, "users", email);
+            const userSnap = await getDoc(userRef);
+
+            if(userSnap.exists()) {
+                signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredentials) => {
+                        if(!userCredentials.user.emailVerified) {
+                            // alert("Please verify your email before logging in.")
+                            setBotState('sad');
+                            notification['error']({
+                                message: `Please verify your email before logging in.`,
+                                duration: 3
+                            })
+
+                            return signOut(auth).then(() => {}).catch((err) => {console.log(err);})
+                        } else {
+                            setBotState('happy');
+                            notification['success']({
+                                message: `Logged in successfully`,
+                                duration: 3
+                            })
+                        }
+                    })
+                    .catch((err) => {
+                        setBotState('sad');
+                        notification['error']({
+                            message: `Invalid credentials`,
+                            duration: 3
+                        })
+                        // console.log(err);
+                    })
+            } else {
+                // alert("Email is not registered.")
+                setBotState('sad');
+                notification['error']({
+                    message: `Email is not registered.`,
+                    duration: 3
+                })
+            }
         }
+
+        setLoading(false);
         
     };
     return (
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#916bcf] to-[#ff3ab0]">
+        {/* {loading && <BarLoader />} */}
 
             <div className="relative h-[80vh] flex flex-col m-6 space-y-8 bg-[#2e0d36] bg-opacity-60 shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                 <div className="flex flex-col justify-center p-8 md:p-14">
@@ -166,7 +183,7 @@ export default function Login() {
                         <span className="font-bold text-md text-[#3c0b3a] cursor-pointer" onClick={()=>setShowResetModal(true)}>Forgot password</span>
                     </div>
                     <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick} disabled={!robotActive}>
-                        Log in
+                        {loading ? <BeatLoader color='#ffffff' /> : "Log in"}
                     </button>
                     {/* <button
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}
