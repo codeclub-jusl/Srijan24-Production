@@ -8,10 +8,28 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
     title: "SRIJAN'24 | Jadavpur University",
-    description:
-        "Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University",
+    description: "Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University",
     metadataBase: new URL('https://srijanju.in'),
     manifest: "/manifest.json",
+    keywords: ['srijan', 'cultural', 'ju', 'fest', 'srijanju', 'technology', 'events', 'games', 'coding', 'srijan24', 'techfest', 'ai', 'management', 'jadavpur university'],
+    authors: [{ name: 'FETSU', url: 'https://srijanju.in' }],
+    creator: 'FETSU',
+    publisher: 'FETSU',
+    openGraph: {
+        title: "SRIJAN'24 | Jadavpur University",
+        description: "Official Website for Srijan'24 - The Annual Techno-Management Fest of Jadavpur University",
+        url: 'https://srijanju.in',
+        siteName: "SRIJAN'24 | Jadavpur University",
+        images: [
+          {
+            url: 'https://srijanju.in/website_preview.png', // Must be an absolute URL
+            width: 1200,
+            height: 640,
+          },
+        ],
+        locale: 'en_US',
+        type: 'website',
+      },
 }
 
 export default function RootLayout({ children }) {
