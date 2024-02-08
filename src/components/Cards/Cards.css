@@ -49,6 +49,7 @@
 .cardBox .cardImage{
     width: 250px;
     height: 300px;
+    border-radius: 3px;
     border-top-right-radius: 60px 60px;
 }
 .cardBox p{
@@ -86,4 +87,6 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #e8e8e8fa;
+    border-radius: 3px;
+    border-top-right-radius: 60px 60px;
 }

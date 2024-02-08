@@ -47,7 +47,7 @@ const TextAnimation = () => {
           <div className="row">
             <div className="home-text">
               <h1 className='mb-4 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Explore Our</h1>
-              <p className="animate-text" ref={animateTextRef}>
+              <p className="animate-text animatedText" ref={animateTextRef}>
                 <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>35+</span>
                 <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] sm:text-5xl md:mb-12 md:text-6xl'>Management</span>
                 <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] sm:text-5xl md:mb-12 md:text-6xl'>Coding</span>

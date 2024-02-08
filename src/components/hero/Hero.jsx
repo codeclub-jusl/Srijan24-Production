@@ -57,6 +57,7 @@ const Hero = () => {
         gsap.to(ufo.current, {
             right: '75%',
             top: '80%',
+            scale: 1.7,
             scrollTrigger: {
                 trigger: ufo.current,
                 start: 'top 40%',
@@ -153,7 +154,7 @@ const Hero = () => {
             <img
                 src='/assets/ufo.png'
                 alt=''
-                className='absolute top-[50%] right-[15%]'
+                className='absolute top-[50%] right-[15%] ufoImage'
                 ref={ufo}
             />
             <div className='pb-2 sm:pb-3 lg:pb-4'>
