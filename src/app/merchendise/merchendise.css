@@ -1,0 +1,128 @@
+#merchendise-body
+{
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+}
+#merchendise-body header
+{
+    color: yellow;
+    text-align: center;
+    font-size: 32px;
+    padding-bottom: 19px;
+}
+#merchendise-main
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 44px;
+    /* align-items: center; */
+}
+#formData
+{
+    width: 489px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 8px violet;
+}
+.formComponents
+{
+    margin: 20px;
+}
+.formComponents input
+{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 3px 2px 3px 2px;
+    box-shadow: 2px 3px;
+    background-color: transparent;
+    outline: none;
+}
+.formComponents input::placeholder
+{
+    /* color: rgb(98, 97, 97); */
+    color: black;
+}
+.formComponents input:focus
+{
+    animation: focused 2s ease-out alternate;
+}
+@keyframes focused {
+    to {
+        background-color: aqua;
+    }
+}
+#submitForm
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.formButtons
+{
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    padding: 4px 13px 4px 13px;
+    font-size: 17px;
+    height: min-content;
+}
+#Merchendise-Image
+{
+    border-radius: 7px;
+    box-shadow: 0px 0px 8px 8px violet;
+}
+#cost
+{
+    width: 300px;
+    text-align: center;
+    border-radius: 20px;
+    animation: cost 1s ease-in-out 0s infinite alternate;
+    /* margin-top: 20px;
+    font-size: 30px;
+    background-color: red;
+    color: white; */
+}
+@keyframes cost
+{
+    to{
+        font-size: 20px;
+        background-color: purple;
+        color: yellow;
+        margin-top: 30px;
+    }
+    from{
+        margin-top: 20px;
+        font-size: 30px;
+        background-color: red;
+        color: white;
+    }
+}
+@keyframes typing {
+    from { 
+        width: 0px;
+        /* text-align: center; */
+    }
+    to {
+        width: 100%;
+        /* text-align: center; */
+    }
+}
+@keyframes blink-caret {
+    from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+.formDropdown
+{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 3px 2px 3px 2px;
+    box-shadow: 2px 3px;
+}
