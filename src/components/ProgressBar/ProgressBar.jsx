@@ -1,17 +1,17 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import styles from './ProgressBar.module.css'
 
 const ProgressBar = () => {
     const [progress, setProgress] = useState(0)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const interval = setInterval(() => {
             setProgress(prevProgress => {
-                prevProgress >= 100 ? 0 : prevProgress + 5
+                return prevProgress >= 100 ? 100 : prevProgress + 10
             })
-        }, 500)
+        }, 100)
 
         return () => {
             clearInterval(interval)
