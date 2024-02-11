@@ -43,13 +43,9 @@ export default function SignUp() {
         }
 
         auth.onAuthStateChanged(async (authUser) => {
-<<<<<<< HEAD
-            if (authUser && authUser.emailVerified) {
-=======
             setLoading(true);
 
-            if(authUser && authUser.emailVerified) {
->>>>>>> d867a977373af2a91e4ac9bd42205886e599b7d2
+            if (authUser && authUser.emailVerified) {
                 const userRef = doc(db, "users", authUser.email);
                 const userSnap = await getDoc(userRef);
 
@@ -306,39 +302,28 @@ export default function SignUp() {
                                 <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
                                     Sign Up
                                 </button>
+                                <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
+                                    {loading ? <BeatLoader color='#ffffff' /> : "Sign Up"}
+                                </button>
                             </div>
-<<<<<<< HEAD
                         )}
                         {/* <button
-=======
-                            <div className='flex items-center justify-center'>
-                                <button className='rounded-full bg-[#f5c9ff] p-2 mx-2 mb-4' onClick={prevStep}>Back</button>
-                                <span className='mx-2 mb-4 text-white'>Step {step}</span>
-                                {/* <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={nextStep}>Next</button> */}
-                            </div>
-                            <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick} disabled={!robotActive}>
-                                {loading ? <BeatLoader color='#ffffff' /> : "Sign Up"}
-                            </button>
-                        </div>
-                    )}
-                    {/* <button
->>>>>>> d867a977373af2a91e4ac9bd42205886e599b7d2
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}
                     >
                         <img src="/images/google.png" alt="img" className="w-6 h-6 inline mr-2" />
                         Sign in with Google
                     </button> */}
-                        <GoogleSignIn />
-                        <div className="text-center text-white">
-                            Already having an account? &nbsp;
-                            <Link href="/login"><span className="font-bold text-[#dfcffc]">Log In here</span></Link>
-                        </div>
-                    </div>
-                    <div className='svg-bot relative min-w-[31vw]'>
-                        <Svg_Login className='transform md:scale-50' botState={botState} />
-                    </div>
+                <GoogleSignIn />
+                <div className="text-center text-white">
+                    Already having an account? &nbsp;
+                    <Link href="/login"><span className="font-bold text-[#dfcffc]">Log In here</span></Link>
                 </div>
             </div>
+            <div className='svg-bot relative min-w-[31vw]'>
+                <Svg_Login className='transform md:scale-50' botState={botState} />
+            </div>
+        </div >
+            </div >
         </>
 
     );
