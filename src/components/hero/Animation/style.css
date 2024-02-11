@@ -1,0 +1,115 @@
+.container{
+	max-width: 1170px;
+	width: 100%;
+	margin:auto;
+}
+
+.home{
+	/* height: 100vh; */
+	/* background-size: cover; */
+	/* background-position: center; */
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	/* padding:10px 15px; */
+	/* position: relative; */
+	/* border: 2px solid red; */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 80px;
+}
+.home::before{
+	/* content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 95%;
+	height: 90%;
+	z-index: 1; */
+}
+
+.home .home-text{
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+.home .home-text p{
+   margin:0;
+   /* overflow: hidden; */
+}
+.home h1{
+	margin: 0;
+	margin-bottom: 15px;
+}
+.home h2{
+	margin: -10px;
+}
+.home .home-text p span{
+   display: none;
+}
+
+.home .home-text p span.text-in{
+   display: block;
+   font-size: 2rem;
+   margin: 0;
+   margin-bottom: 20px;
+   animation: textIn .3s ease;
+   letter-spacing: 5px;
+}
+.home .home-text p span.text-out{
+   animation: textOut .3s ease;
+}
+.manage{
+	background: linear-gradient(45deg, #6100FF 100%, #00E0FF 100%, #FF0099 100%);
+	background-clip: text;
+	color: transparent;
+}
+.codin{
+	background: linear-gradient(45deg, #6100FF 100%, #D907FF 100%, #F4E2FF 100%);
+	background-clip: text;
+	color: transparent;
+}
+.fin{
+	background: linear-gradient(180deg, #FF0099 100%, #6100FF 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+.game{
+	background: linear-gradient(45deg, #FF0099 100%, #00E0FF 100%, #6100FF 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+.robo{
+	background: linear-gradient(45deg, #FBFBFB 100%, #9747FF 100%, #5600E1 100%);
+	background-clip: text;
+	color: transparent;
+
+}
+
+@keyframes textIn{
+   0%{
+	   transform: translateY(100%);
+   }
+   100%{
+	   transform: translateY(0%);
+   }
+}
+@keyframes textOut{
+   0%{
+	   transform: translateY(0%);
+   }
+   100%{
+	   transform: translateY(-100%);
+   }
+}
+
+@media (max-width: 550px){
+	.home{
+		margin-top: 150px;
+		margin-bottom: 80px;
+	}
+}

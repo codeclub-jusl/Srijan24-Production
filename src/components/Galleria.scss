@@ -1,0 +1,133 @@
+$square-size: 22vh;
+$square-size-new: 18vh;
+$square-size-new-mobile: 16vh;
+
+.outer-container-scroll {
+    display: grid;
+    min-block-size: 100vh;
+    place-content: center;
+    height: 100vh;
+    background: #030022;
+
+}
+
+.gallery-text {
+
+    color: white;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.scroller {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    margin-top: 100px;
+
+}
+
+.scroller__inner {
+    display: grid;
+    grid-auto-flow: column dense;
+    grid-template-rows: repeat(4, #{$square-size});
+    grid-template-columns: 1px;
+    grid-auto-columns: $square-size;
+    grid-gap: 15px;
+}
+
+.item {
+
+    border-radius: 10px;
+
+
+    &.big {
+        grid-column-end: span 2;
+        grid-row-end: span 2;
+    }
+
+    &:not(.big) {
+        grid-column-end: span 2;
+        grid-row-end: span 1;
+    }
+
+}
+
+
+
+
+.scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+    --_animation-duration: 60s;
+}
+
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+@media (max-width:767px) {
+    .scroller__inner {
+        display: grid;
+        grid-auto-flow: column dense;
+        grid-template-rows: repeat(4, #{$square-size-new});
+        grid-template-columns: 1px;
+        grid-auto-columns: $square-size-new-mobile;
+        grid-gap: 15px;
+    }
+
+    .scroller[data-animated="true"] {
+        overflow: hidden;
+        -webkit-mask: linear-gradient(90deg,
+                transparent,
+                white 5%,
+                white 95%,
+                transparent);
+        mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+    }
+
+
+    .scroller[data-speed="fast"] {
+        --_animation-duration: 30s;
+    }
+
+}
+.galleryContainer{
+    padding: 30px;
+    margin-top: 30px;
+}
+@media (max-width: 500px){
+    .galleryContainer{
+        padding: 30px 10px;
+    }
+}

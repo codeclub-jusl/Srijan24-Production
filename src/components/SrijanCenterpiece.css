@@ -1,0 +1,47 @@
+.invert-colors {
+    filter: invert(1);
+}
+#subtract {
+    width: 20rem;
+}
+
+#srijan-logo-black {
+    position: absolute;
+    width: 20rem;
+}
+
+#black-srijan-round {
+    top: 20v;
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    padding: 0;
+    margin-top: 17rem;
+    background-image: linear-gradient(
+        180deg,
+        rgba(66, 35, 190, 1) 0%,
+        rgba(78, 44, 100, 1) 100%
+    );
+    border-radius: 100%;
+}
+#events-text {
+    margin-top: 14rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #subtract {
+        width: 15rem;
+    }
+    #srijan-logo-black {
+        width: 15rem;
+    }
+    #black-srijan-round {
+        width: 12rem;
+        height: 12rem;
+        margin-top: 12.5rem;
+    }
+    #events-text {
+        margin-top: 10rem;
+    }
+}

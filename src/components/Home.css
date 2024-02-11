@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    /* background-color: rgb(35, 30, 60); */
+    background-color: rgb(2, 0, 34);
+}
+
+#top {
+    position: relative;
+    height: 60rem;
+}
+#login-button {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    font-size: 1.5vw;
+}
+#header-text {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    font-size: 2vw;
+    color: white;
+    font-weight: bold;
+}
+
+#background-stars {
+    position: absolute;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#saturn-left {
+    position: absolute;
+    top: 20vh;
+    left: 5vw;
+    z-index: 0;
+    width: 12vw;
+}
+
+#saturn-right {
+    position: absolute;
+    top: 20vh;
+    right: 5vw;
+    z-index: 0;
+    width: 17vw;
+}
+#small-saturn {
+    position: absolute;
+    top: 50vh;
+    right: 10vw;
+    z-index: 0;
+    width: 5vw;
+}
+
+#srijan-centrepiece {
+    position: absolute;
+    top: 14vh;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+    #top {
+        height: 50rem;
+    }
+    #login-button {
+        position: absolute;
+        bottom: 5vh;
+        right: 5vw;
+        font-size: 0.8rem;
+    }
+    #header-text {
+        font-size: 1rem;
+    }
+    #srijan-centrepiece {
+        top: 14vh;
+    }
+}
+
+#valley-and-robot {
+    position: relative;
+    width: 100%;
+}
+
+#valley-with-drops {
+    position: absolute;
+    top: 20vw;
+    z-index: 1;
+}
+#cybercity-outline {
+    position: absolute;
+    top: 0;
+}
+#mascot-front {
+    position: absolute;
+    top: 20vw;
+    z-index: 2;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mascot{
+    width: 220px;
+    height: 220px;
+}
+
+#mascot-intro {
+    margin-top: 4vw;
+    font-size: 2vw;
+    z-index: 2;
+}
+#mascot-desc {
+    margin-top: 0.5vw;
+    font-size: 1vw;
+    z-index: 2;
+}
+
+
+@media (max-width: 768px) {
+    #mascot-front {
+        width: 60%;
+        left: 8%;
+        right: 0;
+        margin: auto;
+    }
+    #mascot-intro {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    #mascot-desc {
+        font-size: 1rem;
+    }
+    .mascotContainer{
+        margin-top: 100px;
+    }
+}
+@media (max-width: 550px) {
+    #mascot-front {
+        width: 60%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    #mascot-intro {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    #mascot-desc {
+        font-size: 1rem;
+    }
+    .valleyImage{
+        height: 300px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(173, 173, 173);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(134, 134, 134);
+  }
