@@ -1,15 +1,19 @@
 "use client"
 import { useState } from 'react';
 import './profile.css';
+import AuthHOC from '@/hoc/AuthHOC';
+import { useSelector } from 'react-redux';
 
 const page = () => {
+    const user = useSelector(state => state.userReducer.user);
+
     const [formState, setFormState] = useState({
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        phone: '1234567890',
-        college: 'XYZ University',
-        dept: 'Computer Science',
-        year: '2024'
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        college: user.college,
+        dept: user.dept,
+        year: user.year,
     });
 
     const [isEditable, setIsEditable] = useState(false);
@@ -61,4 +65,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default AuthHOC(page);
