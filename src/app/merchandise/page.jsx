@@ -34,7 +34,7 @@ function toggleModal()
         console.log("Submitted");
     }
     return <div className="bg-gradient-to-r from-[#25015E] to-[#050027]" id="merchendise-body">
-        <header>JUSL Srijan 2024 <span id="merch">Merchendise</span></header>
+        <header>JUSL Srijan 2024 <span id="merch">Merchandise</span></header>
         <div id="merchendise-main">
             <div id="Image-Button-Container">
                 <div id="ImageHolder">
