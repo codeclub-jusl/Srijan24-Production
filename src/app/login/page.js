@@ -11,6 +11,7 @@ import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import GoogleSignIn from '@/components/GoogleSignIn';
 import ResetPassword from '@/components/ResetPassword';
 import { notification } from 'antd';
+import BeatLoader from "react-spinners/BeatLoader";
 
 export default function Login() {
     const router = useRouter();
@@ -22,7 +23,7 @@ export default function Login() {
     const [passwordError, setPasswordError] = useState(false);
     const [botState, setBotState] = useState('surprised');
     const [showResetModal, setShowResetModal] = useState(false);
-
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         if (user && user.emailVerified) {
             // notification['success']({
@@ -34,6 +35,8 @@ export default function Login() {
 
         // auth.onAuthStateChanged(handleAuthStateChanged);
         auth.onAuthStateChanged(async (authUser) => {
+            setLoading(true);
+
             if (authUser && authUser.emailVerified) {
                 const userRef = doc(db, "users", authUser.email);
                 const userSnap = await getDoc(userRef);
@@ -56,8 +59,11 @@ export default function Login() {
                     router.push("/dashboard");
                 }
             }
+
+            setLoading(false);
         })
     }, []);
+
 
     // const validateEmail = () => {
     //     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -83,48 +89,58 @@ export default function Login() {
     const handleClick = async (e) => {
         e.preventDefault();
 
+        setLoading(true);
+
         // validateEmail();
         // validatePassword();
-
-        const userRef = doc(db, "users", email);
-        const userSnap = await getDoc(userRef);
-
-        if (userSnap.exists()) {
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredentials) => {
-                    if (!userCredentials.user.emailVerified) {
-                        // alert("Please verify your email before logging in.")
-                        setBotState('sad');
-                        notification['error']({
-                            message: `Please verify your email before logging in.`,
-                            duration: 3
-                        })
-
-                        return signOut(auth).then(() => { }).catch((err) => { console.log(err); })
-                    } else {
-                        setBotState('happy');
-                        notification['success']({
-                            message: `Logged in successfully`,
-                            duration: 3
-                        })
-                    }
-                })
-                .catch((err) => {
-                    setBotState('sad');
-                    notification['error']({
-                        message: `Invalid credentials`,
-                        duration: 3
-                    })
-                    // console.log(err);
-                })
-        } else {
-            // alert("Email is not registered.")
-            setBotState('sad');
+        if (email.trim().length === 0) {
             notification['error']({
-                message: `Email is not registered.`,
+                message: `Invalid credentials`,
                 duration: 3
             })
+        } else {
+            const userRef = doc(db, "users", email);
+            const userSnap = await getDoc(userRef);
+
+            if (userSnap.exists()) {
+                signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredentials) => {
+                        if (!userCredentials.user.emailVerified) {
+                            // alert("Please verify your email before logging in.")
+                            setBotState('sad');
+                            notification['error']({
+                                message: `Please verify your email before logging in.`,
+                                duration: 3
+                            })
+
+                            return signOut(auth).then(() => { }).catch((err) => { console.log(err); })
+                        } else {
+                            setBotState('happy');
+                            notification['success']({
+                                message: `Logged in successfully`,
+                                duration: 3
+                            })
+                        }
+                    })
+                    .catch((err) => {
+                        setBotState('sad');
+                        notification['error']({
+                            message: `Invalid credentials`,
+                            duration: 3
+                        })
+                        // console.log(err);
+                    })
+            } else {
+                // alert("Email is not registered.")
+                setBotState('sad');
+                notification['error']({
+                    message: `Email is not registered.`,
+                    duration: 3
+                })
+            }
         }
+
+        setLoading(false);
 
     };
     return (
@@ -157,7 +173,7 @@ export default function Login() {
                             <span className="text-md text-[#dfcffc] cursor-pointer" onClick={() => setShowResetModal(true)}>Forgot password</span>
                         </div>
                         <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
-                            Log in
+                            {loading ? <BeatLoader color='#ffffff' /> : "Log in"}
                         </button>
                         {/* <button
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}

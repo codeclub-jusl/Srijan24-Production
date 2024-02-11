@@ -10,6 +10,7 @@ import { loginUser } from '@/store/userSlice';
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import GoogleSignIn from '@/components/GoogleSignIn';
 import { notification } from 'antd';
+import BeatLoader from "react-spinners/BeatLoader";
 
 export default function SignUp() {
     const router = useRouter();
@@ -30,6 +31,7 @@ export default function SignUp() {
     const [phoneError, setPhoneError] = useState(false);
     const [botState, setBotState] = useState('surprised');
     const [step, setStep] = useState(1);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (user && user.emailVerified) {
@@ -41,7 +43,13 @@ export default function SignUp() {
         }
 
         auth.onAuthStateChanged(async (authUser) => {
+<<<<<<< HEAD
             if (authUser && authUser.emailVerified) {
+=======
+            setLoading(true);
+
+            if(authUser && authUser.emailVerified) {
+>>>>>>> d867a977373af2a91e4ac9bd42205886e599b7d2
                 const userRef = doc(db, "users", authUser.email);
                 const userSnap = await getDoc(userRef);
 
@@ -64,6 +72,8 @@ export default function SignUp() {
                 }
 
             }
+
+            setLoading(false);
         });
 
         // auth.onAuthStateChanged(handleAuthStateChanged);
@@ -136,6 +146,7 @@ export default function SignUp() {
 
     const handleClick = () => {
         // console.log("clicked");
+        setLoading(true);
 
         validateEmail();
         validatePassword();
@@ -150,6 +161,7 @@ export default function SignUp() {
 
         if (hasErrors) {
             setBotState('sad');
+            setLoading(false);
         } else {
             setBotState('happy');
 
@@ -187,6 +199,8 @@ export default function SignUp() {
                     setPasswordError(false);
                     setPasswordMatchError(false);
                     setPhoneError(false);
+
+                    setLoading(false);
                 })
                 .catch((err) => {
                     // console.log(err);
@@ -194,6 +208,8 @@ export default function SignUp() {
                         message: `Email already registered`,
                         duration: 3
                     })
+
+                    setLoading(false);
                 });
         }
 
@@ -291,8 +307,22 @@ export default function SignUp() {
                                     Sign Up
                                 </button>
                             </div>
+<<<<<<< HEAD
                         )}
                         {/* <button
+=======
+                            <div className='flex items-center justify-center'>
+                                <button className='rounded-full bg-[#f5c9ff] p-2 mx-2 mb-4' onClick={prevStep}>Back</button>
+                                <span className='mx-2 mb-4 text-white'>Step {step}</span>
+                                {/* <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={nextStep}>Next</button> */}
+                            </div>
+                            <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick} disabled={!robotActive}>
+                                {loading ? <BeatLoader color='#ffffff' /> : "Sign Up"}
+                            </button>
+                        </div>
+                    )}
+                    {/* <button
+>>>>>>> d867a977373af2a91e4ac9bd42205886e599b7d2
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}
                     >
                         <img src="/images/google.png" alt="img" className="w-6 h-6 inline mr-2" />
