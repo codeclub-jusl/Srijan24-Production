@@ -6,18 +6,25 @@ import Form from "./Form";
 export default function Merchendise()
 {
     const tshirts = ["/images/black_front.png" , "/images/black_back.png" , "/images/tshirt_front.png" , "/images/tshirt_back.png" , "/images/white_front.png" , "/images/white_back.png"]
-    const [imageUrl , setImageUrl] = useState("/images/black_front.png");
-    const [num , setNum] = useState(1);
+    const [num , setNum] = useState(0);
     const [modal, setModal] = useState(false);
 
-  const toggleModal = () => {
+function toggleModal()
+{
     setModal(!modal);
-  };
+    if(!modal)
+    {
+        document.body.classList.add('active-modal');
+    }
+    else
+    {
+        document.body.classList.remove('active-modal');
+    }
+};
     useEffect(() => {
         const intervalId = setInterval(() => {
             const updatedCount = (num+1)%6;
             setNum(updatedCount);
-            setImageUrl(tshirts[num])
         }, 3000);
         return () => clearInterval(intervalId);
       }, [num]);
@@ -26,11 +33,17 @@ export default function Merchendise()
         event.preventDefault();
         console.log("Submitted");
     }
-    return <div className="bg-gradient-to-r from-[#916bcf] to-[#ff3ab0]" id="merchendise-body">
-        <header>Introducing you to JUSL Srijan 2024 Merchendise</header>
+    return <div className="bg-gradient-to-r from-[#25015E] to-[#050027]" id="merchendise-body">
+        <header>JUSL Srijan 2024 <span id="merch">Merchendise</span></header>
         <div id="merchendise-main">
-            <div id="Image-Container">
-                <Image src={imageUrl} height={300} width={300} alt="Picture of the author" />
+            <div id="Image-Button-Container">
+                <div id="ImageHolder">
+                    <Image id="tshirt1" src={tshirts[(num+4)%6]} height={300} width={300} alt="Picture of the author" />
+                    <Image id="tshirt2" src={tshirts[(num+5)%6]} height={300} width={300} alt="Picture of the author" />
+                    <Image id="tshirt3" src={tshirts[num]} height={300} width={300} alt="Picture of the author" />
+                    <Image id="tshirt4" src={tshirts[(num+1)%6]} height={300} width={300} alt="Picture of the author" />
+                    <Image id="tshirt5" src={tshirts[(num+2)%6]} height={300} width={300} alt="Picture of the author" />
+                </div>
                 <div id="picPositions">
                     <button style={{backgroundColor : num===1 ? "white" : "purple"}} className="tshirtPosition"></button>
                     <button style={{backgroundColor : num===2 ? "white" : "purple"}} className="tshirtPosition"></button>
@@ -41,8 +54,8 @@ export default function Merchendise()
                 </div>
             </div>
             <div id="ButtonContainer">
-                <div id="cost">Only in 399 &#8377;</div>
-                <button id="order" className="formButtons" onClick={toggleModal}>Click to Order</button>
+                <div id="cost" >Only in 399 &#8377;</div>
+                <button id="order" onClick={toggleModal}>Click to Order</button>
             </div>
             {modal && (
                 <div className="modal">
