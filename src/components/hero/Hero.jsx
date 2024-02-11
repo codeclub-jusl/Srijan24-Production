@@ -32,7 +32,7 @@ const Hero = () => {
         gsap.to(planet1.current, {
             rotate: 50,
             scale: 1.8,
-            y: 400,
+            y: 100,
             scrollTrigger: {
                 trigger: planet1.current,
                 start: 'top 40%',
@@ -66,17 +66,19 @@ const Hero = () => {
                 markers: false,
             },
         })
-        gsap.to(mascot.current, {
-            top: '50%',
-            scale: 1,
-            scrollTrigger: {
-                trigger: ufo.current,
-                start: 'top 40%',
-                end: 'bottom 10%',
-                scrub: true,
-                markers: false,
-            },
-        })
+        gsap.fromTo(mascot.current, {scale: 0}, {scale:1.35, duration: 6})
+        // gsap.to(mascot.current, {
+        //     top: '50%',
+        //     scale: 2,
+        //     duration: 2,
+        //     scrollTrigger: {
+        //         trigger: ufo.current,
+        //         start: 'top 40%',
+        //         end: 'bottom 10%',
+        //         scrub: true,
+        //         markers: false,
+        //     },
+        // })
         // gsap.to(shootingStar1.current, {
         //     top: '65%',
         //     translateX: -30,
