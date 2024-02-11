@@ -48,12 +48,12 @@ const TextAnimation = () => {
             <div className="home-text">
               <h1 className='mb-4 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Explore Our</h1>
               <p className="animate-text animatedText" ref={animateTextRef}>
-                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>35+</span>
-                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] sm:text-5xl md:mb-12 md:text-6xl'>Management</span>
-                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] sm:text-5xl md:mb-12 md:text-6xl'>Coding</span>
-                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] sm:text-5xl md:mb-12 md:text-6xl'>Finance</span>
-                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] sm:text-5xl md:mb-12 md:text-6xl'>Gaming</span>
-                <span className='mb-8 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] sm:text-5xl md:mb-12 md:text-6xl'>Robotics</span>
+                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>35+</span>
+                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] '>Management</span>
+                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] '>Coding</span>
+                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>Finance</span>
+                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] '>Gaming</span>
+                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] '>Robotics</span>
               </p>
               <h2 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Events</h2>
             </div>
