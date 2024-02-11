@@ -145,7 +145,7 @@ export default function Login() {
     };
     return (
         <>
-            <section className="wrapper">
+            <section className="wrapper h-0">
                 <div id="stars"></div>
                 <div id="stars2"></div>
                 <div id="stars3"></div>
