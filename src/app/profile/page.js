@@ -2,21 +2,31 @@
 import { useState } from 'react';
 import './profile.css';
 import AuthHOC from '@/hoc/AuthHOC';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { notification } from 'antd';
+import { doc, updateDoc } from 'firebase/firestore';
+import { auth, db } from '@/firebase/config';
+import BeatLoader from "react-spinners/BeatLoader";
+import { signOut } from 'firebase/auth';
+import { logoutUser } from '@/store/userSlice';
+import { useRouter } from 'next/navigation';
 
 const page = () => {
+    const dispatch = useDispatch();
+    const router = useRouter();
     const user = useSelector(state => state.userReducer.user);
 
     const [formState, setFormState] = useState({
-        name: user.name,
-        email: user.email,
-        phone: user.phone,
-        college: user.college,
-        dept: user.dept,
-        year: user.year,
+        name: user ? user.name : "",
+        email: user ? user.email : "",
+        phone: user ? user.phone : "",
+        college: user ? user.college : "",
+        dept: user ? user.dept : "",
+        year: user ? user.year : "",
     });
 
     const [isEditable, setIsEditable] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
         setFormState({
@@ -29,8 +39,78 @@ const page = () => {
         setIsEditable(!isEditable);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        if(formState.name.trim().length === 0 || formState.college.trim().length === 0 || formState.dept.trim().length === 0 || formState.year.trim().length === 0) {
+            notification['error']({
+                message: `All fields are required`,
+                duration: 3
+            })
+
+            setLoading(false);
+            return;
+        }
+
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phoneRegex.test(parseInt(formState.phone))) {
+            console.log(formState.phone);
+            notification['error']({
+                message: `Invalid phone no`,
+                duration: 3
+            })
+
+            setLoading(false);
+            return;
+        }
+
+        setIsEditable(false);
+
+        const userRef = doc(db, "users", user.email);
+
+        const newUserData = {
+            ...user,
+            name: formState.name,
+            college: formState.college,
+            phone: formState.phone,
+            dept: formState.dept,
+            year: formState.year,
+        }
+
+        await updateDoc(userRef, newUserData)
+            .then(() => {
+                notification['success']({
+                    message: `Profile updated successfully`,
+                    duration: 3
+                })
+            })
+            .catch((err) => {
+                notification['error']({
+                    message: `Something went wrong! Try again later`,
+                    duration: 3
+                })
+            })
+
+        setLoading(false);
+    }
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        signOut(auth);
+        dispatch(logoutUser());
+
+        notification['success']({
+            message: `Logged out successfully`,
+            duration: 3
+        })
+
+        router.push("/login");
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <button type="button" className='bg-green-400 p-4' onClick={handleEditClick}>{isEditable ? 'Disable edit' : 'Allow Edit'}</button>
             <label>
                 <p>Email:</p>
@@ -61,6 +141,14 @@ const page = () => {
 
                 <input type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
             </label>
+
+            <button type='submit' className='bg-green-400 p-4' disabled={!isEditable}>
+                {loading ? <BeatLoader color='#ffffff' /> : "Update Profile"}
+            </button>
+
+            <button type='button' onClick={handleLogout} className='bg-green-400 p-4'>
+                Log out
+            </button>
         </form>
     );
 };
