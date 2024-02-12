@@ -55,7 +55,7 @@ const TextAnimation = () => {
                 <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] '>Gaming</span>
                 <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] '>Robotics</span>
               </p>
-              <h2 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12 montserrat'>events</h2>
+              <h2 className='mb-1 text-4xl font-bold text-white sm:text-3xl montserrat'>events</h2>
             </div>
           </div>
         </div>

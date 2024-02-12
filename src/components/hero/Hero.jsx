@@ -66,7 +66,7 @@ const Hero = () => {
                 markers: false,
             },
         })
-        gsap.fromTo(mascot.current, {scale: 0}, {scale:1.35, duration: 3, repeat: -1, yoyo: true})
+        gsap.fromTo(mascot.current, {scale: 0.9}, {scale:1.35, duration: 2, repeat: -1, yoyo: true})
         // gsap.to(mascot.current, {
         //     top: '50%',
         //     scale: 2,
@@ -212,7 +212,7 @@ const Hero = () => {
 
                             <TextAnimation />
 
-                            <h2 className='mb-6 text-center text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl srijanDate'>
+                            <h2 className='relative -top-4 mb-6 text-center text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl srijanDate'>
                                 21st March - 24th March
                             </h2>
                         </div>
