@@ -51,6 +51,7 @@
     height: 300px;
     border-radius: 3px;
     border-top-right-radius: 60px 60px;
+    /* object-fit: cover; */
 }
 .cardBox p{
     margin-top: 20px;

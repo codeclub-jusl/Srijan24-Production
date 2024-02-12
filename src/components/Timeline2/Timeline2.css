@@ -1,0 +1,12 @@
+.scroll-section-inner .scroll-section{
+    margin-right:-0.825%;
+}
+
+
+@media (min-width: 1537px){
+    .scroll-section-inner .scroll-section{
+        margin-right:-2.25%;
+    }
+}
+
+
