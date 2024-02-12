@@ -5,11 +5,13 @@ import AuthHOC from '@/hoc/AuthHOC';
 import { useDispatch, useSelector } from 'react-redux';
 import { notification } from 'antd';
 import { doc, updateDoc } from 'firebase/firestore';
-import { auth, db } from '@/firebase/config';
+import { auth, db, storage } from '@/firebase/config';
 import BeatLoader from "react-spinners/BeatLoader";
 import { signOut } from 'firebase/auth';
 import { logoutUser } from '@/store/userSlice';
 import { useRouter } from 'next/navigation';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { set } from 'firebase/database';
 
 const page = () => {
     const dispatch = useDispatch();
@@ -23,8 +25,10 @@ const page = () => {
         college: user ? user.college : "",
         dept: user ? user.dept : "",
         year: user ? user.year : "",
+        profilePicUrl: user ? user.profilePicUrl : "",
     });
 
+    const [imageUpload, setImageUpload] = useState(null);
     const [isEditable, setIsEditable] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -38,6 +42,24 @@ const page = () => {
     const handleEditClick = () => {
         setIsEditable(!isEditable);
     };
+
+    const updateProfile = async (newUserData) => {
+        const userRef = doc(db, "users", user.email);
+        
+        await updateDoc(userRef, newUserData)
+                .then(() => {
+                    notification['success']({
+                        message: `Profile updated successfully`,
+                        duration: 3
+                    })
+                })
+                .catch((err) => {
+                    notification['error']({
+                        message: `Something went wrong! Try again later`,
+                        duration: 3
+                    })
+                })
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -67,30 +89,28 @@ const page = () => {
 
         setIsEditable(false);
 
-        const userRef = doc(db, "users", user.email);
+        if(imageUpload) {
+            const profilePicName = user.email + Date.now();
+            const imageRef = ref(storage, `images/${profilePicName}`);
 
-        const newUserData = {
-            ...user,
-            name: formState.name,
-            college: formState.college,
-            phone: formState.phone,
-            dept: formState.dept,
-            year: formState.year,
+            await uploadBytes(imageRef, imageUpload)
+                .then(async (snapshot) => {
+                    await getDownloadURL(snapshot.ref)
+                        .then(async (url) => {
+                            await updateProfile({...formState, profilePicUrl: url});
+                        })
+                })
+                .catch((err) => {
+                    console.log(err);
+                    notification['error']({
+                        message: `Error uploading image`,
+                        duration: 3
+                    })
+                });
+
+        } else {
+            await updateProfile({...formState});
         }
-
-        await updateDoc(userRef, newUserData)
-            .then(() => {
-                notification['success']({
-                    message: `Profile updated successfully`,
-                    duration: 3
-                })
-            })
-            .catch((err) => {
-                notification['error']({
-                    message: `Something went wrong! Try again later`,
-                    duration: 3
-                })
-            })
 
         setLoading(false);
     }
@@ -112,6 +132,10 @@ const page = () => {
     return (
         <form onSubmit={handleSubmit}>
             <button type="button" className='bg-green-400 p-4' onClick={handleEditClick}>{isEditable ? 'Disable edit' : 'Allow Edit'}</button>
+            <label>
+                <p>Choose a pic:</p>
+                <input type='file' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable}/>
+            </label>
             <label>
                 <p>Email:</p>
                 <input type="email" name="email" value={formState.email} readOnly />
