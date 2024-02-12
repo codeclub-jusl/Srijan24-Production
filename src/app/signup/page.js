@@ -177,6 +177,7 @@ export default function SignUp() {
                         college,
                         dept,
                         year,
+                        profilePicUrl: "",
                     });
 
                     await sendEmailVerification(auth.currentUser).then(() => {
