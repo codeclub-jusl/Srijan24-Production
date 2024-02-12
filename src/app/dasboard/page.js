@@ -3,6 +3,7 @@ import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import './dasboard.css'
+import DashBoardNav from '@/components/DashBoardNav/DashBoardNav';
 const page = () => {
     return (
         <>
@@ -62,6 +63,7 @@ const page = () => {
 
 
             </div>
+            <DashBoardNav />
             <Script src="/js/profile.js" defer></Script>
         </>
 
