@@ -5,6 +5,7 @@ import curve22 from '../../../public/images/curve22.svg'
 import curve23 from '../../../public/images/curve23.svg'
 import curve24 from '../../../public/images/curve24.svg'
 import curve25 from '../../../public/images/curve25.svg'
+import curve26 from '../../../public/images/curve26.svg'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -55,12 +56,7 @@ export default function Home() {
                     <div className='scroll-section h-full w-[58vw] flex justify-center items-center '>
                         <Image src={curve23} width={1000} />
                     </div>
-                    <div className='scroll-section h-full w-[58vw] flex justify-center items-center '>
-                        <Image src={curve24} width={1000} />
-                    </div>
-                    <div className='scroll-section h-full w-[58vw] flex justify-center items-center '>
-                        <Image src={curve25} width={1000} />
-                    </div>
+                 
                 </div>
             </div>
         </section>
