@@ -66,7 +66,7 @@ const Hero = () => {
                 markers: false,
             },
         })
-        gsap.fromTo(mascot.current, {scale: 0}, {scale:1.35, duration: 6})
+        gsap.fromTo(mascot.current, {scale: 0}, {scale:1.35, duration: 3, repeat: -1, yoyo: true})
         // gsap.to(mascot.current, {
         //     top: '50%',
         //     scale: 2,
