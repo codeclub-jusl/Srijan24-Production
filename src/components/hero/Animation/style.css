@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 .container{
 	max-width: 1170px;
 	width: 100%;
@@ -41,10 +42,10 @@
 }
 .home h1{
 	margin: 0;
-	margin-bottom: 15px;
+	/* margin-bottom: 15px; */
 }
 .home h2{
-	margin: -10px;
+	/* margin: -10px; */
 }
 .home .home-text p span{
    display: none;
@@ -52,11 +53,14 @@
 
 .home .home-text p span.text-in{
    display: block;
-   font-size: 2rem;
+   font-family: "Montserrat", sans-serif;
+   font-size: 107.19px;
+   font-weight: 800;
    margin: 0;
-   margin-bottom: 20px;
+   /* margin-bottom: 20px; */
    animation: textIn .3s ease;
-   letter-spacing: 5px;
+   letter-spacing: 2px;
+   line-height: 130.66px;
 }
 .home .home-text p span.text-out{
    animation: textOut .3s ease;
@@ -112,4 +116,11 @@
 		margin-top: 150px;
 		margin-bottom: 80px;
 	}
+}
+
+.montserrat{
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 56px;
+	line-height: 56px;
 }

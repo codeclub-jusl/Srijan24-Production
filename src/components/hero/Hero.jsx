@@ -21,8 +21,8 @@ const Hero = () => {
     gsap.registerPlugin(ScrollTrigger)
     const planet1 = useRef(null)
     const planet2 = useRef(null)
-    // const shootingStar1 = useRef(null)
-    // const shootingStar2 = useRef(null)
+    const shootingStar1 = useRef(null)
+    const shootingStar2 = useRef(null)
     const ufo = useRef(null)
     const trigger = useRef(null)
     const mascot = useRef(null)
@@ -79,28 +79,28 @@ const Hero = () => {
         //         markers: false,
         //     },
         // })
-        // gsap.to(shootingStar1.current, {
-        //     top: '65%',
-        //     translateX: -30,
-        //     scrollTrigger: {
-        //         trigger: shootingStar1.current,
-        //         start: 'top 60%',
-        //         end: 'bottom 10%',
-        //         scrub: 1,
-        //         markers: false,
-        //     },
-        // })
-        // gsap.to(shootingStar2.current, {
-        //     top: '60%',
-        //     translateX: -30,
-        //     scrollTrigger: {
-        //         trigger: shootingStar2.current,
-        //         start: 'top 60%',
-        //         end: 'bottom 10%',
-        //         scrub: 1,
-        //         markers: false,
-        //     },
-        // })
+        gsap.to(shootingStar1.current, {
+            top: '65%',
+            translateX: -30,
+            scrollTrigger: {
+                trigger: shootingStar1.current,
+                start: 'top 60%',
+                end: 'bottom 10%',
+                scrub: 1,
+                markers: false,
+            },
+        })
+        gsap.to(shootingStar2.current, {
+            top: '60%',
+            translateX: -30,
+            scrollTrigger: {
+                trigger: shootingStar2.current,
+                start: 'top 60%',
+                end: 'bottom 10%',
+                scrub: 1,
+                markers: false,
+            },
+        })
     })
 
     return (
@@ -137,22 +137,22 @@ const Hero = () => {
             />
 
             {/* right shooting star ----------- */}
-            {/* <img
+            <img
                 src='/assets/shootingstar.png'
                 alt=''
                 className='absolute top-[55%] right-10'
                 ref={shootingStar1}
-            /> */}
+            />
 
             {/* left shooting star ------------ */}
-            {/* <img
+            <img
                 src='/assets/shootingstar.png'
                 alt=''
                 className='absolute top-[50%] left-1/3'
                 ref={shootingStar2}
-            /> */}
+            />
 
-            {/* parallax moving ufo -----------*/}
+            {/* parallax moving ufo ----------- */}
             <img
                 src='/assets/ufo.png'
                 alt=''
