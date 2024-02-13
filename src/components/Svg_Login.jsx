@@ -1,30 +1,10 @@
 "use client"
 import { useState } from "react";
 
-export default function Svg_Login({ botState, robotActive, setRobotActive }) {
-    const handleClick=()=>{
-        setRobotActive(true);
-    }
+export default function Svg_Login({ botState }) {
     return (
-        <div className={`page ${robotActive ? (botState === 'sad' ? 'bot-sad' : botState === 'happy' ? 'bot-happy-start bot-happy' : 'bot-surprised') : 'bot-stand-by'}`}>
-            <div className="in-page loud-link-click" data-sound="http://www.r4ms3s.cz/codepen/emobot/sounds/on.{{type}}">
-                <div className="action" onClick={handleClick}>
-                    <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 590 140"
-                    >
-                        <g>
-                            <path className="st0" d="M77.7,139.1c35,0,52.8-21.2,60.6-39l-34.8-16c-3.4,10.4-13.8,19.4-25.8,19.4c-19.4,0-32.4-14.8-32.4-33.4
-                        s13-33.4,32.4-33.4c12,0,22.4,9,25.8,19.4l34.8-16.2c-8-18.4-25.6-38.8-60.6-38.8c-41.8,0-73.4,27.8-73.4,69
-                        C4.3,111.1,35.9,139.1,77.7,139.1z" />
-                            <path className="st0" d="M241.9,136.7v-35.2h-50.6V3.3h-40.4v133.4H241.9z" />
-                            <path className="st0" d="M298.5,136.7V3.3h-40.4v133.4H298.5z" />
-                            <path className="st0" d="M386.3,139.1c35,0,52.8-21.2,60.6-39l-34.8-16c-3.4,10.4-13.8,19.4-25.8,19.4c-19.4,0-32.4-14.8-32.4-33.4
-                        s13-33.4,32.4-33.4c12,0,22.4,9,25.8,19.4l34.8-16.2c-8-18.4-25.6-38.8-60.6-38.8c-41.8,0-73.4,27.8-73.4,69
-                        C312.9,111.1,344.5,139.1,386.3,139.1z" />
-                            <path className="st0"
-                                d="M586.5,136.7l-52.6-71.4l50.4-62h-49.4l-35,50v-50h-40.4v133.4h40.4v-37l7.4-10l30,47H586.5z" />
-                        </g>
-                    </svg>
-                </div>
+        <div className={`page ${botState === 'sad' ? 'bot-sad' : botState === 'happy' ? 'bot-happy' : botState === 'surprised' ? 'bot-surprised' : 'bot-surprised'}`}>
+            <div className="in-page loud-link-click transform md:scale-[0.6] lg:scale-[0.75] xl:scale-[0.9]">
                 <div className="bot-bg">
                     <i className="bg"></i><i className="bg-small bg-first"></i><i className="bg-small bg-second"></i><i
                         className="bg-small bg-third"></i>
