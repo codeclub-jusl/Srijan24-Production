@@ -24,7 +24,7 @@ export default function Home() {
                 translateX: 0,
             },
             {
-                translateX: '-210vw',
+                translateX: '-100vw',
                 ease: 'none',
                 duration: 1,
                 scrollTrigger: {

@@ -14,7 +14,7 @@
   <circle cx="1286" cy="244" r="5"  className="inner-circle" fill="white"/>
 
 
-  <text x="40" y="660" font-size="46"   fill="white" textAnchor="middle" className="date-event">WORKSHOPS</text>
+  <text x="40" y="660" font-size="46" fill="white" textAnchor="middle" className="date-event">WORKSHOPS</text>
 
 
 

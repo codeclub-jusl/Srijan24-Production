@@ -46,7 +46,7 @@ const TextAnimation = () => {
         <div className="container">
           <div className="row">
             <div className="home-text">
-              <h1 className='mb-4 text-4xl font-bold text-white sm:text-3xl md:mb-12 z-10 montserrat'>Explore Our</h1>
+              <h1 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12 z-10 montserrat'>Explore Our</h1>
               <p className="animate-text animatedText z-[1] overflow-hidden" ref={animateTextRef}>
                 <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>35+</span>
                 <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] '>Management</span>
