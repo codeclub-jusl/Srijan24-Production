@@ -108,7 +108,7 @@ const Hero = () => {
             <Image
                 src='/assets/star.png'
                 alt=''
-                className='absolute h-full w-full'
+                className='absolute h-full w-full object-cover'
                 draggable={false}
                 width={1000}
                 height={1000}
@@ -278,7 +278,7 @@ const Hero = () => {
                         <Image
                             alt='valley-with-drops'
                             src={valleyWithDrops}
-                            className='valleyImage'
+                            className='valleyImage object-cover'
                             draggable={false}
                         />
                     </div>
