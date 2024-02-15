@@ -5,7 +5,7 @@ import { doc, getDoc, setDoc } from 'firebase/firestore'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-const GoogleSignIn = ({ robotActive }) => {
+const GoogleSignIn = () => {
     const dispatch = useDispatch()
 
     const handleClick = () => {
@@ -25,6 +25,7 @@ const GoogleSignIn = ({ robotActive }) => {
                     college: '',
                     dept: '',
                     year: '',
+                    profilePicUrl: '',
                 })
 
                 dispatch(
@@ -45,7 +46,6 @@ const GoogleSignIn = ({ robotActive }) => {
     return (
         <button
             className='w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6'
-            disabled={!robotActive}
             onClick={handleClick}
         >
             <img
