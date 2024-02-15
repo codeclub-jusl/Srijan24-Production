@@ -11,7 +11,7 @@ import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/
 import GoogleSignIn from '@/components/GoogleSignIn';
 import { notification } from 'antd';
 import BeatLoader from "react-spinners/BeatLoader";
-
+import Image from 'next/image';
 export default function SignUp() {
     const router = useRouter();
     const dispatch = useDispatch();
@@ -177,6 +177,7 @@ export default function SignUp() {
                         college,
                         dept,
                         year,
+                        profilePicUrl: "",
                     });
 
                     await sendEmailVerification(auth.currentUser).then(() => {
@@ -218,11 +219,9 @@ export default function SignUp() {
 
     return (
         <>
-            <section className="wrapper h-0">
-                <div id="stars"></div>
-                <div id="stars2"></div>
-                <div id="stars3"></div>
-            </section>
+            <div className='absolute inset-0 -z-80'>
+                <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
+            </div>
             <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#25015E] to-[#050027]">
                 <div className="relative min-h-[60vh] flex flex-row m-6 space-y-8 bg-gradient-to-r from-[#ffffff2a] to-[#ffffff62] shadow-2xl rounded-2xl md:space-y-0">
                     <div className="flex flex-col justify-center p-8 md:p-14">

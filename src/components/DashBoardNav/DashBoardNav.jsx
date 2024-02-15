@@ -5,7 +5,7 @@ export default function DashBoardNav() {
     return (
         <>
             <div className="box">
-                <Link href="/reg"><p>My Profile</p></Link>
+                <Link href="/dasboard"><p>My Profile</p></Link>
                 <Link href="/reg"><p>My Watchlist</p></Link>
             </div>
             <div className="box1">

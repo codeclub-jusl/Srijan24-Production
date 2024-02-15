@@ -43,7 +43,7 @@ export default function Form(props)
         </div>
         <div className="formComponents">
             <MdDriveFileRenameOutline size={27} />
-            <input type="text" name="nameOnTshirt" placeholder="Enter Name on Tshirt"vautoComplete="off"/>
+            <input type="text" name="nameOnTshirt" placeholder="Enter Name on Tshirt" autoComplete="off"/>
         </div>
         <div className="formComponents">
             <IoColorPalette size={27} />

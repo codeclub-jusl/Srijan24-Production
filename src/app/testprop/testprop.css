@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 80vh;
+  --card-width: 60vw;
+}
+
+
+body {
+  background-color: rgb(2, 0, 34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #222535;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  display: flex;
+  border-radius: 6px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  color: aqua;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+h1 {
+  color: rgb(107, 209, 227);
+  font-size: 30px;
+}
+
+h2 {
+  color: rgb(107, 209, 227);
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.svg-frame {
+  position: relative;
+  width: 455px;
+  height: 455px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: change-view 2s ease-in infinite;
+}
+
+@keyframes change-view {
+
+  0%,
+  50% {
+    transform: rotate(-0deg) skew(00deg) translateX(calc(0 * var(--i))) translateY(calc(-0px * var(--i)));
+  }
+
+  70%,
+  100% {
+    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+  }
+}
+input[type='file']{
+  display: none;
+}
+svg {
+  position: absolute;
+  transition: 0.5s;
+  transform-origin: center;
+  width: 450px;
+  height: 450px;
+  fill: none;
+  animation: change-view 5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 12px #00aaff);
+}
+
+#big-centro,
+#outter1,
+#solo-lines,
+#outter-center,
+#bottom-dots,
+#center-lines,
+#squares,
+#top-dots {
+  transform-origin: center;
+  animation: rotate 4s ease-in-out infinite alternate;
+}
+
+#big-centro {
+  animation-delay: -1.5s;
+}
+
+#outter1 {
+  animation-delay: -1.2s;
+}
+
+.rounded-image {
+  border-radius: 50%;
+}
+
+#bottom-dots,
+#top-dots {
+  animation-duration: 7s;
+}
+
+#center-lines,
+#outter-center {
+  animation-duration: 6s;
+  animation-delay: -3s;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+label p {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+input {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.button-49,
+.button-49:after {
+  width: 130px;
+  height: 50px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #bef0ff 5%);
+  border: 0;
+  color: #1d032a;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: "Space Mono", monospace;
+}
+
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  content: 'PROFILE';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #73ecff 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+.glow {
+  transition-property: box-shadow;
+  transition-duration: 1s;
+  border-bottom: 1px solid #3c67e3;
+  padding: 5px;
+}
+
+.glow:focus {
+  box-shadow: 0px 5px 5px -2px #3c67e3;
+}
+
+input:focus {
+  outline: none;
+}
+@media only screen and (min-width: 1251px) {
+  .card {
+    width: 65vw;
+  }
+
+  .svg-container {
+    transform: scale(0.95);
+    width: 50%;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .card {
+    width: 80vw;
+  }
+
+  .svg-container {
+    transform: scale(0.85);
+    width: 50%;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .card {
+    width: 80vw;
+  }
+
+  .svg-container {
+    transform: scale(0.75);
+    width: 50%;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: 80vw;
+  }
+
+  .svg-container {
+    transform: scale(0.7);
+
+    width: 50%;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    width: 70vw;
+  }
+
+  .card {
+    height: auto;
+  }
+
+  .svg-container {
+    transform: scale(0.6);
+    height: 40vh;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    width: 75vw;
+  }
+
+  .card {
+    height: auto;
+  }
+
+  .svg-container {
+    transform: scale(0.5);
+    height: 35vh;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    width: 75vw;
+  }
+
+  .card {
+    height: auto;
+  }
+
+  .svg-container {
+    transform: scale(0.4);
+    height: 32vh;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+    width: 80vw;
+    height: auto;
+  }
+
+  .svg-container {
+    transform: scale(0.3);
+    height: 28vh;
+  }
+
+  .button-49 {
+    margin-bottom: 10px;
+  }
+}
