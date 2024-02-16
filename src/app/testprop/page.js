@@ -14,6 +14,8 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
 import Profile_svg from '@/components/Profile_svg';
 import Image from 'next/image';
+import DashBoardNav from '@/components/DashBoardNav/DashBoardNav';
+import OverallNav from '@/components/OverallNav/OverallNav';
 const page = () => {
     const dispatch = useDispatch();
     const router = useRouter();
@@ -135,7 +137,7 @@ const page = () => {
     }
     return (
         <div className='container'>
-            <div className='absolute inset-0 -z-10'>
+            <div className='absolute inset-0 -z-80'>
                 <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
             </div>
             <div className='card'>
@@ -179,6 +181,7 @@ const page = () => {
                     <button className="button-49" role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
                 </div>
             </div>
+            <OverallNav />
         </div>
     );
 };

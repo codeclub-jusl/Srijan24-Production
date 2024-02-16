@@ -11,6 +11,7 @@ import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/
 import GoogleSignIn from '@/components/GoogleSignIn';
 import { notification } from 'antd';
 import BeatLoader from "react-spinners/BeatLoader";
+import EmailVerification from '@/components/EmailVerification';
 import Image from 'next/image';
 export default function SignUp() {
     const router = useRouter();
@@ -32,6 +33,7 @@ export default function SignUp() {
     const [botState, setBotState] = useState('surprised');
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
+    const [showEmailVerificationModal, setShowEmailVerificationModal] = useState(false);
 
     useEffect(() => {
         if (user && user.emailVerified) {
@@ -181,7 +183,8 @@ export default function SignUp() {
                     });
 
                     await sendEmailVerification(auth.currentUser).then(() => {
-                        router.push("/emailVerification");
+                        setShowEmailVerificationModal(true);
+                        // router.push("/emailVerification");
                     });
 
                     setName("");
@@ -197,6 +200,7 @@ export default function SignUp() {
                     setPasswordMatchError(false);
                     setPhoneError(false);
 
+                    // setShowEmailVerificationModal(true);
                     setLoading(false);
                 })
                 .catch((err) => {
@@ -299,9 +303,6 @@ export default function SignUp() {
                                     {/* <button className='rounded-full bg-[#d9d9d9] p-2 mx-2 mb-4' disabled onClick={nextStep}>Next</button> */}
                                 </div>
                                 <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
-                                    Sign Up
-                                </button>
-                                <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
                                     {loading ? <BeatLoader color='#ffffff' /> : "Sign Up"}
                                 </button>
                             </div>
@@ -321,6 +322,8 @@ export default function SignUp() {
             <div className='svg-bot relative min-w-[31vw]'>
                 <Svg_Login className='transform md:scale-50' botState={botState} />
             </div>
+
+            <EmailVerification isVisible={showEmailVerificationModal} />
         </div >
             </div >
         </>
