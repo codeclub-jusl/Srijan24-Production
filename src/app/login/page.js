@@ -24,6 +24,7 @@ export default function Login() {
     const [botState, setBotState] = useState('surprised');
     const [showResetModal, setShowResetModal] = useState(false);
     const [loading, setLoading] = useState(false);
+    
     useEffect(() => {
         if (user && user.emailVerified) {
             // notification['success']({
@@ -105,6 +106,9 @@ export default function Login() {
             if (userSnap.exists()) {
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredentials) => {
+                        setEmail('');
+                        setPassword('');
+
                         if (!userCredentials.user.emailVerified) {
                             // alert("Please verify your email before logging in.")
                             setBotState('sad');
@@ -159,12 +163,12 @@ export default function Login() {
                             Welcome back! Please enter your details
                         </span>
                         <div className="relative py-4">
-                            <input type="text" id="email" className=" w-full border-b py-1 text-white focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setEmail(e.target.value)} />
+                            <input type="text" id="email" value={email} className=" w-full border-b py-1 text-white focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setEmail(e.target.value)} />
                             <label htmlFor="email" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Email</label>
                             {emailError && <span className="text-red-500 text-sm">*Invalid email</span>}
                         </div>
                         <div className="relative py-4">
-                            <input type="password" id="password" className=" w-full border-b text-white py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" id="password" value={password} className=" w-full border-b text-white py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setPassword(e.target.value)} />
                             <label htmlFor="password" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all" >Password</label>
                             {passwordError && <span className="text-red-500 text-sm">*Password error</span>}
                         </div>
