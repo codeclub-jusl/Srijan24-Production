@@ -11,6 +11,7 @@ import valleyWithDrops from '../../assets/valleyWithDrops.png'
 import cybercityOutline from '../../assets/cybercityOutline.png'
 // import mascotfront from '../../assets/mascot-front.png'
 import mascotfront from '../../assets/mascot-front2.png'
+import blurattop from '../../assets/blurattop.png'
 import './../Home.css'
 import Image from 'next/image'
 import Countdown from '../Countdown'
@@ -66,6 +67,7 @@ const Hero = () => {
                 markers: false,
             },
         })
+        // gsap.fromTo(mascot.current, {scale: 0.9}, {scale:1.35, duration: 2, repeat: -1, yoyo: true})
         gsap.fromTo(mascot.current, {scale: 0.9}, {scale:1.35, duration: 2, repeat: -1, yoyo: true})
         // gsap.to(mascot.current, {
         //     top: '50%',
@@ -113,12 +115,13 @@ const Hero = () => {
                 width={1000}
                 height={1000}
             />
+            <Image src={blurattop} className='absolute left-[2%] md:left-[5%] -top-[9rem] md:-top-[24rem] opacity-65' width={1500} height={1000} alt=''/>
 
             {/* left planet -------------*/}
             <Image
                 src='/assets/hero-planet1.png'
                 alt=''
-                className='md:block absolute top-[35%] left-10 leftPlanet'
+                className='md:block absolute top-[35%] left-10 leftPlanet md:z-50'
                 ref={planet1}
                 draggable={false}
                 width={500}
@@ -129,7 +132,7 @@ const Hero = () => {
             <Image
                 src='/assets/hero-planet2.png'
                 alt=''
-                className='md:block absolute top-[20%] right-24 rightPlanet'
+                className='md:block absolute top-[20%] right-24 rightPlanet md:z-50'
                 ref={planet2}
                 draggable={false}
                 width={500}
@@ -140,7 +143,7 @@ const Hero = () => {
             <img
                 src='/assets/shootingstar.png'
                 alt=''
-                className='absolute top-[55%] right-10'
+                className='absolute top-[55%] right-10 md:z-50'
                 ref={shootingStar1}
             />
 
@@ -148,7 +151,7 @@ const Hero = () => {
             <img
                 src='/assets/shootingstar.png'
                 alt=''
-                className='absolute top-[50%] left-1/3'
+                className='absolute top-[50%] left-1/3 md:z-50'
                 ref={shootingStar2}
             />
 
@@ -156,14 +159,14 @@ const Hero = () => {
             <img
                 src='/assets/ufo.png'
                 alt=''
-                className='absolute top-[50%] right-[15%] ufoImage'
+                className='absolute top-[50%] right-[15%] ufoImage md:z-50'
                 ref={ufo}
             />
             <div className='pb-2 sm:pb-3 lg:pb-4'>
                 <div className='mx-auto max-w-screen-2xl px-4 md:px-4'>
                     <section className='flex flex-col items-center'>
                         <div className='flex max-w-xl flex-col items-center pb-1 pt-2 lg:pb-2 lg:pt-16'>
-                            <div className='ml-2 relative h-full justify-center mb-1 md:mb-1'>
+                            <div className='ml-2 relative h-full justify-center mb-1 md:mb-1 md:z-50'>
                                 {/* srijan red base subtract -------- */}
                                 <div className='redParentBase'>
                                     <div className='redBase'>

@@ -42,7 +42,7 @@ const TextAnimation = () => {
 
   return (
     <div>
-      <section className="home">
+      <section className="home z-[100]">
         <div className="container">
           <div className="row">
             <div className="home-text">

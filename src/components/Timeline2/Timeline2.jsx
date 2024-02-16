@@ -3,13 +3,11 @@ import Image from 'next/image'
 import curve2 from '../../../public/images/curve2.svg'
 import curve22 from '../../../public/images/curve22.svg'
 import curve23 from '../../../public/images/curve23.svg'
-import curve24 from '../../../public/images/curve24.svg'
-import curve25 from '../../../public/images/curve25.svg'
-import curve26 from '../../../public/images/curve26.svg'
+import circle from '../../assets/circle.png'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import "./Timeline2.css"
+import './Timeline2.css'
 
 export default function Home() {
     const sectionRef = useRef(null)
@@ -24,7 +22,7 @@ export default function Home() {
                 translateX: 0,
             },
             {
-                translateX: '-100vw',
+                translateX: '-25%',
                 ease: 'none',
                 duration: 1,
                 scrollTrigger: {
@@ -41,22 +39,24 @@ export default function Home() {
         }
     }, [])
     return (
-        <section className='scroll-section-outer overflow-hidden h-fit'>
-            <div ref={triggerRef}>
+        <section className='scroll-section-outer overflow-hidden h-fit hidden sm:block'>
+            <div
+                ref={triggerRef}
+                className='relative overflow-hidden hidden md:block'
+            >
                 <div
                     ref={sectionRef}
                     className='scroll-section-inner h-[60vh] w-[400vw] flex flex-row relative left-[35rem]'
                 >
-                    <div className='scroll-section h-full w-[58vw] flex justify-center items-center '>
-                        <Image src={curve2} width={1000} className="image"/>
+                    <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
+                        <Image src={curve2} width={1000} className='image' />
                     </div>
-                    <div className='scroll-section h-full w-[58vw] flex justify-center items-center '>
+                    <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
                         <Image src={curve22} width={1000} />
                     </div>
-                    <div className='scroll-section h-full w-[58vw] flex justify-center items-center '>
+                    <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
                         <Image src={curve23} width={1000} />
                     </div>
-                 
                 </div>
             </div>
         </section>
