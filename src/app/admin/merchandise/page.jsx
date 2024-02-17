@@ -21,18 +21,18 @@ async function Merchandise() {
                     <th>College</th>
                     <th>Department</th>
                     <th>Year</th>
-                    <th>Name on Shirt</th>
+                    <th>On Shirt</th>
                     <th>Size</th>
-                    <th>Payment Mode</th>
+                    <th>Mode</th>
                     <th>Transaction ID</th>
-                    <th>Is Verified</th>
+                    <th>Verified</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody className='bg-white divide-y divide-gray-200'>
                 {orders.map(order => (
                     <tr key={order._id}>
-                        <td>{order.name}</td>
+                        <td style={{ textAlign: 'left' }}>{order.name}</td>
                         <td>{order.phoneNumber}</td>
                         <td>{order.college}</td>
                         <td>{order.department}</td>
