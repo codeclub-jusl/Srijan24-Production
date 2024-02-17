@@ -61,8 +61,8 @@ export default function Merchendise() {
                 </div>
             </div>
             <div id='ButtonContainer'>
-                <div className=''>Only at &#8377; 399</div>
-                <Link className='' href='/merchandise/order'>
+                <div className='text-white p-4'>Only at &#8377; 399</div>
+                <Link className='text-white p-4' href='/merchandise/order'>
                     Click to Order
                 </Link>
             </div>
