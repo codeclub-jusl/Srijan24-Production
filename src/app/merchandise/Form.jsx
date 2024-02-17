@@ -1,6 +1,7 @@
 'use client'
 
 import './Form.css'
+import { FormEvent } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { FaSquarePhone } from 'react-icons/fa6'
 import { GrSchedules } from 'react-icons/gr'
@@ -15,10 +16,17 @@ export default function Form() {
     const user = useSelector(state => state?.userReducer?.user)
     const dispatch = useDispatch()
 
-    console.log(user)
+    // /**
+    //  *
+    //  * @param {FormEvent} event
+    //  */
+    // function registerOrder(event) {
+    //     event.preventDefault()
+    //     event.stopPropagation()
+    // }
 
     return (
-        <form id='formData' action='/api/generate-order' method='POST'>
+        <form id='formData' action='/api/order' method='POST'>
             <div className='formComponents'>
                 <FaUserCircle size={27} />
                 <input type='text' name='name' placeholder='Enter Name' />
