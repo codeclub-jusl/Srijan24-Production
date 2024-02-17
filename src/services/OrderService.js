@@ -34,6 +34,16 @@ class OrderService {
     async getAllOrders() {
         return await this.orderRepository.findAll()
     }
+
+    /**
+     * 
+     * @param {string} orderID 
+     * @param {boolean} isVerified
+     */
+    async updateVerificationStatus(orderID, isVerified) {
+        const result = await this.orderRepository.updateVerificationStatusByID(orderID, isVerified)
+        return result
+    }
 }
 
 export const orderService = new OrderService()
