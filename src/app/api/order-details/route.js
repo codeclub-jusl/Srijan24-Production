@@ -1,6 +1,6 @@
 import Razorpay from 'razorpay'
-import { NextRequest, NextResponse } from 'next/server'
-import { randomUUID } from 'crypto'
+import {NextRequest, NextResponse} from 'next/server'
+import {randomUUID} from 'crypto'
 
 const razorpay = new Razorpay({
     key_id: process.env.NEXT_PUBLIC_RAZORPAY_API_KEY,
@@ -46,11 +46,11 @@ export async function POST(request) {
             currency: order.currency,
         }
 
-        return NextResponse.json({ orderDetails }, { status: 200 })
-    } catch (error) {
+        return NextResponse.json({orderDetails}, {status: 200})
+    } catch(error) {
         return NextResponse.json(
-            { error: 'Could not create order.' },
-            { status: 500 },
+            {error: 'Could not create order.'},
+            {status: 500},
         )
     }
 }
