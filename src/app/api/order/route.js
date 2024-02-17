@@ -10,5 +10,5 @@ export async function POST(request) {
     const formdata = await request.formData()
     const id = await orderService.registerOrder(formdata)
 
-    return NextResponse.json({"OrderID": id}, {status: 200})
+    return NextResponse.json({"OrderID": id}, {status: 201})
 }
