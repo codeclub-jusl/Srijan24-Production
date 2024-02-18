@@ -17,6 +17,7 @@
     "aos": "^2.3.4",
     "firebase": "^10.8.0",
     "gsap": "^3.12.5",
+    "mongodb": "^6.3.0",
     "next": "14.1.0",
     "nextjs-progressbar": "^0.0.16",
     "razorpay": "^2.9.2",
