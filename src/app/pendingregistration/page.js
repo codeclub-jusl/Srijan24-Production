@@ -3,13 +3,13 @@ import "./page.css"
 import Image from 'next/image'
 const registeredevents = () => {
     return (
-        <div className='reg'>
-            <div className='absolute inset-0 -z-60'>
+        <>
+            <div className='absolute inset-0 -z-10'>
                 <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
             </div>
             <div className="container">
 
-                <h1 className="heading">Your Registered Events !!😊❤️</h1>
+                <h1 className="heading">Your Registered Events !!</h1>
 
                 <div className="box-container">
 
@@ -58,7 +58,7 @@ const registeredevents = () => {
                 </div>
 
             </div>
-        </div>
+        </>
 
 
     )

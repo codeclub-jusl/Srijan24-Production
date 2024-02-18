@@ -69,14 +69,19 @@ export default function Watchlist() {
             <div id="deleteIcon" onClick={() => deleteEvent(props.name)}>Delete <MdDelete size={24} /></div>
         </div>
     }
-    return <>
-        <div id="Watchlist-body" className="bg-gradient-to-r from-[#25015E] to-[#050027]">
-            <header>Your Watchlist</header>
-            <div id="watchlist">
-                {wishes.map((item, index) => {
-                    return <Wish key={index} image={item.image} name={item.name} time={item.time} venue={item.venue} />
-                })}
+    return (
+        <>
+            <div className='absolute inset-0 -z-80'>
+                <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh', backgroundRepeat: 'repeat-y' }}></Image>
             </div>
-        </div>
-    </>;
+            <div id="Watchlist-body" className="bg-gradient-to-r from-[#25015E] to-[#050027]">
+                <header>Your Watchlist</header>
+                <div id="watchlist">
+                    {wishes.map((item, index) => {
+                        return <Wish key={index} image={item.image} name={item.name} time={item.time} venue={item.venue} />
+                    })}
+                </div>
+            </div>
+        </>
+    );
 };

@@ -11,7 +11,7 @@ export default () => {
 
   return (
     <>
-      
+
       <Hero />
       <div className='mascotGap' />
       <Cards />

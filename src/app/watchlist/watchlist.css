@@ -35,8 +35,8 @@
     background: url(https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?size=626&ext=jpg&ga=GA1.1.87170709.1707696000&semt=sph);
     background-size: cover;
     padding: 20px;
-    width: 336px;
-    height: min-content;
+    width: 306px;
+    height: 350px;
     margin: 20px;
     overflow: hidden;
     animation: hanging 4s alternate ease;
