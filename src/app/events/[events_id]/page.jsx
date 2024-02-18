@@ -1,9 +1,9 @@
 'use client'
-import React, { useState } from 'react';
-import Modal from '@/components/EventComponents/Modal';
-import { BsCalendar, BsPeople } from 'react-icons/bs';
-import { MdCall } from 'react-icons/md';
-import { FaUser } from 'react-icons/fa'; // Import the FaUser icon
+import React, { useState } from 'react'
+import Modal from '@/components/EventComponents/Modal'
+import { BsCalendar, BsPeople } from 'react-icons/bs'
+import { MdCall } from 'react-icons/md'
+import { FaUser } from 'react-icons/fa' // Import the FaUser icon
 
 const EventDetails = () => {
     const eventData = {
@@ -35,31 +35,43 @@ const EventDetails = () => {
             'Sportsmanship: Climbers are expected to display good sportsmanship and respect for fellow competitors. Any unsportsmanlike behavior or actions that endanger others may result in disqualification.',
             'Equipment: We will provide all the necessary equipment for the competition, but climbers are encouraged to wear well-fitting shoes with a thin sole and good grip, such as PT shoes.',
         ],
-        eventRuleLink: 'https://drive.google.com/file/d/1LUraTyqbn8HVO2_sKE_Dh7nvUfi_hJas/view',
-    };
+        eventRuleLink:
+            'https://drive.google.com/file/d/1LUraTyqbn8HVO2_sKE_Dh7nvUfi_hJas/view',
+    }
     const teamSize =
-        eventData.maxMembers === 1 ? 'Individual' : `${eventData.minMembers}-${eventData.maxMembers} members`;
+        eventData.maxMembers === 1
+            ? 'Individual'
+            : `${eventData.minMembers}-${eventData.maxMembers} members`
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    };
+        setIsModalOpen(!isModalOpen)
+    }
 
     // Define mapping from names to icons
     const iconMap = {
         'Krishna Mittal': <BsPeople />,
         'Urwah Jawaid': <BsPeople />,
         'Ashish Kumar Mandal': <BsPeople />,
-    };
+    }
 
     return (
         <div className='bg-gradient-to-br from-black via-sky-950 to-black text-white min-h-screen flex justify-center items-center font-body'>
             <div className='container mx-auto px-4 py-8'>
-            <h1 className="text-4xl font-bold mb-6 text-center">
-                    <span style={{ backgroundClip: 'text', WebkitBackgroundClip: 'text', color: 'transparent', backgroundImage: 'linear-gradient(to right, #87CEEB, #00BFFF)' }}>{eventData.eventName}</span>
+                <h1 className='text-4xl font-bold mb-6 text-center'>
+                    <span
+                        style={{
+                            backgroundClip: 'text',
+                            WebkitBackgroundClip: 'text',
+                            color: 'transparent',
+                            backgroundImage:
+                                'linear-gradient(to right, #87CEEB, #00BFFF)',
+                        }}
+                    >
+                        {eventData.eventName}
+                    </span>
                 </h1>
-
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                     <div className='bg-opacity-50 p-6 rounded-lg flex items-center justify-center md:col-span-1'>
@@ -94,29 +106,50 @@ const EventDetails = () => {
                         </div>
 
                         <div className='bg-opacity-50 rounded-lg shadow-2xl p-5 text-sm md:text-lg'>
-                            <p className='mb-2'><strong className="text-xl md:text-2xl ">Event Coordinators:</strong></p>
+                            <p className='mb-2'>
+                                <strong className='text-xl md:text-2xl '>
+                                    Event Coordinators:
+                                </strong>
+                            </p>
                             <ul className='list-disc '>
-                                {eventData.eventCoordinators.map((coordinator, index) => {
-                                    const [name, phoneNumber] = coordinator.split(' [ ');
-                                    return (
-                                        <li key={index} className='flex items-center mb-2'>
-                                            {iconMap[name]}
-                                            <span className='ml-2'>{name}</span>
-                                            <a href={`tel:${phoneNumber.replace(']', '').trim()}`} className='ml-2 flex items-center text-green-500'>
-                                                <MdCall className='mr-1' />
-                                                {phoneNumber.replace(']', '').trim()}
-                                            </a>
-                                        </li>
-                                    );
-                                })}
+                                {eventData.eventCoordinators.map(
+                                    (coordinator, index) => {
+                                        const [name, phoneNumber] =
+                                            coordinator.split(' [ ')
+                                        return (
+                                            <li
+                                                key={index}
+                                                className='flex items-center mb-2'
+                                            >
+                                                {iconMap[name]}
+                                                <span className='ml-2'>
+                                                    {name}
+                                                </span>
+                                                <a
+                                                    href={`tel:${phoneNumber.replace(']', '').trim()}`}
+                                                    className='ml-2 flex items-center text-green-500'
+                                                >
+                                                    <MdCall className='mr-1' />
+                                                    {phoneNumber
+                                                        .replace(']', '')
+                                                        .trim()}
+                                                </a>
+                                            </li>
+                                        )
+                                    },
+                                )}
                             </ul>
                         </div>
 
                         <div className='flex flex-col p-5 shadow-2xl '>
                             <p className='mb-2'>
-                                <strong className="text-xl md:text-2xl">Event Description:</strong>
+                                <strong className='text-xl md:text-2xl'>
+                                    Event Description:
+                                </strong>
                             </p>
-                            <p className='text-sm md:text-lg'>{eventData.eventDescription}</p>
+                            <p className='text-sm md:text-lg'>
+                                {eventData.eventDescription}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -128,21 +161,30 @@ const EventDetails = () => {
                         Register Now
                     </button>
                 </div>
-                <Modal isOpen={isModalOpen} onClose={toggleModal} minMembers={eventData.minMembers} maxMembers={eventData.maxMembers} eventId={eventData.eventId} /> 
+                <Modal
+                    isOpen={isModalOpen}
+                    onClose={toggleModal}
+                    minMembers={eventData.minMembers}
+                    maxMembers={eventData.maxMembers}
+                    eventId={eventData.eventId}
+                />
                 <div className='bg-opacity-50 p-6 rounded-lg mt-6'>
-    <p className='mb-2'>
-        <strong className="text-xl md:text-2xl">Event Rules:</strong>
-    </p>
-    <ul className='list-disc pl-6 text-sm md:text-lg'>
-        {eventData.eventRules.map((rule, index) => (
-            <li key={index} className="mb-4">{rule}</li> 
-        ))}
-    </ul>
-</div>
-
+                    <p className='mb-2'>
+                        <strong className='text-xl md:text-2xl'>
+                            Event Rules:
+                        </strong>
+                    </p>
+                    <ul className='list-disc pl-6 text-sm md:text-lg'>
+                        {eventData.eventRules.map((rule, index) => (
+                            <li key={index} className='mb-4'>
+                                {rule}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default EventDetails;
+export default EventDetails
