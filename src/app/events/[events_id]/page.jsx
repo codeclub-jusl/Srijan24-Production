@@ -13,7 +13,7 @@ const EventDetails = () => {
             prelims: ['April 15, 2023'],
             finals: 'April 16, 2023',
         },
-        eventPoster: '/assets/events/CLIMBON.png',
+        eventPoster: '/assets/events/poster/CLIMBON.png',
         eventType: 'misc',
         eventHashtags: ['Mountaineering', 'Climbing'],
         eventCoordinators: [
