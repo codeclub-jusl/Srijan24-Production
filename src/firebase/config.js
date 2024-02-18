@@ -14,10 +14,10 @@ const firebaseConfig = {
 };
 
 // const app = initializeApp(firebaseConfig);
-// const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-// const db = getFirestore(); // firestore database
-// const database = getDatabase(); // realtime database
-// const storage = getStorage();
-// const auth = getAuth(app);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(); // firestore database
+const database = getDatabase(); // realtime database
+const storage = getStorage();
+const auth = getAuth(app);
 
-// export { app, db, database, storage, auth };
+export { app, db, database, storage, auth };
