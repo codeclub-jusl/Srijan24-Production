@@ -11,7 +11,7 @@ const page = () => {
     const user = useSelector(state => state.userReducer.user)
 
     return (
-        <>
+        <div className='body-container'>
             <div className='absolute inset-0 -z-10'>
                 <Image
                     src='/assets/bg3.jpg'
@@ -98,7 +98,7 @@ const page = () => {
                 <p>Loading</p>
             )}
             <Script src='/js/profile.js' defer></Script>
-        </>
+        </div>
     )
 }
 

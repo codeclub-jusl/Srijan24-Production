@@ -136,53 +136,56 @@ const page = () => {
         router.push("/login");
     }
     return (
-        <div className='container'>
-            <div className='absolute inset-0 -z-80'>
-                <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
-            </div>
-            <div className='card'>
-                <div className='svg-container'>
-                    <div className="svg-frame">
-                        <Profile_svg />
+        <div className='body-container'>
+            <div className='container'>
+                <div className='absolute inset-0 -z-80'>
+                    <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
+                </div>
+                <div className='card'>
+                    <div className='svg-container'>
+                        <div className="svg-frame">
+                            <Profile_svg />
+                        </div>
+                    </div>
+
+                    <div className="info">
+                        <h1>Hey, John Deere</h1>
+                        <h2>sample@gmail.com</h2>
+
+                        <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
+                        <label className='p-4 text-white cursor-pointer text-xs flex flex-row items-center justify-center' htmlFor="uploadBtn"><Image src="/assets/profile.png" height={40} width={40} /> Change Profile Pic</label>
+
+                        <label>
+                            <p>Name:</p>
+                            <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="text" name="name" value={formState.name} onChange={handleChange} disabled={!isEditable} />
+                        </label>
+                        <label>
+                            <p>Phone:</p>
+
+                            <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="tel" name="phone" value={formState.phone} onChange={handleChange} disabled={!isEditable} />
+                        </label>
+                        <label>
+                            <p>College:</p>
+
+                            <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="text" name="college" value={formState.college} onChange={handleChange} disabled={!isEditable} />
+                        </label>
+                        <label>
+                            <p>Department:</p>
+
+                            <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="text" name="dept" value={formState.dept} onChange={handleChange} disabled={!isEditable} />
+                        </label>
+                        <label>
+                            <p>Year:</p>
+
+                            <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white mb-4' type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
+                        </label>
+                        <button className="button-49" role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
                     </div>
                 </div>
-
-                <div className="info">
-                    <h1>Hey, John Deere</h1>
-                    <h2>sample@gmail.com</h2>
-
-                    <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
-                    <label className='p-4 text-white cursor-pointer text-xs flex flex-row items-center justify-center' htmlFor="uploadBtn"><Image src="/assets/profile.png" height={40} width={40} /> Change Profile Pic</label>
-
-                    <label>
-                        <p>Name:</p>
-                        <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="text" name="name" value={formState.name} onChange={handleChange} disabled={!isEditable} />
-                    </label>
-                    <label>
-                        <p>Phone:</p>
-
-                        <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="tel" name="phone" value={formState.phone} onChange={handleChange} disabled={!isEditable} />
-                    </label>
-                    <label>
-                        <p>College:</p>
-
-                        <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="text" name="college" value={formState.college} onChange={handleChange} disabled={!isEditable} />
-                    </label>
-                    <label>
-                        <p>Department:</p>
-
-                        <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white' type="text" name="dept" value={formState.dept} onChange={handleChange} disabled={!isEditable} />
-                    </label>
-                    <label>
-                        <p>Year:</p>
-
-                        <input className='glow w-[80%] focus:outline-none transition-colors peer bg-transparent text-white mb-4' type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
-                    </label>
-                    <button className="button-49" role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
-                </div>
+                <OverallNav />
             </div>
-            <OverallNav />
         </div>
+
     );
 };
 

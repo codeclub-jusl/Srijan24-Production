@@ -6,7 +6,7 @@ import './dashboard.css'
 import DashBoardNav from '@/components/DashBoardNav/DashBoardNav';
 const page = () => {
     return (
-        <>
+        <div className='body-container'>
             <div className='absolute inset-0 -z-10'>
                 <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
             </div>
@@ -65,7 +65,7 @@ const page = () => {
             </div>
             <DashBoardNav />
             <Script src="/js/profile.js" defer></Script>
-        </>
+        </div>
 
     );
 }

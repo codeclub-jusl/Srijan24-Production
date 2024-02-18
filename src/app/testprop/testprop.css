@@ -19,7 +19,7 @@
 }
 
 
-body {
+.body-container {
   background-color: #25015E;
   display: flex;
   justify-content: center;
