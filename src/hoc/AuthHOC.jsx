@@ -1,7 +1,7 @@
 'use client'
 
 import { auth, db } from '@/firebase/config'
-import { loginUser } from '@/store/userSlice'
+import { loginUser, logoutUser } from '@/store/userSlice'
 import { doc, getDoc } from 'firebase/firestore'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
@@ -39,6 +39,7 @@ const AuthHOC = Component => {
                         router.push('/login')
                     }
                 } else {
+                    dispatch(logoutUser())
                     router.push('/login')
                 }
             })
