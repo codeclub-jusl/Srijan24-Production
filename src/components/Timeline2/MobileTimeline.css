@@ -32,3 +32,18 @@
     position: relative;
     left: 2%;
 }
+.tablet{
+    color: transparent;
+    display: none;
+}
+@media (min-width: 640px) and (max-width: 1025px){
+    .timeline::after{
+        left: 8.75%;
+    }
+    .tablet{
+        display: block;
+    }
+    .text-box{
+        margin-left: 2rem;
+    }
+}

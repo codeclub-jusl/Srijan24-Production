@@ -39,7 +39,7 @@ export default function Home() {
         }
     }, [])
     return (
-        <section className='scroll-section-outer overflow-hidden h-fit hidden sm:block'>
+        <section className='scroll-section-outer overflow-hidden h-fit hidden min-[1025px]:block'>
             <div
                 ref={triggerRef}
                 className='relative overflow-hidden hidden md:block'

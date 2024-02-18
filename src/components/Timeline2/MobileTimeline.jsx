@@ -5,8 +5,8 @@ import circle from '../../assets/circle.png'
 
 const MobileTimeline = () => {
     return (
-        <div className='relative w-screen h-fit sm:hidden'>
-            <div className='timeline'>
+        <div className='relative w-screen h-fit min-[1025px]:hidden'>
+            <div className='timeline overflow-hidden'>
                 <div className='timeline-container'>
                     <Image
                         src={circle}
@@ -15,12 +15,12 @@ const MobileTimeline = () => {
                         className='timeline-img'
                     />
                     <div className='text-box'>
-                        <h2 className='font-Montserrat font-bold text-3xl relative top-12'>
+                        <h2 className='font-Montserrat font-bold text-3xl relative top-12 sm:top-0'>
                             Workshops
                         </h2>
                         <p className='font-Montserrat text-xl relative -top-4 text-transparent -z-20'>
                             Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Modi, quas.
+                            elit. Modi, quas. <span className="tablet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis</span>
                         </p>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const MobileTimeline = () => {
                         <p className='font-Montserrat text-xl'>
                             Bubble Zorbing, Archery
                             <span className='inline relative -top-4 -z-10 text-transparent'>
-                                Lorem
+                                Lorem. <span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span> 
                             </span>
                         </p>
                     </div>
@@ -55,7 +55,7 @@ const MobileTimeline = () => {
                             Standup Comedy
                         </h2>
                         <p className='relative -top-5 -z-10 text-transparent'>
-                            Lorem ipsum dolor sit amet consectetur.
+                            Lorem ipsum dolor sit amet consectetur.<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ const MobileTimeline = () => {
                             F5 Talk Shows
                         </h2>
                         <p className='font-Montserrat text-xl'>
-                            Eminent speakers on various domains
+                            Eminent speakers on various domains<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const MobileTimeline = () => {
                             Coding
                         </h2>
                         <p className='font-Montserrat text-xl'>
-                            Hackathon, Competitive Programming
+                            Hackathon, Competitive Programming<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const MobileTimeline = () => {
                         </h2>
                         <p className='font-Montserrat text-xl'>
                             RoboSoccer, Obstrcution Course Navigation, Circuit
-                            Design
+                            Design<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ const MobileTimeline = () => {
                             Finance and Management
                         </h2>
                         <p className='font-Montserrat text-xl'>
-                            B-Plan, Case Study, Stock Market
+                            B-Plan, Case Study, Stock Market<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ const MobileTimeline = () => {
                         <p className='font-Montserrat text-xl mb-4'>
                             PC, Mobile
                             <span className='relative -left-4 -top-4 -z-20 text-transparent'>
-                                Lorem, ipsum dolor
+                                Lorem, ipsum dolor<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                             </span>
                         </p>
                     </div>
@@ -157,7 +157,7 @@ const MobileTimeline = () => {
                         <p className='font-Montserrat text-xl'>
                             Cybersecurity Puzzle
                             <span className='-z-10 text-transparent'>
-                                Lorem, ipsum dolor.
+                                Lorem, ipsum dolor.<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                             </span>
                         </p>
                     </div>
@@ -173,6 +173,7 @@ const MobileTimeline = () => {
                         <h2 className='font-Montserrat font-bold text-3xl'>
                             Go Kart Exhibition
                         </h2>
+                        <span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                     </div>
                 </div>
                 <div className='timeline-container'>
@@ -187,7 +188,7 @@ const MobileTimeline = () => {
                             Cultural Episodes
                         </h2>
                         <p className='font-Montserrat text-xl'>
-                            Band, BeatBoxing, DJ Nights
+                            Band, BeatBoxing, DJ Nights<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>
@@ -203,7 +204,7 @@ const MobileTimeline = () => {
                             Miscellaneous
                         </h2>
                         <p className='font-Montserrat text-xl'>
-                            Debate, Quiz, Treasure Hunt
+                            Debate, Quiz, Treasure Hunt<span className='tablet'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo exercitationem id perferendis nesciunt distinctio repellendus!</span>
                         </p>
                     </div>
                 </div>

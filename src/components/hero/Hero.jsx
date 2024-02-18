@@ -115,7 +115,9 @@ const Hero = () => {
                 width={1000}
                 height={1000}
             />
-            <Image src={blurattop} className='absolute left-[2%] md:left-[5%] -top-[9rem] md:-top-[24rem] opacity-65' width={1500} height={1000} alt=''/>
+            <div className='absolute -top-[14rem] sm:-top-[10rem] min-[1025px]:left-[4rem] h-[110vh] w-[100vw] min-[1025px]:w-[90vw] mx-auto'>
+                <Image src={blurattop} className='absolute object-cover opacity-85' fill alt=''/>
+            </div>
 
             {/* left planet -------------*/}
             <Image
