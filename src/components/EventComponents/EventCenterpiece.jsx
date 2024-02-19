@@ -1,59 +1,6 @@
 import React from 'react'
 import './EventCenterpiece.css'
-;() => {
-    return (
-        <div>
-            <div className='light'>
-                <div className=' box' style={{ '--i': 0 }}>
-                    <div className='bulb'>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className='box' style={{ '--i': 1 }}>
-                    <div className='bulb'>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className='box' style={{ '--i': 2 }}>
-                    <div className='bulb'>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className='box' style={{ '--i': 3 }}>
-                    <div className='bulb'>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className='box' style={{ '--i': 4 }}>
-                    <div className='bulb'>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className='box' style={{ '--i': 5 }}>
-                    <div className='bulb'>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div className='switch'>
-                    <div className='btn'></div>
-                </div>
-                {/* <audio
-                    id='audio'
-                    src='click.mp3'
-                    frameBorder='0'
-                    autoPlay={false}
-                ></audio> */}
-            </div>
-        </div>
-    )
-}
-export default () => {
+export default ({PageType}) => {
     return (
         // <div className='w-full '>
         <div className='w-full h-[15rem] md:h-[20rem] bg-gray-400 bg-opacity-5 backdrop-filter backdrop-blur-md text-white font-clash tracking-wide font-black flex flex-col items-center justify-center shadow-2xl'>
@@ -64,9 +11,9 @@ export default () => {
                 alt=''
             />
             <p className=' text-[1.5rem] tracking-wider md:text-[2rem] '>
-                EVENTS
+                {PageType}
             </p>
         </div>
-        // </div>
+       
     )
 }

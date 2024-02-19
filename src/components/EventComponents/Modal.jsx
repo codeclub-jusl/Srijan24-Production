@@ -11,7 +11,7 @@ const Modal = ({
     minMembers,
     maxMembers,
 }) => {
-    const user = useSelector(state => state.userReducer.user);
+    const user = useSelector(state => state.userReducer.user)
 
     const [emails, setEmails] = useState(
         Array.from({ length: minMembers - 1 }, () => ''),
@@ -65,7 +65,10 @@ const Modal = ({
                                 id='team-name'
                                 placeholder=' '
                             />
-                            <label htmlFor='login-email' className='login__label'>
+                            <label
+                                htmlFor='login-email'
+                                className='login__label'
+                            >
                                 Team Name
                             </label>
                         </div>
@@ -86,7 +89,10 @@ const Modal = ({
                                         handleEmailChange(index, e.target.value)
                                     }
                                 />
-                                <label htmlFor='login-email' className='login__label'>
+                                <label
+                                    htmlFor='login-email'
+                                    className='login__label'
+                                >
                                     Email ID 1
                                 </label>
                             </div>

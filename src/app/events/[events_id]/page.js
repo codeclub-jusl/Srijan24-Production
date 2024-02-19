@@ -17,7 +17,7 @@ const page = () => {
             prelims: ['April 15, 2023'],
             finals: 'April 16, 2023',
         },
-        eventPoster: '/assets/events/CLIMBON.png',
+        eventPoster: '/assets/events/poster/CLIMBON.png',
         eventType: 'misc',
         eventHashtags: ['Mountaineering', 'Climbing'],
         eventCoordinators: [
@@ -173,9 +173,16 @@ const page = () => {
                 <div className='mt-4 flex justify-center'>
                     <button
                         className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                        onClick={handleRegister}
+                        onClick={handleRegister} // toggleModal
                     >
                         Register Now
+                    </button>
+                    <button
+                        className='bg-[#000032]
+                         hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                        onClick={toggleModal}
+                    >
+                        Add to Watchlist
                     </button>
                 </div>
                 <Modal
