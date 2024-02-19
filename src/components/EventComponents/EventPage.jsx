@@ -14,7 +14,7 @@ const EventPage = ({ eventsId, pageType }) => {
         const response = await fetch('/assets/events/AllEventsData.json');
         const data = await response.json();
         setEvents(data);
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         console.error('Error fetching events data:', error);
       }
@@ -54,7 +54,7 @@ const EventPage = ({ eventsId, pageType }) => {
       
     return eventsToRender.map((eventData, index) => (
       <div key={index} className='p-10 '>
-        <Link href={`/events/${eventData.eventName}`}>
+        <Link href={`/events/${eventData.eventId}`}>
           <div className='cursor-pointer'>
             <EventBox imgSrc={eventData.eventPoster}>
               <h3 className='text-xl font-bold mb-2'>

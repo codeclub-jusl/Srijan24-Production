@@ -8,7 +8,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { auth, db, storage } from '@/firebase/config';
 import BeatLoader from "react-spinners/BeatLoader";
 import { signOut } from 'firebase/auth';
-import { logoutUser } from '@/store/userSlice';
+import { loginUser, logoutUser } from '@/store/userSlice';
 import { useRouter } from 'next/navigation';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
@@ -48,6 +48,11 @@ const page = () => {
         
         await updateDoc(userRef, newUserData)
                 .then(() => {
+                    dispatch(loginUser({
+                        ...user,
+                        ...newUserData
+                    }))
+                    
                     notification['success']({
                         message: `Profile updated successfully`,
                         duration: 3
