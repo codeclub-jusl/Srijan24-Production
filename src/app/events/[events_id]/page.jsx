@@ -155,10 +155,17 @@ const EventDetails = () => {
                 </div>
                 <div className='mt-4 flex justify-center'>
                     <button
-                        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                        className='bg-[#000000] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
                         onClick={toggleModal}
                     >
                         Register Now
+                    </button>
+                    <button
+                        className='bg-[#000032]
+                         hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                        onClick={toggleModal}
+                    >
+                        Add to Watchlist
                     </button>
                 </div>
                 <Modal
