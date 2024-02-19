@@ -20,15 +20,55 @@ const page = ({ params }) => {
 
     const [loading, setLoading] = useState(false)
     const [watchlistButton, setWatchlistButton] = useState('Add to Watchlist')
+    const [registerButton, setRegisterButton] = useState('Register Now')
+    const [eventStatus, setEventStatus] = useState('not registered')
+    const [profileUpdated, setProfileUpdated] = useState(false)
 
     const { events_id } = params
+
+    const capitalizeEveryWord = str => {
+        return str.replace(/\b\w/g, char => {
+            return char.toUpperCase()
+        })
+    }
     // console.log(params);
+
+    const checkEvent = (userEvents, eventId) => {
+        userEvents.find(obj => obj.eventId === eventId)
+    }
 
     useEffect(() => {
         if (user && user.events.watchlist.includes(events_id)) {
             setWatchlistButton('Remove from Watchlist')
         } else {
             setWatchlistButton('Add to Watchlist')
+        }
+
+        if (user) {
+            const object = user.events.registered.find(
+                obj => obj.eventId === events_id,
+            )
+            console.log(object)
+
+            setEventStatus(object.status)       // ⭐⭐⭐⭐need to fix
+            console.log(eventStatus);
+
+            if (eventStatus !== 'not registered') {
+                setRegisterButton(capitalizeEveryWord(eventStatus))
+            }
+        }
+
+        if (
+            user &&
+            user.name &&
+            user.college &&
+            user.year &&
+            user.phone &&
+            user.dept
+        ) {
+            setProfileUpdated(true)
+        } else {
+            setProfileUpdated(false)
         }
     }, [user])
 
@@ -81,6 +121,9 @@ const page = ({ params }) => {
 
     const handleRegister = e => {
         e.preventDefault()
+        if (eventStatus !== 'not registered') {
+            return
+        }
         toggleModal()
     }
 
@@ -243,25 +286,53 @@ const page = ({ params }) => {
                     </div>
                 </div>
                 {user ? (
-                    <div className='mt-4 flex justify-center'>
-                        <button
-                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                            onClick={handleRegister} // toggleModal
-                        >
-                            Register Now
-                        </button>
-                        <button
-                            className='bg-[#000032]
+                    user && profileUpdated ? (
+                        <div className='mt-4 flex justify-center'>
+                            <button
+                                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                                onClick={handleRegister} // toggleModal
+                            >
+                                {registerButton}
+                            </button>
+
+                            {eventStatus === 'not registered' && (
+                                <button
+                                    className='bg-[#000032]
                          hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
-                            onClick={handleWatchList}
-                        >
-                            {loading ? (
-                                <BeatLoader color='#ffffff' />
-                            ) : (
-                                watchlistButton
+                                    onClick={handleWatchList}
+                                >
+                                    {loading ? (
+                                        <BeatLoader color='#ffffff' />
+                                    ) : (
+                                        watchlistButton
+                                    )}
+                                </button>
                             )}
-                        </button>
-                    </div>
+                        </div>
+                    ) : (
+                        <div className='mt-4 flex justify-center'>
+                            <Link
+                                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                                href='/profile'
+                            >
+                                Update profile to register
+                            </Link>
+
+                            {eventStatus === 'not registered' && (
+                                <button
+                                    className='bg-[#000032]
+                         hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                                    onClick={handleWatchList}
+                                >
+                                    {loading ? (
+                                        <BeatLoader color='#ffffff' />
+                                    ) : (
+                                        watchlistButton
+                                    )}
+                                </button>
+                            )}
+                        </div>
+                    )
                 ) : (
                     <div className='mt-4 flex justify-center'>
                         <Link

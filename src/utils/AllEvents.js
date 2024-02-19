@@ -15,7 +15,7 @@ const events = [
             'Ashish Kumar Mandal [ 7294925744 ]',
         ],
         minMembers: 1,
-        maxMembers: 1,
+        maxMembers: 2,
         eventDescription: [
             'CLIMBON is an artificial rock climbing competition organized by Jadavpur University Mountaineering And Hiking Club every year.',
         ],
