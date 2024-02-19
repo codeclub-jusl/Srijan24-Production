@@ -129,8 +129,8 @@ const Profile_svg = () => {
                     <path id="Ellipse 45" d="M152.445 160.624C135.723 180.1 127.383 205.455 129.26 231.112C131.136 256.768 143.075 280.625 162.451 297.433C181.826 314.242 207.05 322.625 232.575 320.739C258.099 318.853 281.833 306.852 298.555 287.376C315.277 267.9 323.617 242.545 321.74 216.888C319.864 191.232 307.925 167.375 288.549 150.567C269.174 133.758 243.95 125.375 218.425 127.261C192.901 129.147 169.167 141.148 152.445 160.624L152.445 160.624Z" stroke="#f5acff" stroke-width="8" stroke-dasharray="1 20" />
                 </g>
             </svg>
-            <div id="center">
-                <Image src="/assets/profile3.png" className='rounded-image' alt="" width={150} height={150} ></Image>
+            <div id="center" className='w-[150px] h-[150px] rounded-full'>
+                <Image src="/assets/profile.jpg" className='rounded-full' alt="" width="150" height="150" ></Image>
             </div>
         </>
 

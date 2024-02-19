@@ -46,7 +46,6 @@ console.log(eventDataArray);
 
 return (
     <>
-    <Navbar/>
     <div style={{ 
         minHeight: '100vh',
         padding: '20px',

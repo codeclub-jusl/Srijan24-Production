@@ -6,11 +6,9 @@ export default function DashBoardNav() {
         <>
             <div className="box">
                 <Link href="/testprop"><p>My Profile</p></Link>
-                <Link href="/watchlist"><p>My Watchlist</p></Link>
             </div>
             <div className="box1">
-                <Link href="/registeredevents"><p>Registered Events</p></Link>
-                <Link href="/pendingregistration"><p>Pending Registrations</p></Link>
+                <Link href="/login"><p>Login</p></Link>
             </div>
         </>
     )

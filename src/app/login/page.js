@@ -24,7 +24,7 @@ export default function Login() {
     const [botState, setBotState] = useState('surprised');
     const [showResetModal, setShowResetModal] = useState(false);
     const [loading, setLoading] = useState(false);
-    
+
     useEffect(() => {
         if (user && user.emailVerified) {
             // notification['success']({
@@ -149,7 +149,7 @@ export default function Login() {
     };
     return (
         <>
-          
+
             <div className='absolute inset-0 -z-80'>
                 <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
             </div>

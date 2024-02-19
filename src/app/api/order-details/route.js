@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import Razorpay from 'razorpay'
 import {NextRequest, NextResponse} from 'next/server'
 import {randomUUID} from 'crypto'
@@ -56,4 +54,3 @@ export async function POST(request) {
         )
     }
 }
->>>>>>> 20107406eacfb1661659d53e1f738160f716a1e6
