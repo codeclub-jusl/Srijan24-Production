@@ -26,6 +26,10 @@ const GoogleSignIn = () => {
                     dept: '',
                     year: '',
                     profilePicUrl: '',
+                    events: {
+                        watchlist: [],
+                        registered: [],
+                    },
                 })
 
                 dispatch(

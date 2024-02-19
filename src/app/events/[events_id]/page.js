@@ -1,47 +1,72 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from '@/components/EventComponents/Modal'
 import { BsCalendar, BsPeople } from 'react-icons/bs'
 import { MdCall } from 'react-icons/md'
 import { useRouter } from 'next/navigation'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import Link from 'next/link'
+import { doc, getDoc, updateDoc } from 'firebase/firestore'
+import { db } from '@/firebase/config'
+import { loginUser } from '@/store/userSlice'
+import { notification } from 'antd'
+import { getEventById } from '@/utils/event'
+import BeatLoader from 'react-spinners/BeatLoader'
 
-const page = () => {
+const page = ({ params }) => {
     const router = useRouter()
+    const dispatch = useDispatch()
     const user = useSelector(state => state.userReducer.user)
 
-    const eventData = {
-        eventId: '007',
-        eventName: "Climbon'23",
-        eventDate: {
-            prelims: ['April 15, 2023'],
-            finals: 'April 16, 2023',
-        },
-        eventPoster: '/assets/events/poster/CLIMBON.png',
-        eventType: 'misc',
-        eventHashtags: ['Mountaineering', 'Climbing'],
-        eventCoordinators: [
-            'Krishna Mittal [ 8540062753 ]',
-            'Urwah Jawaid [ 9103158993 ]',
-            'Ashish Kumar Mandal [ 7294925744 ]',
-        ],
-        minMembers: 3,
-        maxMembers: 5,
-        eventDescription: [
-            'CLIMBON is an artificial rock climbing competition organized by Jadavpur University Mountaineering And Hiking Club every year. It is open to all and there is no age or gender bar. No prior experience is required. Any passionate person from any college can participate. The competition would take place under the supervision of esteemed instructors and all the safety gears would also be provided. It is the best place for any adventurer to begin.',
-        ],
-        eventRules: [
-            'Climbing routes: The competition may have different climbing routes with varying levels of difficulty, which are marked with colored holds. Climbers must follow the designated route and only use the marked holds. Touching any other part of the wall or using any other holds is not allowed and may result in disqualification.',
-            'Timing: Each climber has a set amount of time to complete the route. The time limit may vary depending on the difficulty level of the route. If the climber does not complete the route within the specified time, their score will be based on the furthest point they reached.',
-            'Scoring: The score is determined by the number of holds the climber reaches and touches during the climb. Climbers are awarded points for each hold they touch. The climber with the highest score in their category wins.',
-            'Categories: Climbers may be grouped into different categories based on their gender. Each category may have different routes and scoring criteria.',
-            "Safety: Safety is of utmost importance in artificial rock climbing contests. Climbers must follow all safety guidelines and instructions provided by event organizers. Judges may stop a climber's ascent if they feel that the climber is in danger or not following safety rules.",
-            'Sportsmanship: Climbers are expected to display good sportsmanship and respect for fellow competitors. Any unsportsmanlike behavior or actions that endanger others may result in disqualification.',
-            'Equipment: We will provide all the necessary equipment for the competition, but climbers are encouraged to wear well-fitting shoes with a thin sole and good grip, such as PT shoes.',
-        ],
-        eventRuleLink:
-            'https://drive.google.com/file/d/1LUraTyqbn8HVO2_sKE_Dh7nvUfi_hJas/view',
-    }
+    const [loading, setLoading] = useState(false)
+    const [watchlistButton, setWatchlistButton] = useState('Add to Watchlist')
+
+    const { events_id } = params
+    // console.log(params);
+
+    useEffect(() => {
+        if (user && user.events.watchlist.includes(events_id)) {
+            setWatchlistButton('Remove from Watchlist')
+        } else {
+            setWatchlistButton('Add to Watchlist')
+        }
+    }, [user])
+
+    // const eventData = {
+    //     eventId: '007',
+    //     eventName: "Climbon'23",
+    //     eventDate: {
+    //         prelims: ['April 15, 2023'],
+    //         finals: 'April 16, 2023',
+    //     },
+    //     eventPoster: '/assets/events/poster/CLIMBON.png',
+    //     eventType: 'misc',
+    //     eventHashtags: ['Mountaineering', 'Climbing'],
+    //     eventCoordinators: [
+    //         'Krishna Mittal [ 8540062753 ]',
+    //         'Urwah Jawaid [ 9103158993 ]',
+    //         'Ashish Kumar Mandal [ 7294925744 ]',
+    //     ],
+    //     minMembers: 3,
+    //     maxMembers: 5,
+    //     eventDescription: [
+    //         'CLIMBON is an artificial rock climbing competition organized by Jadavpur University Mountaineering And Hiking Club every year. It is open to all and there is no age or gender bar. No prior experience is required. Any passionate person from any college can participate. The competition would take place under the supervision of esteemed instructors and all the safety gears would also be provided. It is the best place for any adventurer to begin.',
+    //     ],
+    //     eventRules: [
+    //         'Climbing routes: The competition may have different climbing routes with varying levels of difficulty, which are marked with colored holds. Climbers must follow the designated route and only use the marked holds. Touching any other part of the wall or using any other holds is not allowed and may result in disqualification.',
+    //         'Timing: Each climber has a set amount of time to complete the route. The time limit may vary depending on the difficulty level of the route. If the climber does not complete the route within the specified time, their score will be based on the furthest point they reached.',
+    //         'Scoring: The score is determined by the number of holds the climber reaches and touches during the climb. Climbers are awarded points for each hold they touch. The climber with the highest score in their category wins.',
+    //         'Categories: Climbers may be grouped into different categories based on their gender. Each category may have different routes and scoring criteria.',
+    //         "Safety: Safety is of utmost importance in artificial rock climbing contests. Climbers must follow all safety guidelines and instructions provided by event organizers. Judges may stop a climber's ascent if they feel that the climber is in danger or not following safety rules.",
+    //         'Sportsmanship: Climbers are expected to display good sportsmanship and respect for fellow competitors. Any unsportsmanlike behavior or actions that endanger others may result in disqualification.',
+    //         'Equipment: We will provide all the necessary equipment for the competition, but climbers are encouraged to wear well-fitting shoes with a thin sole and good grip, such as PT shoes.',
+    //     ],
+    //     eventRuleLink:
+    //         'https://drive.google.com/file/d/1LUraTyqbn8HVO2_sKE_Dh7nvUfi_hJas/view',
+    // }
+
+    const eventData = getEventById(events_id)
+    // console.log(eventData);
 
     const teamSize =
         eventData.maxMembers === 1
@@ -56,12 +81,59 @@ const page = () => {
 
     const handleRegister = e => {
         e.preventDefault()
+        toggleModal()
+    }
 
-        if (!user) {
-            alert("log in")
-        } else {
-            toggleModal()
+    const handleWatchList = async e => {
+        e.preventDefault()
+        setLoading(true)
+
+        const userRef = doc(db, 'users', user.email)
+        const userSnap = await getDoc(userRef)
+
+        if (userSnap.exists()) {
+            const userData = userSnap.data()
+
+            if (watchlistButton === 'Add to Watchlist') {
+                userData.events.watchlist.push(eventData.eventId)
+            } else {
+                const index = userData.events.watchlist.indexOf(events_id)
+
+                if (index !== -1) {
+                    userData.events.watchlist.splice(index, 1)
+                }
+            }
+
+            await updateDoc(userRef, userData)
+                .then(() => {
+                    dispatch(
+                        loginUser({
+                            ...user,
+                            ...userData,
+                        }),
+                    )
+
+                    if (watchlistButton === 'Add to Watchlist') {
+                        notification['success']({
+                            message: `Event added to watchlist`,
+                            duration: 3,
+                        })
+                    } else {
+                        notification['success']({
+                            message: `Event removed from watchlist`,
+                            duration: 3,
+                        })
+                    }
+                    setLoading(false)
+                })
+                .catch(err => {
+                    notification['error']({
+                        message: `Something went wrong!`,
+                        duration: 3,
+                    })
+                })
         }
+        setLoading(false)
     }
 
     // Define mapping from names to icons
@@ -170,21 +242,36 @@ const page = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-4 flex justify-center'>
-                    <button
-                        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                        onClick={handleRegister} // toggleModal
-                    >
-                        Register Now
-                    </button>
-                    <button
-                        className='bg-[#000032]
+                {user ? (
+                    <div className='mt-4 flex justify-center'>
+                        <button
+                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                            onClick={handleRegister} // toggleModal
+                        >
+                            Register Now
+                        </button>
+                        <button
+                            className='bg-[#000032]
                          hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
-                        onClick={toggleModal}
-                    >
-                        Add to Watchlist
-                    </button>
-                </div>
+                            onClick={handleWatchList}
+                        >
+                            {loading ? (
+                                <BeatLoader color='#ffffff' />
+                            ) : (
+                                watchlistButton
+                            )}
+                        </button>
+                    </div>
+                ) : (
+                    <div className='mt-4 flex justify-center'>
+                        <Link
+                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                            href='/login'
+                        >
+                            Log in to register
+                        </Link>
+                    </div>
+                )}
                 <Modal
                     isOpen={isModalOpen}
                     onClose={toggleModal}

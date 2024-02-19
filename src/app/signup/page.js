@@ -180,6 +180,10 @@ export default function SignUp() {
                         dept,
                         year,
                         profilePicUrl: "",
+                        events: {
+                            watchlist: [],
+                            registered: [],
+                        },
                     });
 
                     await sendEmailVerification(auth.currentUser).then(() => {

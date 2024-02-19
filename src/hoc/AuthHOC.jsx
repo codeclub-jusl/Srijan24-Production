@@ -36,6 +36,7 @@ const AuthHOC = Component => {
 
                         // console.log("auth hoc");
                     } else {
+                        dispatch(logoutUser())
                         router.push('/login')
                     }
                 } else {
