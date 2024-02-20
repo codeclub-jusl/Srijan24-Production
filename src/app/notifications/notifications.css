@@ -1,0 +1,115 @@
+#notificationBody
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+#invitation
+{
+    width: 700px;
+}
+.header
+{
+    font-size: 45px;
+    padding: 20px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-align: center;
+}
+.notifybody
+{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.invitationItem
+{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 10px;
+    border-radius: 5px;
+}
+.invitationItem:hover
+{
+    box-shadow: 0px 0px 5px 5px grey;
+    cursor: pointer;
+}
+#inviteTitle
+{
+    font-size: 25px;
+    color: #19ff00;
+    font-weight: 700;
+}
+#arrowIcon
+{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: white;
+}
+#arrowIcon:hover
+{
+    height: 1.5em;
+    width: 1.5em;
+}
+#inviteDesc
+{
+    font-size: 20px;
+    color: #ea89ff;
+}
+#notification
+{
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+}
+.notificationItem
+{
+    background: linear-gradient(135deg, rgba(140, 234, 241, 0.5), rgba(63, 227, 60, 0.2));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(144, 144, 144, 0.37);
+    display: grid;
+    grid-template-columns: 85% 15%;
+    border-radius: 12px;
+    padding: 10px;
+}
+.notificationItem div
+{
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    color: yellow;
+    font-weight: 550;
+}
+.notificationItem span
+{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: violet;
+}
+@media only screen and (width<1000px)
+{
+    #notification{width: 95%;}
+}
+@media only screen and (width<792px)
+{
+    #invitation{width: 90%;}
+}
+@media only screen and (width<559px)
+{
+    .header{font-size: 6.4cqi;}
+    #inviteTitle{font-size: 4.2cqi;}
+    #inviteDesc{font-size: 3.5cqi;}
+    .notificationItem div{font-size: 4cqi;}
+    .notificationItem span{font-size: 3.3cqi;}
+}

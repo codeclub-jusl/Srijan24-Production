@@ -16,24 +16,28 @@ export default function Form(props)
     }
     return <form id="formData" onSubmit={props.handleSubmit}>
         <div className="formComponents">
-            <FaUserCircle size={27} />
-            <input type="text" name="name" placeholder="Enter Name" autoComplete="off"/>
+            <FaUserCircle size={27} color="white"/>
+            <input type="text" name="name" autoComplete="off" required/>
+            <div>Name</div>
         </div>
         <div className="formComponents">
-            <FaSquarePhone size={27} />
-            <input type="number" name="PhNumber" placeholder="Enter Phone No." autoComplete="off"/>
+            <FaSquarePhone size={27} color="white"/>
+            <input type="number" name="PhNumber" autoComplete="off" required/>
+            <div>Phone No.</div>
         </div>
         <div className="formComponents">
-            <IoSchool size={27} />
-            <input type="text" name="college" placeholder="Enter College" autoComplete="off"/>
+            <IoSchool size={27} color="white"/>
+            <input type="text" name="college" autoComplete="off" required/>
+            <div>College</div>
         </div>
         <div className="formComponents">
-            <GrSchedules size={27} />
-            <input type="text" name="department" placeholder="Enter Department" autoComplete="off"/>
+            <GrSchedules size={27} color="white"/>
+            <input type="text" name="department" autoComplete="off" required/>
+            <div>Department</div>
         </div>
         <div className="formComponents">
-            <MdHotelClass size={27} />
-            <select className="formDropdown" name="year" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off">
+            <MdHotelClass size={27} color="white"/>
+            <select className="formDropdown" name="year" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off" required>
                 <option value="none" disabled hidden>Select Year</option>
                 <option value="1st">1st</option>
                 <option value="2nd">2nd</option>
@@ -42,19 +46,20 @@ export default function Form(props)
             </select>
         </div>
         <div className="formComponents">
-            <MdDriveFileRenameOutline size={27} />
-            <input type="text" name="nameOnTshirt" placeholder="Enter Name on Tshirt"vautoComplete="off"/>
+            <MdDriveFileRenameOutline size={27} color="white"/>
+            <input type="text" name="nameOnTshirt" autoComplete="off" required/>
+            <div>Name on tshirt</div>
         </div>
         <div className="formComponents">
-            <IoColorPalette size={27} />
-            <select className="formDropdown" name="colour" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off">
+            <IoColorPalette size={27} color="white"/>
+            <select className="formDropdown" name="colour" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off" required>
                 <option value="none" disabled hidden>Select Colour</option>
                 <option value="black">Black</option>
             </select>
         </div>
         <div className="formComponents">
-            <BiSolidTShirt size={27} />
-            <select className="formDropdown" name="size" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off">
+            <BiSolidTShirt size={27} color="white"/>
+            <select className="formDropdown" name="size" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off" required>
                 <option value="none" disabled hidden>Select Size</option>
                 <option value="S">S(38)</option>
                 <option value="M">M(40)</option>
@@ -65,13 +70,13 @@ export default function Form(props)
             </select>
         </div>
         <div className="formComponents">
-            <GiMoneyStack size={27} />
+            <GiMoneyStack size={27} color="white"/>
             <select className="formDropdown" name="payment" defaultValue={'none'} onChange={(event)=>handleSelect(event)} autoComplete="off">
                 <option value="none" disabled hidden>Select Payment Mode</option>
                 <option value="upi">UPI</option>
             </select>
         </div>
-        <div className="formComponents" id="submitForm">
+        <div id="submitForm">
             <button id="submitOrder" className="merchButtons" style={{backgroundColor : "orangered"}} type="submit">Submit</button>
             <button id="close" className="merchButtons" onClick={props.toggleModal}>Close</button>
         </div>
