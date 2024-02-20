@@ -186,6 +186,7 @@ export default function SignUp() {
                         },
                         invitations: [],
                         notifications: [],
+                        referralCode: "",
                     });
 
                     await sendEmailVerification(auth.currentUser).then(() => {

@@ -30,7 +30,7 @@ const page = () => {
     const router = useRouter();
     const user = useSelector(state => state.userReducer.user);
     // const user = propsUser
-    console.log(user);
+    // console.log(user);
 
     // console.log(propsUser)
 
