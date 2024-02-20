@@ -4,15 +4,14 @@ import React from 'react'
 import Script from 'next/script'
 import Image from 'next/image'
 import Link from 'next/link'
-import './dashboard.css'
 import AuthHOC from '@/hoc/AuthHOC'
 import { useSelector } from 'react-redux'
-
+import './dashboard.css'
 const page = () => {
     const user = useSelector(state => state.userReducer.user)
 
     return (
-        <>
+        <div className='body-container'>
             <div className='absolute inset-0 -z-10'>
                 <Image
                     src='/assets/bg3.jpg'
@@ -99,7 +98,7 @@ const page = () => {
                 <p>Loading</p>
             )}
             <Script src='/js/profile.js' defer></Script>
-        </>
+        </div>
     )
 }
 
