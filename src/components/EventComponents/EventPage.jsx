@@ -3,23 +3,19 @@ import React, { useState, useEffect } from 'react'
 import EventBox from '@/components/EventComponents/EventBox'
 import Link from 'next/link'
 import EventCenterpiece from '@/components/EventComponents/EventCenterpiece'
+import { getEventById } from '@/utils/event'
 
 const EventPage = ({ eventsId, pageType }) => {
     const [events, setEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(
-                    '/assets/events/AllEventsData.json',
-                )
-                const data = await response.json()
-                setEvents(data)
-                // console.log(data);
-            } catch (error) {
-                console.error('Error fetching events data:', error)
+        const fetchData = () => {
+            let fetchedEvents = []
+            for(let i=0; i<eventsId.length; i++) {
+                fetchedEvents.push(getEventById(eventsId[i]))
             }
+            setEvents(fetchedEvents)
         }
 
         fetchData()
