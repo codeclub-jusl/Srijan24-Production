@@ -12,6 +12,7 @@ import { loginUser } from '@/store/userSlice'
 import { notification } from 'antd'
 import { getEventById } from '@/utils/event'
 import BeatLoader from 'react-spinners/BeatLoader'
+import UserHOC from '@/hoc/UserHOC'
 
 const page = ({ params }) => {
     const router = useRouter()
@@ -25,7 +26,6 @@ const page = ({ params }) => {
     const [profileUpdated, setProfileUpdated] = useState(false)
 
     const { events_id } = params
-
     const capitalizeEveryWord = str => {
         return str.replace(/\b\w/g, char => {
             return char.toUpperCase()
@@ -48,14 +48,7 @@ const page = ({ params }) => {
             const object = user.events.registered.find(
                 obj => obj.eventId === events_id,
             )
-            console.log(object)
-
-            setEventStatus(object.status)       // ⭐⭐⭐⭐need to fix
-            console.log(eventStatus);
-
-            if (eventStatus !== 'not registered') {
-                setRegisterButton(capitalizeEveryWord(eventStatus))
-            }
+            if(object) setEventStatus(object.status)
         }
 
         if (
@@ -70,7 +63,11 @@ const page = ({ params }) => {
         } else {
             setProfileUpdated(false)
         }
-    }, [user])
+
+        if (eventStatus !== 'not registered') {
+            setRegisterButton(capitalizeEveryWord(eventStatus))
+        }
+    }, [user, eventStatus])
 
     // const eventData = {
     //     eventId: '007',
@@ -121,9 +118,22 @@ const page = ({ params }) => {
 
     const handleRegister = e => {
         e.preventDefault()
-        if (eventStatus !== 'not registered') {
+        if (eventStatus === 'pending') {
+            notification['info']({
+                message: `pending`,
+                duration: 3,
+            })
             return
         }
+
+        if (eventStatus === 'registered') {
+            notification['info']({
+                message: `You have already registered for the event`,
+                duration: 3,
+            })
+            return
+        }
+
         toggleModal()
     }
 
@@ -369,4 +379,4 @@ const page = ({ params }) => {
     )
 }
 
-export default page
+export default UserHOC(page)

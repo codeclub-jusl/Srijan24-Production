@@ -99,8 +99,8 @@ const Modal = ({
             }
 
             if (userEmail !== user.email) {
-                const notificationString = `${userData.email} has invited you for the event: ${eventDesc.eventName}`
-                userData.notifications.push(notificationString)
+                const invitationString = `${userData.email} has invited you for the event: ${eventDesc.eventName}`
+                userData.invitations.push(invitationString)
 
                 // console.log(userData);
             } else {

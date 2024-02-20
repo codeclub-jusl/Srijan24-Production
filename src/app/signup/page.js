@@ -184,6 +184,7 @@ export default function SignUp() {
                             watchlist: [],
                             registered: [],
                         },
+                        invitations: [],
                         notifications: [],
                     });
 

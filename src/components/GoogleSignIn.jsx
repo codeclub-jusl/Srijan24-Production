@@ -30,6 +30,7 @@ const GoogleSignIn = () => {
                         watchlist: [],
                         registered: [],
                     },
+                    invitations: [],
                     notifications: [],
                 })
 
