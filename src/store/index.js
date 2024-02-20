@@ -12,6 +12,7 @@ import {
 } from 'redux-persist'
 
 const persistConfig = {
+    timeout: 1000,
     key: 'root',
     version: 1,
     storage,
