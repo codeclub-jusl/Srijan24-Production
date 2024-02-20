@@ -1,5 +1,6 @@
 'use client'
 import EventPage from '@/components/EventComponents/EventPage'
+import UserHOC from '@/hoc/UserHOC'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
@@ -19,4 +20,4 @@ const Watchlisted = () => {
     )
 }
 
-export default Watchlisted
+export default UserHOC(Watchlisted)

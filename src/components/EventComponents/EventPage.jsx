@@ -8,6 +8,7 @@ import { getEventById } from '@/utils/event'
 const EventPage = ({ eventsId, pageType }) => {
     const [events, setEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState(null)
 
     useEffect(() => {
         const fetchData = () => {
@@ -22,7 +23,7 @@ const EventPage = ({ eventsId, pageType }) => {
     }, [eventsId])
 
     useEffect(() => {
-        if (eventsId && eventsId.length > 0) {
+        if (events && events.length > 0 && eventsId && eventsId.length > 0) {
             const filtered = events.filter(event =>
                 eventsId.includes(event.eventId),
             )
@@ -68,7 +69,7 @@ const EventPage = ({ eventsId, pageType }) => {
                             <h3 className='text-xl font-bold mb-2'>
                                 {eventData.eventName}
                             </h3>
-                            <p>{eventData.eventDescription}</p>
+                            <p>{eventData.eventShortDescription}</p>
                         </EventBox>
                     </div>
                 </Link>
@@ -107,10 +108,15 @@ const EventPage = ({ eventsId, pageType }) => {
                     {categories.map((category, index) => (
                         <span
                             key={index}
-                            className='rounded-full px-4 py-[.3rem] hover:bg-white/20 transition-all duration-500 ease-in-out'
-                            onClick={() =>
+                            className={`rounded-full cursor-pointer px-4 py-[.3rem] hover:bg-white/20 transition-all duration-500 ease-in-out ${
+                                selectedCategory === category.toLowerCase()
+                                    ? 'bg-white/20'
+                                    : ''
+                            }`}
+                            onClick={() => {
                                 filterEventsByType(category.toLowerCase())
-                            }
+                                setSelectedCategory(category.toLowerCase())
+                            }}
                         >
                             {category}
                         </span>
