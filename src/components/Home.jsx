@@ -11,7 +11,6 @@ import SrijanCentrepiece from './SrijanCentrepiece'
 import mascotfront from '../assets/mascot-front.png'
 import './Home.css'
 import Countdown from './Countdown'
-
 const Home = () => {
     return (
         <div>

@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
-import './profile.css';
+import styles from './testprop.module.css';
 import AuthHOC from '@/hoc/AuthHOC';
 import { useDispatch, useSelector } from 'react-redux';
 import { notification } from 'antd';
@@ -12,8 +12,20 @@ import { loginUser, logoutUser } from '@/store/userSlice';
 import { useRouter } from 'next/navigation';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
-
+import Profile_svg from '@/components/Profile_svg';
+import Image from 'next/image';
+import OverallNav from '@/components/OverallNav/OverallNav';
 const page = () => {
+
+
+    const handleEditClick = (e) => {
+        if (isEditable) {
+            handleSubmit(e);
+        } else {
+            setIsEditable(true);
+        }
+    };
+
     const dispatch = useDispatch();
     const router = useRouter();
     const user = useSelector(state => state.userReducer.user);
@@ -55,9 +67,6 @@ const page = () => {
         });
     };
 
-    const handleEditClick = () => {
-        setIsEditable(!isEditable);
-    };
 
     const updateProfile = async (newUserData) => {
         const userRef = doc(db, "users", user.email);
@@ -149,53 +158,52 @@ const page = () => {
 
         router.push("/login");
     }
-
     return (
-        <form onSubmit={handleSubmit}>
-            <button type="button" className='bg-green-400 p-4' onClick={handleEditClick}>{isEditable ? 'Disable edit' : 'Allow Edit'}</button>
-            <label>
-                <p>Choose a pic:</p>
-                <input type='file' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable}/>
-            </label>
-            <label>
-                <p>Email:</p>
-                <input type="email" name="email" value={formState.email} readOnly />
-            </label>
-            <label>
-                <p>Name:</p>
+        <div className={styles.body_container}>
+                <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen '>
+                    <div className={styles.card}>
+                        <div className={styles.svg_container}>
+                                <img src={formState.profilePicUrl} className={styles.blob} />
+                        </div>
 
-                <input type="text" name="name" value={formState.name} onChange={handleChange} disabled={!isEditable} />
-            </label>
-            <label>
-                <p>Phone:</p>
+                        <div className={styles.info}>
+                            <h1>Hey, {formState.name}</h1>
+                            <h2>{formState.email}</h2>
 
-                <input type="tel" name="phone" value={formState.phone} onChange={handleChange} disabled={!isEditable} />
-            </label>
-            <label>
-                <p>College:</p>
+                            <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
+                            <label className={styles.profile_pic} htmlFor="uploadBtn"><Image src="/assets/profile.png" height={40} width={40} /> Change Profile Pic</label>
 
-                <input type="text" name="college" value={formState.college} onChange={handleChange} disabled={!isEditable} />
-            </label>
-            <label>
-                <p>Department:</p>
+                            <label>
+                                <p>Name:</p>
+                                <input className={styles.glow} type="text" name="name" value={formState.name} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>Phone:</p>
 
-                <input type="text" name="dept" value={formState.dept} onChange={handleChange} disabled={!isEditable} />
-            </label>
-            <label>
-                <p>Year:</p>
+                                <input className={styles.glow} type="tel" name="phone" value={formState.phone} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>College:</p>
 
-                <input type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
-            </label>
+                                <input className={styles.glow} type="text" name="college" value={formState.college} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>Department:</p>
 
-            <button type='submit' className='bg-green-400 p-4' disabled={!isEditable}>
-                {loading ? <BeatLoader color='#ffffff' /> : "Update Profile"}
-            </button>
+                                <input className={styles.glow} type="text" name="dept" value={formState.dept} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>Year:</p>
 
-            <button type='button' onClick={handleLogout} className='bg-green-400 p-4'>
-                Log out
-            </button>
-        </form>
+                                <input className={styles.glow} type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <button className={styles.button_49} role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
     );
 };
 
-export default AuthHOC(page);
+export default page;
