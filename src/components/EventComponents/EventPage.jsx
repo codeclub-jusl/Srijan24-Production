@@ -12,14 +12,14 @@ const EventPage = ({ eventsId, pageType }) => {
     useEffect(() => {
         const fetchData = () => {
             let fetchedEvents = []
-            for(let i=0; i<eventsId.length; i++) {
+            for (let i = 0; i < eventsId.length; i++) {
                 fetchedEvents.push(getEventById(eventsId[i]))
             }
             setEvents(fetchedEvents)
         }
 
         fetchData()
-    }, [])
+    }, [eventsId])
 
     useEffect(() => {
         if (eventsId && eventsId.length > 0) {
@@ -47,12 +47,18 @@ const EventPage = ({ eventsId, pageType }) => {
     }
 
     const renderEvents = () => {
-        const eventsToRender =
-            filteredEvents.length > 0
-                ? filteredEvents
-                : pageType === 'Events'
-                  ? events
-                  : filteredEvents
+        const eventsToRender = filteredEvents
+
+        if (eventsToRender.length === 0) {
+            return (
+                <div className='text-white text-center mt-4'>
+                    <p className='text-xl font-semibold'>No events found</p>
+                    <p className='text-base mt-2'>
+                        Try exploring other categories or check back later.
+                    </p>
+                </div>
+            )
+        }
 
         return eventsToRender.map((eventData, index) => (
             <div key={index} className='p-10 '>
