@@ -12,7 +12,7 @@ import GoogleSignIn from '@/components/GoogleSignIn';
 import ResetPassword from '@/components/ResetPassword';
 import { notification } from 'antd';
 import BeatLoader from "react-spinners/BeatLoader";
-
+import Image from 'next/image';
 export default function Login() {
     const router = useRouter();
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export default function Login() {
     const [botState, setBotState] = useState('surprised');
     const [showResetModal, setShowResetModal] = useState(false);
     const [loading, setLoading] = useState(false);
-    
+
     useEffect(() => {
         if (user && user.emailVerified) {
             // notification['success']({
@@ -149,55 +149,53 @@ export default function Login() {
     };
     return (
         <>
-            <section className="wrapper h-0">
-                <div id="stars"></div>
-                <div id="stars2"></div>
-                <div id="stars3"></div>
-            </section>
-            <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#25015E] to-[#050027]">
 
-                <div className="relative min-h-[60vh] flex flex-row m-6 space-y-8 bg-gradient-to-r from-[#ffffff2a] to-[#ffffff62] shadow-2xl rounded-2xl md:space-y-0">
-                    <div className="flex flex-col justify-center p-8 md:p-14">
-                        <h1 className="mb-3 login-h1 text-[28px] sm:text-[35px] md:text-[45px] lg:text-[50px]">Welcome back</h1>
-                        <span className="font-light text-white mb-8 text-[10px] sm:text-[14px] md:text-[16px] lg:text-[17px]">
-                            Welcome back! Please enter your details
-                        </span>
-                        <div className="relative py-4">
-                            <input type="text" id="email" value={email} className=" w-full border-b py-1 text-white focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setEmail(e.target.value)} />
-                            <label htmlFor="email" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Email</label>
-                            {emailError && <span className="text-red-500 text-sm">*Invalid email</span>}
-                        </div>
-                        <div className="relative py-4">
-                            <input type="password" id="password" value={password} className=" w-full border-b text-white py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setPassword(e.target.value)} />
-                            <label htmlFor="password" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all" >Password</label>
-                            {passwordError && <span className="text-red-500 text-sm">*Password error</span>}
-                        </div>
-                        <div className="flex justify-center mb-2 w-full py-4 items-center text-center">
+            <div className="bg-gradient-to-r from-[#34524e] to-[#000000]"> 
+                <div className='bg-[url(/images/about/about.png)] flex items-center justify-center  min-h-screen '>
+                    <div className="relative min-h-[60vh] flex flex-row m-6 space-y-8 bg-gradient-to-r from-[#ffffff2a] to-[#ffffff62] shadow-2xl rounded-2xl md:space-y-0">
+                        <div className="flex flex-col justify-center p-8 md:p-14">
+                            <h1 className="mb-3 login-h1 text-[40px] sm:text-[42px] md:text-[45px] lg:text-[50px]">Welcome back</h1>
+                            <span className="font-light text-white mb-8 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[17px]">
+                                Welcome back! Please enter your details
+                            </span>
+                            <div className="relative py-4">
+                                <input type="text" id="email" value={email} className=" w-full border-b py-1 text-white focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setEmail(e.target.value)} />
+                                <label htmlFor="email" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Email</label>
+                                {emailError && <span className="text-red-500 text-sm">*Invalid email</span>}
+                            </div>
+                            <div className="relative py-4">
+                                <input type="password" id="password" value={password} className=" w-full border-b text-white py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent" autoComplete='off' placeholder='' onChange={(e) => setPassword(e.target.value)} />
+                                <label htmlFor="password" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all" >Password</label>
+                                {passwordError && <span className="text-red-500 text-sm">*Password error</span>}
+                            </div>
+                            <div className="flex justify-center mb-2 w-full py-4 items-center text-center">
 
-                            <span className="text-md text-[#dfcffc] cursor-pointer" onClick={() => setShowResetModal(true)}>Forgot password</span>
-                        </div>
-                        <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
-                            {loading ? <BeatLoader color='#ffffff' /> : "Log in"}
-                        </button>
-                        {/* <button
+                                <span className="text-md text-[#dfcffc] cursor-pointer" onClick={() => setShowResetModal(true)}>Forgot password</span>
+                            </div>
+                            <button className="w-full bg-[#2e0d36]  text-[#f5c9ff] p-2 rounded-lg mb-6" onClick={handleClick}>
+                                {loading ? <BeatLoader color='#ffffff' /> : "Log in"}
+                            </button>
+                            {/* <button
                         className="w-full bg-[#2e0d36]  text-[#f5c9ff]  text-md p-2 rounded-lg mb-6" disabled={!robotActive}
                     >
                         <img src="/images/google.png" alt="img" className="w-6 h-6 inline mr-2" />
                         Sign in with Google
                     </button> */}
-                        <GoogleSignIn />
-                        <div className="text-center text-white">
-                            Don't have an account? &nbsp;
-                            <Link href="/signup"><span className="font-bold text-[#dfcffc]">Sign Up here</span></Link>
+                            <GoogleSignIn />
+                            <div className="text-center text-white">
+                                Don't have an account? &nbsp;
+                                <Link href="/signup"><span className="font-bold text-[#dfcffc]">Sign Up here</span></Link>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className='svg-bot relative min-w-[30vw]'>
-                        <Svg_Login className='transform md:scale-50' botState={botState} />
-                    </div>
+                        <div className='svg-bot relative min-w-[30vw]'>
+                            <Svg_Login className='transform md:scale-50' botState={botState} />
+                        </div>
 
-                    <ResetPassword isVisible={showResetModal} onClose={() => setShowResetModal(false)} />
+                        <ResetPassword isVisible={showResetModal} onClose={() => setShowResetModal(false)} />
+                    </div>
                 </div>
+
             </div>
         </>
 

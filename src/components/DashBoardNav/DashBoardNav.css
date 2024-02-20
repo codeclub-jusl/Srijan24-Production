@@ -1,0 +1,40 @@
+.box {
+    background: #25015E;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    height: 80px;
+    clip-path: polygon(0 0, calc(100% - 100.00px) 0, 100% 100.00px, 100% 100%, 0 100%);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    background: #2acdff4e;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    height: 80px;
+    clip-path: polygon(0 100.00px, 100.00px 0, 100% 0, 100% 100%, 0 100%);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box p, .box1 p {
+    color: aliceblue;
+    margin: 10px;
+}
