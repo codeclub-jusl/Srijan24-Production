@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './profile.css';
 import AuthHOC from '@/hoc/AuthHOC';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,6 +17,10 @@ const page = () => {
     const dispatch = useDispatch();
     const router = useRouter();
     const user = useSelector(state => state.userReducer.user);
+    // const user = propsUser
+    console.log(user);
+
+    // console.log(propsUser)
 
     const [formState, setFormState] = useState({
         name: user ? user.name : "",
@@ -27,6 +31,18 @@ const page = () => {
         year: user ? user.year : "",
         profilePicUrl: user ? user.profilePicUrl : "",
     });
+
+    useEffect(() => {
+        setFormState({
+            name: user ? user.name : "",
+            email: user ? user.email : "",
+            phone: user ? user.phone : "",
+            college: user ? user.college : "",
+            dept: user ? user.dept : "",
+            year: user ? user.year : "",
+            profilePicUrl: user ? user.profilePicUrl : "",
+        })
+    }, [user])
 
     const [imageUpload, setImageUpload] = useState(null);
     const [isEditable, setIsEditable] = useState(false);
