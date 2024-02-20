@@ -144,7 +144,12 @@
   align-items: center;
   justify-content: center;
 }
-
+.profile_pic img{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+}
 .button_49,
 .button_49:after {
   width: 130px;
@@ -187,7 +192,11 @@
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
-
+.logout{
+  padding: 1px;
+  font-size: 12px;
+  color: rgb(255, 137, 137);
+}
 @keyframes glitch {
   0% {
     clip-path: var(--slice-1);

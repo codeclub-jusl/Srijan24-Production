@@ -1,5 +1,4 @@
 .box {
-    position: absolute;
     top: 0;
     left: 0;
     width: 400px;
@@ -14,15 +13,16 @@
     align-items: center;
     justify-content: left;
     z-index: 1000;
+    position: fixed;
 }
 
 .box1 {
     background: #2acdff4e;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    bottom: 0;
     right: 0;
-    width: 950px;
-    height: 100px;
+    width: 600px;
+    height: 70px;
     clip-path: polygon(0 100.00px, 100.00px 0, 100% 0, 100% 100%, 0 100%);
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
