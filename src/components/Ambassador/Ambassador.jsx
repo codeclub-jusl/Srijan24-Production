@@ -28,7 +28,7 @@ const Ambassador = () => {
                 />
             </div>
             <div className='relative flex flex-row gap-16 w-full mt-10'>
-                <div className='relative flex flex-col w-full sm:w-[55%]'>
+                <div className='relative flex flex-col w-full lg:w-[55%]'>
                     <h1 className='relative font-Montserrat text-[#A067FE] font-semibold text-[3rem] sm:text-[4rem] leading-[4rem] sm:leading-[5rem] mb-8'>
                         JOIN, SHINE, WIN!
                     </h1>
@@ -51,24 +51,24 @@ const Ambassador = () => {
                     <Image src={cross} fill className='object-cover' />
                 </div>
             </div>
-            <div className='relative w-full sm:w-[90%] h-fit flex flex-wrap items-center justify-between text-center gap-12 sm:gap-0 my-8'>
-                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] bg-amber-800 rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
+            <div className='relative w-full sm:w-[90%] min-h-fit flex flex-wrap items-center justify-between text-center gap-10 xl:gap-0 my-8'>
+                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
                     Build a Network
                 </div>
-                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] bg-amber-800 rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
+                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
                     Certificates & Rewards
                 </div>
-                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] bg-amber-800 rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
+                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
                     Learn new skills
                 </div>
-                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] bg-amber-800 rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
+                <div className='benefits relative text-white flex items-center text-center w-[234px] h-[234px] rounded-full font-Montserrat font-semibold text-[34px] leading-[40px] p-4 mx-auto'>
                     Much More
                 </div>
             </div>
             <h1 className='relative font-Montserrat text-[#A067FE] font-semibold text-[52px] sm:text-[56px] leading-[4rem] sm:leading-[5rem] mt-6 mb-12'>
                 What will you do?
             </h1>
-            <div className='duties relative h-fit w-full flex flex-col items-center justify-center gap-8 sm:gap-6 px-4 sm:px-12 py-10 rounded-[50px]'>
+            <div className='duties relative h-fit w-full flex flex-col items-center justify-center gap-8 xl:gap-6 px-4 sm:px-12 py-10 rounded-[50px]'>
                 <div className='relative w-full h-fit flex flex-row items-center gap-5'>
                     <Image src={smile} width={52} height={52} />
                     <p className='relative font-Montserrat font-semibold text-[1.5rem] sm:text-[1.75rem] leading-[39px] text-white'>
@@ -119,8 +119,8 @@ const Ambassador = () => {
                         className='max-[550px]:hidden'
                     />
                 </div>
-                <div className='relative w-full h-fit flex flex-col lg:flex-row justify-between items-center gap-20 sm:gap-1 px-2 sm:px-12 py-8'>
-                    <div className='relative flex flex-col justify-center items-center gap-4 w-[90%] sm:w-[30%] px-4'>
+                <div className='relative w-full h-fit flex flex-col lg:flex-row justify-between items-center gap-20 xl:gap-1 px-2 xl:px-12 py-8'>
+                    <div className='relative flex flex-col justify-center items-center text-center gap-4 w-[90%] xl:w-[30%] px-4'>
                         <p className='relative font-Montserrat text-xl font-semibold text-white'>
                             Get 10+ registrations
                         </p>
@@ -128,7 +128,7 @@ const Ambassador = () => {
                             Certificate of Appreciation!
                         </p>
                     </div>
-                    <div className='relative flex flex-col justify-center items-center gap-4 w-[90%] sm:w-[30%] px-4'>
+                    <div className='relative flex flex-col justify-center items-center text-center gap-4 w-[90%] xl:w-[30%] px-4'>
                         <p className='relative font-Montserrat text-xl font-semibold text-white'>
                             Get 35+ registrations
                         </p>
@@ -136,7 +136,7 @@ const Ambassador = () => {
                             Certificate of Appreciation & SRIJAN Merchandise
                         </p>
                     </div>
-                    <div className='relative flex flex-col justify-center items-center gap-4 w-[90%] sm:w-[30%] px-4'>
+                    <div className='relative flex flex-col justify-center items-center text-center gap-4 w-[90%] xl:w-[30%] px-4'>
                         <p className='relative font-Montserrat text-xl font-semibold text-white'>
                             Get 50+ registrations{' '}
                         </p>
