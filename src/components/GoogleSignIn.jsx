@@ -26,6 +26,11 @@ const GoogleSignIn = () => {
                     dept: '',
                     year: '',
                     profilePicUrl: '',
+                    events: {
+                        watchlist: [],
+                        registered: [],
+                    },
+                    notifications: [],
                 })
 
                 dispatch(
@@ -37,6 +42,12 @@ const GoogleSignIn = () => {
                         dept: '',
                         year: '',
                         emailVerified: userCredentials.user.emailVerified,
+                        profilePicUrl: '',
+                        events: {
+                            watchlist: [],
+                            registered: [],
+                        },
+                        notifications: [],
                     }),
                 )
             }

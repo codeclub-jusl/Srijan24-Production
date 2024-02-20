@@ -29,6 +29,7 @@
     "react-typed": "^2.0.12",
     "react-vertical-timeline-component": "^3.6.0",
     "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
     "sass": "^1.70.0",
     "sharp": "^0.33.2"
   },

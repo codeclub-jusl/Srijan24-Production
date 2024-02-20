@@ -1,12 +1,12 @@
 import EventPage from '@/components/EventComponents/EventPage'
 import React from 'react'
 
-const page = () => {
+const Watchlisted = () => {
   return (
     <div>
-        <EventPage eventsId={['007', '008']} pageType='Events'/>
+        <EventPage eventsId={['008']} pageType='Watchlisted Events'/>
     </div>
   )
 }
 
-export default page
+export default Watchlisted
