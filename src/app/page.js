@@ -17,10 +17,10 @@ export default () => {
             <Cards />
             <Gallery />
             <About />
-            {/* <Timeline /> */}
             <Timeline2/>
             <MobileTimeline/>
             <Footer />
             <OverallNav />
         </>
     )
+}
