@@ -10,10 +10,10 @@ export default function OverallNav() {
             </div>
             <div className="box1">
                 <Link href="/dasboard"><p>Dashboard</p></Link>
-                <Link href="/dasboard"><p>Events</p></Link>
-                <Link href="/reg"><p>Merchandise</p></Link>
+                <Link href="/events"><p>Events</p></Link>
+                <Link href="/merchandise"><p>Merchandise</p></Link>
                 <Link href="/login"><p>Login/SignUp</p></Link>
-                <Link href="/reg"><p>SrijanGPT</p></Link>
+                <Link href="/testprop"><p>SrijanGPT</p></Link>
                 <Link href="/reg"><p>AboutUs</p></Link>
                 <Image src="/assets/mascot-front2.png" width={100} height={100}></Image>
             </div>

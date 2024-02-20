@@ -14,8 +14,8 @@ export default () => {
       <Cards />
       <Gallery />
       <About />
-      {/* <Timeline /> */}
       <Footer />
+      <OverallNav />
     </>
   );
 }

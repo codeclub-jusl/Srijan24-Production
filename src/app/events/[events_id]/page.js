@@ -3,9 +3,13 @@ import React, { useState } from 'react'
 import Modal from '@/components/EventComponents/Modal'
 import { BsCalendar, BsPeople } from 'react-icons/bs'
 import { MdCall } from 'react-icons/md'
-import { FaUser } from 'react-icons/fa' // Import the FaUser icon
+import { useRouter } from 'next/navigation'
+import { useSelector } from 'react-redux'
 
-const EventDetails = () => {
+const page = () => {
+    const router = useRouter()
+    const user = useSelector(state => state.userReducer.user)
+
     const eventData = {
         eventId: '007',
         eventName: "Climbon'23",
@@ -13,7 +17,7 @@ const EventDetails = () => {
             prelims: ['April 15, 2023'],
             finals: 'April 16, 2023',
         },
-        eventPoster: '/assets/events/CLIMBON.png',
+        eventPoster: '/assets/events/poster/CLIMBON.png',
         eventType: 'misc',
         eventHashtags: ['Mountaineering', 'Climbing'],
         eventCoordinators: [
@@ -38,6 +42,7 @@ const EventDetails = () => {
         eventRuleLink:
             'https://drive.google.com/file/d/1LUraTyqbn8HVO2_sKE_Dh7nvUfi_hJas/view',
     }
+
     const teamSize =
         eventData.maxMembers === 1
             ? 'Individual'
@@ -47,6 +52,16 @@ const EventDetails = () => {
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen)
+    }
+
+    const handleRegister = e => {
+        e.preventDefault()
+
+        if (!user) {
+            alert("log in")
+        } else {
+            toggleModal()
+        }
     }
 
     // Define mapping from names to icons
@@ -126,7 +141,9 @@ const EventDetails = () => {
                                                     {name}
                                                 </span>
                                                 <a
-                                                    href={`tel:${phoneNumber.replace(']', '').trim()}`}
+                                                    href={`tel:${phoneNumber
+                                                        .replace(']', '')
+                                                        .trim()}`}
                                                     className='ml-2 flex items-center text-green-500'
                                                 >
                                                     <MdCall className='mr-1' />
@@ -156,9 +173,16 @@ const EventDetails = () => {
                 <div className='mt-4 flex justify-center'>
                     <button
                         className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                        onClick={toggleModal}
+                        onClick={handleRegister} // toggleModal
                     >
                         Register Now
+                    </button>
+                    <button
+                        className='bg-[#000032]
+                         hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                        onClick={toggleModal}
+                    >
+                        Add to Watchlist
                     </button>
                 </div>
                 <Modal
@@ -187,4 +211,4 @@ const EventDetails = () => {
     )
 }
 
-export default EventDetails
+export default page
