@@ -20,7 +20,7 @@ const page = () => {
                     <div className={styles.card_container}>
 
                         <div className={styles.card_holder}>
-                            <Link href="/testprop">
+                            <Link href="/profile">
                                 <div className={styles.card}>
                                     <div className={styles.wrapper}>
                                         <img src="/assets/card-cover2.jpg" alt='img' />
