@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.campus_ambassador{
+    font-family: "Montserrat", sans-serif;
+}
+.benefits{
+    background: linear-gradient(180deg, rgba(160, 103, 254, 0.55) 0%, rgba(37, 1, 95, 0.67) 0.01%, rgba(61, 1, 159, 0.64) 100%);
+}
+
+.apply{
+    background: linear-gradient(180deg, #9747FF 0%, #3D019F 100%);
+}
+.apply:hover{
+    background: linear-gradient(180deg, #FF0099 0%, #3D019F 100%);
+}
+.duties{
+    background: linear-gradient(180deg, rgba(160, 103, 254, 0.37) 0%, rgba(24, 0, 56, 0.78) 100%);
+}
+.rewards{
+    background: linear-gradient(110.59deg, rgba(46, 0, 121, 0.42) 3.69%, rgba(33, 0, 88, 0.38) 100%);
+
+}
+.rewards .slabs{
+    background: linear-gradient(225deg, #3D019F 0%, #6100FF 100%);
+}
