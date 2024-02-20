@@ -14,7 +14,9 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
 import Image from 'next/image';
 const page = () => {
-
+    const [imageUpload, setImageUpload] = useState(null);
+    const [isEditable, setIsEditable] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleEditClick = (e) => {
         if (isEditable) {
@@ -53,10 +55,6 @@ const page = () => {
             profilePicUrl: user ? user.profilePicUrl : "",
         })
     }, [user])
-
-    const [imageUpload, setImageUpload] = useState(null);
-    const [isEditable, setIsEditable] = useState(false);
-    const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
         setFormState({
@@ -102,7 +100,6 @@ const page = () => {
             setLoading(false);
             return;
         }
-
         const phoneRegex = /^[6-9]\d{9}$/;
         if (!phoneRegex.test(parseInt(formState.phone))) {
             console.log(formState.phone);
@@ -114,7 +111,14 @@ const page = () => {
             setLoading(false);
             return;
         }
-
+        if (formState.year < 1 || formState.year > 4) {
+            notification['error']({
+                message: `Year must be between 1-4`,
+                duration: 3
+            })
+            setLoading(false);
+            return;
+        }
         setIsEditable(false);
 
         if (imageUpload) {
@@ -197,7 +201,7 @@ const page = () => {
 
                             <input className={styles.glow} type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
                         </label>
-                        <button className={styles.button_49} role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
+                        <button className={styles.button_49} role="button" onClick={handleEditClick}>{loading ? <BeatLoader color='rgb(110, 74, 139)' /> : isEditable ? 'SAVE' : 'EDIT'}</button>
                     </div>
                 </div>
             </div>
