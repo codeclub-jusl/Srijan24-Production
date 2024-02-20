@@ -1,6 +1,6 @@
 "use client"
-import { useState } from 'react';
-import styles from './testprop.module.css'
+import { useEffect, useState } from 'react';
+import styles from './testprop.module.css';
 import AuthHOC from '@/hoc/AuthHOC';
 import { useDispatch, useSelector } from 'react-redux';
 import { notification } from 'antd';
@@ -8,18 +8,31 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { auth, db, storage } from '@/firebase/config';
 import BeatLoader from "react-spinners/BeatLoader";
 import { signOut } from 'firebase/auth';
-import { logoutUser } from '@/store/userSlice';
+import { loginUser, logoutUser } from '@/store/userSlice';
 import { useRouter } from 'next/navigation';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
 import Profile_svg from '@/components/Profile_svg';
 import Image from 'next/image';
-import DashBoardNav from '@/components/DashBoardNav/DashBoardNav';
 import OverallNav from '@/components/OverallNav/OverallNav';
 const page = () => {
+
+
+    const handleEditClick = (e) => {
+        if (isEditable) {
+            handleSubmit(e);
+        } else {
+            setIsEditable(true);
+        }
+    };
+
     const dispatch = useDispatch();
     const router = useRouter();
     const user = useSelector(state => state.userReducer.user);
+    // const user = propsUser
+    console.log(user);
+
+    // console.log(propsUser)
 
     const [formState, setFormState] = useState({
         name: user ? user.name : "",
@@ -30,6 +43,18 @@ const page = () => {
         year: user ? user.year : "",
         profilePicUrl: user ? user.profilePicUrl : "",
     });
+
+    useEffect(() => {
+        setFormState({
+            name: user ? user.name : "",
+            email: user ? user.email : "",
+            phone: user ? user.phone : "",
+            college: user ? user.college : "",
+            dept: user ? user.dept : "",
+            year: user ? user.year : "",
+            profilePicUrl: user ? user.profilePicUrl : "",
+        })
+    }, [user])
 
     const [imageUpload, setImageUpload] = useState(null);
     const [isEditable, setIsEditable] = useState(false);
@@ -42,37 +67,35 @@ const page = () => {
         });
     };
 
-    const handleEditClick = (e) => {
-        if (isEditable) {
-            handleSubmit(e);
-        } else {
-            setIsEditable(true);
-        }
-    };
 
     const updateProfile = async (newUserData) => {
         const userRef = doc(db, "users", user.email);
-
+        
         await updateDoc(userRef, newUserData)
-            .then(() => {
-                notification['success']({
-                    message: `Profile updated successfully`,
-                    duration: 3
+                .then(() => {
+                    dispatch(loginUser({
+                        ...user,
+                        ...newUserData
+                    }))
+                    
+                    notification['success']({
+                        message: `Profile updated successfully`,
+                        duration: 3
+                    })
                 })
-            })
-            .catch((err) => {
-                notification['error']({
-                    message: `Something went wrong! Try again later`,
-                    duration: 3
+                .catch((err) => {
+                    notification['error']({
+                        message: `Something went wrong! Try again later`,
+                        duration: 3
+                    })
                 })
-            })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('i am running')
         setLoading(true);
-        if (formState.name.trim().length === 0 || formState.college.trim().length === 0 || formState.dept.trim().length === 0 || formState.year.trim().length === 0) {
+
+        if(formState.name.trim().length === 0 || formState.college.trim().length === 0 || formState.dept.trim().length === 0 || formState.year.trim().length === 0) {
             notification['error']({
                 message: `All fields are required`,
                 duration: 3
@@ -96,7 +119,7 @@ const page = () => {
 
         setIsEditable(false);
 
-        if (imageUpload) {
+        if(imageUpload) {
             const profilePicName = user.email + Date.now();
             const imageRef = ref(storage, `images/${profilePicName}`);
 
@@ -104,7 +127,7 @@ const page = () => {
                 .then(async (snapshot) => {
                     await getDownloadURL(snapshot.ref)
                         .then(async (url) => {
-                            await updateProfile({ ...formState, profilePicUrl: url });
+                            await updateProfile({...formState, profilePicUrl: url});
                         })
                 })
                 .catch((err) => {
@@ -116,7 +139,7 @@ const page = () => {
                 });
 
         } else {
-            await updateProfile({ ...formState });
+            await updateProfile({...formState});
         }
 
         setLoading(false);
@@ -137,54 +160,49 @@ const page = () => {
     }
     return (
         <div className={styles.body_container}>
-            <div className={styles.container}>
-                <div className='absolute inset-0 -z-80'>
-                    <Image src="/images/about/about.png" className='' alt="" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100vh' }}></Image>
-                </div>
-                <div className={styles.card}>
-                    <div className={styles.svg_container}>
-                        <div className={styles.svg_frame}>
-                        <img src="/assets/profile.jpg" className={styles.blob} />
+                <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen '>
+                    <div className={styles.card}>
+                        <div className={styles.svg_container}>
+                                <img src={formState.profilePicUrl} className={styles.blob} />
+                        </div>
+
+                        <div className={styles.info}>
+                            <h1>Hey, {formState.name}</h1>
+                            <h2>{formState.email}</h2>
+
+                            <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
+                            <label className={styles.profile_pic} htmlFor="uploadBtn"><Image src="/assets/profile.png" height={40} width={40} /> Change Profile Pic</label>
+
+                            <label>
+                                <p>Name:</p>
+                                <input className={styles.glow} type="text" name="name" value={formState.name} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>Phone:</p>
+
+                                <input className={styles.glow} type="tel" name="phone" value={formState.phone} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>College:</p>
+
+                                <input className={styles.glow} type="text" name="college" value={formState.college} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>Department:</p>
+
+                                <input className={styles.glow} type="text" name="dept" value={formState.dept} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <label>
+                                <p>Year:</p>
+
+                                <input className={styles.glow} type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
+                            </label>
+                            <button className={styles.button_49} role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
                         </div>
                     </div>
-
-                    <div className={styles.info}>
-                        <h1>Hey, John Deere</h1>
-                        <h2>sample@gmail.com</h2>
-
-                        <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
-                        <label className={styles.profile_pic} htmlFor="uploadBtn"><Image src="/assets/profile.png" height={40} width={40} /> Change Profile Pic</label>
-
-                        <label>
-                            <p>Name:</p>
-                            <input className={styles.glow} type="text" name="name" value={formState.name} onChange={handleChange} disabled={!isEditable} />
-                        </label>
-                        <label>
-                            <p>Phone:</p>
-
-                            <input className={styles.glow} type="tel" name="phone" value={formState.phone} onChange={handleChange} disabled={!isEditable} />
-                        </label>
-                        <label>
-                            <p>College:</p>
-
-                            <input className={styles.glow} type="text" name="college" value={formState.college} onChange={handleChange} disabled={!isEditable} />
-                        </label>
-                        <label>
-                            <p>Department:</p>
-
-                            <input className={styles.glow} type="text" name="dept" value={formState.dept} onChange={handleChange} disabled={!isEditable} />
-                        </label>
-                        <label>
-                            <p>Year:</p>
-
-                            <input className={styles.glow} type="number" name="year" value={formState.year} onChange={handleChange} disabled={!isEditable} />
-                        </label>
-                        <button className={styles.button_49} role="button" onClick={handleEditClick}>{isEditable ? 'SAVE' : 'EDIT'}</button>
-                    </div>
                 </div>
-            </div>
-        </div>
 
+            </div>
     );
 };
 

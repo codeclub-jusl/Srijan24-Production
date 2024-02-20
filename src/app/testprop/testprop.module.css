@@ -13,49 +13,38 @@
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 15px #c08bc7;
   animation: blob 3.7s linear infinite;
-  box-shadow: 0 5px 5px 5px rgb(69, 16, 112);
 }
 
 @keyframes blob {
-  0%, 100% {
-      border-radius:
-          42% 56% 72% 28% / 42% 42% 56% 48%;
+
+  0%,
+  100% {
+    border-radius:
+      42% 56% 72% 28% / 42% 42% 56% 48%;
   }
 
   33% {
-      border-radius:
-          42% 28% 48% 48% / 28% 28% 72% 72%;
+    border-radius:
+      42% 28% 48% 48% / 28% 28% 72% 72%;
   }
 
   66% {
-      border-radius:
-          100% 56% 56% 100% / 100% 100% 56% 56%;
+    border-radius:
+      100% 56% 56% 100% / 100% 100% 56% 56%;
   }
 }
+
 .body_container {
-  background-color: #25015E;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+  margin: 0;
+  background-color: rgb(110, 74, 139);
   position: relative;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .card {
-  background: #222535e1;
-  width: var(--card-width);
-  height: var(--card-height);
+  background: rgba(42, 28, 53, 0.636);
   padding: 3px;
   position: relative;
   display: flex;
@@ -71,37 +60,6 @@
 }
 
 
-
-.card::before {
-  content: "";
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(var(--rotate), #f5acff, #f07eff 43%, #952ca3);
-  position: absolute;
-  z-index: -1;
-  top: -1%;
-  left: -2%;
-  animation: spin 2.5s linear infinite;
-}
-
-.card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(var(--rotate), #f5acff, #f07eff 43%, #952ca3);
-  opacity: 1;
-  transition: opacity .5s;
-  animation: spin 2.5s linear infinite;
-}
 
 @keyframes spin {
   0% {
@@ -129,17 +87,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.svg_frame {
-  position: relative;
-  width: 455px;
-  height: 455px;
-  transform-style: preserve-3d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: change-view 2s ease-in infinite;
+  padding: 10px;
 }
 
 @keyframes change-view {
@@ -154,9 +102,11 @@
     transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
   }
 }
-.info input[type='file']{
+
+.info input[type='file'] {
   display: none;
 }
+
 .svg_frame svg {
   position: absolute;
   transition: 0.5s;
@@ -166,39 +116,6 @@
   fill: none;
   animation: change-view 5s ease-in-out infinite alternate;
   filter: drop-shadow(0 0 12px #e798ff);
-}
-
-#big-centro,
-#outter1,
-#solo-lines,
-#outter-center,
-#bottom-dots,
-#center-lines,
-#squares,
-#top-dots {
-  transform-origin: center;
-  animation: rotate 4s ease-in-out infinite alternate;
-}
-
-#big-centro {
-  animation-delay: -1.5s;
-}
-
-#outter1 {
-  animation-delay: -1.2s;
-}
-
-
-
-#bottom-dots,
-#top-dots {
-  animation-duration: 7s;
-}
-
-#center-lines,
-#outter-center {
-  animation-duration: 6s;
-  animation-delay: -3s;
 }
 
 @keyframes rotate {
@@ -216,16 +133,18 @@
   font-size: 18px;
   margin-bottom: 8px;
 }
-.profile_pic{
-    padding: 1rem;
-    color: white;
-    cursor: pointer;
-    font-size: 0.75rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+
+.profile_pic {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
 .button_49,
 .button_49:after {
   width: 130px;
@@ -259,7 +178,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #f5acff 3%,#b700ff 5%, #ea4dff 5%);
+  background: linear-gradient(45deg, transparent 3%, #f5acff 3%, #b700ff 5%, #ea4dff 5%);
   text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #f5acff;
   clip-path: var(--slice-0);
 }
@@ -329,13 +248,14 @@
 .glow {
   transition-property: box-shadow;
   transition-duration: 1s;
-  border-bottom: 1px solid #6f007e;
+  border-bottom: 1px solid #920ea3;
   padding: 5px;
   width: 80%;
   outline: none;
   transition: all 0.3s ease;
   background-color: transparent;
   color: white;
+  text-align: center;
 }
 
 .glow:focus {
@@ -346,57 +266,55 @@
 .info input:focus {
   outline: none;
 }
+
 @media only screen and (min-width: 1251px) {
   .card {
     width: 65vw;
   }
 
-  .svg_container {
-    transform: scale(0.95);
-    width: 50%;
-  }
-
   .button_49 {
     margin-bottom: 10px;
   }
 }
+
 @media only screen and (max-width: 1250px) {
   .card {
     width: 80vw;
   }
 
-  .svg_container {
-    transform: scale(0.85);
-    width: 50%;
+  .blob {
+    width: 380px;
+    height: 380px;
   }
 
   .button_49 {
     margin-bottom: 10px;
   }
 }
+
 @media only screen and (max-width: 1100px) {
   .card {
     width: 80vw;
   }
 
-  .svg_container {
-    transform: scale(0.75);
-    width: 50%;
+  .blob {
+    width: 350px;
+    height: 350px;
   }
 
   .button_49 {
     margin-bottom: 10px;
   }
 }
+
 @media only screen and (max-width: 1000px) {
   .card {
     width: 80vw;
   }
 
-  .svg_container {
-    transform: scale(0.7);
-
-    width: 50%;
+  .blob {
+    width: 320px;
+    height: 320px;
   }
 
   .button_49 {
@@ -413,16 +331,13 @@
     position: relative;
     border-radius: 10px;
     flex-direction: column;
-    width: 70vw;
-  }
-
-  .card {
     height: auto;
+    width: auto;
   }
 
-  .svg_container {
-    transform: scale(0.6);
-    height: 40vh;
+  .blob {
+    width: 240px;
+    height: 240px;
   }
 
   .button_49 {
@@ -440,47 +355,22 @@
     border-radius: 10px;
     flex-direction: column;
     width: 75vw;
-  }
-
-  .card {
     height: auto;
   }
 
-  .svg_container {
-    transform: scale(0.5);
-    height: 35vh;
+  .blob {
+    width: 200px;
+    height: 200px;
   }
 
   .button_49 {
     margin-bottom: 10px;
+    width: 110px;
+    height: 45px;
+    font-size: 19px;
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .card {
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    padding: 3px;
-    position: relative;
-    border-radius: 10px;
-    flex-direction: column;
-    width: 75vw;
-  }
-
-  .card {
-    height: auto;
-  }
-
-  .svg_container {
-    transform: scale(0.4);
-    height: 32vh;
-  }
-
-  .button_49 {
-    margin-bottom: 10px;
-  }
-}
 
 @media only screen and (max-width: 500px) {
   .card {
@@ -492,12 +382,15 @@
     width: 80vw;
   }
 
-  .svg_container {
-    transform: scale(0.3);
-    height: 28vh;
+  .blob {
+    width: 100px;
+    height: 100px;
   }
 
   .button_49 {
     margin-bottom: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
   }
 }

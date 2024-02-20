@@ -1,7 +1,35 @@
 #formData
 {
     width: 100%;
-    border-radius: 10px;
+}
+#formData::before
+{
+    content: "";
+    position: absolute;
+    background-color: yellow;
+    width: 200px;
+    height: 134%;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    animation: rotate 4s linear infinite;
+    /* box-shadow: 0px 0px 8px 8px yellow; */
+}
+#formData::after
+{
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background: linear-gradient(to right , #e15454 , #dccccc);
+    z-index: -1;
+}
+@keyframes rotate
+{
+    from{ transform: rotate(0deg);}
+    to{ transform: rotate(360deg); }
 }
 .formComponents
 {
@@ -9,6 +37,10 @@
     display: flex;
     align-items: center;
     border-bottom: 2px solid purple;
+    /* position: relative; */
+    /* border-radius: 10px; */
+    /* box-shadow: inset 0px 0px 8px 8px silver; */
+    /* background-color: whitesmoke; */
 }
 .formComponents input
 {
@@ -23,7 +55,8 @@
 }
 .formComponents input::placeholder
 {
-    color: rgb(66, 28, 85);
+    /* color: rgb(66, 28, 85); */
+    color: white;
     font-weight: normal;
 }
 .formDropdown
@@ -39,20 +72,34 @@
 {
     color: black !important;
 }
-.formComponents input:focus
+.formComponents div
 {
-    animation: focused 0.1s ease-out forwards;
+    position : absolute ;
+    margin : auto ;
+    left : 0 ;
+    right : 0 ;
+    width: max-content;
+    pointer-events: none;
+    transition: 0.5s;
+    font-size: 20px;
 }
-@keyframes focused {
-    to {
-        font-size: 30px;
-    }
+.formComponents input:focus + div,
+.formComponents input:valid + div
+{
+    transform: translateY(-19px);
+    font-size: 15px;
+    color: white;
+}
+.formDropdown option[value="none"]:disabled {
+    color: blue; /* Change the color to gray */
 }
 #submitForm
 {
     display: flex;
     justify-content: space-evenly;
     border-bottom: none;
+    margin: 20px;
+    align-items: center;
 }
 .merchButtons
 {

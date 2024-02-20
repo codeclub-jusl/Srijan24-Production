@@ -8,7 +8,7 @@ import OverallNav from '@/components/OverallNav/OverallNav';
 const page = () => {
     return (
         <div className={styles.body_container}>
-            <div className='bg-[url(/images/about/about.png)] flex items-center justify-center  min-h-screen '>
+            <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen'>
                 <div className={styles.marquee}>
                     <div className={styles.typing}>
                         <p id="word"></p><p className={styles.blink}>|</p>
