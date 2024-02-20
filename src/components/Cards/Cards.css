@@ -91,3 +91,20 @@
     border-radius: 3px;
     border-top-right-radius: 60px 60px;
 }
+.unlockedCard{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(0, 0, 0, 0.566); */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: transparent;
+    border-radius: 3px;
+    border-top-right-radius: 60px 60px;
+}

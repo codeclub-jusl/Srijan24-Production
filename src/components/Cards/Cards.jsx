@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./Cards.css";
 import Image from "next/image";
 
@@ -8,7 +9,7 @@ export default function Cards(){
         <div className="cardBox disabledCard">
           <Image src={"/images/ambassador.jpeg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>
           <p>Campus Ambassador</p>
-          <div className="lockedCard">Locked</div>
+          <Link href="/ambassador" target="_blank" className="unlockedCard"></Link>
         </div>
         <div className="cardBox disabledCard">
           <Image src={"/images/events.jpg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>

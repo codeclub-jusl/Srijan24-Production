@@ -37,7 +37,8 @@ const Ambassador = () => {
                         Tech-vibes and win amazing rewards!
                     </p>
                     <Link
-                        href='/'
+                        href='https://forms.gle/R2LXS6DEnQfdnmZC6'
+                        target='_blank'
                         className='apply relative text-white font-Montserrat text-[2rem] leading-[39px] w-[15rem] h-[3.5rem] flex justify-center items-center rounded-[32px] mb-8 transition-all duration-1000'
                     >
                         Apply Now
