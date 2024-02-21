@@ -38,7 +38,7 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
     const updateUser = async (userEmail, updatedTeamDetails, allAccepted) => {
         const eventDetails = getEventById(eventId)
 
-        console.log(updatedTeamDetails)
+        // console.log(updatedTeamDetails)
 
         const userRef = doc(db, 'users', userEmail)
         const userSnap = await getDoc(userRef)
@@ -76,7 +76,7 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
 
             if (allAccepted) {
                 const notificationString =
-                    'All members have accepted the invitation fot the event: ' +
+                    'Registration Successful: You have successfully registered in the event: ' +
                     eventDetails.eventName
                 userData.notifications.push({ notificationString, timeStamp })
             }
