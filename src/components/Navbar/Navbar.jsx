@@ -38,7 +38,7 @@ function Navbar() {
         router.push("/login");
     }
     return (
-        <nav id='Navbar' className={`w-full ${montserrat.className}`}>
+        <nav id='Navbar' className={`w-full bg-transparent ${montserrat.className}`}>
             <div className='flex flex-row items-center bg-transparent py-2 justify-center w-full'>
                 <ul className='flex flex-row justify-center items-center gap-x-5 text-white font-medium'>
                     <li>

@@ -4,8 +4,8 @@ import EventBox from '@/components/EventComponents/EventBox'
 import Link from 'next/link'
 import EventCenterpiece from '@/components/EventComponents/EventCenterpiece'
 import { getEventById } from '@/utils/event'
-
-const EventPage = ({ eventsId, pageType }) => {
+import Navbar from '../Navbar/Navbar'
+const EventPage = ({ eventsId, pageType, bgColor }) => {
     const [events, setEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
     const [selectedCategory, setSelectedCategory] = useState(null)
@@ -87,7 +87,8 @@ const EventPage = ({ eventsId, pageType }) => {
     ]
 
     return (
-        <div className='bg-gradient-to-br from-black via-sky-950 to-black'>
+        <div style={{background: `linear-gradient(to bottom right, black, ${bgColor}, black)`}}>
+            <Navbar />
             <div
                 style={{
                     minHeight: '100vh',

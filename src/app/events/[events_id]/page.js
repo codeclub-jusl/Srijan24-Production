@@ -50,6 +50,7 @@ const page = ({ params }) => {
                 obj => obj.eventId === events_id,
             )
             if (object) setEventStatus(object.status)
+            else setEventStatus('not registered')
         }
 
         if (
@@ -67,6 +68,8 @@ const page = ({ params }) => {
 
         if (eventStatus !== 'not registered') {
             setRegisterButton(capitalizeEveryWord(eventStatus))
+        } else {
+            setRegisterButton('Register Now')
         }
     }, [user, eventStatus])
 
@@ -85,7 +88,7 @@ const page = ({ params }) => {
     }
 
     const toggleInvitationModal = () => {
-        setIsInvitationModalOpen(!isModalOpen)
+        setIsInvitationModalOpen(!isInvitationModalOpen)
     }
 
     const handleRegister = e => {
@@ -188,8 +191,8 @@ const page = ({ params }) => {
                             className='mx-auto mb-6 rounded-lg max-w-full h-auto'
                         />
                     </div>
-                    <div className='flex flex-col gap-10 bg-opacity-50 p-6 rounded-lg md:col-span-1 '>
-                        <div className='flex flex-col shadow-2xl p-5'>
+                    <div className='flex flex-col gap-5 bg-opacity-50 p-6 rounded-lg md:col-span-1 '>
+                        <div className='flex flex-col shadow-2xl p-3'>
                             <div className='flex items-center mb-4'>
                                 <BsCalendar className='mr-2' />
                                 <p>
@@ -212,9 +215,9 @@ const page = ({ params }) => {
                             </div>
                         </div>
 
-                        <div className='bg-opacity-50 rounded-lg shadow-2xl p-5 text-sm md:text-lg'>
+                        <div className='bg-opacity-50 rounded-lg shadow-2xl p-3 text-sm md:text-lg'>
                             <p className='mb-2'>
-                                <strong className='text-xl md:text-2xl '>
+                                <strong className='text-lg md:text-xl '>
                                     Event Coordinators:
                                 </strong>
                             </p>
@@ -249,14 +252,26 @@ const page = ({ params }) => {
                                 )}
                             </ul>
                         </div>
+                        {eventData.prize && (
+                                <div className='flex flex-col p-3 shadow-2xl'>
+                                <p className='mb-2'>
+                                    <strong className='text-lg md:text-xl'>
+                                    Prize:
+                                    </strong>
+                                </p>
+                                <p className='text-sm md:text-base'>
+                                    {eventData.prize}
+                                </p>
+                                </div>
+                            )}
 
-                        <div className='flex flex-col p-5 shadow-2xl '>
+                        <div className='flex flex-col p-3 shadow-2xl '>
                             <p className='mb-2'>
-                                <strong className='text-xl md:text-2xl'>
+                                <strong className='text-lg md:text-xl'>
                                     Event Description:
                                 </strong>
                             </p>
-                            <p className='text-sm md:text-lg'>
+                            <p className='text-sm md:text-base'>
                                 {eventData.eventDescription}
                             </p>
                         </div>
@@ -334,7 +349,7 @@ const page = ({ params }) => {
                 />
                 <div className='bg-opacity-50 p-6 rounded-lg mt-6'>
                     <p className='mb-2'>
-                        <strong className='text-xl md:text-2xl'>
+                        <strong className='text-lg md:text-xl'>
                             Event Rules:
                         </strong>
                     </p>

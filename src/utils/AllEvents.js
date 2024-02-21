@@ -13,9 +13,10 @@ const events = [
             'Sounak Ghosh [ 8910272026 ]',
             'Sushmit Dasgupta [ 8100145170 ]',
         ],
+        prize: ["1st : 5000   |   " , "2nd : 3000  |   " , "3rd : 2000 " ],
         minMembers: 1,
         maxMembers: 3,
-        eventPoster: '/images/events/openalmer[1]-01.png',
+        eventPoster: '/images/events/openalmer[1]-01.jpg',
         registrationType : `Srijan'24 Website`,
         eventShortDescription: `Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!`,
         eventDescription: [`The event will consist of two rounds, Online Prelims (hosted on Kaggle) consisting of two tracks, Feature Selection and Puzzle Solving using AI, and an Offline Presentation Round.
@@ -54,6 +55,7 @@ const events = [
     minMembers: 2,
     maxMembers: 4 ,
     registrationType : `Srijan'24 Website`,
+    prize: ["Certificates and prize pool of Rs.2000"],
     eventShortDescription: `Roborace: Mini F1-like event where small bots compete autonomously on a track, showcasing cutting-edge racing technology`,
     eventDescription: [`Roborace is a thrilling event where pint-sized bots navigate a track autonomously, resembling a scaled-down version of Formula 1 racing. These small yet mighty machines showcase cutting-edge technology as they speed through twists and turns without human intervention. Spectators witness the future of motorsports unfold as these robotic competitors push the limits of agility and precision, offering a glimpse into the potential of autonomous driving in high-speed environments.`],
     eventRules: {
@@ -70,7 +72,7 @@ const events = [
     "Max voltage: 24V",
     "Bot with sharp objects attached or with dead weight will be disqualified",
     "Total track width will be 2m"],
-    "Prizes": ["Certificates and prize pool of Rs.2000"],
+    
     "Note":[" At any point the decision taken by the coordinators will be final"] ,
 },
 } ,

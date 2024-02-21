@@ -103,7 +103,7 @@ const page = () => {
         }
         const phoneRegex = /^[6-9]\d{9}$/;
         if (!phoneRegex.test(parseInt(formState.phone))) {
-            console.log(formState.phone);
+            // console.log(formState.phone);
             notification['error']({
                 message: `Invalid phone no`,
                 duration: 3
@@ -173,11 +173,8 @@ const page = () => {
                     <div className={styles.info}>
                         <h1>Hey, {formState.name}</h1>
                         <h2>{formState.email}</h2>
-                        <button type='button' onClick={handleLogout} className={styles.logout}>
-                            Log out
-                        </button>
-                        <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
-                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' /> {imageUpload?imageUpload.name:'Change Profile Pic'}</label>
+                        <input type='file' accept='image/*' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
+                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' />{imageUpload?imageUpload.name:'change profile pic'}</label>
 
                         <label>
                             <p>Name:</p>

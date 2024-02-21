@@ -44,11 +44,11 @@ const Modal = ({
     }
 
     const checkTeamName = (eventData, tname) => {
-        eventData.some(obj => obj.teamName === tname)
+        return eventData.some(obj => obj.teamName === tname)
     }
 
     const checkEvent = (userEvents, eventId) => {
-        userEvents.some(obj => obj.eventId === eventId)
+        return userEvents.some(obj => obj.eventId === eventId)
     }
 
     const checkUser = async userEmail => {
@@ -103,8 +103,16 @@ const Modal = ({
             // console.log(timeStamp);
 
             if (userEmail === user.email) {
-                const notificationString = "You have registered for the event: " + eventDesc.eventName
-                userData.notifications.push({notificationString, timeStamp})
+                let notificationString = ""
+                if(maxMembers === 1) {
+                    notificationString =
+                        'You have successfully registered for the event: ' + eventDesc.eventName
+                    
+                } else {
+                    notificationString =
+                        'You have initiated registration for the event: ' + eventDesc.eventName
+                }
+                userData.notifications.push({ notificationString, timeStamp })
 
                 if (userData.events.watchlist.includes(eventId)) {
                     const index = userData.events.watchlist.indexOf(eventId)
@@ -112,7 +120,11 @@ const Modal = ({
                 }
                 // console.log(userData);
             } else {
-                userData.invitations.push({eventId, teamName: team.teamName, timeStamp})
+                userData.invitations.push({
+                    eventId,
+                    teamName: team.teamName,
+                    timeStamp,
+                })
             }
 
             await updateDoc(userRef, userData)
@@ -123,6 +135,11 @@ const Modal = ({
         }
 
         return null
+    }
+
+    const areEmailsUnique = (emails) => {
+        const uniqueEmails = new Set(emails);
+        return uniqueEmails.size === emails.length;
     }
 
     const handleSubmit = async e => {
@@ -136,10 +153,22 @@ const Modal = ({
             return
         }
 
+        let allEmails = [...emails, user.email]
+        if(!areEmailsUnique(allEmails)) {
+            notification['error']({
+                message: `All the members should have unique email id`,
+                duration: 3,
+            })
+            return
+        }
+
         setLoading(true)
 
         // console.log(teamName.toLowerCase().trim());
-        const modifiedTeamName = teamName.toLowerCase().trim().replace(/\s/g, "");
+        const modifiedTeamName = teamName
+            .toLowerCase()
+            .trim()
+            .replace(/\s/g, '')
 
         const teamRef = doc(db, eventId, modifiedTeamName)
         // console.log(teamRef);
@@ -168,11 +197,15 @@ const Modal = ({
             members.push({ email: emails[i], accepted: false })
         }
 
-        const team = {
+        let team = {
             teamName,
             leader: user.email,
             members: members,
             status: 'pending',
+        }
+
+        if (maxMembers === 1) {
+            team = { ...team, status: 'registered' }
         }
 
         const eventDesc = getEventById(eventId)
@@ -180,7 +213,6 @@ const Modal = ({
         dispatch(loginUser({ ...user, ...updatedCurrentUser }))
 
         if (maxMembers === 1) {
-
             await setDoc(doc(db, eventId, modifiedTeamName), {
                 ...team,
                 status: 'registered',
@@ -197,7 +229,6 @@ const Modal = ({
                         duration: 3,
                     })
                 })
-
         } else {
             await setDoc(doc(db, eventId, modifiedTeamName), {
                 ...team,
@@ -206,13 +237,13 @@ const Modal = ({
                     for (let i = 0; i < emails.length; i++) {
                         const res = await updateUser(emails[i], eventDesc, team)
                     }
-        
+
                     notification['success']({
                         message: `Invitations sent to the members`,
                         duration: 3,
                     })
                 })
-                .catch((err) => {
+                .catch(err => {
                     notification['error']({
                         message: `Something went wrong! Try again later`,
                         duration: 3,

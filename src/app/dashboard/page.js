@@ -74,4 +74,4 @@ const page = () => {
     );
 }
 
-export default page
+export default AuthHOC(page)
