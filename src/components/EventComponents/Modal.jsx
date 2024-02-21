@@ -100,7 +100,6 @@ const Modal = ({
 
             // const timeStamp = new Date().toLocaleString('en-US', { timeZone: 'UTC' });
             const timeStamp = Date.now()
-            // console.log(timeStamp);
 
             if (userEmail === user.email) {
                 let notificationString = ""
@@ -118,7 +117,7 @@ const Modal = ({
                     const index = userData.events.watchlist.indexOf(eventId)
                     userData.events.watchlist.splice(index, 1)
                 }
-                // console.log(userData);
+
             } else {
                 userData.invitations.push({
                     eventId,
