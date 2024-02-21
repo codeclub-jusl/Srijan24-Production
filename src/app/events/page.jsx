@@ -3,7 +3,6 @@ import EventPage from '@/components/EventComponents/EventPage'
 import { getAllEvents } from '@/utils/event'
 import React, { useEffect, useState } from 'react'
 import Navbar from '@/components/Navbar/Navbar'
-import OverallNav from '@/components/OverallNav/OverallNav'
 const page = () => {
     const [eventsId, setEventsId] = useState([])
 
@@ -21,7 +20,6 @@ const page = () => {
 
     return (
         <div>
-            <OverallNav></OverallNav>
             <EventPage eventsId={eventsId} pageType='Events' bgColor="#0f172a" />
         </div>
     )
