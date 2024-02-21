@@ -84,7 +84,7 @@ const Modal = ({
 
         if (userSnap.exists()) {
             const userData = userSnap.data()
-            if (maxMembers === 1) {
+            if (maxMembers === 1 || emails.length === 0) {
                 userData.events.registered.push({
                     eventId,
                     ...team,
@@ -100,11 +100,10 @@ const Modal = ({
 
             // const timeStamp = new Date().toLocaleString('en-US', { timeZone: 'UTC' });
             const timeStamp = Date.now()
-            // console.log(timeStamp);
 
             if (userEmail === user.email) {
                 let notificationString = ""
-                if(maxMembers === 1) {
+                if(maxMembers === 1 || emails.length === 0) {
                     notificationString =
                         'You have successfully registered for the event: ' + eventDesc.eventName
                     
@@ -118,7 +117,7 @@ const Modal = ({
                     const index = userData.events.watchlist.indexOf(eventId)
                     userData.events.watchlist.splice(index, 1)
                 }
-                // console.log(userData);
+
             } else {
                 userData.invitations.push({
                     eventId,
@@ -204,7 +203,9 @@ const Modal = ({
             status: 'pending',
         }
 
-        if (maxMembers === 1) {
+        // console.log(emails);
+
+        if (maxMembers === 1 || emails.length === 0) {
             team = { ...team, status: 'registered' }
         }
 
@@ -212,7 +213,7 @@ const Modal = ({
         const updatedCurrentUser = await updateUser(user.email, eventDesc, team)
         dispatch(loginUser({ ...user, ...updatedCurrentUser }))
 
-        if (maxMembers === 1) {
+        if (maxMembers === 1 || emails.length === 0) {
             await setDoc(doc(db, eventId, modifiedTeamName), {
                 ...team,
                 status: 'registered',
