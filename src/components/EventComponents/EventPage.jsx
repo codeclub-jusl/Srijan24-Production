@@ -4,7 +4,7 @@ import EventBox from '@/components/EventComponents/EventBox'
 import Link from 'next/link'
 import EventCenterpiece from '@/components/EventComponents/EventCenterpiece'
 import { getEventById } from '@/utils/event'
-import Navbar from '../Navbar/Navbar'
+import OverallNav from '../OverallNav/OverallNav'
 const EventPage = ({ eventsId, pageType, bgColor }) => {
     const [events, setEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
@@ -88,7 +88,7 @@ const EventPage = ({ eventsId, pageType, bgColor }) => {
 
     return (
         <div style={{background: `linear-gradient(to bottom right, black, ${bgColor}, black)`}}>
-            <Navbar />
+            <OverallNav></OverallNav>
             <div
                 style={{
                     minHeight: '100vh',

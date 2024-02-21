@@ -49,7 +49,10 @@ export default function OverallNav() {
             <div className={styles.box1}>
                 <Link href="/events"><p>Events</p></Link>
                 {user ? (
-                    <button onClick={handleLogout}>LogOut</button>
+                    <Link href="/dashboard"><p>Dashboard</p></Link>
+                ) : ""}
+                {user ? (
+                    <button onClick={handleLogout}><p>LogOut</p></button>
                 ) : (
                     <Link href="/login"><p>LogIn</p></Link>
                 )}
