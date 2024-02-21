@@ -106,8 +106,8 @@ export default function SignUp() {
     };
 
     const validatePassword = () => {
-        const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$&*]).{8,}$/;
-        if (!passwordRegex.test(password)) {
+        const passwordRegex = pass.match(/[a-z]/g) && pass.match(/[A-Z]/g) && pass.match(/[0-9]/g) && pass.match(/[^a-zA-Z\d]/g) && pass.length >= 8;
+        if (!passwordRegex) {
             setPasswordError(true);
         } else {
             setPasswordError(false);
@@ -123,7 +123,7 @@ export default function SignUp() {
     };
 
     const validatePhone = () => {
-        const phoneRegex = /^\d{9}$/;
+        const phoneRegex = /^[6-9]\d{10}$/;
         if (!phoneRegex.test(phone)) {
             setPhoneError(true);
         } else {
@@ -295,7 +295,7 @@ export default function SignUp() {
                                     <div className="relative py-4">
                                         <input type="password" value={password} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setPassword(e.target.value); validatePassword(); }} />
                                         <label htmlFor="year" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Password</label>
-                                        {passwordError && <span className="text-red-500 text-xs">*Invalid Password</span>}
+                                        {passwordError && <span className="text-red-500 text-xs">*Invalid Password, Password must contain atleast 1 uppercase, 1 lowercase, 1 digit & 1 special character</span>}
                                     </div>
                                     <div className="relative py-4">
                                         <input type="password" value={confirmPassword} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setConfirmPassword(e.target.value); }} />
