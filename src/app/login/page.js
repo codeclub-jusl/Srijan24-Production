@@ -50,7 +50,6 @@ export default function Login() {
                     //     duration: 2
                     // })
                     const authTokenID = await authUser.getIdToken();
-                    document.cookie = `x-srijan-firebase-auth-token=${authTokenID}; path=/admin`
                     dispatch(loginUser({
                         ...userData,
                         authTokenID: authTokenID,

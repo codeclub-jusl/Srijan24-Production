@@ -10,6 +10,7 @@ export const userSlice = createSlice({
   reducers: {
     loginUser: (state, action) => {
       state.user = action.payload;
+      document.cookie = `x-srijan-firebase-auth-token=${action.payload.authTokenID}; path=/admin`
     },
 
     logoutUser: (state, action) => {

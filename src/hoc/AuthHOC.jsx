@@ -30,9 +30,6 @@ const AuthHOC = Component => {
                         })
 
                         const authTokenID = await authUser.getIdToken()
-                        document.cookie = `x-srijan-firebase-auth-token=${authTokenID}; path=/admin`
-                        console.log('cookie is', document.cookie)
-
                         dispatch(
                             loginUser({
                                 ...userData,
