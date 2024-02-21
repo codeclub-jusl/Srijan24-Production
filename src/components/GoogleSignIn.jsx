@@ -32,6 +32,7 @@ const GoogleSignIn = () => {
                     },
                     invitations: [],
                     notifications: [],
+                    referralCode: "",
                 })
 
                 dispatch(

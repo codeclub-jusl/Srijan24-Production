@@ -7,7 +7,6 @@ import Footer from '@/components/footer/Footer'
 import Hero from '@/components/hero/Hero'
 import Timeline2 from '@/components/Timeline2/Timeline2'
 import MobileTimeline from '@/components/Timeline2/MobileTimeline'
-import OverallNav from '@/components/OverallNav/OverallNav';
 
 export default () => {
     return (
@@ -20,7 +19,6 @@ export default () => {
             <Timeline2/>
             <MobileTimeline/>
             <Footer />
-            <OverallNav />
         </>
     )
 }

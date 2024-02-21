@@ -1,12 +1,23 @@
+'use client'
 import EventPage from '@/components/EventComponents/EventPage'
-import React from 'react'
+import UserHOC from '@/hoc/UserHOC'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Watchlisted = () => {
-  return (
-    <div>
-        <EventPage eventsId={['008']} pageType='Watchlisted Events'/>
-    </div>
-  )
+    const user = useSelector(state => state.userReducer.user)
+    const userWatchlist = user.events.watchlist
+    const [eventsId, setEventsId] = useState(userWatchlist)
+
+    useEffect(() => {
+        setEventsId(user.events.watchlist)
+    }, [user])
+
+    return (
+        <div>
+            <EventPage eventsId={eventsId} pageType='Watchlisted Events' bgColor="sky" />
+        </div>
+    )
 }
 
-export default Watchlisted
+export default UserHOC(Watchlisted)

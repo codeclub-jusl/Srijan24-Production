@@ -3,30 +3,27 @@ import React, { useState, useEffect } from 'react'
 import EventBox from '@/components/EventComponents/EventBox'
 import Link from 'next/link'
 import EventCenterpiece from '@/components/EventComponents/EventCenterpiece'
+import { getEventById } from '@/utils/event'
 
-const EventPage = ({ eventsId, pageType }) => {
+const EventPage = ({ eventsId, pageType, bgColor }) => {
     const [events, setEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState(null)
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(
-                    '/assets/events/AllEventsData.json',
-                )
-                const data = await response.json()
-                setEvents(data)
-                // console.log(data);
-            } catch (error) {
-                console.error('Error fetching events data:', error)
+        const fetchData = () => {
+            let fetchedEvents = []
+            for (let i = 0; i < eventsId.length; i++) {
+                fetchedEvents.push(getEventById(eventsId[i]))
             }
+            setEvents(fetchedEvents)
         }
 
         fetchData()
-    }, [])
+    }, [eventsId])
 
     useEffect(() => {
-        if (eventsId && eventsId.length > 0) {
+        if (events && events.length > 0 && eventsId && eventsId.length > 0) {
             const filtered = events.filter(event =>
                 eventsId.includes(event.eventId),
             )
@@ -51,12 +48,18 @@ const EventPage = ({ eventsId, pageType }) => {
     }
 
     const renderEvents = () => {
-        const eventsToRender =
-            filteredEvents.length > 0
-                ? filteredEvents
-                : pageType === 'Events'
-                  ? events
-                  : filteredEvents
+        const eventsToRender = filteredEvents
+
+        if (eventsToRender.length === 0) {
+            return (
+                <div className='text-white text-center mt-4'>
+                    <p className='text-xl font-semibold'>No events found</p>
+                    <p className='text-base mt-2'>
+                        Try exploring other categories or check back later.
+                    </p>
+                </div>
+            )
+        }
 
         return eventsToRender.map((eventData, index) => (
             <div key={index} className='p-10 '>
@@ -66,7 +69,7 @@ const EventPage = ({ eventsId, pageType }) => {
                             <h3 className='text-xl font-bold mb-2'>
                                 {eventData.eventName}
                             </h3>
-                            <p>{eventData.eventDescription}</p>
+                            <p>{eventData.eventShortDescription}</p>
                         </EventBox>
                     </div>
                 </Link>
@@ -84,7 +87,7 @@ const EventPage = ({ eventsId, pageType }) => {
     ]
 
     return (
-        <div className='bg-gradient-to-br from-black via-sky-950 to-black'>
+        <div className={`bg-gradient-to-br from-black via-${bgColor}-950 to-black`}>
             <div
                 style={{
                     minHeight: '100vh',
@@ -105,10 +108,15 @@ const EventPage = ({ eventsId, pageType }) => {
                     {categories.map((category, index) => (
                         <span
                             key={index}
-                            className='rounded-full px-4 py-[.3rem] hover:bg-white/20 transition-all duration-500 ease-in-out'
-                            onClick={() =>
+                            className={`rounded-full cursor-pointer px-4 py-[.3rem] hover:bg-white/20 transition-all duration-500 ease-in-out ${
+                                selectedCategory === category.toLowerCase()
+                                    ? 'bg-white/20'
+                                    : ''
+                            }`}
+                            onClick={() => {
                                 filterEventsByType(category.toLowerCase())
-                            }
+                                setSelectedCategory(category.toLowerCase())
+                            }}
                         >
                             {category}
                         </span>

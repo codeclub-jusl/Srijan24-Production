@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import './Modal.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { doc, getDoc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import { db } from '@/firebase/config'
 import { notification } from 'antd'
 import BeatLoader from 'react-spinners/BeatLoader'
@@ -44,11 +44,11 @@ const Modal = ({
     }
 
     const checkTeamName = (eventData, tname) => {
-        eventData.some(obj => obj.teamName === tname)
+        return eventData.some(obj => obj.teamName === tname)
     }
 
     const checkEvent = (userEvents, eventId) => {
-        userEvents.some(obj => obj.eventId === eventId)
+        return userEvents.some(obj => obj.eventId === eventId)
     }
 
     const checkUser = async userEmail => {
@@ -98,26 +98,48 @@ const Modal = ({
                 })
             }
 
-            if (userEmail !== user.email) {
-                const invitationString = `${userData.email} has invited you for the event: ${eventDesc.eventName}`
-                userData.invitations.push(invitationString)
+            // const timeStamp = new Date().toLocaleString('en-US', { timeZone: 'UTC' });
+            const timeStamp = Date.now()
+            // console.log(timeStamp);
 
-                // console.log(userData);
-            } else {
+            if (userEmail === user.email) {
+                let notificationString = ""
+                if(maxMembers === 1) {
+                    notificationString =
+                        'You have successfully registered for the event: ' + eventDesc.eventName
+                    
+                } else {
+                    notificationString =
+                        'You have initiated registration for the event: ' + eventDesc.eventName
+                }
+                userData.notifications.push({ notificationString, timeStamp })
+
                 if (userData.events.watchlist.includes(eventId)) {
                     const index = userData.events.watchlist.indexOf(eventId)
                     userData.events.watchlist.splice(index, 1)
                 }
+                // console.log(userData);
+            } else {
+                userData.invitations.push({
+                    eventId,
+                    teamName: team.teamName,
+                    timeStamp,
+                })
             }
 
             await updateDoc(userRef, userData)
 
-            console.log(userData);
+            // console.log(userData)
 
             return userData
         }
 
         return null
+    }
+
+    const areEmailsUnique = (emails) => {
+        const uniqueEmails = new Set(emails);
+        return uniqueEmails.size === emails.length;
     }
 
     const handleSubmit = async e => {
@@ -131,80 +153,106 @@ const Modal = ({
             return
         }
 
+        let allEmails = [...emails, user.email]
+        if(!areEmailsUnique(allEmails)) {
+            notification['error']({
+                message: `All the members should have unique email id`,
+                duration: 3,
+            })
+            return
+        }
+
         setLoading(true)
 
-        const eventRef = doc(db, 'events', eventId)
-        const eventSnap = await getDoc(eventRef)
+        // console.log(teamName.toLowerCase().trim());
+        const modifiedTeamName = teamName
+            .toLowerCase()
+            .trim()
+            .replace(/\s/g, '')
 
-        if (eventSnap.exists()) {
-            const eventData = eventSnap.data()
+        const teamRef = doc(db, eventId, modifiedTeamName)
+        // console.log(teamRef);
+        const teamSnap = await getDoc(teamRef)
 
-            if (checkTeamName(eventData.teams, teamName)) {
-                notification['error']({
-                    message: `Teamname already in use`,
-                    duration: 3,
-                })
+        if (teamSnap.exists()) {
+            notification['error']({
+                message: `Teamname already in use`,
+                duration: 3,
+            })
 
+            setLoading(false)
+            return
+        }
+
+        for (let i = 0; i < emails.length; i++) {
+            const res = await checkUser(emails[i])
+            if (!res) {
                 setLoading(false)
                 return
             }
+        }
 
-            for (let i = 0; i < emails.length; i++) {
-                const res = await checkUser(emails[i])
-                if (!res) {
-                    setLoading(false)
-                    return
-                }
-            }
+        let members = [{ email: user.email, accepted: true }]
+        for (let i = 0; i < emails.length; i++) {
+            members.push({ email: emails[i], accepted: false })
+        }
 
-            // setTeam({
-            //     teamName,
-            //     leader: user.email,
-            //     members: [user.email, ...emails],
-            // })
+        let team = {
+            teamName,
+            leader: user.email,
+            members: members,
+            status: 'pending',
+        }
 
-            const team = {
-                teamName,
-                leader: user.email,
-                members: [user.email, ...emails],
-                status: 'pending',
-            }
+        if (maxMembers === 1) {
+            team = { ...team, status: 'registered' }
+        }
 
-            const eventDesc = getEventById(eventId)
-            const updatedCurrentUser = await updateUser(
-                user.email,
-                eventDesc,
-                team,
-            )
-            dispatch(loginUser({ ...user, ...updatedCurrentUser }))
+        const eventDesc = getEventById(eventId)
+        const updatedCurrentUser = await updateUser(user.email, eventDesc, team)
+        dispatch(loginUser({ ...user, ...updatedCurrentUser }))
 
-            if (maxMembers === 1) {
-                eventData.teams.push({ ...team, status: 'registered' })
-                await updateDoc(eventRef, eventData)
-
-                notification['success']({
-                    message: `Registered successfully`,
-                    duration: 3,
+        if (maxMembers === 1) {
+            await setDoc(doc(db, eventId, modifiedTeamName), {
+                ...team,
+                status: 'registered',
+            })
+                .then(() => {
+                    notification['success']({
+                        message: `Registered successfully`,
+                        duration: 3,
+                    })
                 })
-            } else {
-                eventData.teams.push(team)
-                await updateDoc(eventRef, eventData)
-
-                for (let i = 0; i < emails.length; i++) {
-                    const res = await updateUser(emails[i], eventDesc, team)
-                }
-
-                notification['success']({
-                    message: `Invitations sent to the members`,
-                    duration: 3,
+                .catch(err => {
+                    notification['error']({
+                        message: `Something went wrong! Try again later`,
+                        duration: 3,
+                    })
                 })
-            }
+        } else {
+            await setDoc(doc(db, eventId, modifiedTeamName), {
+                ...team,
+            })
+                .then(async () => {
+                    for (let i = 0; i < emails.length; i++) {
+                        const res = await updateUser(emails[i], eventDesc, team)
+                    }
 
-            setLoading(false)
-            onClose()
+                    notification['success']({
+                        message: `Invitations sent to the members`,
+                        duration: 3,
+                    })
+                })
+                .catch(err => {
+                    notification['error']({
+                        message: `Something went wrong! Try again later`,
+                        duration: 3,
+                    })
+                })
         }
 
         setLoading(false)
+        onClose()
     }
 
     if (!isOpen) return null

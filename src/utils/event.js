@@ -5,3 +5,7 @@ export const getEventById = (id) => {
     // console.log(id);
     return event;
 }
+
+export const getAllEvents = () => {
+    return events;
+}
