@@ -50,6 +50,7 @@ const page = ({ params }) => {
                 obj => obj.eventId === events_id,
             )
             if (object) setEventStatus(object.status)
+            else setEventStatus('not registered')
         }
 
         if (
@@ -67,6 +68,8 @@ const page = ({ params }) => {
 
         if (eventStatus !== 'not registered') {
             setRegisterButton(capitalizeEveryWord(eventStatus))
+        } else {
+            setRegisterButton('Register Now')
         }
     }, [user, eventStatus])
 
@@ -85,7 +88,7 @@ const page = ({ params }) => {
     }
 
     const toggleInvitationModal = () => {
-        setIsInvitationModalOpen(!isModalOpen)
+        setIsInvitationModalOpen(!isInvitationModalOpen)
     }
 
     const handleRegister = e => {

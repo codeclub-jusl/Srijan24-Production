@@ -22,9 +22,12 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
 
         if (data1) {
             const { eventId: _, ...data2 } = data1
+            data2.members = data2.members.filter(
+                obj => obj.email !== data1.leader,
+            )
             setTeamData(data2)
         }
-    }, [])
+    }, [user])
 
     const getEventIndex = userData => {
         return userData.events.registered.findIndex(
@@ -34,6 +37,8 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
 
     const updateUser = async (userEmail, updatedTeamDetails, allAccepted) => {
         const eventDetails = getEventById(eventId)
+
+        console.log(updatedTeamDetails)
 
         const userRef = doc(db, 'users', userEmail)
         const userSnap = await getDoc(userRef)
@@ -64,6 +69,11 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                 )
             }
 
+            if (userData.events.watchlist.includes(eventId)) {
+                const index = userData.events.watchlist.indexOf(eventId)
+                userData.events.watchlist.splice(index, 1)
+            }
+
             if (allAccepted) {
                 const notificationString =
                     'All members have accepted the invitation fot the event: ' +
@@ -84,8 +94,9 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
             )
 
             if (index !== -1) {
-                let teamDetails = user.events.registered[index]
-                let members = teamDetails.members
+                let teamDetails = { ...user.events.registered[index] }
+                let members = [...teamDetails.members]
+
                 const noOfMembers = members.length
                 let acceptedMembers = 1
                 for (let i = 0; i < noOfMembers; i++) {
@@ -100,8 +111,12 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                 const userIndex = members.findIndex(
                     obj => obj.email === user.email,
                 )
+
                 if (userIndex !== -1) {
-                    members[userIndex] = { ...members[index], accepted: true }
+                    members[userIndex] = {
+                        ...members[userIndex],
+                        accepted: true,
+                    }
                 }
 
                 teamDetails.members = [...members]
@@ -114,7 +129,7 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                     await updateUser(members[i].email, teamDetails, allAccepted)
                 }
 
-                const modifiedTeamName = teamName
+                const modifiedTeamName = teamDetails.teamName
                     .toLowerCase()
                     .trim()
                     .replace(/\s/g, '')
@@ -138,6 +153,7 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                 })
             }
         } catch (err) {
+            console.log(err)
             notification['error']({
                 message: `Somthing went wrong! Try again later`,
                 duration: 3,
@@ -283,36 +299,37 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                         </div>
                     </div>
                     {/* if accepted then green shadow else red shadow */}
-                    {teamData && teamData.members.slice(1).map((member, index) => (
-                        <div
-                            key={index}
-                            className={`items-center  ${
-                                member.accepted
-                                    ? 'bg-[#16724059]'
-                                    : 'bg-[#61111159]'
-                            } `}
-                        >
-                            <div className='login__box'>
-                                <i className='ri-user-3-line login__icon'></i>
+                    {teamData &&
+                        teamData.members.map((member, index) => (
+                            <div
+                                key={index}
+                                className={`items-center  ${
+                                    member.accepted
+                                        ? 'bg-[#16724059]'
+                                        : 'bg-[#61111159]'
+                                } `}
+                            >
+                                <div className='login__box'>
+                                    <i className='ri-user-3-line login__icon'></i>
 
-                                <div className='login__box-input'>
-                                    <input
-                                        type='email'
-                                        required
-                                        className='login__input'
-                                        id={`email-${index + 1}`}
-                                        value={member.email}
-                                    />
-                                    <label
-                                        htmlFor='login-email'
-                                        className='login__label'
-                                    >
-                                        Email ID {index + 2}
-                                    </label>
+                                    <div className='login__box-input'>
+                                        <input
+                                            type='email'
+                                            required
+                                            className='login__input'
+                                            id={`email-${index + 1}`}
+                                            value={member.email}
+                                        />
+                                        <label
+                                            htmlFor='login-email'
+                                            className='login__label'
+                                        >
+                                            Email ID {index + 2}
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
 
                 {/* {emails.length < maxMembers - 1 && (
