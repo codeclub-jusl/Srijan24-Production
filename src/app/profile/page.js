@@ -174,7 +174,7 @@ const page = () => {
                         <h1>Hey, {formState.name}</h1>
                         <h2>{formState.email}</h2>
                         <input type='file' accept='image/*' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
-                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' />{imageUpload?imageUpload.name:'change profile pic'}</label>
+                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' />{imageUpload?imageUpload.name:'Change Profile Pic'}</label>
 
                         <label>
                             <p>Name:</p>
