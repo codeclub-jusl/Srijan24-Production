@@ -16,7 +16,7 @@ const events = [
         prize: ["1st : 5000   |   " , "2nd : 3000  |   " , "3rd : 2000 " ],
         minMembers: 1,
         maxMembers: 3,
-        eventPoster: '/images/events/openalmer[1]-01.png',
+        eventPoster: '/images/events/openalmer[1]-01.jpg',
         registrationType : `Srijan'24 Website`,
         eventShortDescription: `Embark on the ML adventure in 'OpenAImer'! Unleash your algorithms, analyse data, and spark innovation!`,
         eventDescription: [`The event will consist of two rounds, Online Prelims (hosted on Kaggle) consisting of two tracks, Feature Selection and Puzzle Solving using AI, and an Offline Presentation Round.

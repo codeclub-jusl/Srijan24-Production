@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(173, 173, 173);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(134, 134, 134);
+  }
 main {
     font-family: 'Montserrat', sans-serif;
 }

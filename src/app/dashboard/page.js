@@ -6,10 +6,12 @@ import Link from 'next/link';
 import AuthHOC from '@/hoc/AuthHOC'
 import styles from './dashboard.module.css'
 import { useSelector } from 'react-redux'
+import OverallNav from '@/components/OverallNav/OverallNav';
 const page = () => {
     const user = useSelector(state => state.userReducer.user)
     return (
         <div className={styles.body_container}>
+            <OverallNav></OverallNav>
             <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen'>
                 <div className={styles.marquee}>
                     <div className={styles.typing}>
