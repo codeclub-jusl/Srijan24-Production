@@ -11,12 +11,12 @@ import { getEventById } from '@/utils/event'
 
 const InvitationModal = ({ isOpen, onClose, eventId }) => {
     const user = useSelector(state => state.userReducer.user)
-    const teamName = user.invitations.find(obj => obj.eventId === eventId)
+    // const teamName = user.invitations.find(obj => obj.eventId === eventId)
     const [teamData, setTeamData] = useState(null)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        const data1 = user.events.registered.find(
+        const data1 = user && user.events.registered.find(
             obj => obj.eventId === eventId,
         )
 
