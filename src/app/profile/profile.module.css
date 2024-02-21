@@ -144,12 +144,14 @@
   align-items: center;
   justify-content: center;
 }
-.profile_pic img{
+
+.profile_pic img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   margin-right: 2px;
 }
+
 .button_49,
 .button_49:after {
   width: 130px;
@@ -192,11 +194,13 @@
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
-.logout{
+
+.logout {
   padding: 1px;
   font-size: 12px;
   color: rgb(255, 137, 137);
 }
+
 @keyframes glitch {
   0% {
     clip-path: var(--slice-1);
@@ -321,6 +325,22 @@
     width: 80vw;
   }
 
+  .info h1 {
+    font-size: 28px;
+  }
+
+  .info h2 {
+    font-size: 13px;
+  }
+
+  .info label p {
+    font-size: 16px;
+  }
+
+  .info input {
+    font-size: 15px;
+  }
+
   .blob {
     width: 320px;
     height: 320px;
@@ -342,6 +362,22 @@
     flex-direction: column;
     height: auto;
     width: auto;
+  }
+
+  .info h1 {
+    font-size: 25px;
+  }
+
+  .info h2 {
+    font-size: 13px;
+  }
+
+  .info label p {
+    font-size: 16px;
+  }
+
+  .info input {
+    font-size: 15px;
   }
 
   .blob {
@@ -366,7 +402,21 @@
     width: 75vw;
     height: auto;
   }
+  .info h1 {
+    font-size: 25px;
+  }
 
+  .info h2 {
+    font-size: 13px;
+  }
+
+  .info label p {
+    font-size: 15px;
+  }
+
+  .info input {
+    font-size: 14px;
+  }
   .blob {
     width: 200px;
     height: 200px;
@@ -390,7 +440,21 @@
     flex-direction: column;
     width: 80vw;
   }
+  .info h1 {
+    font-size: 20px;
+  }
 
+  .info h2 {
+    font-size: 11px;
+  }
+
+  .info label p {
+    font-size: 16px;
+  }
+
+  .info input {
+    font-size: 15px;
+  }
   .blob {
     width: 100px;
     height: 100px;
