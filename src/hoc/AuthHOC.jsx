@@ -29,9 +29,14 @@ const AuthHOC = Component => {
                             emailVerified: authUser.emailVerified,
                         })
 
+                        const authTokenID = await authUser.getIdToken()
+                        document.cookie = `x-srijan-firebase-auth-token=${authTokenID}; path=/admin`
+                        console.log('cookie is', document.cookie)
+
                         dispatch(
                             loginUser({
                                 ...userData,
+                                authTokenID: authTokenID,
                                 emailVerified: authUser.emailVerified,
                             }),
                         )
