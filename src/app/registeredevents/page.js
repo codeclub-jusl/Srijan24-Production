@@ -21,7 +21,7 @@ const Registered = () => {
 
     return (
         <div>
-            <EventPage eventsId={eventsId} pageType='Registered Events' />
+            <EventPage eventsId={eventsId} pageType='Registered Events' bgColor="green" />
         </div>
     )
 }

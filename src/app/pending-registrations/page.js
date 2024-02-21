@@ -21,7 +21,7 @@ const Pending = () => {
 
     return (
         <div>
-            <EventPage eventsId={eventsId} pageType='Pending Registrations' />
+            <EventPage eventsId={eventsId} pageType='Pending Registrations' bgColor="rose" />
         </div>
     )
 }

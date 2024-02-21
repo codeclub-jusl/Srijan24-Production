@@ -20,7 +20,7 @@ const page = () => {
 
     return (
         <div>
-            <EventPage eventsId={eventsId} pageType='Events' />
+            <EventPage eventsId={eventsId} pageType='Events' bgColor="slate" />
         </div>
     )
 }

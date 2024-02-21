@@ -15,7 +15,7 @@ const Watchlisted = () => {
 
     return (
         <div>
-            <EventPage eventsId={eventsId} pageType='Watchlisted Events' />
+            <EventPage eventsId={eventsId} pageType='Watchlisted Events' bgColor="sky" />
         </div>
     )
 }
