@@ -130,12 +130,26 @@ const Modal = ({
         return null
     }
 
+    const areEmailsUnique = (emails) => {
+        const uniqueEmails = new Set(emails);
+        return uniqueEmails.size === emails.length;
+    }
+
     const handleSubmit = async e => {
         e.preventDefault()
 
         if (teamName.trim().length === 0) {
             notification['error']({
                 message: `Enter your team name`,
+                duration: 3,
+            })
+            return
+        }
+
+        let allEmails = [...emails, user.email]
+        if(!areEmailsUnique(allEmails)) {
+            notification['error']({
+                message: `All the members should have unique email id`,
                 duration: 3,
             })
             return
