@@ -94,43 +94,6 @@ const Notification = () => {
         setNotifications(ntf)
     }, [user])
 
-    // const data = {
-    //     invitation: [
-    //         {
-    //             title: 'Handsome Boy',
-    //             description:
-    //                 'Wah kya larka haa , very handsome , isse to maza ayega',
-    //         },
-    //         {
-    //             title: 'Confession to Arhana',
-    //             description:
-    //                 'You have been invited to confess Arhana Kundu at FETSU presents CIIPPUS 2023',
-    //         },
-    //     ],
-    //     notification: [
-    //         {
-    //             title: 'Apnar gaand marano hoye geche',
-    //             time: 'Feb 20 2024 02:06:35 GMT+0530',
-    //         },
-    //         {
-    //             title: 'Paytm pe 500 rupay gawa diye',
-    //             time: 'Feb 20 2024 02:06:35 GMT+0530',
-    //         },
-    //         {
-    //             title: 'Aaaaahhh Khide peyeche , ekhon khabo , kheye bari giye snan korbo , kore ektu ghumobo',
-    //             time: 'Feb 20 2024 02:06:35 GMT+0530',
-    //         },
-    //         {
-    //             title: 'Na bhai amake ektu bari jete hobe taka tulte . Tai ami jete parbo na . Tora ja  , ei je amake bolli jete etei onek .',
-    //             time: 'Feb 20 2024 02:06:35 GMT+0530',
-    //         },
-    //         {
-    //             title: 'Na bhai toder onek dosh ache . Ekdin age bolle ki hoy , kom se kom ek bochor age bolbi to , tahole ami bari giye taka tule rakhtam',
-    //             time: 'Feb 20 2024 02:06:35 GMT+0530',
-    //         },
-    //     ],
-    // }
-
     function handleInvitation(eventId) {
         router.push(`/events/${eventId}`)
     }

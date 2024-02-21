@@ -44,11 +44,11 @@ const Modal = ({
     }
 
     const checkTeamName = (eventData, tname) => {
-        eventData.some(obj => obj.teamName === tname)
+        return eventData.some(obj => obj.teamName === tname)
     }
 
     const checkEvent = (userEvents, eventId) => {
-        userEvents.some(obj => obj.eventId === eventId)
+        return userEvents.some(obj => obj.eventId === eventId)
     }
 
     const checkUser = async userEmail => {
@@ -103,8 +103,15 @@ const Modal = ({
             // console.log(timeStamp);
 
             if (userEmail === user.email) {
-                const notificationString =
-                    'You have registered for the event: ' + eventDesc.eventName
+                let notificationString = ""
+                if(maxMembers === 1) {
+                    notificationString =
+                        'You have successfully registered for the event: ' + eventDesc.eventName
+                    
+                } else {
+                    notificationString =
+                        'You have initiated registration for the event: ' + eventDesc.eventName
+                }
                 userData.notifications.push({ notificationString, timeStamp })
 
                 if (userData.events.watchlist.includes(eventId)) {
