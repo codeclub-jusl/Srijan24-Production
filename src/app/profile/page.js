@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
 import Image from 'next/image';
+import Navbar from '@/components/Navbar/Navbar';
 const page = () => {
     const [imageUpload, setImageUpload] = useState(null);
     const [isEditable, setIsEditable] = useState(false);
@@ -162,6 +163,7 @@ const page = () => {
     }
     return (
         <div className={styles.body_container}>
+            <Navbar></Navbar>
             <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen '>
                 <div className={styles.card}>
                     <div className={styles.svg_container}>
@@ -175,7 +177,7 @@ const page = () => {
                             Log out
                         </button>
                         <input type='file' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
-                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' /> Change Profile Pic</label>
+                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' /> {imageUpload?imageUpload.name:'Change Profile Pic'}</label>
 
                         <label>
                             <p>Name:</p>
