@@ -10,7 +10,6 @@ const getCookie = (name) => {
   });
 }
 
-
 const deleteCookie = (name, path, domain) => {
   if(getCookie(name)) {
     document.cookie = name + "=" +
@@ -26,20 +25,14 @@ export const userSlice = createSlice({
   reducers: {
     loginUser: (state, action) => {
       state.user = action.payload;
-      console.log('before cookies set')
       document.cookie = `x-srijan-firebase-auth-token=${action.payload.authTokenID}`
       document.cookie = `x-srijan-firebase-user-email=${action.payload.email}`
-      console.log(action.payload)
-      console.log('after cookies set')
     },
 
     logoutUser: (state, action) => {
-      state.user = null;
-      console.log('before cookie removal')
       deleteCookie('x-srijan-firebase-auth-token')
       deleteCookie('x-srijan-firebase-user-email')
-      console.log('after cookie removal')
-
+      state.user = null;
     },
   },
 });
