@@ -1,9 +1,8 @@
 "use client";
 import Image from 'next/image';
-import "./not_found.css";
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-export default function Not_Found()
+export default () => 
 {
     const router = useRouter();
     useEffect(() => {
@@ -18,7 +17,7 @@ export default function Not_Found()
         return () => clearTimeout(timer);
       }, []);
     return <>
-    <main className="main">
+    <main id="not_found_main">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
