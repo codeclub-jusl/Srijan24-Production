@@ -90,7 +90,7 @@ const events = [
             'Md. Azhaan [ 8637007433 ]',
             'Haimi Jha [ 9433426285 ]',
         ],
-        prize: ["Certificates and prize pool of Rs.5000"],
+        prize: ["Exciting prize pool of Rs.5000"],
         minMembers: 1,
         maxMembers: 3,
         eventPoster: '/images/events/Cypher.png',
@@ -99,11 +99,10 @@ const events = [
         eventDescription: [`Participants will be given a short crash course on the cryptographic methods to be used during the contest. Based on this knowledge and common observation, they would be required to solve 4 stages in the prelims to qualify for the finals.`],
         eventRules: {
             " ": [
-
-                "1. Participants must carry their own laptops (1 per team). Carrying headphones is adviced.",
-                "2. Participants can take notes during the session and refer to them during the contest.",
-                "3. Any online tools might be used for additional help.",
-                "4. First 10 teams to finish the prelims will qualify to the finals, which will have 3 winners.",
+                "Participants must carry their own laptops (1 per team). Carrying headphones is adviced.",
+                "Participants can take notes during the session and refer to them during the contest.",
+                "Any online tools might be used for additional help.",
+                "First 10 teams to finish the prelims will qualify to the finals, which will have 3 winners.",
             ],
         },
     }
