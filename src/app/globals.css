@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 ::-webkit-scrollbar {
     width: 5px;
   }
@@ -1921,3 +1924,34 @@ screen and (max-height: 380px) {
     }
 }
 /*end of not found page*/
+
+.noEventBox{
+    /* font-family: "Tinos", serif; */
+    font-weight: 600;
+    /* font-family: "Roboto Flex", sans-serif; */
+}
+.noEventBox h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.noEventBox p{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 30px;
+}
+.eventTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+.eventDesc{
+    text-align: justify;
+}
+@media (max-width: 540px){
+    .noEventBox h2{
+        font-size: 1.5rem;
+    }
+    .noEventBox p{
+        font-size: 1rem;
+    }
+}

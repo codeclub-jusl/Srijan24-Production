@@ -52,9 +52,9 @@ export default function OverallNav() {
                     <Link href="/dashboard"><p>Dashboard</p></Link>
                 ) : ""}
                 {user ? (
-                    <button onClick={handleLogout}><p>LogOut</p></button>
+                    <button onClick={handleLogout}><p>Logout</p></button>
                 ) : (
-                    <Link href="/login"><p>LogIn</p></Link>
+                    <Link href="/login"><p>Login</p></Link>
                 )}
             </div>
         </div>

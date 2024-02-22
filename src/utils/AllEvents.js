@@ -126,13 +126,50 @@ const events = [
         eventPoster: '/images/events/capital-clash.png',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Hola Everyone! Let's dive into the world of Business Problems and unleash your potential by solving business complexities with Teamwork! Pitch your Solutions and get a chance to be a real Case Solver.`,
-        eventDescription: [`It is a case study event where you will have to present a unique solution throught the mode of ppt. It will be online.`],
+        eventDescription: [`It is a case study event where you will have to present a unique solution through the mode of ppt. It will be online.`],
         eventRules: {
             " ": [
                 "Similar to case study rules. It will be notified later"
             ],
         },
-    }
+    },
+    {
+        eventId: 'h42',
+        eventName: 'H42',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'coding',
+        eventHashtags: ['Competitive Programming', 'Brainstorming'],
+        eventCoordinators: [
+            'Dibyabrata Panja [ 8509184415 ]',
+            'Ayush Sharma [ 9874180842 ]', 
+            'Soujash Mandal [ 9382929688 ]',
+        ],
+        prize: ["Exciting prizes(TBD) for the top 3 winners(teams)"],
+        minMembers: 3,
+        maxMembers: 3,
+        eventPoster: '/images/events/h42.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins.`,
+        eventDescription: [`Do you enjoy coding but fail to realize its significance in the real world? Do you get bored with the mundane problems you get to solve? Do you yearn to do more? Do you want to rack your head and find the best suited algorithm? Do you have the patience to do so?
+        
+        H42 brought to you by Srijan, Jadavpur University, offers a splendid
+        chance to prove your coding skills and end the boredom. Come, be
+        a part of this coding event and code to glory.
+        `],
+        eventRules: {
+            " ": [
+                "This is a team event. Each team comprises 3 members. Inter-college teams are not allowed.",
+                "There will be 2 rounds. Both the rounds will have 4 programming questions.",
+                "Only one prelims will be conducted which will be in Online mode.",
+                "The timing of the event will be notified later.",
+                "Top 20 teams from the preliminary round will make it to the finals.",
+                "The decisions of Code Club Officials are final and binding."
+            ],
+        },
+    },
 ]
 
 module.exports = events

@@ -75,11 +75,12 @@ const page = ({ params }) => {
 
     const eventData = getEventById(events_id)
 
-    const teamSize =
-        eventData.maxMembers === 1
-            ? 'Individual'
+    let teamSize = 0;
+    if(eventData!==undefined){
+        teamSize = eventData.maxMembers === 1 ? 'Individual'
             : `${eventData.minMembers}-${eventData.maxMembers} members`
 
+    }
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isInvitationModalOpen, setIsInvitationModalOpen] = useState(false)
 
@@ -168,26 +169,31 @@ const page = ({ params }) => {
 
     return (
         <div className='bg-gradient-to-br from-black via-sky-950 to-black text-white min-h-screen flex justify-center items-center font-body'>
-            <div className='container mx-auto px-4 py-8'>
-                <h1 className='text-4xl font-bold mb-6 text-center'>
+            {eventData===undefined && <div className='noEventBox'>
+                    <h2>Event Not Found</h2>
+                    <p>Sorry, but we can't find the event you are looking for...</p>
+                </div>}
+            {eventData && <div className='container mx-auto px-4 py-8'>
+                <h1 className='text-4xl font-bold mb-6 text-center eventTitle'>
                     <span
                         style={{
                             backgroundClip: 'text',
                             WebkitBackgroundClip: 'text',
                             color: 'transparent',
                             backgroundImage:
-                                'linear-gradient(to right, #87CEEB, #00BFFF)',
+                                // 'linear-gradient(to right, #87CEEB, #00BFFF)',
+                                'linear-gradient(to right, #DADCDE, #067AD5)',
                         }}
                     >
-                        {eventData.eventName}
+                        {eventData && eventData.eventName}
                     </span>
                 </h1>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                     <div className='bg-opacity-50 p-6 rounded-lg flex items-center justify-center md:col-span-1'>
                         <img
-                            src={eventData.eventPoster}
-                            alt={eventData.eventName}
+                            src={eventData && eventData.eventPoster}
+                            alt={eventData && eventData.eventName}
                             className='mx-auto mb-6 rounded-lg max-w-full h-auto'
                         />
                     </div>
@@ -197,14 +203,14 @@ const page = ({ params }) => {
                                 <BsCalendar className='mr-2' />
                                 <p>
                                     <strong>Event Date (Prelims):</strong>{' '}
-                                    {eventData.eventDate.prelims.join(', ')}
+                                    {eventData && eventData.eventDate.prelims.join(', ')}
                                 </p>
                             </div>
                             <div className='flex items-center mb-4'>
                                 <BsCalendar className='mr-2' />
                                 <p>
                                     <strong>Event Date (Finals):</strong>{' '}
-                                    {eventData.eventDate.finals}
+                                    {eventData && eventData.eventDate.finals}
                                 </p>
                             </div>
                             <div className='flex items-center mb-4'>
@@ -222,7 +228,7 @@ const page = ({ params }) => {
                                 </strong>
                             </p>
                             <ul className='list-disc '>
-                                {eventData.eventCoordinators.map(
+                                {eventData && eventData.eventCoordinators.map(
                                     (coordinator, index) => {
                                         const [name, phoneNumber] =
                                             coordinator.split(' [ ')
@@ -252,7 +258,7 @@ const page = ({ params }) => {
                                 )}
                             </ul>
                         </div>
-                        {eventData.prize && (
+                        {eventData && eventData.prize && (
                                 <div className='flex flex-col p-3 shadow-2xl'>
                                 <p className='mb-2'>
                                     <strong className='text-lg md:text-xl'>
@@ -271,8 +277,8 @@ const page = ({ params }) => {
                                     Event Description:
                                 </strong>
                             </p>
-                            <p className='text-sm md:text-base'>
-                                {eventData.eventDescription}
+                            <p className='text-sm md:text-base eventDesc'>
+                                {eventData && eventData.eventDescription}
                             </p>
                         </div>
                     </div>
@@ -338,14 +344,14 @@ const page = ({ params }) => {
                 <Modal
                     isOpen={isModalOpen}
                     onClose={toggleModal}
-                    minMembers={eventData.minMembers}
-                    maxMembers={eventData.maxMembers}
-                    eventId={eventData.eventId}
+                    minMembers={eventData && eventData.minMembers}
+                    maxMembers={eventData && eventData.maxMembers}
+                    eventId={eventData && eventData.eventId}
                 />
                 <InvitationModal
                     isOpen={isInvitationModalOpen}
                     onClose={toggleInvitationModal}
-                    eventId={eventData.eventId}
+                    eventId={eventData && eventData.eventId}
                 />
                 <div className='bg-opacity-50 p-6 rounded-lg mt-6'>
                     <p className='mb-2'>
@@ -354,7 +360,7 @@ const page = ({ params }) => {
                         </strong>
                     </p>
                     <ul className='list-disc pl-6 text-sm md:text-lg'>
-                        {Object.entries(eventData.eventRules).map(
+                        {eventData && Object.entries(eventData.eventRules).map(
                             ([round, rules], roundIndex) => (
                                 <div key={roundIndex} className='mb-4'>
                                     <p className='text-lg font-semibold'>
@@ -372,7 +378,7 @@ const page = ({ params }) => {
                         )}
                     </ul>
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }
