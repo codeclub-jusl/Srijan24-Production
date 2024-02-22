@@ -35,7 +35,7 @@
     -webkit-backdrop-filter: blur(13px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     z-index: 1000;
 }
@@ -44,12 +44,10 @@
     color: aliceblue;
 }
 
-.box p,
 .box1 p {
     color: aliceblue;
-    margin-right: 30px;
+    margin-right: 50px;
 }
-
 @media only screen and (max-width: 900px) {
     .box {
         width: 360px;
@@ -111,8 +109,6 @@
 
     .box1 {
         height: 60px;
-        width: 360px;
-        justify-content: right;
     }
 
 }
