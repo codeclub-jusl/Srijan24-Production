@@ -3,7 +3,6 @@ import EventPage from '@/components/EventComponents/EventPage'
 import UserHOC from '@/hoc/UserHOC'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-
 const Registered = () => {
     const user = useSelector(state => state.userReducer.user)
     const userRegistered = user.events.registered
@@ -21,7 +20,7 @@ const Registered = () => {
 
     return (
         <div>
-            <EventPage eventsId={eventsId} pageType='Registered Events' bgColor="green" />
+            <EventPage eventsId={eventsId} pageType='Registered Events' bgColor="#052e16" />
         </div>
     )
 }

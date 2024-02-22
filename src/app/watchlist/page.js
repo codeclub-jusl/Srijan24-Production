@@ -3,7 +3,6 @@ import EventPage from '@/components/EventComponents/EventPage'
 import UserHOC from '@/hoc/UserHOC'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-
 const Watchlisted = () => {
     const user = useSelector(state => state.userReducer.user)
     const userWatchlist = user.events.watchlist
@@ -14,8 +13,9 @@ const Watchlisted = () => {
     }, [user])
 
     return (
+
         <div>
-            <EventPage eventsId={eventsId} pageType='Watchlisted Events' bgColor="sky" />
+            <EventPage eventsId={eventsId} pageType='Watchlisted Events' bgColor="#082f49" />
         </div>
     )
 }
