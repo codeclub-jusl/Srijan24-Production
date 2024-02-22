@@ -90,7 +90,7 @@ const events = [
             'Md. Azhaan [ 8637007433 ]',
             'Haimi Jha [ 9433426285 ]',
         ],
-        prize: ["Exciting prize pool of Rs.5000"],
+        prize: ["Exciting prize pool of Rs. 5000"],
         minMembers: 1,
         maxMembers: 3,
         eventPoster: '/images/events/Cypher.png',
@@ -103,6 +103,33 @@ const events = [
                 "Participants can take notes during the session and refer to them during the contest.",
                 "Any online tools might be used for additional help.",
                 "First 10 teams to finish the prelims will qualify to the finals, which will have 3 winners.",
+            ],
+        },
+    },
+    {
+        eventId: 'capital-clash',
+        eventName: 'Capital Clash',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'business & management',
+        eventHashtags: ['finance', 'business', 'finclubju', 'stock-market', 'case-study'],
+        eventCoordinators: [
+            'Adipto Ghosh Dastidar [ 6290764395 ]',
+            'Souptik Dasgupta [ 9007475778 ]',
+            'Akankcha Singh [ 7727954915 ]',
+        ],
+        prize: ["Exciting prize pool of Rs. 5000"],
+        minMembers: 3,
+        maxMembers: 5,
+        eventPoster: '/images/events/capital-clash.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Hola Everyone! Let's dive into the world of Business Problems and unleash your potential by solving business complexities with Teamwork! Pitch your Solutions and get a chance to be a real Case Solver.`,
+        eventDescription: [`It is a case study event where you will have to present a unique solution throught the mode of ppt. It will be online.`],
+        eventRules: {
+            " ": [
+                "Similar to case study rules. It will be notified later"
             ],
         },
     }
