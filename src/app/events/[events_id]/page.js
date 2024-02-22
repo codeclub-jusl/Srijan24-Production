@@ -78,7 +78,7 @@ const page = ({ params }) => {
     let teamSize = 0;
     if(eventData!==undefined){
         teamSize = eventData.maxMembers === 1 ? 'Individual'
-            : `${eventData.minMembers}-${eventData.maxMembers} members`
+            : eventData.maxMembers===eventData.minMembers? `${eventData.minMembers} members` : `${eventData.minMembers}-${eventData.maxMembers} members`
 
     }
     const [isModalOpen, setIsModalOpen] = useState(false)
