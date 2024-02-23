@@ -42,20 +42,20 @@ const TextAnimation = () => {
 
   return (
     <div>
-      <section className="home">
+      <section className="home z-[100]">
         <div className="container">
           <div className="row">
             <div className="home-text">
-              <h1 className='mb-4 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Explore Our</h1>
-              <p className="animate-text animatedText" ref={animateTextRef}>
-                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>35+</span>
-                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] '>Management</span>
-                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] '>Coding</span>
-                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>Finance</span>
-                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] '>Gaming</span>
-                <span className=' font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] '>Robotics</span>
+              <h1 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12 z-10 montserrat'>Explore Our</h1>
+              <p className="animate-text animatedText z-[1] overflow-hidden" ref={animateTextRef}>
+                <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>35+</span>
+                <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#6100FF] to-[#00E0FF] '>Management</span>
+                <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#D907FF] to-[#F4E2FF] '>Coding</span>
+                <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#6100FF] '>Finance</span>
+                <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#00E0FF] to-[#FF0099] '>Gaming</span>
+                <span className='bg-clip-text text-transparent bg-gradient-to-r from-[#FBFBFB] to-[#5600E1] '>Robotics</span>
               </p>
-              <h2 className='mb-2 text-4xl font-bold text-white sm:text-3xl md:mb-12'>Events</h2>
+              <h2 className='mb-1 text-4xl font-bold text-white sm:text-3xl montserrat'>events</h2>
             </div>
           </div>
         </div>
@@ -65,3 +65,5 @@ const TextAnimation = () => {
 };
 
 export default TextAnimation;
+
+

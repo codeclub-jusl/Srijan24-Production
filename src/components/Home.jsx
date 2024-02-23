@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import './Home.css'
 import saturnLeft from '../assets/saturnLeft.png'
@@ -11,7 +12,11 @@ import SrijanCentrepiece from './SrijanCentrepiece'
 import mascotfront from '../assets/mascot-front.png'
 import './Home.css'
 import Countdown from './Countdown'
+import {gsap} from 'gsap'
+import { useEffect, useRef,useState } from 'react'
+
 const Home = () => {
+    
     return (
         <div>
             <div id='top' className='flex flex-col items-center'>
@@ -63,8 +68,8 @@ const Home = () => {
                         Your smart assistant for Srijan 2024
                     </p>
                 </div>
-                <div id='mascot-front'>
-                    <Image alt='mascot-front' src={mascotfront} />
+                <div ref={triggerRef} id='mascot-front'>
+                    <Image alt='mascot-front' src={mascotfront} fill className='mascot-front' />
                 </div>
                 <div id='valley-with-drops'>
                     <Image alt='valley-with-drops' src={valleyWithDrops} />

@@ -1,0 +1,49 @@
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.timeline-container{
+    padding: 10px 50px;
+    position: relative;
+    width: 100%;
+    height: 12.5rem;
+}
+.text-box{
+    /* background-color: #fff; */
+    position: relative;
+    border-radius: 10px;
+    color: #fff;
+    margin-left: 1rem;
+}
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #6100FF;
+    top: 0;
+    left: 17.5%;
+    margin-left: -3px;
+}
+
+.timeline-img{
+    position: relative;
+    left: 2%;
+}
+.tablet{
+    color: transparent;
+    display: none;
+}
+@media (min-width: 640px) and (max-width: 1025px){
+    .timeline::after{
+        left: 8.75%;
+    }
+    .tablet{
+        display: block;
+    }
+    .text-box{
+        margin-left: 2rem;
+    }
+}
