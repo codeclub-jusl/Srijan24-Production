@@ -14,6 +14,7 @@ import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar/Navbar';
+import OverallNav from '@/components/OverallNav/OverallNav';
 const page = () => {
     const [imageUpload, setImageUpload] = useState(null);
     const [isEditable, setIsEditable] = useState(false);
@@ -163,8 +164,9 @@ const page = () => {
     }
     return (
         <div className={styles.body_container}>
-            <Navbar></Navbar>
+            
             <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen '>
+                <OverallNav></OverallNav>
                 <div className={styles.card}>
                     <div className={styles.svg_container}>
                         <img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} className={styles.blob} alt='profile-img' />
@@ -173,11 +175,8 @@ const page = () => {
                     <div className={styles.info}>
                         <h1>Hey, {formState.name}</h1>
                         <h2>{formState.email}</h2>
-                        <button type='button' onClick={handleLogout} className={styles.logout}>
-                            Log out
-                        </button>
                         <input type='file' accept='image/*' id='uploadBtn' onChange={(e) => setImageUpload(e.target.files[0])} disabled={!isEditable} />
-                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' /> Change Profile Pic</label>
+                        <label className={styles.profile_pic} htmlFor="uploadBtn"><img src={formState.profilePicUrl !== "" ? formState.profilePicUrl : '/images/avatar.jpg'} alt='profile-img' />{imageUpload?imageUpload.name:'Change Profile Pic'}</label>
 
                         <label>
                             <p>Name:</p>

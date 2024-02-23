@@ -1,9 +1,9 @@
 .box {
     top: 0;
     left: 0;
-    width: 400px;
+    width: 390px;
     height: 100px;
-    clip-path: polygon(0 0,100% 0,100% calc(100% - 200.00px),calc(100% - 200.00px) 100%,0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 200.00px), calc(100% - 200.00px) 100%, 0 100%);
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(13px);
@@ -16,12 +16,17 @@
     position: fixed;
 }
 
+.box img {
+    width: 200px;
+    height: 200px;
+}
+
 .box1 {
     background: #2acdff4e;
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 600px;
+    width: 450px;
     height: 70px;
     clip-path: polygon(0 100.00px, 100.00px 0, 100% 0, 100% 100%, 0 100%);
     background: rgba(255, 255, 255, 0.25);
@@ -30,13 +35,80 @@
     -webkit-backdrop-filter: blur(13px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     z-index: 1000;
 }
 
-
-.box p, .box1 p {
+.box1 button {
     color: aliceblue;
-    margin-right: 30px;
+}
+
+.box1 p {
+    color: aliceblue;
+    margin-right: 50px;
+}
+@media only screen and (max-width: 900px) {
+    .box {
+        width: 360px;
+        height: 90px;
+    }
+
+    .box img {
+        width: 165px;
+        height: 165px;
+    }
+
+    .box1 {
+        height: 65px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .box {
+        width: 340px;
+        height: 80px;
+    }
+
+    .box img {
+        width: 155px;
+        height: 155px;
+    }
+
+    .box1 {
+        height: 65px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        width: 330px;
+        height: 75px;
+    }
+
+    .box img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .box1 {
+        height: 65px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .box {
+        width: 300px;
+        height: 70px;
+    }
+
+    .box img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .box1 {
+        height: 60px;
+    }
+
 }

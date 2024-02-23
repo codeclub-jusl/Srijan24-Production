@@ -3,7 +3,6 @@ import EventPage from '@/components/EventComponents/EventPage'
 import UserHOC from '@/hoc/UserHOC'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-
 const Pending = () => {
     const user = useSelector(state => state.userReducer.user)
     const userRegistrations = user.events.registered
@@ -21,7 +20,7 @@ const Pending = () => {
 
     return (
         <div>
-            <EventPage eventsId={eventsId} pageType='Pending Registrations' bgColor="rose" />
+            <EventPage eventsId={eventsId} pageType='Pending Registrations' bgColor="#4c0519" />
         </div>
     )
 }
