@@ -1,5 +1,6 @@
 const ambassadors = {
     // "halderarindam10000@gmail.com": "aBcDe",
+    "tanmayroy81011@gmail.com": "AbCdE",
     "ankanbera36@gmail.com": "iwRwp",
     "mbera21062005@gmail.com": "IfN9G",
     "mg8552638@gmail.com": "cVO8X",
