@@ -17,9 +17,9 @@ export default () => {
       <div className='mascotGap' />
       <Cards />
       <Gallery />
-      <About />
       <Timeline2/>
       <MobileTimeline/>
+      <About />
       <Footer />
       <OverallNav></OverallNav>
     </>

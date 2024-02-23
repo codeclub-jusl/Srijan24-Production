@@ -6,24 +6,23 @@ export default function Cards(){
   return (
     <>
       <div className="cardsContainer font-Montserrat">
-        <div className="cardBox disabledCard">
-          <Image src={"/images/ambassador.jpeg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>
+        <Link href={"/ambassador"} className="cardBox">
+          <Image src={"/images/ambassador.jpeg"} height={800} width={850} alt="cardImage" className="cardImage"/>
           <p>Campus Ambassador</p>
-          <Link href="/ambassador" target="_blank" className="unlockedCard"></Link>
-        </div>
+        </Link>
+
 
         <Link href={"/events"} className="cardBox">
-          <Image src={"/images/events.jpg"} height={300} width={250} alt="cardImage" className="cardImage"/>
+          <Image src={"/images/events.jpg"} height={800} width={850} alt="cardImage" className="cardImage"/>
           <p>Events</p>
-          {/* <div className="lockedCard">Locked</div> */}
         </Link>
         <div className="cardBox disabledCard">
-          <Image src={"/images/merchandise.jpg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>
+          <Image src={"/images/merchandise.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
           <p>Merchandise</p>
           <div className="lockedCard">Locked</div>
         </div>
         <div className="cardBox disabledCard">
-          <Image src={"/images/workshop.jpg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>
+          <Image src={"/images/workshop.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
           <p>Workshop</p>
           <div className="lockedCard">Locked</div>
         </div>
