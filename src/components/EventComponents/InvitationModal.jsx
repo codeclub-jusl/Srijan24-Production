@@ -8,11 +8,15 @@ import { notification } from 'antd'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { loginUser } from '@/store/userSlice'
 import { getEventById } from '@/utils/event'
+import UserHOC from '@/hoc/UserHOC'
 
 const InvitationModal = ({ isOpen, onClose, eventId }) => {
+    if (!isOpen) return null
+
     const user = useSelector(state => state.userReducer.user)
     // const teamName = user.invitations.find(obj => obj.eventId === eventId)
     const [teamData, setTeamData] = useState(null)
+    const [allTeamData, setAllTeamData] = useState(null)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -21,6 +25,7 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
         )
 
         if (data1) {
+            setAllTeamData(data1)
             const { eventId: _, ...data2 } = data1
             data2.members = data2.members.filter(
                 obj => obj.email !== data1.leader,
@@ -239,7 +244,80 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
         onClose()
     }
 
-    if (!isOpen) return null
+    const updateUser3 = async userEmail => {
+        const eventDetails = getEventById(eventId)
+
+        const userRef = doc(db, 'users', userEmail)
+        const userSnap = await getDoc(userRef)
+
+        if (userSnap.exists()) {
+            let userData = userSnap.data()
+            userData.events.registered = userData.events.registered.filter(
+                obj => obj.eventId !== eventId,
+            )
+
+            const timeStamp = Date.now()
+
+            if (userEmail !== user.email) {
+                const notificationString =
+                    user.email +
+                    ' has deleted the registration for the event: ' +
+                    eventDetails.eventName
+                userData.notifications.push({ notificationString, timeStamp })
+            } else {
+                const notificationString =
+                    'You have removed the registration for the event: ' +
+                    eventDetails.eventName
+                userData.notifications.push({ notificationString, timeStamp })
+            }
+
+            userData.invitations = userData.invitations.filter(
+                obj => obj.eventId !== eventId,
+            )
+
+            await updateDoc(userRef, userData)
+        }
+    }
+
+    const handleRemove = async () => {
+        setLoading(true)
+
+        try {
+            const index = user.events.registered.findIndex(
+                obj => obj.eventId === eventId,
+            )
+
+            if (index !== -1) {
+                let teamDetails = user.events.registered[index]
+                let members = teamDetails.members
+                const noOfMembers = members.length
+
+                for (let i = 0; i < noOfMembers; i++) {
+                    await updateUser3(members[i].email)
+                }
+
+                const modifiedTeamName = teamData.teamName
+                    .toLowerCase()
+                    .trim()
+                    .replace(/\s/g, '')
+
+                await deleteDoc(doc(db, eventId, modifiedTeamName))
+
+                notification['success']({
+                    message: `Registration removed`,
+                    duration: 3,
+                })
+            }
+        } catch (err) {
+            notification['error']({
+                message: `Somthing went wrong! Try again later`,
+                duration: 3,
+            })
+        }
+
+        setLoading(false)
+        onClose()
+    }
 
     return (
         <div className='fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50'>
@@ -338,7 +416,7 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                     </button>
                 )}
                 */}
-                {user && teamData && user.email !== teamData.leader && (
+                {(user && teamData && user.email !== teamData.leader && teamData.status === 'pending') ? (
                     <>
                         <button
                             type='button'
@@ -363,6 +441,18 @@ const InvitationModal = ({ isOpen, onClose, eventId }) => {
                             )}
                         </button>
                     </>
+                ) : user && teamData && user.email === teamData.leader && (
+                    <button
+                            type='button'
+                            className='login__button'
+                            onClick={handleRemove}
+                        >
+                            {loading ? (
+                                <BeatLoader color='#ffffff' />
+                            ) : (
+                                'Remove registration'
+                            )}
+                        </button>
                 )}
             </form>
         </div>

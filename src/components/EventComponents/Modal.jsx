@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Modal.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
@@ -8,6 +8,7 @@ import { notification } from 'antd'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { loginUser } from '@/store/userSlice'
 import { getEventById } from '@/utils/event'
+import UserHOC from '@/hoc/UserHOC'
 
 const Modal = ({
     isOpen,
@@ -17,8 +18,19 @@ const Modal = ({
     minMembers,
     maxMembers,
 }) => {
+    if (!isOpen) return null
+
     const dispatch = useDispatch()
     const user = useSelector(state => state.userReducer.user)
+
+    useEffect(() => {
+        if(user && user.events.registered.find(obj => obj.eventId === eventId)) {
+            const thisTeamData = user.events.registered.find(obj => obj.eventId === eventId);
+            if(thisTeamData.leader !== user.email) {
+                onClose()
+            }
+        }
+    }, [user])
 
     const [loading, setLoading] = useState(false)
     const [emails, setEmails] = useState(
@@ -256,7 +268,6 @@ const Modal = ({
         onClose()
     }
 
-    if (!isOpen) return null
     // console.log(teamSize, eventId, minMembers, maxMembers, emails, isValid)
 
     return (

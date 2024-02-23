@@ -94,18 +94,18 @@ const page = ({ params }) => {
 
     const handleRegister = e => {
         e.preventDefault()
-        if (eventStatus === 'pending') {
+        if (eventStatus === 'pending' || eventStatus === 'registered') {
             toggleInvitationModal()
             return
         }
 
-        if (eventStatus === 'registered') {
-            notification['info']({
-                message: `You have already registered for the event`,
-                duration: 3,
-            })
-            return
-        }
+        // if (eventStatus === 'registered') {
+        //     notification['info']({
+        //         message: `You have already registered for the event`,
+        //         duration: 3,
+        //     })
+        //     return
+        // }
 
         toggleModal()
     }
