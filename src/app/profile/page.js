@@ -4,7 +4,7 @@ import styles from './profile.module.css'
 import AuthHOC from '@/hoc/AuthHOC'
 import { useDispatch, useSelector } from 'react-redux'
 import { notification } from 'antd'
-import { doc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import { auth, db, storage } from '@/firebase/config'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { signOut } from 'firebase/auth'
@@ -22,6 +22,7 @@ const page = () => {
     const [isEditable, setIsEditable] = useState(false)
     const [loading, setLoading] = useState(false)
     const [referCode, setReferCode] = useState('')
+    const [referredFriends, setReferredFriends] = useState([])
 
     const handleEditClick = e => {
         if (isEditable) {
@@ -36,7 +37,8 @@ const page = () => {
     const user = useSelector(state => state.userReducer.user)
 
     const referralCode = findReferralCode(user.email)
-    const campusAmbassador = getAmbassadorByCode('aBcDe')
+    const campusAmbassador = getAmbassadorByCode(user.referralCode)
+    // const campusAmbassador = "AbCdE"
     // const user = propsUser
     // console.log(user);
 
@@ -62,6 +64,12 @@ const page = () => {
             year: user ? user.year : '',
             profilePicUrl: user ? user.profilePicUrl : '',
         })
+
+        if(user.referredFriends) {
+            setReferredFriends(user.referredFriends)
+        } else {
+            setReferredFriends([])
+        }
     }, [user])
 
     const handleChange = event => {
@@ -78,7 +86,7 @@ const page = () => {
         }
     }
 
-    const updateProfile = async newUserData => {
+    const updateProfile = async (newUserData, message) => {
         const userRef = doc(db, 'users', user.email)
 
         await updateDoc(userRef, newUserData)
@@ -91,7 +99,7 @@ const page = () => {
                 )
 
                 notification['success']({
-                    message: `Profile updated successfully`,
+                    message: message,
                     duration: 3,
                 })
             })
@@ -163,14 +171,55 @@ const page = () => {
                     })
                 })
         } else {
-            await updateProfile({ ...formState })
+            await updateProfile({ ...formState }, "Profile updated successfully")
         }
 
         setLoading(false)
     }
 
-    const handleSubmitReferral = ()=>{
-        console.log(referCode);
+    const handleSubmitReferral = async (e) => {
+        e.preventDefault()
+        // console.log(referCode);
+        const ambassadorUser = getAmbassadorByCode(referCode)
+
+        if(!ambassadorUser) {
+            notification['error']({
+                message: `Invalid referral code`,
+                duration: 3,
+            })
+            return;
+        }
+
+        setLoading(true);
+
+        try {
+            const ambassadorUserRef = doc(db, 'users', ambassadorUser)
+            const ambassadorUserSnap = await getDoc(ambassadorUserRef)
+
+            if(ambassadorUserSnap.exists()) {
+                const ambassadorUserData = ambassadorUserSnap.data()
+                if(ambassadorUserData.referredFriends) {
+                    const newAmbassadorUserData = {...ambassadorUserData, referredFriends: [...ambassadorUserData.referredFriends, user.email]}
+                    await updateDoc(ambassadorUserRef, newAmbassadorUserData)
+                } else {
+                    await setDoc(ambassadorUserRef, {
+                        referredFriends: [user.email],
+                      }, { merge: true });
+                }
+            }
+
+            await updateProfile({...formState, referralCode: referCode}, 'Referral code updated')
+
+        } catch (err) {
+            // console.log(err);
+            notification['error']({
+                message: `Somthing went wrong! Try again later`,
+                duration: 3,
+            })
+        }
+
+        setReferCode('')
+        setLoading(false);
     }
 
 
@@ -187,6 +236,7 @@ const page = () => {
 
         router.push('/login')
     }
+
     return (
         <div className={styles.body_container}>
             <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen flex-col'>
@@ -326,18 +376,18 @@ const page = () => {
                 </div>
 
                 {/* Campus Ambassador Referral section --------------------------- */}
-                {/* {referralCode && <div className={styles.ambassadorCard}>
+                {referralCode && <div className={styles.ambassadorCard}>
                     <h2>Campus Ambassador</h2>
                     <p>
                         Hey, Congrats! you are selected as a Campus Ambassador
                     </p>
 
-                    <div className={styles.referralBox}>{referralCode}</div>
-                </div>} */}
+                    <div className={styles.referralBox}>You have referred {referredFriends.length} {referredFriends.length <= 1 ? 'friend' : 'friends'}</div>
+                </div>}
 
 
                 {/* User: Referral Form Section ------------------------------------- */}
-                {/* {!referralCode && <div className={styles.ambassadorCard}>
+                {!referralCode && <div className={styles.ambassadorCard}>
                     <h2>Referral</h2>
                     {campusAmbassador===undefined &&
                         <>
@@ -349,7 +399,9 @@ const page = () => {
                                     value={referCode}
                                     onChange={e => setReferCode(e.target.value)}
                                 />
-                                <button onClick={handleSubmitReferral}>Enter</button>
+                                <button onClick={handleSubmitReferral}>
+                                    {loading ? <BeatLoader color='#ffffff' /> : 'Enter'}
+                                </button>
                             </div>
                         </>
                     }
@@ -360,7 +412,7 @@ const page = () => {
                             <p className={styles.ambassadorMessage}>Hey! You are referred by {campusAmbassador}</p>
                         </>
                     }
-                </div>} */}
+                </div>}
             </div>
         </div>
     )
