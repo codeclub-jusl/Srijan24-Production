@@ -22,7 +22,7 @@ export default function Home() {
                 translateX: 0,
             },
             {
-                translateX: '-25%',
+                translateX: '-26%',
                 ease: 'none',
                 duration: 1,
                 scrollTrigger: {
@@ -39,26 +39,35 @@ export default function Home() {
         }
     }, [])
     return (
-        <section className='scroll-section-outer overflow-hidden h-fit hidden min-[1025px]:block'>
-            <div
-                ref={triggerRef}
-                className='relative overflow-hidden hidden md:block'
-            >
+        <>
+            <section className='scroll-section-outer overflow-hidden h-fit hidden min-[1025px]:block'>
+                <h1 className='relative font-Montserrat font-semibold text-[4rem] text-white text-center my-4'>
+                    Timeline
+                </h1>
                 <div
-                    ref={sectionRef}
-                    className='scroll-section-inner h-[60vh] w-[400vw] flex flex-row relative left-[35rem]'
+                    ref={triggerRef}
+                    className='relative overflow-hidden hidden md:block'
                 >
-                    <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
-                        <Image src={curve2} width={1000} className='image' />
-                    </div>
-                    <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
-                        <Image src={curve22} width={1000} />
-                    </div>
-                    <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
-                        <Image src={curve23} width={1000} />
+                    <div
+                        ref={sectionRef}
+                        className='scroll-section-inner h-[60vh] w-[400vw] flex flex-row relative left-[35rem]'
+                    >
+                        <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
+                            <Image
+                                src={curve2}
+                                width={1000}
+                                className='image'
+                            />
+                        </div>
+                        <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
+                            <Image src={curve22} width={1000} />
+                        </div>
+                        <div className='scroll-section h-full w-[58vw] overflow-hidden flex justify-center items-center '>
+                            <Image src={curve23} width={1000} />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
