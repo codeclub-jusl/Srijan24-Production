@@ -1,23 +1,62 @@
-import Link from "next/link";
-import './OverallNav.css';
-import Image from "next/image";
-import Script from "next/script";
+"use client"
+import styles from './overallNav.module.css';
+import Link from 'next/link'
+import { Montserrat } from 'next/font/google'
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { notification } from 'antd';
+import { doc, updateDoc } from 'firebase/firestore';
+import { auth, db, storage } from '@/firebase/config';
+import { signOut } from 'firebase/auth';
+import { loginUser, logoutUser } from '@/store/userSlice';
+import { useRouter } from 'next/navigation';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { set } from 'firebase/database';
+const montserrat = Montserrat({ subsets: ['latin'] })
 export default function OverallNav() {
+    /*const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const controlNavbar = (e)=>{
+        if(e.currentTarget.scrollTop > lastScrollY){
+            setShowNavbar(false);
+        }
+        else{
+            setShowNavbar(true);
+        }
+        setLastScrollY(e.currentTarget.scrollTop);
+    }*/
+    const dispatch = useDispatch();
+    const router = useRouter();
+    const user = useSelector(state => state.userReducer.user);
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        signOut(auth);
+        dispatch(logoutUser());
+
+        notification['success']({
+            message: `Logged out successfully`,
+            duration: 3
+        })
+
+        router.push("/login");
+    }
     return (
-        <>
-            <div className="box">
-                <Image src="/assets/Srijan logo.png" width={250} height={250}></Image>
+        <div>
+            <div className={styles.box}>
+                <Link href="/"><img src="/assets/Srijan logo.png" alt="logo"></img></Link>
             </div>
-            <div className="box1">
-                <Link href="/dasboard"><p>Dashboard</p></Link>
+            <div className={styles.box1}>
                 <Link href="/events"><p>Events</p></Link>
-                <Link href="/merchandise"><p>Merchandise</p></Link>
-                <Link href="/login"><p>Login/SignUp</p></Link>
-                <Link href="/testprop"><p>SrijanGPT</p></Link>
-                <Link href="/reg"><p>AboutUs</p></Link>
-                <Image src="/assets/mascot-front2.png" width={100} height={100}></Image>
+                {user ? (
+                    <Link href="/dashboard"><p>Dashboard</p></Link>
+                ) : ""}
+                {user ? (
+                    <button onClick={handleLogout}><p>Logout</p></button>
+                ) : (
+                    <Link href="/login"><p>Login</p></Link>
+                )}
             </div>
-            <Script src="/js/nav.js" />
-        </>
+        </div>
     )
 }

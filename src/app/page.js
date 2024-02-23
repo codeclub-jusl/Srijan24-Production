@@ -10,17 +10,18 @@ import MobileTimeline from '@/components/Timeline2/MobileTimeline'
 import OverallNav from '@/components/OverallNav/OverallNav';
 
 export default () => {
-    return (
-        <>
-            <Hero />
-            <div className='mascotGap' />
-            <Cards />
-            <Gallery />
-            <About />
-            <Timeline2/>
-            <MobileTimeline/>
-            <Footer />
-            <OverallNav />
-        </>
-    )
+
+  return (
+    <>
+      <Hero />
+      <div className='mascotGap' />
+      <Cards />
+      <Gallery />
+      <About />
+      <Timeline2/>
+      <MobileTimeline/>
+      <Footer />
+      <OverallNav></OverallNav>
+    </>
+  );
 }

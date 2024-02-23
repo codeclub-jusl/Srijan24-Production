@@ -97,44 +97,58 @@ export default function SignUp() {
     }, [confirmPassword])
 
     const validateEmail = () => {
-        const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!re.test(email)) {
-            setEmailError(true);
+        const re = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+
+        if (re.test(email)) {
+            return true;
         } else {
-            setEmailError(false);
+            return false;
         }
     };
 
-    const validatePassword = () => {
-        const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$&*]).{8,}$/;
-        if (!passwordRegex.test(password)) {
-            setPasswordError(true);
-        } else {
-            setPasswordError(false);
-        }
+    const validatePassword = (password) => {
+        const isPassValid = password.match(/[a-z]/g) && password.match(/[A-Z]/g) && password.match(/[0-9]/g) && password.match(/[^a-zA-Z\d]/g) && password.length >= 6;
+
+        return isPassValid;
     };
 
-    const validatePasswordMatch = () => {
+    const validatePasswordMatch = (password, confirmPassword) => {
         if (password !== confirmPassword) {
-            setPasswordMatchError(true);
+            return false;
         } else {
-            setPasswordMatchError(false);
+            return true;
         }
     };
 
     const validatePhone = () => {
-        const phoneRegex = /^\d{9}$/;
-        if (!phoneRegex.test(phone)) {
-            setPhoneError(true);
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (phoneRegex.test(phone)) {
+            return true;
         } else {
-            setPhoneError(false);
+            return false;
         }
     };
     const nextStep = () => {
-        if (step === 1 && email && phone && !phoneError && !emailError) {
-            setStep(step + 1);
-        } else if (step === 2 && college && year && dept) {
-            setStep(step + 1);
+        if(step === 1)
+        {
+            if (name && email && phone && validatePhone(phone) && validateEmail(email)) {
+                setStep(step + 1);
+            } else {
+                notification['error']({
+                    message: `All fields are required. Please make sure phone and email are valid`,
+                    duration: 3,
+                })
+            }
+        }
+        else if(step === 2) {
+            if(college && year && dept) {
+                setStep(step + 1);
+            } else {
+                notification['error']({
+                    message: `All fields are required.`,
+                    duration: 3,
+                })
+            }
         }
     };
 
@@ -144,12 +158,28 @@ export default function SignUp() {
 
     const handleClick = () => {
         // console.log("clicked");
+        if(!validatePassword(password)) {
+            notification['error']({
+                message: `Password must contain atleast 1 each lowercase, uppercase, special character, digit and must be 6 characters long`,
+                duration: 5,
+            })
+            return;
+        }
+
+        if(!validatePasswordMatch(password, confirmPassword)) {
+            notification['error']({
+                message: `Confirm password did not match`,
+                duration: 3,
+            })
+            return;
+        }
+
         setLoading(true);
 
-        validateEmail();
-        validatePassword();
-        validatePasswordMatch();
-        validatePhone();
+        // validateEmail();
+        // validatePassword();
+        // validatePasswordMatch();
+        // validatePhone();
 
         // console.log(passwordMatchError);
 
@@ -186,6 +216,7 @@ export default function SignUp() {
                         },
                         invitations: [],
                         notifications: [],
+                        referralCode: "",
                     });
 
                     await sendEmailVerification(auth.currentUser).then(() => {
@@ -244,13 +275,13 @@ export default function SignUp() {
                                         <label htmlFor="username" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Full Name</label>
                                     </div>
                                     <div className="relative py-4">
-                                        <input type="text" value={email} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setEmail(e.target.value); validateEmail(); }} />
+                                        <input type="text" value={email} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setEmail(e.target.value);}} />
                                         <label htmlFor="username" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Email</label>
                                         {emailError && <span className="text-red-500 text-xs">*Invalid Email Address</span>}
                                     </div>
 
                                     <div className="relative py-4">
-                                        <input type="number" value={phone} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setPhone(e.target.value); validatePhone(); }} />
+                                        <input type="number" value={phone} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setPhone(e.target.value);}} />
                                         <label htmlFor="username" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Phone Number</label>
                                         {phoneError && <span className="text-red-500 text-xs">*Invalid Phone Number</span>}
                                     </div>
@@ -292,9 +323,9 @@ export default function SignUp() {
                             {step === 3 && (
                                 <div>
                                     <div className="relative py-4">
-                                        <input type="password" value={password} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setPassword(e.target.value); validatePassword(); }} />
+                                        <input type="password" value={password} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setPassword(e.target.value);}} />
                                         <label htmlFor="year" className="absolute left-0 top-1 text-[#f5c9ff] cursor-text text-xs peer-focus:text-xs peer-placeholder-shown:text-base peer-focus:-top-3 transition-all">Password</label>
-                                        {passwordError && <span className="text-red-500 text-xs">*Invalid Password</span>}
+                                        {passwordError && <span className="text-red-500 text-xs">*Invalid Password, Password must contain atleast 1 uppercase, 1 lowercase, 1 digit & 1 special character</span>}
                                     </div>
                                     <div className="relative py-4">
                                         <input type="password" value={confirmPassword} className=" w-full border-b py-1 focus:outline-none focus:border-b-2 transition-colors peer bg-transparent text-white" autoComplete='off' placeholder='' onChange={(e) => { setConfirmPassword(e.target.value); }} />

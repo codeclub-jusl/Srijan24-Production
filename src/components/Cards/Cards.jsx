@@ -11,11 +11,12 @@ export default function Cards(){
           <p>Campus Ambassador</p>
           <Link href="/ambassador" target="_blank" className="unlockedCard"></Link>
         </div>
-        <div className="cardBox disabledCard">
-          <Image src={"/images/events.jpg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>
+
+        <Link href={"/events"} className="cardBox">
+          <Image src={"/images/events.jpg"} height={300} width={250} alt="cardImage" className="cardImage"/>
           <p>Events</p>
-          <div className="lockedCard">Locked</div>
-        </div>
+          {/* <div className="lockedCard">Locked</div> */}
+        </Link>
         <div className="cardBox disabledCard">
           <Image src={"/images/merchandise.jpg"} height={300} width={250} alt="cardImage" className="cardImage object-cover"/>
           <p>Merchandise</p>
