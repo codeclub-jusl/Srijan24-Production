@@ -78,7 +78,7 @@ const page = ({ params }) => {
     let teamSize = 0;
     if(eventData!==undefined){
         teamSize = eventData.maxMembers === 1 ? 'Individual'
-            : `${eventData.minMembers}-${eventData.maxMembers} members`
+            : eventData.maxMembers===eventData.minMembers? `${eventData.minMembers} members` : `${eventData.minMembers}-${eventData.maxMembers} members`
 
     }
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -94,18 +94,18 @@ const page = ({ params }) => {
 
     const handleRegister = e => {
         e.preventDefault()
-        if (eventStatus === 'pending') {
+        if (eventStatus === 'pending' || eventStatus === 'registered') {
             toggleInvitationModal()
             return
         }
 
-        if (eventStatus === 'registered') {
-            notification['info']({
-                message: `You have already registered for the event`,
-                duration: 3,
-            })
-            return
-        }
+        // if (eventStatus === 'registered') {
+        //     notification['info']({
+        //         message: `You have already registered for the event`,
+        //         duration: 3,
+        //     })
+        //     return
+        // }
 
         toggleModal()
     }
@@ -281,6 +281,16 @@ const page = ({ params }) => {
                                 {eventData && eventData.eventDescription}
                             </p>
                         </div>
+                        {eventData && eventData.documentLink && <div className='flex flex-col p-3 shadow-2xl '>
+                            <p className='mb-2'>
+                                {/* <strong className='text-lg md:text-xl'>
+                                    Event Description:
+                                </strong> */}
+                            </p>
+                            <p className='text-sm md:text-base eventDesc'>
+                                Click <Link href={eventData.documentLink} className='documentLink'>here</Link> to know more about this event
+                            </p>
+                        </div>}
                     </div>
                 </div>
                 {user ? (
