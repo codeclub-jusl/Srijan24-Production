@@ -46,7 +46,7 @@ export default function OverallNav() {
             <div className={styles.box}>
                 <Link href="/"><img src="/assets/Srijan logo.png" alt="logo"></img></Link>
             </div>
-            <div className={styles.box1}>
+            <div className={user ? styles.box1 : styles.box2}>
                 <Link href="/events"><p>Events</p></Link>
                 {user ? (
                     <Link href="/dashboard"><p>Dashboard</p></Link>

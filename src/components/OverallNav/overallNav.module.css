@@ -40,6 +40,25 @@
     z-index: 1000;
 }
 
+.box2 {
+    background: #2acdff4e;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 330px;
+    height: 70px;
+    clip-path: polygon(0 100.00px, 100.00px 0, 100% 0, 100% 100%, 0 100%);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    z-index: 1000;
+}
+
 .box1 button {
     color: aliceblue;
 }
@@ -48,6 +67,16 @@
     color: aliceblue;
     margin-right: 50px;
 }
+
+.box2 button {
+    color: aliceblue;
+}
+
+.box2 p {
+    color: aliceblue;
+    margin-right: 50px;
+}
+
 @media only screen and (max-width: 900px) {
     .box {
         width: 360px;
@@ -62,6 +91,11 @@
     .box1 {
         height: 65px;
     }
+
+    .box2 {
+        height: 65px;
+    }
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -76,6 +110,10 @@
     }
 
     .box1 {
+        height: 65px;
+    }
+
+    .box2 {
         height: 65px;
     }
 }
@@ -94,6 +132,10 @@
     .box1 {
         height: 65px;
     }
+
+    .box2 {
+        height: 65px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -108,6 +150,10 @@
     }
 
     .box1 {
+        height: 60px;
+    }
+
+    .box2 {
         height: 60px;
     }
 
