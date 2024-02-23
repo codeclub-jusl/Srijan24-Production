@@ -218,6 +218,37 @@ const events = [
         },
         documentLink: "/pdf/ControlCraft@JUMTC.pdf",
     },
+    {
+        eventId: 'uncode',
+        eventName: 'Uncode',
+        eventDate: {
+            prelims: ['20th March (6:00 pm to 7:30pm)'],
+            finals: '23rd March (2:30 pm to 5:00 pm)',
+        },
+        eventType: 'coding',
+        eventHashtags: ['uncode', 'reverseengineering', 'coding','brainstorming', 'puzzles'],
+        eventCoordinators: [
+            'Farhan Ikbal [ 8967463602 ]',
+            'Upayan De [ 9874589366 ]', 
+            'Om Mittal [ 7003516965 ]',
+        ],
+        prize: ["prize pool of Rs.5000"],
+        minMembers: 1,
+        maxMembers: 2,
+        eventPoster: '/images/events/uncode.jpeg',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Put on your thinking caps and get ready to spot patterns, provide inputs and analyse outputs from a rogue executable to tame the underlying logic. Can you extract order from chaos? Or will you succumb to the entropy of 1's and 0's?`,
+        eventDescription: [`Unlock the secrets of binary executables and decode your way to victory at our Reverse Engineering Event as part of this Srijan 2024! This thrilling competition invites tech buffs to showcase their prowess in unraveling the mysteries of executable files. Gather your team of 1-2 members, as we open the gates to inter-college participation, welcoming all undergraduates to embark on this intellectual journey. Brace yourselves for a two-round challenge where the online Prelims will test your mental mettle, with the top 10 teams advancing to the gripping offline Finals. Join us in this riveting exploration of reverse engineering and leave your imprint in the realm of binary brilliance!`],
+        eventRules: {
+            "": [
+                "The contest will consist of a number of problems of increasing difficulty.",
+                "Each problem will be in the form of an executable file, which provides an output on being given an input.",
+                "The expected format of an input to the executable will be mentioned in the problem statement.",
+                "You will be required to write a program (in C/C++/Python/Java) that behaves indistinguishably from the given executable for all inputs in the domain.",
+                "Teams indulging in plagiarism will be disqualified.",
+            ],
+        },
+    },
     // {
     //     eventId: 'ace-the-case',
     //     eventName: 'Ace The Case',

@@ -15,11 +15,13 @@ import { set } from 'firebase/database'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar/Navbar'
 import OverallNav from '@/components/OverallNav/OverallNav'
+import { findReferralCode, getAmbassadorByCode } from '@/utils/ambassadors'
 
 const page = () => {
     const [imageUpload, setImageUpload] = useState(null)
     const [isEditable, setIsEditable] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [referCode, setReferCode] = useState('')
 
     const handleEditClick = e => {
         if (isEditable) {
@@ -32,6 +34,9 @@ const page = () => {
     const dispatch = useDispatch()
     const router = useRouter()
     const user = useSelector(state => state.userReducer.user)
+
+    const referralCode = findReferralCode(user.email)
+    const campusAmbassador = getAmbassadorByCode('aBcDe')
     // const user = propsUser
     // console.log(user);
 
@@ -164,6 +169,11 @@ const page = () => {
         setLoading(false)
     }
 
+    const handleSubmitReferral = ()=>{
+        console.log(referCode);
+    }
+
+
     const handleLogout = e => {
         e.preventDefault()
 
@@ -179,7 +189,7 @@ const page = () => {
     }
     return (
         <div className={styles.body_container}>
-            <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen '>
+            <div className='bg-[url(/images/about/about.png)] flex items-center justify-center min-h-screen flex-col'>
                 <OverallNav></OverallNav>
                 <div className={styles.card}>
                     <div className={styles.svg_container}>
@@ -192,7 +202,7 @@ const page = () => {
                             className={styles.blob}
                             alt='profile-img'
                         />
-                        <div className="profileNameDetails">
+                        <div className='profileNameDetails'>
                             <h1>Hey, {formState.name}</h1>
                             <h2>{formState.email}</h2>
                         </div>
@@ -314,6 +324,43 @@ const page = () => {
                         </button>
                     </div>
                 </div>
+
+                {/* Campus Ambassador Referral section --------------------------- */}
+                {/* {referralCode && <div className={styles.ambassadorCard}>
+                    <h2>Campus Ambassador</h2>
+                    <p>
+                        Hey, Congrats! you are selected as a Campus Ambassador
+                    </p>
+
+                    <div className={styles.referralBox}>{referralCode}</div>
+                </div>} */}
+
+
+                {/* User: Referral Form Section ------------------------------------- */}
+                {/* {!referralCode && <div className={styles.ambassadorCard}>
+                    <h2>Referral</h2>
+                    {campusAmbassador===undefined &&
+                        <>
+                            <p>Do you have any referral?</p>
+                            <div>
+                                <input
+                                    type='text'
+                                    placeholder='Enter the referral code'
+                                    value={referCode}
+                                    onChange={e => setReferCode(e.target.value)}
+                                />
+                                <button onClick={handleSubmitReferral}>Enter</button>
+                            </div>
+                        </>
+                    }
+                    {
+                        campusAmbassador && 
+                        <>
+                            <p>Hey, see who referred you in Srijan'24</p>
+                            <p className={styles.ambassadorMessage}>Hey! You are referred by {campusAmbassador}</p>
+                        </>
+                    }
+                </div>} */}
             </div>
         </div>
     )
