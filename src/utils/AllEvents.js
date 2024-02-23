@@ -170,6 +170,131 @@ const events = [
             ],
         },
     },
+    {
+        eventId: 'control-craft',
+        eventName: 'ControlCraft: Path Mastery',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'circuits & robotics',
+        eventHashtags: ['ControlCraft', 'RoboticDomination'],
+        eventCoordinators: [
+            'Diptanshu Chakrabartty [ 9531681891 ]',
+            'Sayan K. Sah [ 8927309046 ]', 
+            'Saptarshi Maity [ 8942027507 ]',
+        ],
+        prize: ["prize pool of Rs.10000"],
+        minMembers: 1,
+        maxMembers: 4,
+        eventPoster: '/images/events/control-craft.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Get ready to blast off in the ControlCraft Robotics Challenge, a mechatronics spectacle like no other, hosted by the Mechatronics Club. This year, we're pushing the boundaries of manual control mastery and robot-building brilliance!`,
+        eventDescription: [`Initiate Engines! ControlCraft Awaits!
+
+        Unit designations confirmed. Prepare for deactivation of objective obstacles.
+        
+        Mission Parameters:
+        
+        Path Protocol: Traverse designated terrain. Eliminate deviations. Execute maneuvers with optimal efficiency.
+        Object Acquisition: Secure scattered units. Implement precise manipulation. Construct designated formation.
+        ControlCraft Convergence: Integrate acquired skills. Navigate complex environment. Achieve designated objectives for maximum efficiency.
+        This is NOT a mere construction exercise. It is a symphony of mechatronics. Showcase your unit's technical elegance and your own control algorithms. Dominate the competition. Ascend to the robotic pinnacle.
+        
+        Are you ready for the upload?
+        
+        Register now and initiate your robotic potential!`],
+        eventRules: {
+            "General Guidelines": [
+                "Each team must not exceed 4 members. Members can be from any department and any year but must be from the same institution.",
+                "A total of 6 minutes will be provided for completion of the task.",
+                "The maximum dimension of the robot can be 20cm x 20cm x 15cm  (l x b x h ) including wheels excluding the manipulator. Correction up to 1 cm is allowed.",
+                "Equip your robot with a reliable four-wheel roving mechanism & a pick-and-place manipulator mechanism.",
+                "Implement a Wired or Wireless communication to control the robot's motion and pick and place mechanism. [everything will be manually controlled]",
+                "The length of the wire (for wired bots) should be long enough so as to avoid tangling.",
+                "Maximum permissible weight including the manipulator must not exceed 4 kg.",
+                "Teams have to compete in this event by making its path through a specified track or arena."
+            ],
+        },
+        documentLink: "/pdf/ControlCraft@JUMTC.pdf",
+    },
+    {
+        eventId: 'uncode',
+        eventName: 'Uncode',
+        eventDate: {
+            prelims: ['20th March (6:00 pm to 7:30pm)'],
+            finals: '23rd March (2:30 pm to 5:00 pm)',
+        },
+        eventType: 'coding',
+        eventHashtags: ['uncode', 'reverseengineering', 'coding','brainstorming', 'puzzles'],
+        eventCoordinators: [
+            'Farhan Ikbal [ 8967463602 ]',
+            'Upayan De [ 9874589366 ]', 
+            'Om Mittal [ 7003516965 ]',
+        ],
+        prize: ["prize pool of Rs.5000"],
+        minMembers: 1,
+        maxMembers: 2,
+        eventPoster: '/images/events/uncode.jpeg',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Put on your thinking caps and get ready to spot patterns, provide inputs and analyse outputs from a rogue executable to tame the underlying logic. Can you extract order from chaos? Or will you succumb to the entropy of 1's and 0's?`,
+        eventDescription: [`Unlock the secrets of binary executables and decode your way to victory at our Reverse Engineering Event as part of this Srijan 2024! This thrilling competition invites tech buffs to showcase their prowess in unraveling the mysteries of executable files. Gather your team of 1-2 members, as we open the gates to inter-college participation, welcoming all undergraduates to embark on this intellectual journey. Brace yourselves for a two-round challenge where the online Prelims will test your mental mettle, with the top 10 teams advancing to the gripping offline Finals. Join us in this riveting exploration of reverse engineering and leave your imprint in the realm of binary brilliance!`],
+        eventRules: {
+            "": [
+                "The contest will consist of a number of problems of increasing difficulty.",
+                "Each problem will be in the form of an executable file, which provides an output on being given an input.",
+                "The expected format of an input to the executable will be mentioned in the problem statement.",
+                "You will be required to write a program (in C/C++/Python/Java) that behaves indistinguishably from the given executable for all inputs in the domain.",
+                "Teams indulging in plagiarism will be disqualified.",
+            ],
+        },
+    },
+    // {
+    //     eventId: 'ace-the-case',
+    //     eventName: 'Ace The Case',
+    //     eventDate: {
+    //         prelims: ['TBD'],
+    //         finals: 'TBD',
+    //     },
+    //     eventType: 'business & management',
+    //     eventHashtags: ['#Case_Study', 'Problem_Solving'],
+    //     eventCoordinators: [
+    //         'Piyush Gupta [ 7439484942 ]',
+    //         'Raktim Banerjee [ 9569584047 ]', 
+    //         'Souptik Dasgupta [ 9007475778 ]',
+    //     ],
+    //     prize: ["TBD"],
+    //     minMembers: 1,
+    //     maxMembers: 3,
+    //     eventPoster: '/images/events/h42.png',
+    //     registrationType: `Srijan'24 Website`,
+    //     eventShortDescription: `Business case-study event to test everything, from your real-world problem solving to Pitching Skills, all under 24 hours!`,
+    //     eventDescription: [`Do you  have an astute proclivity for brainstorming and have a knack of finding solutions to problems?
+    //     We've got you covered!
+    //     Unleash your problem solving prowess in "Ace the Case"! Hop in for a thrilling opportunity to analyze real world challenges, develop innovative solutions and showcase your strategic acumen. Embrace the chance to network , interact and rise to the challenge!`],
+    //     eventRules: {
+    //         "Event Rules": [
+    //             "Join the Group links sent via emails beforehand to avoid last minute hassle.",
+    //             "The event is to be conducted in two rounds : Selection Round and Finale",
+    //             "Prompts will be provided to you 2 days PRIOR to the event.",
+    //             "Strictly adhere to the slide limits in each Round.",
+    //         ],
+    //         "Selection Round": [
+    //             "Event to be Conducted Online",
+    //             "Each team needs to submit an Abstract Report of the case study provided to them within 24 hours",
+    //             "The timer will start IMMEDIATELY as the Prompt Release is mailed/sent to the team",
+    //             "Slide Limit: 1 SLIDE ONLY",
+    //         ],
+    //         "Finale": [
+    //             "Pitching Time is 4-5 mins",
+    //             "Judges Rebuttal time is 2-3 mins",
+    //             "Brownie points for sticking to the time limit.",
+    //             "Max. Slide limit: 4 Slides + 1 Slide for Team Name + 1 Concluding Slide",
+    //             "The Event details will be provided to you once you qualify the Selection Round."
+    //         ],
+    //     },
+    //     // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
+    // },
 ]
 
 module.exports = events

@@ -82,7 +82,7 @@
   margin-bottom: 2px;
 }
 
-.svg-container {
+.svg_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -362,6 +362,7 @@
     flex-direction: column;
     height: auto;
     width: auto;
+    width: 400px;
   }
 
   .info h1 {
@@ -465,5 +466,122 @@
     width: 100px;
     height: 40px;
     font-size: 18px;
+  }
+}
+
+.info input:disabled{
+  color: rgba(220, 220, 220, 0.826);
+  cursor: not-allowed;
+  color: #C6C6C6;
+}
+.info select:disabled{
+  cursor: not-allowed;
+}
+
+.ambassadorCard {
+  background: rgba(42, 28, 53, 0.636);
+  padding: 20px;
+  display: flex;
+  border-radius: 6px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: #f5acff;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.ambassadorCard h2{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.ambassadorCard p{
+  font-size: 1rem;
+}
+.ambassadorCard .referralBox{
+  background: #c08bc79a;
+  padding: 13px 40px;
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 15px;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+.ambassadorCard input{
+  background: none;
+  outline: none;
+  border-bottom: 1px solid #920ea3;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+.ambassadorMessage{
+  margin-top: 20px;
+  background: #c08bc79a;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+@media only screen and (min-width: 1251px) {
+  .ambassadorCard {
+    width: 65vw;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .ambassadorCard {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .ambassadorCard {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .ambassadorCard {
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .ambassadorCard {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ambassadorCard {
+    width: 75vw;
+  }
+  .ambassadorCard h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .ambassadorCard h2{
+    font-size: 1.2rem;
+  }
+  .ambassadorCard p{
+    font-size: .9rem;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .ambassadorMessage {
+    width: 300px;
+    font-size: .85rem !important;
+    padding: 10px 15px !important;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .ambassadorMessage {
+    width: 250px;
+    font-size: .85rem !important;
+    padding: 10px 15px !important;
   }
 }

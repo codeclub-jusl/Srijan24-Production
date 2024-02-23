@@ -132,8 +132,8 @@ const Footer = () => {
                             <div className='footerHeading'>LEGAL</div>
                             <a href='/pdf/Srijan_Privacy_Policy.pdf' target='_blank'>Privacy</a>
                             <a href='/pdf/Srijan_Terms_and_Conditions.pdf' target='_blank'>Terms</a>
-                            <a href='/pdf/Srijan_Refund_and_Cancellation.pdf' target='_blank'>Refund</a>
-                            <a href='/pdf/Srijan_Sponsorship_Brochure.pdf' target='_blank'>Sponsorship</a>
+                            <a href='/pdf/Srijan_Event_Brochure.pdf' target='_blank'>Event</a>
+                            <a href='/pdf/Srijan_Sponsorship_Brochure.pdf' target='_blank'>Sponsor</a>
                         </div>
                     </div>
 
