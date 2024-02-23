@@ -82,7 +82,7 @@
   margin-bottom: 2px;
 }
 
-.svg-container {
+.svg_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -362,6 +362,7 @@
     flex-direction: column;
     height: auto;
     width: auto;
+    width: 400px;
   }
 
   .info h1 {
@@ -466,4 +467,13 @@
     height: 40px;
     font-size: 18px;
   }
+}
+
+.info input:disabled{
+  color: rgba(220, 220, 220, 0.826);
+  cursor: not-allowed;
+  color: #C6C6C6;
+}
+.info select:disabled{
+  cursor: not-allowed;
 }
