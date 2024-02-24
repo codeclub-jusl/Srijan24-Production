@@ -16,6 +16,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar/Navbar'
 import OverallNav from '@/components/OverallNav/OverallNav'
 import { findReferralCode, getAmbassadorByCode } from '@/utils/ambassadors'
+import { SiWhatsapp } from "react-icons/si";
 
 const page = () => {
     const [imageUpload, setImageUpload] = useState(null)
@@ -222,6 +223,15 @@ const page = () => {
         setLoading(false);
     }
 
+    const shareReferralCode = () => {
+
+        const text = `Hello there! You're cordially invited to join us at Srijan'24, where creativity knows no bounds! Use my referral code: *${referralCode}* and let's embark on an unforgettable journey together!`
+        const wpUrl = `https://api.whatsapp.com/send?text=${text}`
+
+        window.open(wpUrl, '_blank');
+
+    }
+
 
     const handleLogout = e => {
         e.preventDefault()
@@ -236,6 +246,8 @@ const page = () => {
 
         router.push('/login')
     }
+
+    // whatsapp://send?text=${text}
 
     return (
         <div className={styles.body_container}>
@@ -381,6 +393,15 @@ const page = () => {
                     <p>
                         Hey, Congrats! you are selected as a Campus Ambassador
                     </p>
+
+                    <div className={styles.shareDiv}>
+                        <div className={styles.referralBox}>
+                            <p>Your referral code: {referralCode}</p>
+                        </div>
+                        <button className={styles.referralBox} onClick={shareReferralCode}>
+                            <SiWhatsapp className={styles.whatsappIcons}/>
+                        </button>
+                    </div>
 
                     <div className={styles.referralBox}>You have referred {referredFriends.length} {referredFriends.length <= 1 ? 'friend' : 'friends'}</div>
                 </div>}
