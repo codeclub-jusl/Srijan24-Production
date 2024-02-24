@@ -1,0 +1,414 @@
+.glassmorphism-container {
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.btn {
+    margin: 20px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+  }
+  .btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .btn::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btn:hover::before {
+    opacity: 1;
+  }
+  
+  .btn:active:after {
+    background: transparent;
+  }
+  
+  .btn:active {
+    color: #000;
+    font-weight: bold;
+  }
+
+  .merchandisePrice{
+    color: yellow;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 40px 0px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+  .merchandisePrice h4{
+    font-size: 1.15rem;
+    animation: 2s saleAnimation alternate infinite;
+    font-family: 'Exo', sans-serif;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    /* background-color: white; */
+    /* color: white; */
+    font-weight: 800;
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: 2px solid white;
+  }
+  @keyframes saleAnimation{
+    0%{
+      color: rgb(172, 10, 10);
+    }
+    16%{
+      color: rgb(192, 72, 25);
+    }
+    32%{
+      color: rgb(150, 215, 28);
+    }
+    48%{
+      transform: scale(1.15);
+      color: rgb(57, 137, 23);
+    }
+    64%{
+      color: rgb(19, 182, 60);
+  
+    }
+    90%{
+      color: rgb(250, 250, 72);
+  
+    }
+    100%{
+      color: rgb(242, 242, 10);
+    }
+  }
+
+  .merchandiseFormContainer{
+    padding: 10px 20px;
+    margin: 0px 20px;
+  }
+
+@media (max-width: 650px){
+    .merchandiseHeading{
+        font-size: 1.8rem;
+        padding: 0px 20px;
+    }
+}
+@media (max-width: 520px){
+    .merchandiseHeading{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+@media (max-width: 500px){
+    .merchandiseForm {
+        width: 300px;
+    }
+}
+@media (max-width: 400px){
+    .merchandiseForm {
+        width: 280px;
+    }
+}
+.pulseContainer{
+    /* height: 150vh; */
+}
+.offlinePaymentDetails{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-variant: small-caps;
+    left: 200px;
+    bottom: -200px;
+    line-height: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .instructionsModal{
+    width: 450px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /* background: linear-gradient(to top right, rgba(29, 90, 161, 0.95), rgba(20, 114, 79, 0.95));
+    color: white; */
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    padding-bottom: 30px;
+  }
+  .paymentScannerBox{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.paymentScannerBox div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    margin: 0px 25px;
+  }
+  .paymentScannerBox div h4{
+    margin: 0 0 1px;
+    font-size: .85rem;
+  }
+  .paymentScannerBox div h5{
+    margin: 0px 0 10px;
+    font-size: .8rem;
+    color: rgb(119, 27, 218);
+  }
+  .qrScannerImage{
+    width: 120px;
+    height: 120px;
+  }
+  .merchandiseInstructionButton{
+    border: 0;
+    /* background: linear-gradient(to top right, rgb(157, 26, 26), rgb(244, 32, 32)); */
+    background: linear-gradient(to top right, rgb(72, 15, 133), rgb(142, 18, 219));
+    color: white;
+    padding: 18px 40px;
+    font-family: 'Exo', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+  }
+  .p1{
+     border: 0;
+    background: linear-gradient(to top right, rgb(157, 26, 26), rgb(244, 32, 32));
+    color: white;
+    padding: 18px 40px;
+    font-family: 'Exo', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+  .instructionsModal h2{
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    /* color: rgb(167, 31, 31); */
+    /* color: rgb(103, 103, 103); */
+    color: rgb(111, 17, 212);
+    font-weight: 800;
+  }
+  .instructionsModal .exitIcon{
+    position: absolute;
+    top: 28px;
+    right: 26px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: rgb(72, 15, 133);
+  }
+  .instructions{
+    display: flex;
+    /* align-items: center; */
+    font-family: 'Poppins', sans-serif;
+    margin: 4px 0px;
+    text-align: justify;
+  }
+  .instructions span{
+    font-size: .79rem;
+    line-height: 16px;
+    width: 90%;
+  }
+  .instructions span i{
+    color: rgb(4, 52, 227);
+  }
+  .instructions span b, .instructions span strong{
+    color: rgb(44, 43, 43);
+  }
+  .instructionBullets{
+    margin-right: 6px;
+  }
+  .instructionLink{
+    color: rgb(0, 72, 255);
+    font-weight: 700;
+    font-size: .75rem;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+  }
+  /* .merchandiseUnderstoodButtonBox{
+    position: relative;
+  } */
+  .merchandiseUnderstoodButtonBox button{
+    /* background: rgb(40, 107, 232); */
+    background: rgb(117, 25, 216);
+    color: white;
+    padding: 7px 15px;
+    border: 0px;
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    border-radius: 4px;
+    font-size: .76rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 550px){
+    .instructionsModal{
+      width: 410px;
+      height: 590px;
+      border-radius: 10px;
+      padding: 10px 25px;
+      padding-bottom: 30px;
+    }
+    .instructionsModal h2{
+      top: 5px;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      font-size: .96rem;
+      align-items: center;
+    }
+    .instructions span{
+      font-size: .79rem;
+      line-height: 14px;
+      width: 90%;
+      text-align: justify;
+    }
+  }
+  @media (max-width: 480px){
+    .instructionsModal{
+      width: 365px;
+      height: 610px;
+      border-radius: 10px;
+      padding: 0px 25px;
+      padding-bottom: 20px;
+    }
+    .instructionsModal h2{
+      top: 15px;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      font-size: .91rem;
+      text-align: center;
+      align-items: center;
+    }
+    .qrScannerImage{
+      width: 100px;
+      height: 100px;
+    }
+    .instructions span{
+      font-size: .79rem;
+      line-height: 15px;
+      width: 90%;
+      text-align: justify;
+    }
+    .merchandiseInstructionButton{
+        padding: 18px 30px;
+        font-family: 'Exo', sans-serif;
+        font-weight: 800;
+        font-size: .95rem;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+    .paymentScannerBox{
+      margin-bottom: 5px;
+    }
+  }
+  @media (max-width: 440px){
+    .instructionsModal{
+      width: 340px;
+      height: 590px;
+      border-radius: 10px;
+      padding: 0px 25px;
+      padding-bottom: 20px;
+    }
+    .instructionsModal h2{
+      top: 6px;
+      left: 0;
+      right: 0;
+      justify-content: center;
+      font-size: .9rem;
+      text-align: center;
+      align-items: center;
+    }
+    .qrScannerImage{
+      width: 115px;
+      height: 115px;
+    }
+    .instructions span{
+      font-size: .77rem;
+      line-height: 14px;
+      width: 90%;
+      text-align: justify;
+    }
+  }
+  @media (max-width: 390px){
+    .instructionsModal{
+      width: 340px;
+      height: 590px;
+      padding: 0px 20px;
+      padding-bottom: 20px;
+    }
+    .instructionsModal h2{
+      top: 6px;
+      left: 0px;
+      right: 0;
+      justify-content: center;
+      font-size: .89rem;
+      text-align: center;
+      align-items: center;
+    }
+    .instructions span{
+      font-size: .75rem;
+      line-height: 14px;
+      width: 90%;
+      text-align: justify;
+  
+    }
+  }
