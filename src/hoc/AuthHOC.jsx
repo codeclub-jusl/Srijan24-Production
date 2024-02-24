@@ -29,9 +29,11 @@ const AuthHOC = Component => {
                             emailVerified: authUser.emailVerified,
                         })
 
+                        const authTokenID = await authUser.getIdToken()
                         dispatch(
                             loginUser({
                                 ...userData,
+                                authTokenID: authTokenID,
                                 emailVerified: authUser.emailVerified,
                             }),
                         )
