@@ -49,9 +49,10 @@ export default function Login() {
                     //     message: `Logged in as ${userData.email}`,
                     //     duration: 2
                     // })
-
+                    const authTokenID = await authUser.getIdToken();
                     dispatch(loginUser({
                         ...userData,
+                        authTokenID: authTokenID,
                         emailVerified: authUser.emailVerified,
                     }));
 
