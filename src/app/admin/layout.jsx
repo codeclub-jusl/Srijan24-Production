@@ -33,7 +33,7 @@ export default async function AdminLayout({ children }) {
         }
 
         return children
-    } catch (e) {
+    } catch (error) {
         if (error.code == 'auth/id-token-revoked') {
             // Token has been revoked. Inform the user to reauthenticate or signOut() the user.
             return (
@@ -46,7 +46,7 @@ export default async function AdminLayout({ children }) {
             return (
                 <section>
                     <h2>User Not Authenticated.</h2>
-                    <p>o_o This Action Will Be Repoted. o_o</p>
+                    <p>o_o This Action Will Be Reported. o_o</p>
                 </section>
             )
         }

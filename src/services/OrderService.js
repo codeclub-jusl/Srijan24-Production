@@ -20,6 +20,7 @@ class OrderService {
  * @param {string} orderDetails.College
  * @param {string} orderDetails.Department
  * @param {string} orderDetails.TShirtName
+ * @param {'White' | 'Black'} orderDetails.TShirtColor
  * @param {'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'} orderDetails.TShirtSize
  * @param {'UPI' | 'Cash'} orderDetails.PaymentMode
  * @param {string} orderDetails.Campus
@@ -35,6 +36,7 @@ class OrderService {
             orderDetails.Department,
             orderDetails.TShirtName,
             orderDetails.TShirtSize,
+            orderDetails.TShirtColor,
             orderDetails.PaymentMode,
             orderDetails.Campus,
             orderDetails.PaymentCollector,
@@ -51,10 +53,10 @@ class OrderService {
     /**
      * 
      * @param {string} orderID 
-     * @param {boolean} isVerified
+     * @param {"accepted" | "rejected"} status
      */
-    async updateVerificationStatus(orderID, isVerified) {
-        const result = await this.orderRepository.updateVerificationStatusByID(orderID, isVerified)
+    async updateVerificationStatus(orderID, status) {
+        const result = await this.orderRepository.updateVerificationStatusByID(orderID, status)
         return result
     }
 }

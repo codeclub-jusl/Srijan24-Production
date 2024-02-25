@@ -35,6 +35,11 @@ export class Order {
     tShirtSize
 
     /**
+     * @type {'Black' | 'White'}
+     */
+    tShirtColor
+
+    /**
      * @type {'UPI' | 'Cash'}
      */
     paymentMode
@@ -55,9 +60,9 @@ export class Order {
     transactionID
 
     /**
-     * @type {boolean}
+     * @type {'pending' | 'accepted' | 'rejected'}
      */
-    isVerified
+    status
 
     /**
      * 
@@ -68,10 +73,12 @@ export class Order {
      * @param {string} department 
      * @param {string} tShirtName 
      * @param {'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'} tShirtSize 
+     * @param {'Black' | 'White'} tShirtColor 
      * @param {'UPI' | 'Cash'} paymentMode 
      * @param {string} campus
      * @param {string} paymentCollector
      * @param {string | null} transactionID 
+     * @param {string} status 
      */
     constructor (
         name,
@@ -81,10 +88,12 @@ export class Order {
         department,
         tShirtName,
         tShirtSize,
+        tShirtColor,
         paymentMode,
         campus,
         paymentCollector,
-        transactionID
+        transactionID,
+        status
     ) {
 
 
@@ -118,11 +127,11 @@ export class Order {
         this.department = department
         this.tShirtName = tShirtName
         this.tShirtSize = tShirtSize
+        this.tShirtColor = tShirtColor
         this.paymentMode = paymentMode
-
         this.transactionID = transactionID
         this.campus = campus
         this.paymentCollector = paymentCollector
-        this.isVerified = false
+        this.status = "pending"
     }
 }

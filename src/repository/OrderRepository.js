@@ -45,13 +45,13 @@ export class OrderRepository {
      * @param {string} id 
      * @param {boolean} isVerified 
      */
-    async updateVerificationStatusByID(id, isVerified) {
+    async updateVerificationStatusByID(id, status) {
         const db = await GetDB()
 
         const collection = db.collection(OrderRepository.collectionName)
         const result = await collection.updateOne({"_id": new ObjectId(id)}, {
             $set: {
-                "isVerified": isVerified
+                "status": status
             }
         })
         return result

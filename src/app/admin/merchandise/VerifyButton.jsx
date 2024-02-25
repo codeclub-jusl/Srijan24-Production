@@ -4,11 +4,11 @@ import { useRef, MutableRefObject } from 'react'
 import { auth } from '@/firebase/config'
 import { useRouter } from 'next/navigation'
 
-async function toggleVerification(id, isVerified) {
+async function toggleVerification(id, status) {
     const response = await fetch(`/api/order/verify/${id}`, {
         method: 'PATCH',
         body: JSON.stringify({
-            isVerified,
+            status: (status==="accept")?"accepted":(status==="reject")?"rejected":"pending",
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ async function toggleVerification(id, isVerified) {
     })
     return response.ok ? true : false
 }
-export default function VerifyButton({ id, isVerified }) {
+export default function VerifyButton({ type, id, isVerified }) {
     const router = useRouter()
     /**
      * @type {MutableRefObject<HTMLButtonElement>}
@@ -26,7 +26,7 @@ export default function VerifyButton({ id, isVerified }) {
     async function changeVerificationStatus() {
         try {
             verifyButtonRef.current.disabled = true
-            const isUpdated = await toggleVerification(id, isVerified)
+            const isUpdated = await toggleVerification(id, type)
             if (isUpdated) {
                 router.refresh()
             } else {
@@ -49,9 +49,9 @@ export default function VerifyButton({ id, isVerified }) {
         <button
             ref={verifyButtonRef}
             onClick={() => changeVerificationStatus()}
-            className='bg-blue-500 hover:bg-blue-700 disabled:bg-gray-800 text-white font-bold py-2 px-4 rounded w-full text-center'
+            className='bg-blue-500 hover:bg-blue-700 disabled:bg-gray-800 text-white font-bold py-2 px-4 rounded w-full text-center merchandiseVerifyButton'
         >
-            {isVerified ? 'Unverify' : 'Verify'}
+            {type}
         </button>
     )
 }

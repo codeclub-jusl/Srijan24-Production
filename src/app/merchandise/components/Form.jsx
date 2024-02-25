@@ -52,7 +52,7 @@ export default function Form() {
             College: college,
             Department: department,
             TShirtSize: tshirtSize,
-            TshirtColor: tshirtColor,
+            TShirtColor: tshirtColor,
             TShirtName: tshirtName,
             PaymentMode: paymentMode,
             Campus: campus,
