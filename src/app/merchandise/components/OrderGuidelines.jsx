@@ -29,7 +29,7 @@ export default function OrderGuidelines(props) {
                 <div className={'paymentScannerBox'}>
                     <div>
                         <Image
-                            src={'/assets/merchandise/qr_code.webp'}
+                            src={'/assets/merchandise/jyotishman_qr.jpeg'}
                             height={300}
                             width={300}
                             alt='qr_image'
@@ -42,7 +42,7 @@ export default function OrderGuidelines(props) {
                     </div>
                     <div>
                         <Image
-                            src={'/assets/merchandise/qr_code.webp'}
+                            src={'/assets/merchandise/subhadip_qr.jpeg'}
                             height={300}
                             width={300}
                             alt='qr_image'

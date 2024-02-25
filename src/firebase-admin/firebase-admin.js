@@ -1,3 +1,4 @@
+import { credential } from 'firebase-admin';
 import {applicationDefault, initializeApp, getApps, App} from 'firebase-admin/app';
 import {getAuth} from 'firebase-admin/auth'
 import {getDatabase} from 'firebase-admin/database'
@@ -19,7 +20,12 @@ for(const app of apps) {
 if(!defaultApp) {
     // Initialize the default app
     defaultApp = initializeApp({
-        credential: applicationDefault(),
+        // credential: applicationDefault(),
+        credential: credential.cert({
+            project_id: process.env.PROJECT_ID,
+            private_key: process.env.PRIVATE_KEY,
+            client_email: process.env.CLIENT_EMAIL
+        }),
         databaseURL: process.env.FIREBASE_REALTIME_DATABASE_URL
     }, 'firebase_admin_app');
 }

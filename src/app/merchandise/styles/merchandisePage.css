@@ -412,3 +412,46 @@
   
     }
   }
+
+  .merchandiseNoteContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .merchandiseNote{
+    color: white;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    width: 550px;
+    background: #a77eff26;
+  }
+  .merchandiseNote h2{
+    color: yellow;
+    font-weight: 700;
+  }
+  .merchandiseNote b{
+    color: yellow;
+  }
+  @media (max-width: 650px){
+    .merchandiseNote{
+      width: 500px;
+    }
+  }
+  @media (max-width: 530px){
+    .merchandiseNote{
+      width: 420px;
+    }
+  }
+  @media (max-width: 450px){
+    .merchandiseNote{
+      width: 370px;
+    }
+  }
+  @media (max-width: 400px){
+    .merchandiseNote{
+      width: 330px;
+    }
+  }

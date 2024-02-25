@@ -124,7 +124,7 @@ const Footer = () => {
                         <div className='footerColumn'>
                             <div className='footerHeading'>EXPLORE</div>
                             <a href='/'>Home</a>
-                            <a className='disabledLink'>Events</a>
+                            <a href="/events">Events</a>
                             <a className='disabledLink'>Merchandise</a>
                             <a href="/ambassador">Ambassador</a>
                         </div>
