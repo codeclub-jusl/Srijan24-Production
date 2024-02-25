@@ -46,7 +46,7 @@ export default function Merchendise() {
         useState(false)
 
     return (
-        <>
+        <main className='min-h-screen bg-gradient-to-r from-[#25015E] to-[#050027]'>
             <OrderGuidelines
                 visibleInstructionsModal={visibleInstructionsModal}
                 setVisibleInstructionsModal={setVisibleInstructionsModal}
@@ -129,6 +129,6 @@ export default function Merchendise() {
                     </div>
                 </div>
             </div>
-        </>
+        </main>
     )
 }
