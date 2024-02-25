@@ -1986,3 +1986,27 @@ screen and (max-height: 380px) {
     font-size: 15px;
     margin-bottom: 2px;
 }
+
+.merchandiseVerifyContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.merchandiseVerifyButton{
+    margin: 0px 2px;
+    font-size: .8rem;
+    padding: 6px 8px;
+    font-variant: small-caps;
+}
+.merchandiseVerifyContainer button:nth-child(2){
+    background-color: green;
+}
+.merchandiseVerifyContainer button:nth-child(2):hover{
+    background-color: darkgreen;
+}
+.merchandiseVerifyContainer button:nth-child(3){
+    background-color: red;
+}
+.merchandiseVerifyContainer button:nth-child(3):hover{
+    background-color: darkred;
+}

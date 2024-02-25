@@ -13,20 +13,35 @@ class OrderService {
 
 
     /**
-     * 
-     * @param {FormData} orderDetails 
+ * @param {Object} orderDetails
+ * @param {string} orderDetails.Name
+ * @param {string} orderDetails.Email
+ * @param {string} orderDetails.PhoneNumber
+ * @param {string} orderDetails.College
+ * @param {string} orderDetails.Department
+ * @param {string} orderDetails.TShirtName
+ * @param {'White' | 'Black'} orderDetails.TShirtColor
+ * @param {'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'} orderDetails.TShirtSize
+ * @param {'UPI' | 'Cash'} orderDetails.PaymentMode
+ * @param {string} orderDetails.Campus
+ * @param {string} orderDetails.PaymentCollector
+ * @param {string | undefined} orderDetails.TransactionID
      */
     async registerOrder(orderDetails) {
-        const name = orderDetails.get("name").toString()
-        const phoneNumber = orderDetails.get("PhNumber").toString()
-        const college = orderDetails.get("college").toString()
-        const department = orderDetails.get("department").toString()
-        const year = orderDetails.get("year").toString()
-        const nameOnShirt = orderDetails.get("nameOnTshirt").toString()
-        const size = orderDetails.get("size").toString()
-        const paymentMode = orderDetails.get("payment").toString()
-
-        const order = new Order(name, phoneNumber, college, department, year, nameOnShirt, size, paymentMode)
+        const order = new Order(
+            orderDetails.Name,
+            orderDetails.Email,
+            orderDetails.PhoneNumber,
+            orderDetails.College,
+            orderDetails.Department,
+            orderDetails.TShirtName,
+            orderDetails.TShirtSize,
+            orderDetails.TShirtColor,
+            orderDetails.PaymentMode,
+            orderDetails.Campus,
+            orderDetails.PaymentCollector,
+            orderDetails.TransactionID
+        )
         const objectID = await this.orderRepository.insertOrder(order)
         return objectID.toString("hex")
     }
@@ -38,10 +53,10 @@ class OrderService {
     /**
      * 
      * @param {string} orderID 
-     * @param {boolean} isVerified
+     * @param {"accepted" | "rejected"} status
      */
-    async updateVerificationStatus(orderID, isVerified) {
-        const result = await this.orderRepository.updateVerificationStatusByID(orderID, isVerified)
+    async updateVerificationStatus(orderID, status) {
+        const result = await this.orderRepository.updateVerificationStatusByID(orderID, status)
         return result
     }
 }

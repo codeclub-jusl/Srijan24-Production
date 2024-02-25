@@ -7,7 +7,7 @@ import {NextResponse, NextRequest} from 'next/server'
 export async function PATCH(request, {params}) {
     // TODO: route guard should be implemented as otherwise people can ping this route and change verified status
     const body = await request.json()
-    const {isVerified} = body
+    const {status} = body
 
     /**
      * ID of the order which has to be returned.
@@ -15,7 +15,7 @@ export async function PATCH(request, {params}) {
      */
     const id = params.id
 
-    const res = await orderService.updateVerificationStatus(id, !isVerified)
+    const res = await orderService.updateVerificationStatus(id, status)
     return NextResponse.json(res, {status: 200})
 
 

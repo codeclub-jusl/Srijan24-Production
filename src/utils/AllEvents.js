@@ -116,20 +116,25 @@ const events = [
         eventType: 'business & management',
         eventHashtags: ['finance', 'business', 'finclubju', 'stock-market', 'case-study'],
         eventCoordinators: [
-            'Adipto Ghosh Dastidar [ 6290764395 ]',
-            'Souptik Dasgupta [ 9007475778 ]',
-            'Akankcha Singh [ 7727954915 ]',
+            'Abir Sen [ 6290764395 ]',
+            'Soumyadeep Pal [ 9007475778 ]',
+            'Souptik Dasgupta [ 7727954915 ]',
         ],
         prize: ["Exciting prize pool of Rs. 5000"],
-        minMembers: 3,
-        maxMembers: 5,
+        minMembers: 2,
+        maxMembers: 3,
         eventPoster: '/images/events/capital-clash.png',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Hola Everyone! Let's dive into the world of Business Problems and unleash your potential by solving business complexities with Teamwork! Pitch your Solutions and get a chance to be a real Case Solver.`,
-        eventDescription: [`It is a case study event where you will have to present a unique solution through the mode of ppt. It will be online.`],
+        eventDescription: [`Capital Clash is a case study event where you will be given the financial background of a company and the problems it is facing. Using your financial and business knowledge, analyse the flaws in the financial model and come up with solutions on how to correct it.`],
         eventRules: {
-            " ": [
-                "Similar to case study rules. It will be notified later"
+            "Rules": [
+                "The case will be released 4 days before the event",
+                "Each team can have 2-3 members",
+                "Participants would have to submit their presentation 1 day before the event",
+                "There would be 1 round",
+                "Each team would be allocated 4 minutes to present their case",
+                "After presentation, there would be a Q&A period of 2 minutes."
             ],
         },
     },
@@ -249,6 +254,99 @@ const events = [
             ],
         },
     },
+    // {
+    //     eventId: 'hackforge',
+    //     eventName: 'HackForge - Forging the Future',
+    //     eventDate: {
+    //         prelims: ['till 14th March 11:59pm'],
+    //         finals: '17th March (10am to 8pm)',
+    //     },
+    //     eventType: 'coding',
+    //     eventHashtags: ['hackathon', 'challenges'],
+    //     eventCoordinators: [
+    //         'Rajdeep Mallick [ 7029422038 ]',
+    //         'Arindam Halder [ 8777712395 ]', 
+    //         'Anurag Jha [ 7044904397 ]',
+    //     ],
+    //     prize: ["1st: Rs.5000 | 2nd: Rs.3000 | 3rd: Rs.2000 | Best Beginner: Rs.1000 | Best UI/UX: Rs.1000"],
+    //     minMembers: 3,
+    //     maxMembers: 4,
+    //     eventPoster: '/images/events/hackforge.png',
+    //     registrationType: `Srijan'24 Website`,
+    //     eventShortDescription: `Welcome to HackForge, an electrifying offline hackathon brought to you by CodeClub JUSL as part of Srijan'24`,
+    //     eventDescription: [`Dive into the future of technology with CodeClub's "HackForge: Forging the Future" at Jadavpur University! Join over 150 students for an exhilarating marathon of Creation, Innovation & Fun at our Salt Lake campus. Whether you're a seasoned coder or an eager explorer, don't miss this dynamic event to unleash your potential. Experience the thrill of innovation and be part of shaping tomorrow's world. Join us for an extraordinary celebration of ingenuity and excitement at Jadavpur University!`],
+    //     eventRules: {
+    //         "Guidelines": [
+    //             "Open to all students who are currently enrolled in a college or university.",
+    //             "Teams comprising 3-4 members are required, with participation open to both inter-institutional and inter-batch collaborations.",
+    //             "There will be 2 rounds: Idea Submission Round and Coding+Pitching Round.",
+    //             "In the Idea Submission Round, each team has to submit their idea in a PPT (maximum 10 slides) based on the themes provided, through this portal.",
+    //             "Shortlisted teams will qualify for the Coding+Pitching Round which will be conducted onsite in SMCC Building, Jadavpur University Salt Lake Campus.",
+    //             "Top performers (if eligible) will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."
+    //         ],
+    //         "Rules": [
+    //             "The Coding+Pitching Round will start sharp at 10am. All team members have to be present onsite during this round, otherwise, the team will be disqualified.",
+    //             "Participants can use any tech stack to build the solution based on the given themes.",
+    //             "All the commits in the Github repository must contain commits only after the start of the onsite round of the hackathon.",
+    //             "All submissions will be run through a plagiarism detector. Any case of code plagiarism will result in the disqualification of the team from the contest.",
+    //             "Your code will be evaluated at different timestamps, so it's important to periodically push code to the specified repository.",
+    //             "Note: Foods, beverages will be provided to all team members in the onsite round."
+    //         ],
+    //         "Problem Statements": [
+    //             "The problem statements will be revealed soon..."
+    //         ]
+    //     },
+    //     unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
+    //     websiteLink: "https://hackforge.srijanju.in"
+    // },
+
+    // {
+    //     eventId: 'ace-the-case',
+    //     eventName: 'Ace The Case',
+    //     eventDate: {
+    //         prelims: ['TBD'],
+    //         finals: 'TBD',
+    //     },
+    //     eventType: 'business & management',
+    //     eventHashtags: ['#Case_Study', 'Problem_Solving'],
+    //     eventCoordinators: [
+    //         'Piyush Gupta [ 7439484942 ]',
+    //         'Raktim Banerjee [ 9569584047 ]', 
+    //         'Souptik Dasgupta [ 9007475778 ]',
+    //     ],
+    //     prize: ["TBD"],
+    //     minMembers: 1,
+    //     maxMembers: 3,
+    //     eventPoster: '/images/events/h42.png',
+    //     registrationType: `Srijan'24 Website`,
+    //     eventShortDescription: `Business case-study event to test everything, from your real-world problem solving to Pitching Skills, all under 24 hours!`,
+    //     eventDescription: [`Do you  have an astute proclivity for brainstorming and have a knack of finding solutions to problems?
+    //     We've got you covered!
+    //     Unleash your problem solving prowess in "Ace the Case"! Hop in for a thrilling opportunity to analyze real world challenges, develop innovative solutions and showcase your strategic acumen. Embrace the chance to network , interact and rise to the challenge!`],
+    //     eventRules: {
+    //         "Event Rules": [
+    //             "Join the Group links sent via emails beforehand to avoid last minute hassle.",
+    //             "The event is to be conducted in two rounds : Selection Round and Finale",
+    //             "Prompts will be provided to you 2 days PRIOR to the event.",
+    //             "Strictly adhere to the slide limits in each Round.",
+    //         ],
+    //         "Selection Round": [
+    //             "Event to be Conducted Online",
+    //             "Each team needs to submit an Abstract Report of the case study provided to them within 24 hours",
+    //             "The timer will start IMMEDIATELY as the Prompt Release is mailed/sent to the team",
+    //             "Slide Limit: 1 SLIDE ONLY",
+    //         ],
+    //         "Finale": [
+    //             "Pitching Time is 4-5 mins",
+    //             "Judges Rebuttal time is 2-3 mins",
+    //             "Brownie points for sticking to the time limit.",
+    //             "Max. Slide limit: 4 Slides + 1 Slide for Team Name + 1 Concluding Slide",
+    //             "The Event details will be provided to you once you qualify the Selection Round."
+    //         ],
+    //     },
+    //     // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
+    // },
+    
     {
         eventId: 'sherlocked',
         eventName: 'Sherlocked',
@@ -279,7 +377,6 @@ const events = [
                 "Fastest team clearing all levels will be declared the ultimate winner.",
             ],
         },
-        // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
     },
 ]
 

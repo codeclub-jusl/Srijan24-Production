@@ -7,28 +7,37 @@ export class Order {
     /**
      * @type {string} 
      */
+    email
+
+    /**
+     * @type {string} 
+     */
     phoneNumber
 
     /**
      * @type {string}
      */
     college
+
     /**
      * @type {string}
      */
     department
-    /**
-     * @type {'1st' | '2nd' | '3rd' | '4th'}
-     */
-    year
+
     /**
      * @type {string}
      */
-    nameOnShirt
+    tShirtName
+
     /**
      * @type {'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'}
      */
-    size
+    tShirtSize
+
+    /**
+     * @type {'Black' | 'White'}
+     */
+    tShirtColor
 
     /**
      * @type {'UPI' | 'Cash'}
@@ -36,44 +45,93 @@ export class Order {
     paymentMode
 
     /**
-     * @type {string | null}
+     * @type {string}
+     */
+    campus
+
+    /**
+     * @type {string}
+     */
+    paymentCollector
+
+    /**
+     * @type {string | undefined}
      */
     transactionID
 
     /**
-     * @type {boolean}
+     * @type {'pending' | 'accepted' | 'rejected'}
      */
-    isVerified
+    status
 
     /**
      * 
      * @param {string} name 
+     * @param {string} email
      * @param {string} phoneNumber
      * @param {string} college 
      * @param {string} department 
-     * @param {'1st' | '2nd' | '3rd' | '4th'} year 
-     * @param {string} nameOnShirt 
-     * @param {'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'} size 
+     * @param {string} tShirtName 
+     * @param {'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL'} tShirtSize 
+     * @param {'Black' | 'White'} tShirtColor 
      * @param {'UPI' | 'Cash'} paymentMode 
-     * @param {string | undefined} transactionID 
+     * @param {string} campus
+     * @param {string} paymentCollector
+     * @param {string | null} transactionID 
+     * @param {string} status 
      */
-    constructor (name, phoneNumber, college, department, year, nameOnShirt, size, paymentMode, transactionID) {
-        this.name = name
+    constructor (
+        name,
+        email,
+        phoneNumber,
+        college,
+        department,
+        tShirtName,
+        tShirtSize,
+        tShirtColor,
+        paymentMode,
+        campus,
+        paymentCollector,
+        transactionID,
+        status
+    ) {
+
+
         if(phoneNumber.length !== 10 || !/[0-9]{10}/.test(phoneNumber)) {
+            throw new Error("Invalid phone number")
+        }
+
+        paymentMode = paymentMode.trim().toUpperCase()
+        if(paymentMode !== 'UPI' && paymentMode !== 'CASH') {
+            throw new Error("Only UPI and Cash payment modes are available")
 
         }
+        if(paymentMode === 'UPI' && !transactionID) {
+            throw new Error("Cannot have payment mode as UPI without transactionID")
+        }
+        if(
+            typeof transactionID === undefined ||
+            transactionID === null ||
+            transactionID.trim() === '' ||
+            paymentMode === 'CASH'
+        ) {
+            transactionID = null
+        }
+
+
+
+        this.name = name
+        this.email = email
         this.phoneNumber = phoneNumber
         this.college = college
         this.department = department
-        this.year = year
-        this.nameOnShirt = nameOnShirt
-        this.size = size
+        this.tShirtName = tShirtName
+        this.tShirtSize = tShirtSize
+        this.tShirtColor = tShirtColor
         this.paymentMode = paymentMode
-        if(this.paymentMode.trim().toUpperCase() === 'UPI' && !transactionID) {
-            throw new Error("cannot have payment mode as UPI without transactionID")
-        }
         this.transactionID = transactionID
-        this.isVerified = false
+        this.campus = campus
+        this.paymentCollector = paymentCollector
+        this.status = "pending"
     }
-
 }
