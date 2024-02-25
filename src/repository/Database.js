@@ -10,7 +10,10 @@ let DB = null
 
 export async function GetDB() {
     if(!process.env.MONGO_URL) {
-        throw new Error('could not instantiate database connection')
+        throw new Error('could not instantiate database connection without mongodb url')
+    }
+    if(!process.env.MONGO_DATABASE_NAME) {
+        throw new Error('could not instantiate database connection without mongo database name')
     }
 
     if(DB) {
