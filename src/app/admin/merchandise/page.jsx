@@ -17,13 +17,15 @@ async function Merchandise() {
             <thead className='bg-gray-50'>
                 <tr>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Phone Number</th>
                     <th>College</th>
                     <th>Department</th>
-                    <th>Year</th>
-                    <th>On Shirt</th>
-                    <th>Size</th>
-                    <th>Mode</th>
+                    <th>T-Shirt Name</th>
+                    <th>T-Shirt Size</th>
+                    <th>Campus</th>
+                    <th>Payment Collector</th>
+                    <th>Payment Mode</th>
                     <th>Transaction ID</th>
                     <th>Verified</th>
                     <th>Action</th>
@@ -31,14 +33,16 @@ async function Merchandise() {
             </thead>
             <tbody className='bg-white divide-y divide-gray-200'>
                 {orders.map(order => (
-                    <tr key={order._id}>
+                    <tr key={order._id} data-order-id={order._id}>
                         <td style={{ textAlign: 'left' }}>{order.name}</td>
+                        <td>{order.email}</td>
                         <td>{order.phoneNumber}</td>
                         <td>{order.college}</td>
                         <td>{order.department}</td>
-                        <td>{order.year}</td>
-                        <td>{order.nameOnShirt}</td>
-                        <td>{order.size}</td>
+                        <td>{order.tShirtName}</td>
+                        <td>{order.tShirtSize}</td>
+                        <td>{order.campus}</td>
+                        <td>{order.paymentCollector}</td>
                         <td>{order.paymentMode}</td>
                         <td>
                             {order.transactionID ? order.transactionID : 'NIL'}

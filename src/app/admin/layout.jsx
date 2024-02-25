@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers'
-import { defaultAuth } from './firebase-admin'
+import { defaultAuth } from '@/firebase-admin/firebase-admin'
 export const runtime = 'nodejs'
 export default async function AdminLayout({ children }) {
     'use server'
@@ -34,11 +34,21 @@ export default async function AdminLayout({ children }) {
 
         return children
     } catch (e) {
-        return (
-            <section>
-                <h2>User Not Authenticated.</h2>
-                <p>o_o This Action Will Be Repoted. o_o</p>
-            </section>
-        )
+        if (error.code == 'auth/id-token-revoked') {
+            // Token has been revoked. Inform the user to reauthenticate or signOut() the user.
+            return (
+                <section>
+                    Auth Token Has Been Revoked! Please do a fresh login to
+                    continue...
+                </section>
+            )
+        } else {
+            return (
+                <section>
+                    <h2>User Not Authenticated.</h2>
+                    <p>o_o This Action Will Be Repoted. o_o</p>
+                </section>
+            )
+        }
     }
 }
