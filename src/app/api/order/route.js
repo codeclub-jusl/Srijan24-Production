@@ -10,6 +10,7 @@ export const runtime = 'nodejs'
 export async function POST(request) {
     const authTokenHeader = request.headers.get('Authorization')
     const authToken = authTokenHeader.split(' ')[1]
+    console.log(authTokenHeader)
     try {
         const decodedToken = await defaultAuth.verifyIdToken(
             authToken,
@@ -22,11 +23,12 @@ export async function POST(request) {
         if(decodedToken.email !== orderData['Email']) {
             throw new Error('user faking email...')
         }
-
+        console.log(orderData)
         const id = await orderService.registerOrder(orderData)
 
         return NextResponse.json({"OrderID": id}, {status: 201})
     } catch(e) {
+        console.log(e)
         if(e.code === 11000 && e.keyPattern?.transactionID) {
             return NextResponse.json({
                 code: 'duplicate-transaction-id',

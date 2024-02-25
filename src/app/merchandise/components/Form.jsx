@@ -100,6 +100,7 @@ export default function Form() {
                         'Please pay and use a fresh transaction ID or if already paid, please contact the admin immediately.',
                 })
             } else {
+                console.log(e)
                 notification['error']({
                     message: `Could not place order, please try again!`,
                     duration: 3,
