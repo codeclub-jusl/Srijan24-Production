@@ -249,52 +249,38 @@ const events = [
             ],
         },
     },
-    // {
-    //     eventId: 'ace-the-case',
-    //     eventName: 'Ace The Case',
-    //     eventDate: {
-    //         prelims: ['TBD'],
-    //         finals: 'TBD',
-    //     },
-    //     eventType: 'business & management',
-    //     eventHashtags: ['#Case_Study', 'Problem_Solving'],
-    //     eventCoordinators: [
-    //         'Piyush Gupta [ 7439484942 ]',
-    //         'Raktim Banerjee [ 9569584047 ]', 
-    //         'Souptik Dasgupta [ 9007475778 ]',
-    //     ],
-    //     prize: ["TBD"],
-    //     minMembers: 1,
-    //     maxMembers: 3,
-    //     eventPoster: '/images/events/h42.png',
-    //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Business case-study event to test everything, from your real-world problem solving to Pitching Skills, all under 24 hours!`,
-    //     eventDescription: [`Do you  have an astute proclivity for brainstorming and have a knack of finding solutions to problems?
-    //     We've got you covered!
-    //     Unleash your problem solving prowess in "Ace the Case"! Hop in for a thrilling opportunity to analyze real world challenges, develop innovative solutions and showcase your strategic acumen. Embrace the chance to network , interact and rise to the challenge!`],
-    //     eventRules: {
-    //         "Event Rules": [
-    //             "Join the Group links sent via emails beforehand to avoid last minute hassle.",
-    //             "The event is to be conducted in two rounds : Selection Round and Finale",
-    //             "Prompts will be provided to you 2 days PRIOR to the event.",
-    //             "Strictly adhere to the slide limits in each Round.",
-    //         ],
-    //         "Selection Round": [
-    //             "Event to be Conducted Online",
-    //             "Each team needs to submit an Abstract Report of the case study provided to them within 24 hours",
-    //             "The timer will start IMMEDIATELY as the Prompt Release is mailed/sent to the team",
-    //             "Slide Limit: 1 SLIDE ONLY",
-    //         ],
-    //         "Finale": [
-    //             "Pitching Time is 4-5 mins",
-    //             "Judges Rebuttal time is 2-3 mins",
-    //             "Brownie points for sticking to the time limit.",
-    //             "Max. Slide limit: 4 Slides + 1 Slide for Team Name + 1 Concluding Slide",
-    //             "The Event details will be provided to you once you qualify the Selection Round."
-    //         ],
-    //     },
-    //     // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
-    // },
+    {
+        eventId: 'sherlocked',
+        eventName: 'Sherlocked',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'coding',
+        eventHashtags: ['coding','brainstorming'],
+        eventCoordinators: [
+            'Anurag Jha [ 7044904397 ]',
+            'Manas Pratim Biswas [ 8942981600 ]', 
+            'Tanmay Roy [ 8101159941 ]',
+        ],
+        prize: ["Exciting prizes(TBD) for the top 3 winning teams"],
+        minMembers: 3,
+        maxMembers: 3,
+        eventPoster: '/images/events/sherlocked.jpeg',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Sherlocked: A thrilling coding and puzzle-solving challenge. Prelims feature 10 puzzles and 2 coding questions. Top teams advance to a multi-level 2-hour Finals for ultimate victory.`,
+        eventDescription: [`Prepare yourself for the ultimate test of coding and problem-solving skills! The Preliminary Round kicks off with 10 challenging puzzles and 2 coding problems, all squeezed into a fast-paced 1-hour showdown. But that's just the beginning! The top teams will move on to the thrilling Finals: Sherlocked! Get ready for a 2-hour adventure filled with technical challenges and strategic thinking. Each level gets tougher, pushing you to use all your coding expertise and puzzle-solving skills. It's a mix of coding challenges, brain teasers, and the excitement of a capture-the-flag competition.`],
+        eventRules: {
+            "": [
+                "Prelims: 10 puzzles, 2 coding questions, 1-hour round.",
+                "Top teams advancing to Finals will be declared on the same or next day.",
+                "Sherlocked Finals: 2-hour event with progressive difficulty levels",
+                "Teams advance by clearing levels, aiming to finish all as quickly as possible.",
+                "Fastest team clearing all levels will be declared the ultimate winner.",
+            ],
+        },
+        // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
+    },
 ]
 
 module.exports = events
