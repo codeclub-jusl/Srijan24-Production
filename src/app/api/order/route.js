@@ -27,6 +27,12 @@ export async function POST(request) {
 
         return NextResponse.json({"OrderID": id}, {status: 201})
     } catch(e) {
+        if(e.code === 11000 && e.keyPattern?.transactionID) {
+            return NextResponse.json({
+                code: 'duplicate-transaction-id',
+                message: 'An order with given transaction ID already exists!'
+            }, {status: 400})
+        }
         return NextResponse.json(e, {status: 400})
     }
 
