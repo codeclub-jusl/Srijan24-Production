@@ -8,7 +8,6 @@ export const runtime = 'nodejs'
  * @param {NextRequest} request Request object containing item details.
  */
 export async function POST(request) {
-
     const authTokenHeader = request.headers.get('Authorization')
     const authToken = authTokenHeader.split(' ')[1]
     try {
@@ -18,7 +17,7 @@ export async function POST(request) {
         )
 
         const orderData = await request.json()
-        console.log(orderData)
+        // console.log(orderData)
 
         if(decodedToken.email !== orderData['Email']) {
             throw new Error('user faking email...')
