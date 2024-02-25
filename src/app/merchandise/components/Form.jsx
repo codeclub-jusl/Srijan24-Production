@@ -57,7 +57,7 @@ export default function Form() {
             PaymentCollector: paidTo,
             TransactionID: transactionId,
         }
-
+        let expiredCount = 0
         try {
             const resp = await fetch('/api/order', {
                 method: 'POST',
@@ -70,17 +70,34 @@ export default function Form() {
             })
             const data = await resp.json()
             if (!resp.ok) {
-                throw new Error(data)
+                throw data
             }
             const orderID = data['OrderID']
             router.push(`/merchandise/success?orderID=${orderID}`)
         } catch (e) {
-            if (e.code === 'auth/id-token-revoked') {
+            if (
+                e.code === 'auth/id-token-revoked' ||
+                e.code === 'auth/id-token-expired'
+            ) {
                 const newAuthToken = await auth.currentUser.getIdToken(true)
                 dispatch(refreshUserToken(newAuthToken))
-                placeOrder()
+                if (expiredCount < 3) {
+                    expiredCount++
+                    placeOrder()
+                } else {
+                    notification['error']({
+                        message: `Could not validate user, please login once again and retry...`,
+                        duration: 3,
+                    })
+                }
+            } else if (e.code === 'duplicate-transaction-id') {
+                notification['error']({
+                    message: `${e.message}`,
+                    duration: 8,
+                    description:
+                        'Please pay and use a fresh transaction ID or if already paid, please contact the admin immediately.',
+                })
             } else {
-                console.log(e.message)
                 notification['error']({
                     message: `Could not place order, please try again!`,
                     duration: 3,
