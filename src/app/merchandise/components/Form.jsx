@@ -6,6 +6,7 @@ import { useState, FormEventHandler } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { refreshUserToken } from '@/store/userSlice'
 import { useRouter } from 'next/navigation'
+import { notification } from 'antd'
 
 const campusCollectors = {
     'Jadavpur Campus': 'Arin Ray',
@@ -68,6 +69,9 @@ export default function Form() {
                 body: JSON.stringify(orderData),
             })
             const data = await resp.json()
+            if (!resp.ok) {
+                throw new Error(data)
+            }
             const orderID = data['OrderID']
             router.push(`/merchandise/success?orderID=${orderID}`)
         } catch (e) {
@@ -76,7 +80,11 @@ export default function Form() {
                 dispatch(refreshUserToken(newAuthToken))
                 placeOrder()
             } else {
-                console.log(e)
+                console.log(e.message)
+                notification['error']({
+                    message: `Could not place order, please try again!`,
+                    duration: 3,
+                })
             }
         }
     }
@@ -390,7 +398,7 @@ export default function Form() {
                     </div>
 
                     <div className='flex justify-center items-center'>
-                        <button className='btn' onClick={placeOrder}>
+                        <button className='btn' type='submit'>
                             Place Order
                         </button>
                     </div>
