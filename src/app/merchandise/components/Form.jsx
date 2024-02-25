@@ -5,6 +5,7 @@ import '../styles/form.css'
 import { useState, FormEventHandler } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { refreshUserToken } from '@/store/userSlice'
+import { useRouter } from 'next/navigation'
 
 const campusCollectors = {
     'Jadavpur Campus': 'Arin Ray',
@@ -14,6 +15,7 @@ const campusCollectors = {
 export default function Form() {
     const user = useSelector(state => state?.userReducer?.user)
     const dispatch = useDispatch()
+    const router = useRouter()
 
     const [paymentMode, setPaymentMode] = useState('upi')
     const [transactionId, setTransactionId] = useState('')
@@ -65,8 +67,9 @@ export default function Form() {
                 },
                 body: JSON.stringify(orderData),
             })
-            const data = resp.json()
-            console.log(data)
+            const data = await resp.json()
+            const orderID = data['OrderID']
+            router.push(`/merchandise/success?orderID=${orderID}`)
         } catch (e) {
             if (e.code === 'auth/id-token-revoked') {
                 const newAuthToken = await auth.currentUser.getIdToken(true)
