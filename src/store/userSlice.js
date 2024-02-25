@@ -4,6 +4,7 @@ const initialState = {
   user: null,
 };
 
+
 const getCookie = (name) => {
   return document.cookie.split(';').some(c => {
     return c.trim().startsWith(name + '=');
@@ -25,8 +26,8 @@ export const userSlice = createSlice({
   reducers: {
     loginUser: (state, action) => {
       state.user = action.payload;
-      document.cookie = `x-srijan-firebase-auth-token=${action.payload.authTokenID}`
-      document.cookie = `x-srijan-firebase-user-email=${action.payload.email}`
+      document.cookie = `x-srijan-firebase-auth-token=${action.payload.authTokenID}; max-age=86400`
+      document.cookie = `x-srijan-firebase-user-email=${action.payload.email}; max-age=86400`
     },
 
     logoutUser: (state, action) => {
@@ -36,8 +37,9 @@ export const userSlice = createSlice({
     },
 
     refreshUserToken: (state, action) => {
-      console.log('payload is ', action.payload)
       state.user.authTokenID = action.payload
+      // update the old cookie with the new token value
+      document.cookie = `x-srijan-firebase-auth-token=${action.payload}; max-age=86400`
     },
   },
 });
