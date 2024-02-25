@@ -2010,3 +2010,6 @@ screen and (max-height: 380px) {
 .merchandiseVerifyContainer button:nth-child(3):hover{
     background-color: darkred;
 }
+.prizeListItem{
+    margin-left: 10px;
+}

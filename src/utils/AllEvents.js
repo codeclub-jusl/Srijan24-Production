@@ -268,7 +268,7 @@ const events = [
     //         'Arindam Halder [ 8777712395 ]', 
     //         'Anurag Jha [ 7044904397 ]',
     //     ],
-    //     prize: ["1st: Rs.5000 | 2nd: Rs.3000 | 3rd: Rs.2000 | Best Beginner: Rs.1000 | Best UI/UX: Rs.1000"],
+    //     prize: ["1st: Rs.5000", "2nd: Rs.3000", "3rd: Rs.2000", "Best Beginner: Rs.1000", "Best UI/UX: Rs.1000", "Top Performers: will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."],
     //     minMembers: 3,
     //     maxMembers: 4,
     //     eventPoster: '/images/events/hackforge.png',

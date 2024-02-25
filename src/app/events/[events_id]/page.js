@@ -266,7 +266,11 @@ const page = ({ params }) => {
                                     </strong>
                                 </p>
                                 <p className='text-sm md:text-base'>
-                                    {eventData.prize}
+                                    {eventData.prize && eventData.prize.length>0 && eventData.prize.map((data)=>{
+                                        return(
+                                            <li className='prizeListItem'>{data}</li>
+                                        )
+                                    })}
                                 </p>
                                 </div>
                             )}
