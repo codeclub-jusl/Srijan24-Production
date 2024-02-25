@@ -23,7 +23,7 @@ if(!defaultApp) {
         // credential: applicationDefault(),
         credential: credential.cert({
             project_id: process.env.PROJECT_ID,
-            private_key: process.env.PRIVATE_KEY,
+            private_key: process.env.PRIVATE_KEY.replace(/\\n/gm, "\n"),
             client_email: process.env.CLIENT_EMAIL
         }),
         databaseURL: process.env.FIREBASE_REALTIME_DATABASE_URL
