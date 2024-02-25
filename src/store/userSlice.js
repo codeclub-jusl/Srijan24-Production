@@ -34,7 +34,12 @@ export const userSlice = createSlice({
       deleteCookie('x-srijan-firebase-user-email')
       state.user = null;
     },
+
+    refreshUserToken: (state, action) => {
+      console.log('payload is ', action.payload)
+      state.user.authTokenID = action.payload
+    },
   },
 });
 
-export const {loginUser, logoutUser} = userSlice.actions;
+export const {loginUser, logoutUser, refreshUserToken} = userSlice.actions;
