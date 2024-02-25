@@ -37,8 +37,8 @@ export default function OrderGuidelines(props) {
                             draggable={false}
                             priority={true}
                         />
-                        <h4>Ayush Mishra</h4>
-                        <h5>ayushdtps@oksbi</h5>
+                        <h4>Jyotishman Sarkar</h4>
+                        <h5>jman19@axl</h5>
                     </div>
                     <div>
                         <Image
@@ -50,8 +50,8 @@ export default function OrderGuidelines(props) {
                             draggable={false}
                             priority={true}
                         />
-                        <h4>Bitan Banerjee</h4>
-                        <h5>bbanerjeeagp@oksbi</h5>
+                        <h4>Subhadip De</h4>
+                        <h5>subhadipde.habra@okaxis</h5>
                     </div>
                 </div>
                 {/* <div className={'instructions'}>
@@ -126,8 +126,7 @@ export default function OrderGuidelines(props) {
                     <TfiHandPointRight className={'instructionBullets'} />{' '}
                     <span>
                         {' '}
-                        For any further queries, reach out to Ayush Mishra [
-                        8927898690 ] or Bitan Banerjee [ 7439377598 ] anytime
+                        For any further queries, reach out to Jyotishman Sarkar [ 9674318486 ] or Subhadip De [ 8584038115 ] anytime
                     </span>
                 </div>
                 {/* please scan any one of the two QR codes shown above. If you choose 1st one, then at the time  */}

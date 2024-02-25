@@ -9,8 +9,8 @@ import { useRouter } from 'next/navigation'
 import { notification } from 'antd'
 
 const campusCollectors = {
-    'Jadavpur Campus': 'Arin Ray',
-    'Saltlake Campus': 'Tanmoy Roy',
+    'Jadavpur Campus': 'Jyotishman Sarkar (Jadavpur Campus)',
+    'Saltlake Campus': 'Subhadip De (SaltLake Campus)',
 }
 
 export default function Form() {
@@ -25,6 +25,7 @@ export default function Form() {
     const [department, setDepartment] = useState('')
     const [college, setCollege] = useState('')
     const [tshirtSize, setTshirtSize] = useState('')
+    const [tshirtColor, setTshirtColor] = useState('black')
     const [tshirtName, setTshirtName] = useState('')
     const [campus, setCampus] = useState('')
     const [paidTo, setPaidTo] = useState('')
@@ -51,6 +52,7 @@ export default function Form() {
             College: college,
             Department: department,
             TShirtSize: tshirtSize,
+            TshirtColor: tshirtColor,
             TShirtName: tshirtName,
             PaymentMode: paymentMode,
             Campus: campus,
@@ -212,14 +214,37 @@ export default function Form() {
                             }
                         >
                             <option value='' disabled>
-                                Select T-shirt size
+                                Select T-shirt Size
                             </option>
-                            <option value='S'>S</option>
-                            <option value='M'>M</option>
-                            <option value='L'>L</option>
-                            <option value='XL'>XL</option>
-                            <option value='XXL'>XXL</option>
-                            <option value='XXXL'>XXXL</option>
+                            <option value='S'>S (38)</option>
+                            <option value='M'>M (40)</option>
+                            <option value='L'>L (42)</option>
+                            <option value='XL'>XL (44)</option>
+                            <option value='XXL'>XXL (46)</option>
+                            <option value='XXXL'>XXXL (48)</option>
+                        </select>
+                    </div>
+                    <div className='mb-4'>
+                        <label
+                            htmlFor='tshirt-size'
+                            className='block text-white'
+                        >
+                            T-Shirt Color
+                        </label>
+                        <select
+                            id='tshirt-size'
+                            required
+                            className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
+                            value={tshirtColor}
+                            onChange={event =>
+                                setTshirtColor(event.target.value)
+                            }
+                        >
+                            <option value='' disabled>
+                                Select T-shirt Color
+                            </option>
+                            <option value='black'>Black</option>
+                            <option value='white'>White</option>
                         </select>
                     </div>
                     <div className='mb-4'>
@@ -366,6 +391,7 @@ export default function Form() {
                             </label>
                             <input
                                 type='text'
+                                placeholder='Enter the UPI Transaction ID'
                                 value={transactionId}
                                 onChange={e => setTransactionId(e.target.value)}
                                 className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'

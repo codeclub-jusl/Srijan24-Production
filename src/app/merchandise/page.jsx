@@ -16,11 +16,11 @@ import OrderGuidelines from './components/OrderGuidelines'
 export default function Merchendise() {
     const tshirts = useMemo(function () {
         return [
-            '/images/black_front.png',
-            '/images/tshirt_front.png',
-            '/images/tshirt_back.png',
-            '/images/white_front.png',
-            '/images/white_back.png',
+            '/assets/merchandise/black_front.png',
+            '/assets/merchandise/black_back.png',
+            '/assets/merchandise/white_front.png',
+            '/assets/merchandise/white_back.png',
+            // '/images/white_back.png',
         ]
     }, [])
 
@@ -100,7 +100,7 @@ export default function Merchendise() {
                             </div>
 
                             <div className='merchandisePrice'>
-                                <h4>Only for Rs. 380/-</h4>
+                                <h4>Only for Rs. 359/-</h4>
                             </div>
                             <div className={'offlinePaymentDetails'}>
                                 <button
