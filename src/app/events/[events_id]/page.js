@@ -278,7 +278,7 @@ const page = ({ params }) => {
                                 </strong>
                             </p>
                             <p className='text-sm md:text-base eventDesc'>
-                                {eventData && eventData.eventDescription}
+                                {eventData && eventData.eventDescription && eventData.eventDescription.length>0 && eventData.eventDescription.map((data)=> (<p>{data}</p>))}
                             </p>
                         </div>
                         {eventData && eventData.documentLink && <div className='flex flex-col p-3 shadow-2xl '>
@@ -291,17 +291,30 @@ const page = ({ params }) => {
                                 Click <Link href={eventData.documentLink} className='documentLink'>here</Link> to know more about this event
                             </p>
                         </div>}
+                        {eventData && eventData.websiteLink && <div className='flex flex-col p-3 shadow-2xl '>
+                            <p className='text-sm md:text-base eventDesc'>
+                                Click <Link href={eventData.websiteLink} className='documentLink'>here</Link> to access site to know more about this event
+                            </p>
+                        </div>}
                     </div>
                 </div>
                 {user ? (
                     user && profileUpdated ? (
                         <div className='mt-4 flex justify-center'>
-                            <button
+                            {!eventData.unstopRegistrationLink && <button
                                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
                                 onClick={handleRegister} // toggleModal
                             >
                                 {registerButton}
-                            </button>
+                            </button>}
+                            {eventData.unstopRegistrationLink && 
+                                <Link
+                                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                                    href={eventData.unstopRegistrationLink}
+                                >
+                                    Register on Unstop
+                                </Link>
+                            }
 
                             {eventStatus === 'not registered' && (
                                 <button
