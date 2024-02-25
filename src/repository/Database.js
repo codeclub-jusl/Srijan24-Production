@@ -1,10 +1,12 @@
-import {MongoClient, Db} from "mongodb"
+import {MongoClient, Db, ServerApiVersion} from "mongodb"
 
 
 /**
  * @type {Db}
  */
 let DB = null
+
+
 
 export async function GetDB() {
     if(!process.env.MONGO_URL) {
@@ -15,7 +17,16 @@ export async function GetDB() {
         return DB
     }
 
-    const client = await MongoClient.connect(process.env.MONGO_URL)
+    const client = new MongoClient(process.env.MONGO_URL, {
+        serverApi: {
+            version: ServerApiVersion.v1,
+            strict: true,
+            deprecationErrors: true,
+        }
+    }
+    );
+
+    await client.connect()
     DB = client.db(process.env.MONGO_DATABASE_NAME)
     return DB
 }
