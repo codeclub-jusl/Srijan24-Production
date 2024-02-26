@@ -78,7 +78,6 @@ export class Order {
      * @param {string} campus
      * @param {string} paymentCollector
      * @param {string | null} transactionID 
-     * @param {string} status 
      */
     constructor (
         name,
@@ -92,8 +91,7 @@ export class Order {
         paymentMode,
         campus,
         paymentCollector,
-        transactionID,
-        status
+        transactionID
     ) {
 
 
@@ -106,11 +104,9 @@ export class Order {
             throw new Error("Only UPI and Cash payment modes are available")
 
         }
-        if(paymentMode === 'UPI' && !transactionID) {
-            throw new Error("Cannot have payment mode as UPI without transactionID")
-        }
+
         if(
-            typeof transactionID === undefined ||
+            typeof transactionID === "undefined" ||
             transactionID === null ||
             transactionID.trim() === '' ||
             paymentMode === 'CASH'
@@ -118,7 +114,9 @@ export class Order {
             transactionID = null
         }
 
-
+        if(paymentMode === 'UPI' && !transactionID) {
+            throw new Error("Cannot have payment mode as UPI without transactionID")
+        }
 
         this.name = name
         this.email = email
