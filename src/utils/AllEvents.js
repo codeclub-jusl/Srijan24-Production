@@ -255,6 +255,51 @@ const events = [
         },
     },
     // {
+    //     eventId: 'robosoccer',
+    //     eventName: 'ROBOSOCCER',
+    //     eventDate: {
+    //         prelims: ['22/3/24'],
+    //         finals: '23/3/24',
+    //     },
+    //     eventType: 'circuits & robotics',
+    //     eventHashtags: ["robo", "soccer", "football"],
+    //     eventCoordinators: [
+    //         'Sukalyan Bisui [ 8697488984 ]',
+    //         'Adipto Ghosh Dastidar [ 6290764395 ]', 
+    //     ],
+    //     prize: ["Prize pool of Rs.2000"],
+    //     minMembers: 1,
+    //     maxMembers: 5,
+    //     eventPoster: '/images/events/h42.png',
+    //     registrationType: `Srijan'24 Website`,
+    //     eventShortDescription: `Robots playing soccer`,
+    //     eventDescription: [`Are you ready for a spectacle of wondrous magnitude, unlike any other, that will leave your heart racing with excitement? Experience the electrifying spectacle of the Robosoccer at SRIJAN'24 ! This thrilling game combines the excitement of match day with the world of robotics. This adrenaline-pumping game combines the high-energy atmosphere of match day with the thrilling world of robotics.
+    //     Whether you're a tech aficionado or a soccer fanatic, the Robosoccer is an event you won't want to miss. The anticipation and energy in the air are palpable as you prepare to compete in the arena of the warriors.Showcase your skills by building bots, coding moves, and planning strategies. It's not just a game; it's an unforgettable experience
+    //     This is not just any game, my friends, it's an unforgettable experience. The thrill of the competition, the excitement of the crowd, and the camaraderie of your fellow competitors will leave you with memories that will last a lifetime.
+    //     So don't wait - get in on the action and experience the excitement of the Robosoccer! Don't miss out - register now and be part of the most electrifying tech sports event of the year!`],
+    //     eventRules: {
+    //         "General Rules": [
+    //             "Each team can consist of a maximum of 5 members.",
+    //             "The decision of the JUSC match officials is final and binding.",
+    //             "The competition will be bisected into wired and wireless categories. The prize money will be separate for the winners of these two categories.",
+    //         ],
+    //         "Goals": [
+    //             "The main goal of participating bot is to shoot the ball into the opponent's goal.",
+    //             "The ball is to be taken across the field only by pushing. It cannot be clamped or lifted in the air and at no point of time should the ball be covered by all sides by the participant’s bot or any part of it.",
+    //             "Dribbling mechanisms can be used; however, the ball must have at least one direction for free motion.",
+    //             "A participant’s bot is not supposed to interact directly with the opponent’s bot when it is not in possession of the ball. If one of the bots is in possession of the ball, the other can attempt to dis-possess it by attacking only the ball.",
+    //             "Physical interaction between the bots in this process will be tolerated if it is judged that the attacking bot went for the ball.",
+    //             "If a bot is found to commit a foul (directly hitting/obstructing the motion of the opponent’s bot), the opponent will be given a free–shot.",
+    //             "In case of entangling of the wires, there can be a restart, with the ball placed at the point where it was before the entangling of the wires, upon the discretion of the referee.",
+    //             "Damaging the arena in any form will lead to immediate disqualification.",
+    //             "After every goal is scored the ball would be placed back in the centre circle and each bot shall restart from their respective D-lines.",
+    //             "There shall be red regions in the four corners. If a bot pushes its opponent to that area completely, it receives points (only applicable in Round 1).",
+    //             "Own goals are taken into account."
+    //         ],
+    //     },
+    //     documentLink: "https://docs.google.com/document/d/11T7RU_-vUNgSap0WcAMY0VL8hvi80Eqf-3RkAn7tRYg/edit#heading=h.c5rpsdy8g2ak",
+    // },
+    // {
     //     eventId: 'hackforge',
     //     eventName: 'HackForge - Forging the Future',
     //     eventDate: {

@@ -216,12 +216,12 @@ export default function Form() {
                             <option value='' disabled>
                                 Select T-shirt Size
                             </option>
-                            <option value='S'>S (38)</option>
-                            <option value='M'>M (40)</option>
-                            <option value='L'>L (42)</option>
-                            <option value='XL'>XL (44)</option>
-                            <option value='XXL'>XXL (46)</option>
-                            <option value='XXXL'>XXXL (48)</option>
+                            <option value='S'>S (36)</option>
+                            <option value='M'>M (38)</option>
+                            <option value='L'>L (40)</option>
+                            <option value='XL'>XL (42)</option>
+                            <option value='XXL'>XXL (44)</option>
+                            <option value='XXXL'>XXXL (46)</option>
                         </select>
                     </div>
                     <div className='mb-4'>
