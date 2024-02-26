@@ -10,13 +10,14 @@ export const runtime = 'nodejs'
 export async function POST(request) {
     const authTokenHeader = request.headers.get('Authorization')
     const authToken = authTokenHeader.split(' ')[1]
-    return NextResponse.json({"token": authToken}, {status: 400})
 
     try {
         const decodedToken = await defaultAuth.verifyIdToken(
             authToken,
             // true,
         )
+        return NextResponse.json({"decoded token": decodedToken}, {status: 200})
+
 
         const orderData = await request.json()
         // console.log(orderData)
