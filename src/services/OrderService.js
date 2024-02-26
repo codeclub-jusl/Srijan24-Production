@@ -42,10 +42,10 @@ class OrderService {
             orderDetails.PaymentCollector,
             orderDetails.TransactionID
         )
-        return order
 
-        // const objectID = await this.orderRepository.insertOrder(order)
-        // return objectID.toString("hex")
+
+        const objectID = await this.orderRepository.insertOrder(order)
+        return objectID.toString("hex")
     }
 
     async getAllOrders() {

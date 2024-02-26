@@ -84,15 +84,16 @@ export default function Form() {
             ) {
                 const newAuthToken = await auth.currentUser.getIdToken(true)
                 dispatch(refreshUserToken(newAuthToken))
-                if (expiredCount < 3) {
-                    expiredCount++
-                    placeOrder()
-                } else {
-                    notification['error']({
-                        message: `Could not validate user, please login once again and retry...`,
-                        duration: 3,
-                    })
-                }
+                // if (expiredCount < 3) {
+                //     expiredCount++
+                //     placeOrder()
+                // } else {
+                notification['error']({
+                    message: `Auth Expired Due To Inactivity`,
+                    description: `Please relogin to our website and try once again.`,
+                    duration: 3,
+                })
+                // }
             } else if (e.code === 'duplicate-transaction-id') {
                 notification['error']({
                     message: `${e.message}`,
