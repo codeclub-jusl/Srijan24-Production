@@ -299,6 +299,39 @@ const events = [
         unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
         websiteLink: "https://hackforge.srijanju.in"
     },
+
+    {
+        eventId: 'sherlocked',
+        eventName: 'Sherlocked',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'coding',
+        eventHashtags: ['coding','brainstorming'],
+        eventCoordinators: [
+            'Anurag Jha [ 7044904397 ]',
+            'Manas Pratim Biswas [ 8942981600 ]', 
+            'Tanmay Roy [ 8101159941 ]',
+        ],
+        prize: ["Exciting prizes(TBD) for the top 3 winning teams"],
+        minMembers: 3,
+        maxMembers: 3,
+        eventPoster: '/images/events/sherlocked.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Sherlocked: A thrilling coding and puzzle-solving challenge. Prelims feature 10 puzzles and 2 coding questions. Top teams advance to a multi-level 2-hour Finals for ultimate victory.`,
+        eventDescription: [`Prepare yourself for the ultimate test of coding and problem-solving skills! The Preliminary Round kicks off with 10 challenging puzzles and 2 coding problems, all squeezed into a fast-paced 1-hour showdown. But that's just the beginning! The top teams will move on to the thrilling Finals: Sherlocked! Get ready for a 2-hour adventure filled with technical challenges and strategic thinking. Each level gets tougher, pushing you to use all your coding expertise and puzzle-solving skills. It's a mix of coding challenges, brain teasers, and the excitement of a capture-the-flag competition.`],
+        eventRules: {
+            "": [
+                "Prelims: 10 puzzles, 2 coding questions, 1-hour round.",
+                "Top teams advancing to Finals will be declared on the same or next day.",
+                "Sherlocked Finals: 2-hour event with progressive difficulty levels",
+                "Teams advance by clearing levels, aiming to finish all as quickly as possible.",
+                "Fastest team clearing all levels will be declared the ultimate winner.",
+            ],
+        },
+    },
+
     // {
     //     eventId: 'robosoccer',
     //     eventName: 'ROBOSOCCER',
@@ -392,37 +425,7 @@ const events = [
     //     // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
     // },
     
-    // {
-    //     eventId: 'sherlocked',
-    //     eventName: 'Sherlocked',
-    //     eventDate: {
-    //         prelims: ['TBD'],
-    //         finals: 'TBD',
-    //     },
-    //     eventType: 'coding',
-    //     eventHashtags: ['coding','brainstorming'],
-    //     eventCoordinators: [
-    //         'Anurag Jha [ 7044904397 ]',
-    //         'Manas Pratim Biswas [ 8942981600 ]', 
-    //         'Tanmay Roy [ 8101159941 ]',
-    //     ],
-    //     prize: ["Exciting prizes(TBD) for the top 3 winning teams"],
-    //     minMembers: 3,
-    //     maxMembers: 3,
-    //     eventPoster: '/images/events/sherlocked.jpeg',
-    //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Sherlocked: A thrilling coding and puzzle-solving challenge. Prelims feature 10 puzzles and 2 coding questions. Top teams advance to a multi-level 2-hour Finals for ultimate victory.`,
-    //     eventDescription: [`Prepare yourself for the ultimate test of coding and problem-solving skills! The Preliminary Round kicks off with 10 challenging puzzles and 2 coding problems, all squeezed into a fast-paced 1-hour showdown. But that's just the beginning! The top teams will move on to the thrilling Finals: Sherlocked! Get ready for a 2-hour adventure filled with technical challenges and strategic thinking. Each level gets tougher, pushing you to use all your coding expertise and puzzle-solving skills. It's a mix of coding challenges, brain teasers, and the excitement of a capture-the-flag competition.`],
-    //     eventRules: {
-    //         "": [
-    //             "Prelims: 10 puzzles, 2 coding questions, 1-hour round.",
-    //             "Top teams advancing to Finals will be declared on the same or next day.",
-    //             "Sherlocked Finals: 2-hour event with progressive difficulty levels",
-    //             "Teams advance by clearing levels, aiming to finish all as quickly as possible.",
-    //             "Fastest team clearing all levels will be declared the ultimate winner.",
-    //         ],
-    //     },
-    // },
+    
 ]
 
 module.exports = events
