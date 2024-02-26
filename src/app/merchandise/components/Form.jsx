@@ -71,6 +71,7 @@ export default function Form() {
                 body: JSON.stringify(orderData),
             })
             const data = await resp.json()
+            console.log('data is', data)
             if (!resp.ok) {
                 throw data
             }
