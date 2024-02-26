@@ -16,15 +16,14 @@ export async function POST(request) {
             authToken,
             // true,
         )
-        return NextResponse.json({"decoded token": decodedToken}, {status: 200})
 
 
         const orderData = await request.json()
-        // console.log(orderData)
 
         if(decodedToken.email !== orderData['Email']) {
             throw new Error('user faking email...')
         }
+        return NextResponse.json({"decoded token": decodedToken, "order data": orderData}, {status: 200})
         const id = await orderService.registerOrder(orderData)
 
         return NextResponse.json({"OrderID": id}, {status: 201})
