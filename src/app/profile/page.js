@@ -24,6 +24,8 @@ const page = () => {
     const [loading, setLoading] = useState(false)
     const [referCode, setReferCode] = useState('')
     const [referredFriends, setReferredFriends] = useState([])
+    const [referralCode, setReferralCode] = useState(undefined)
+    const [campusAmbassador, setCampusAmbassador] = useState(undefined)
 
     const handleEditClick = e => {
         if (isEditable) {
@@ -37,8 +39,8 @@ const page = () => {
     const router = useRouter()
     const user = useSelector(state => state.userReducer.user)
 
-    const referralCode = findReferralCode(user.email)
-    const campusAmbassador = getAmbassadorByCode(user.referralCode)
+    // const referralCode = findReferralCode(user.email)
+    // const campusAmbassador = getAmbassadorByCode(user.referralCode)
     // const campusAmbassador = "AbCdE"
     // const user = propsUser
     // console.log(user);
@@ -70,6 +72,14 @@ const page = () => {
             setReferredFriends(user.referredFriends)
         } else {
             setReferredFriends([])
+        }
+
+        if(user) {
+            setReferralCode(findReferralCode(user.email))
+            setCampusAmbassador(getAmbassadorByCode(user.referralCode))
+        } else {
+            setReferralCode(undefined)
+            setCampusAmbassador(undefined)
         }
     }, [user])
 
