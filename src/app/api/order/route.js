@@ -23,8 +23,12 @@ export async function POST(request) {
         if(decodedToken.email !== orderData['Email']) {
             throw new Error('user faking email...')
         }
-        return NextResponse.json({"decoded token": decodedToken, "order data": orderData}, {status: 200})
-        const id = await orderService.registerOrder(orderData)
+        // const id = await orderService.registerOrder(orderData)
+
+        //testing whether order object creation is successfully done
+        const order = await orderService.registerOrder(orderData)
+
+        return NextResponse.json({"decoded token": decodedToken, "order data": orderData, "order": order}, {status: 200})
 
         return NextResponse.json({"OrderID": id}, {status: 201})
     } catch(e) {
