@@ -254,6 +254,51 @@ const events = [
             ],
         },
     },
+    {
+        eventId: 'hackforge',
+        eventName: 'HackForge - Forging the Future',
+        eventDate: {
+            prelims: ['till 14th March 11:59pm'],
+            finals: '17th March (10am to 8pm)',
+        },
+        eventType: 'coding',
+        eventHashtags: ['hackathon', 'challenges'],
+        eventCoordinators: [
+            'Rajdeep Mallick [ 7029422038 ]',
+            'Arindam Halder [ 8777712395 ]', 
+            'Anurag Jha [ 7044904397 ]',
+        ],
+        prize: ["1st: Rs.5000", "2nd: Rs.3000", "3rd: Rs.2000", "Best Beginner: Rs.1000", "Best UI/UX: Rs.1000", "Top Performers: will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."],
+        minMembers: 3,
+        maxMembers: 4,
+        eventPoster: '/images/events/hackforge.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Welcome to HackForge, an electrifying offline hackathon brought to you by CodeClub JUSL as part of Srijan'24`,
+        eventDescription: [`Dive into the future of technology with CodeClub's "HackForge: Forging the Future" at Jadavpur University! Join over 150 students for an exhilarating marathon of Creation, Innovation & Fun at our Salt Lake campus. Whether you're a seasoned coder or an eager explorer, don't miss this dynamic event to unleash your potential. Experience the thrill of innovation and be part of shaping tomorrow's world. Join us for an extraordinary celebration of ingenuity and excitement at Jadavpur University!`],
+        eventRules: {
+            "Guidelines": [
+                "Open to all students who are currently enrolled in a college or university.",
+                "Teams comprising 3-4 members are required, with participation open to both inter-institutional and inter-batch collaborations.",
+                "There will be 2 rounds: Idea Submission Round and Coding+Pitching Round.",
+                "In the Idea Submission Round, each team has to submit their idea in a PPT (maximum 10 slides) based on the themes provided, through this portal.",
+                "Shortlisted teams will qualify for the Coding+Pitching Round which will be conducted onsite in SMCC Building, Jadavpur University Salt Lake Campus.",
+                "Top performers (if eligible) will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street with a chance of grabbing a FTE opportunity after the intern period."
+            ],
+            "Rules": [
+                "The Coding+Pitching Round will start sharp at 10am. All team members have to be present onsite during this round, otherwise, the team will be disqualified.",
+                "Participants can use any tech stack to build the solution based on the given themes.",
+                "All the commits in the Github repository must contain commits only after the start of the onsite round of the hackathon.",
+                "All submissions will be run through a plagiarism detector. Any case of code plagiarism will result in the disqualification of the team from the contest.",
+                "Your code will be evaluated at different timestamps, so it's important to periodically push code to the specified repository.",
+                "Note: Foods, beverages will be provided to all team members in the onsite round."
+            ],
+            "Problem Statements": [
+                "The problem statements will be revealed soon..."
+            ]
+        },
+        unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
+        websiteLink: "https://hackforge.srijanju.in"
+    },
     // {
     //     eventId: 'robosoccer',
     //     eventName: 'ROBOSOCCER',
@@ -298,51 +343,6 @@ const events = [
     //         ],
     //     },
     //     documentLink: "https://docs.google.com/document/d/11T7RU_-vUNgSap0WcAMY0VL8hvi80Eqf-3RkAn7tRYg/edit#heading=h.c5rpsdy8g2ak",
-    // },
-    // {
-    //     eventId: 'hackforge',
-    //     eventName: 'HackForge - Forging the Future',
-    //     eventDate: {
-    //         prelims: ['till 14th March 11:59pm'],
-    //         finals: '17th March (10am to 8pm)',
-    //     },
-    //     eventType: 'coding',
-    //     eventHashtags: ['hackathon', 'challenges'],
-    //     eventCoordinators: [
-    //         'Rajdeep Mallick [ 7029422038 ]',
-    //         'Arindam Halder [ 8777712395 ]', 
-    //         'Anurag Jha [ 7044904397 ]',
-    //     ],
-    //     prize: ["1st: Rs.5000", "2nd: Rs.3000", "3rd: Rs.2000", "Best Beginner: Rs.1000", "Best UI/UX: Rs.1000", "Top Performers: will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."],
-    //     minMembers: 3,
-    //     maxMembers: 4,
-    //     eventPoster: '/images/events/hackforge.png',
-    //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Welcome to HackForge, an electrifying offline hackathon brought to you by CodeClub JUSL as part of Srijan'24`,
-    //     eventDescription: [`Dive into the future of technology with CodeClub's "HackForge: Forging the Future" at Jadavpur University! Join over 150 students for an exhilarating marathon of Creation, Innovation & Fun at our Salt Lake campus. Whether you're a seasoned coder or an eager explorer, don't miss this dynamic event to unleash your potential. Experience the thrill of innovation and be part of shaping tomorrow's world. Join us for an extraordinary celebration of ingenuity and excitement at Jadavpur University!`],
-    //     eventRules: {
-    //         "Guidelines": [
-    //             "Open to all students who are currently enrolled in a college or university.",
-    //             "Teams comprising 3-4 members are required, with participation open to both inter-institutional and inter-batch collaborations.",
-    //             "There will be 2 rounds: Idea Submission Round and Coding+Pitching Round.",
-    //             "In the Idea Submission Round, each team has to submit their idea in a PPT (maximum 10 slides) based on the themes provided, through this portal.",
-    //             "Shortlisted teams will qualify for the Coding+Pitching Round which will be conducted onsite in SMCC Building, Jadavpur University Salt Lake Campus.",
-    //             "Top performers (if eligible) will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."
-    //         ],
-    //         "Rules": [
-    //             "The Coding+Pitching Round will start sharp at 10am. All team members have to be present onsite during this round, otherwise, the team will be disqualified.",
-    //             "Participants can use any tech stack to build the solution based on the given themes.",
-    //             "All the commits in the Github repository must contain commits only after the start of the onsite round of the hackathon.",
-    //             "All submissions will be run through a plagiarism detector. Any case of code plagiarism will result in the disqualification of the team from the contest.",
-    //             "Your code will be evaluated at different timestamps, so it's important to periodically push code to the specified repository.",
-    //             "Note: Foods, beverages will be provided to all team members in the onsite round."
-    //         ],
-    //         "Problem Statements": [
-    //             "The problem statements will be revealed soon..."
-    //         ]
-    //     },
-    //     unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
-    //     websiteLink: "https://hackforge.srijanju.in"
     // },
 
     // {
