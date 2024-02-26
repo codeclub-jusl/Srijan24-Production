@@ -68,7 +68,7 @@ const page = () => {
             profilePicUrl: user ? user.profilePicUrl : '',
         })
 
-        if(user.referredFriends) {
+        if(user && user.referredFriends) {
             setReferredFriends(user.referredFriends)
         } else {
             setReferredFriends([])
