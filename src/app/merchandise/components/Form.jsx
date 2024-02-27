@@ -61,12 +61,12 @@ export default function Form() {
         }
         let expiredCount = 0
         try {
-            const resp = await fetch('/api/order', {
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_ORDER_SERVER}/order`, {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${user.authTokenID}`,
+                    // 'Content-Type': 'application/json',
+                    // Authorization: `Bearer ${user.authTokenID}`,
                 },
                 body: JSON.stringify(orderData),
             })

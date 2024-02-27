@@ -35,6 +35,8 @@ const ambassadors = {
     "aritraganguly2019@gmail.com": "wfW0b",
     "rahul.prasad1706@gmail.com": "OVFXz",
     "sreenjoysaha2711@outlook.com": "TGo3d",
+    "2305337@kiit.ac.in": "uM0f8",
+    "iammeghdeb@gmail.com": "yZuel",
 }
 
 export function findReferralCode(email) {
