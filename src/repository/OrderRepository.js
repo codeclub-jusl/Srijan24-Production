@@ -1,6 +1,7 @@
 import {Order} from "@/dao/Order"
 import {GetDB} from "./Database"
 import {ObjectId} from "mongodb"
+import { MongoClient } from "mongodb"
 
 export class OrderRepository {
     static collectionName = 'orders'
@@ -26,7 +27,9 @@ export class OrderRepository {
      * @param {Order} order 
      */
     async insertOrder(order) {
-        const db = await GetDB()
+        // const db = await GetDB()
+        const client = await MongoClient.connect(process.env.MONGO_URL)
+        const db = client.db(process.env.MONGO_DATABASE_NAME)
         const collection = db.collection(OrderRepository.collectionName)
 
         const result = await collection.insertOne(order)
@@ -34,7 +37,10 @@ export class OrderRepository {
     }
 
     async findAll() {
-        const db = await GetDB()
+        // const db = await GetDB()
+        const client = await MongoClient.connect(process.env.MONGO_URL)
+        const db = client.db(process.env.MONGO_DATABASE_NAME)
+
         const collection = db.collection(OrderRepository.collectionName)
         const docs = await collection.find({}).toArray()
         return docs
@@ -46,7 +52,9 @@ export class OrderRepository {
      * @param {boolean} isVerified 
      */
     async updateVerificationStatusByID(id, status) {
-        const db = await GetDB()
+        // const db = await GetDB()
+        const client = await MongoClient.connect(process.env.MONGO_URL)
+        const db = client.db(process.env.MONGO_DATABASE_NAME)
 
         const collection = db.collection(OrderRepository.collectionName)
         const result = await collection.updateOne({"_id": new ObjectId(id)}, {

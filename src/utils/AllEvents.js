@@ -254,50 +254,159 @@ const events = [
             ],
         },
     },
+    {
+        eventId: 'hackforge',
+        eventName: 'HackForge - Forging the Future',
+        eventDate: {
+            prelims: ['till 14th March 11:59pm'],
+            finals: '17th March (10am to 8pm)',
+        },
+        eventType: 'coding',
+        eventHashtags: ['hackathon', 'challenges'],
+        eventCoordinators: [
+            'Rajdeep Mallick [ 7029422038 ]',
+            'Arindam Halder [ 8777712395 ]', 
+            'Anurag Jha [ 7044904397 ]',
+        ],
+        prize: ["1st: Rs.5000", "2nd: Rs.3000", "3rd: Rs.2000", "Best Beginner: Rs.1000", "Best UI/UX: Rs.1000", "Top Performers: will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."],
+        minMembers: 3,
+        maxMembers: 4,
+        eventPoster: '/images/events/hackforge.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Welcome to HackForge, an electrifying offline hackathon brought to you by CodeClub JUSL as part of Srijan'24`,
+        eventDescription: [`Dive into the future of technology with CodeClub's "HackForge: Forging the Future" at Jadavpur University! Join over 150 students for an exhilarating marathon of Creation, Innovation & Fun at our Salt Lake campus. Whether you're a seasoned coder or an eager explorer, don't miss this dynamic event to unleash your potential. Experience the thrill of innovation and be part of shaping tomorrow's world. Join us for an extraordinary celebration of ingenuity and excitement at Jadavpur University!`],
+        eventRules: {
+            "Guidelines": [
+                "Open to all students who are currently enrolled in a college or university.",
+                "Teams comprising 3-4 members are required, with participation open to both inter-institutional and inter-batch collaborations.",
+                "There will be 2 rounds: Idea Submission Round and Coding+Pitching Round.",
+                "In the Idea Submission Round, each team has to submit their idea in a PPT (maximum 10 slides) based on the themes provided, through this portal.",
+                "Shortlisted teams will qualify for the Coding+Pitching Round which will be conducted onsite in SMCC Building, Jadavpur University Salt Lake Campus.",
+                "Top performers (if eligible) will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street with a chance of grabbing a FTE opportunity after the intern period."
+            ],
+            "Rules": [
+                "The Coding+Pitching Round will start sharp at 10am. All team members have to be present onsite during this round, otherwise, the team will be disqualified.",
+                "Participants can use any tech stack to build the solution based on the given themes.",
+                "All the commits in the Github repository must contain commits only after the start of the onsite round of the hackathon.",
+                "All submissions will be run through a plagiarism detector. Any case of code plagiarism will result in the disqualification of the team from the contest.",
+                "Your code will be evaluated at different timestamps, so it's important to periodically push code to the specified repository.",
+                "Note: Foods, beverages will be provided to all team members in the onsite round."
+            ],
+            "Problem Statements": [
+                "The problem statements will be revealed soon..."
+            ]
+        },
+        unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
+        websiteLink: "https://hackforge.srijanju.in"
+    },
+
+    {
+        eventId: 'sherlocked',
+        eventName: 'Sherlocked',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'coding',
+        eventHashtags: ['coding','brainstorming'],
+        eventCoordinators: [
+            'Anurag Jha [ 7044904397 ]',
+            'Manas Pratim Biswas [ 8942981600 ]', 
+            'Tanmay Roy [ 8101159941 ]',
+        ],
+        prize: ["Exciting prizes(TBD) for the top 3 winning teams"],
+        minMembers: 3,
+        maxMembers: 3,
+        eventPoster: '/images/events/sherlocked.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Sherlocked: A thrilling coding and puzzle-solving challenge. Prelims feature 10 puzzles and 2 coding questions. Top teams advance to a multi-level 2-hour Finals for ultimate victory.`,
+        eventDescription: [`Prepare yourself for the ultimate test of coding and problem-solving skills! The Preliminary Round kicks off with 10 challenging puzzles and 2 coding problems, all squeezed into a fast-paced 1-hour showdown. But that's just the beginning! The top teams will move on to the thrilling Finals: Sherlocked! Get ready for a 2-hour adventure filled with technical challenges and strategic thinking. Each level gets tougher, pushing you to use all your coding expertise and puzzle-solving skills. It's a mix of coding challenges, brain teasers, and the excitement of a capture-the-flag competition.`],
+        eventRules: {
+            "": [
+                "Prelims: 10 puzzles, 2 coding questions, 1-hour round.",
+                "Top teams advancing to Finals will be declared on the same or next day.",
+                "Sherlocked Finals: 2-hour event with progressive difficulty levels",
+                "Teams advance by clearing levels, aiming to finish all as quickly as possible.",
+                "Fastest team clearing all levels will be declared the ultimate winner.",
+            ],
+        },
+    },
+
+    {
+        eventId: 'math-e-magician',
+        eventName: 'math-e-magician',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'brainstorming',
+        eventHashtags: ['brainstorming' , 'matholympiad'],
+        eventCoordinators: [
+            'Subha Bhattacharya [ 9073701438 ]',
+            'Shubhayan Ghosal  [ 9903297707 ]', 
+            'Subhajit Fadikar [ 9330377041 ]',
+        ],
+        prize: ["Prizepool of 3000"],
+        minMembers: 1,
+        maxMembers: 3,
+        eventPoster: '/images/events/math-e-magician.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Prelims will consist of a Terrific Brainstorming Math Olympiad and the Fi- nals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams`,
+        eventDescription: [`There will be 2 events in the MATH-E-MAGICIAN.
+        Prelims will consist of a Terrific Brainstorming Math Olympiad and the Finals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams on the APPLICATIONS OF MATHEMATICS IN YOUR FAVOURITE ENGINEERING SCIENCE`],
+        eventRules: {
+            "": [
+                "Each team can have a maximum of three members.",
+                "Participants must adhere to the given time limits for each round.",
+                "Topics in the second round should be well-formulated and challenging.",
+                ],
+        },
+    },
+
     // {
-    //     eventId: 'hackforge',
-    //     eventName: 'HackForge - Forging the Future',
+    //     eventId: 'robosoccer',
+    //     eventName: 'ROBOSOCCER',
     //     eventDate: {
-    //         prelims: ['till 14th March 11:59pm'],
-    //         finals: '17th March (10am to 8pm)',
+    //         prelims: ['22/3/24'],
+    //         finals: '23/3/24',
     //     },
-    //     eventType: 'coding',
-    //     eventHashtags: ['hackathon', 'challenges'],
+    //     eventType: 'circuits & robotics',
+    //     eventHashtags: ["robo", "soccer", "football"],
     //     eventCoordinators: [
-    //         'Rajdeep Mallick [ 7029422038 ]',
-    //         'Arindam Halder [ 8777712395 ]', 
-    //         'Anurag Jha [ 7044904397 ]',
+    //         'Sukalyan Bisui [ 8697488984 ]',
+    //         'Adipto Ghosh Dastidar [ 6290764395 ]', 
     //     ],
-    //     prize: ["1st: Rs.5000", "2nd: Rs.3000", "3rd: Rs.2000", "Best Beginner: Rs.1000", "Best UI/UX: Rs.1000", "Top Performers: will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."],
-    //     minMembers: 3,
-    //     maxMembers: 4,
-    //     eventPoster: '/images/events/hackforge.png',
+    //     prize: ["Prize pool of Rs.2000"],
+    //     minMembers: 1,
+    //     maxMembers: 5,
+    //     eventPoster: '/images/events/h42.png',
     //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Welcome to HackForge, an electrifying offline hackathon brought to you by CodeClub JUSL as part of Srijan'24`,
-    //     eventDescription: [`Dive into the future of technology with CodeClub's "HackForge: Forging the Future" at Jadavpur University! Join over 150 students for an exhilarating marathon of Creation, Innovation & Fun at our Salt Lake campus. Whether you're a seasoned coder or an eager explorer, don't miss this dynamic event to unleash your potential. Experience the thrill of innovation and be part of shaping tomorrow's world. Join us for an extraordinary celebration of ingenuity and excitement at Jadavpur University!`],
+    //     eventShortDescription: `Robots playing soccer`,
+    //     eventDescription: [`Are you ready for a spectacle of wondrous magnitude, unlike any other, that will leave your heart racing with excitement? Experience the electrifying spectacle of the Robosoccer at SRIJAN'24 ! This thrilling game combines the excitement of match day with the world of robotics. This adrenaline-pumping game combines the high-energy atmosphere of match day with the thrilling world of robotics.
+    //     Whether you're a tech aficionado or a soccer fanatic, the Robosoccer is an event you won't want to miss. The anticipation and energy in the air are palpable as you prepare to compete in the arena of the warriors.Showcase your skills by building bots, coding moves, and planning strategies. It's not just a game; it's an unforgettable experience
+    //     This is not just any game, my friends, it's an unforgettable experience. The thrill of the competition, the excitement of the crowd, and the camaraderie of your fellow competitors will leave you with memories that will last a lifetime.
+    //     So don't wait - get in on the action and experience the excitement of the Robosoccer! Don't miss out - register now and be part of the most electrifying tech sports event of the year!`],
     //     eventRules: {
-    //         "Guidelines": [
-    //             "Open to all students who are currently enrolled in a college or university.",
-    //             "Teams comprising 3-4 members are required, with participation open to both inter-institutional and inter-batch collaborations.",
-    //             "There will be 2 rounds: Idea Submission Round and Coding+Pitching Round.",
-    //             "In the Idea Submission Round, each team has to submit their idea in a PPT (maximum 10 slides) based on the themes provided, through this portal.",
-    //             "Shortlisted teams will qualify for the Coding+Pitching Round which will be conducted onsite in SMCC Building, Jadavpur University Salt Lake Campus.",
-    //             "Top performers (if eligible) will get a chance to be a part of the hiring process for 2 months (Remote) paid internship at 221B Baker Street."
+    //         "General Rules": [
+    //             "Each team can consist of a maximum of 5 members.",
+    //             "The decision of the JUSC match officials is final and binding.",
+    //             "The competition will be bisected into wired and wireless categories. The prize money will be separate for the winners of these two categories.",
     //         ],
-    //         "Rules": [
-    //             "The Coding+Pitching Round will start sharp at 10am. All team members have to be present onsite during this round, otherwise, the team will be disqualified.",
-    //             "Participants can use any tech stack to build the solution based on the given themes.",
-    //             "All the commits in the Github repository must contain commits only after the start of the onsite round of the hackathon.",
-    //             "All submissions will be run through a plagiarism detector. Any case of code plagiarism will result in the disqualification of the team from the contest.",
-    //             "Your code will be evaluated at different timestamps, so it's important to periodically push code to the specified repository.",
-    //             "Note: Foods, beverages will be provided to all team members in the onsite round."
+    //         "Goals": [
+    //             "The main goal of participating bot is to shoot the ball into the opponent's goal.",
+    //             "The ball is to be taken across the field only by pushing. It cannot be clamped or lifted in the air and at no point of time should the ball be covered by all sides by the participant’s bot or any part of it.",
+    //             "Dribbling mechanisms can be used; however, the ball must have at least one direction for free motion.",
+    //             "A participant’s bot is not supposed to interact directly with the opponent’s bot when it is not in possession of the ball. If one of the bots is in possession of the ball, the other can attempt to dis-possess it by attacking only the ball.",
+    //             "Physical interaction between the bots in this process will be tolerated if it is judged that the attacking bot went for the ball.",
+    //             "If a bot is found to commit a foul (directly hitting/obstructing the motion of the opponent’s bot), the opponent will be given a free–shot.",
+    //             "In case of entangling of the wires, there can be a restart, with the ball placed at the point where it was before the entangling of the wires, upon the discretion of the referee.",
+    //             "Damaging the arena in any form will lead to immediate disqualification.",
+    //             "After every goal is scored the ball would be placed back in the centre circle and each bot shall restart from their respective D-lines.",
+    //             "There shall be red regions in the four corners. If a bot pushes its opponent to that area completely, it receives points (only applicable in Round 1).",
+    //             "Own goals are taken into account."
     //         ],
-    //         "Problem Statements": [
-    //             "The problem statements will be revealed soon..."
-    //         ]
     //     },
-    //     unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
-    //     websiteLink: "https://hackforge.srijanju.in"
+    //     documentLink: "https://docs.google.com/document/d/11T7RU_-vUNgSap0WcAMY0VL8hvi80Eqf-3RkAn7tRYg/edit#heading=h.c5rpsdy8g2ak",
     // },
 
     // {
@@ -347,37 +456,7 @@ const events = [
     //     // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
     // },
     
-    // {
-    //     eventId: 'sherlocked',
-    //     eventName: 'Sherlocked',
-    //     eventDate: {
-    //         prelims: ['TBD'],
-    //         finals: 'TBD',
-    //     },
-    //     eventType: 'coding',
-    //     eventHashtags: ['coding','brainstorming'],
-    //     eventCoordinators: [
-    //         'Anurag Jha [ 7044904397 ]',
-    //         'Manas Pratim Biswas [ 8942981600 ]', 
-    //         'Tanmay Roy [ 8101159941 ]',
-    //     ],
-    //     prize: ["Exciting prizes(TBD) for the top 3 winning teams"],
-    //     minMembers: 3,
-    //     maxMembers: 3,
-    //     eventPoster: '/images/events/sherlocked.jpeg',
-    //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Sherlocked: A thrilling coding and puzzle-solving challenge. Prelims feature 10 puzzles and 2 coding questions. Top teams advance to a multi-level 2-hour Finals for ultimate victory.`,
-    //     eventDescription: [`Prepare yourself for the ultimate test of coding and problem-solving skills! The Preliminary Round kicks off with 10 challenging puzzles and 2 coding problems, all squeezed into a fast-paced 1-hour showdown. But that's just the beginning! The top teams will move on to the thrilling Finals: Sherlocked! Get ready for a 2-hour adventure filled with technical challenges and strategic thinking. Each level gets tougher, pushing you to use all your coding expertise and puzzle-solving skills. It's a mix of coding challenges, brain teasers, and the excitement of a capture-the-flag competition.`],
-    //     eventRules: {
-    //         "": [
-    //             "Prelims: 10 puzzles, 2 coding questions, 1-hour round.",
-    //             "Top teams advancing to Finals will be declared on the same or next day.",
-    //             "Sherlocked Finals: 2-hour event with progressive difficulty levels",
-    //             "Teams advance by clearing levels, aiming to finish all as quickly as possible.",
-    //             "Fastest team clearing all levels will be declared the ultimate winner.",
-    //         ],
-    //     },
-    // },
+    
 ]
 
 module.exports = events

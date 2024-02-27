@@ -53,7 +53,7 @@ const page = () => {
         phone: user ? user.phone : '',
         college: user ? user.college : '',
         dept: user ? user.dept : '',
-        year: user ? user.year : '',
+        year: user && user.year ? user.year : '1',
         profilePicUrl: user ? user.profilePicUrl : '',
     })
 
@@ -64,11 +64,11 @@ const page = () => {
             phone: user ? user.phone : '',
             college: user ? user.college : '',
             dept: user ? user.dept : '',
-            year: user ? user.year : '',
+            year: user && user.year ? user.year : '1',
             profilePicUrl: user ? user.profilePicUrl : '',
         })
 
-        if(user.referredFriends) {
+        if(user && user.referredFriends) {
             setReferredFriends(user.referredFriends)
         } else {
             setReferredFriends([])
@@ -95,6 +95,7 @@ const page = () => {
                 [event.target.name]: event.target.value,
             })
         }
+        // console.log("year changed");
     }
 
     const updateProfile = async (newUserData, message) => {
@@ -125,6 +126,8 @@ const page = () => {
     const handleSubmit = async e => {
         e.preventDefault()
         setLoading(true)
+
+        // console.log(formState);
 
         if (
             formState.name.trim().length === 0 ||

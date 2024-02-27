@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { notification } from 'antd'
 
 const campusCollectors = {
-    'Jadavpur Campus': 'Jyotishman Sarkar (Jadavpur Campus)',
+    'Jadavpur Campus': 'Adipto Ghosh Dastidar (Jadavpur Campus)',
     'Saltlake Campus': 'Subhadip De (SaltLake Campus)',
 }
 
@@ -61,12 +61,12 @@ export default function Form() {
         }
         let expiredCount = 0
         try {
-            const resp = await fetch('/api/order', {
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_ORDER_SERVER}/order`, {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${user.authTokenID}`,
+                    // 'Content-Type': 'application/json',
+                    // Authorization: `Bearer ${user.authTokenID}`,
                 },
                 body: JSON.stringify(orderData),
             })
@@ -220,12 +220,12 @@ export default function Form() {
                             <option value='' disabled>
                                 Select T-shirt Size
                             </option>
-                            <option value='S'>S (38)</option>
-                            <option value='M'>M (40)</option>
-                            <option value='L'>L (42)</option>
-                            <option value='XL'>XL (44)</option>
-                            <option value='XXL'>XXL (46)</option>
-                            <option value='XXXL'>XXXL (48)</option>
+                            <option value='S'>S (36)</option>
+                            <option value='M'>M (38)</option>
+                            <option value='L'>L (40)</option>
+                            <option value='XL'>XL (42)</option>
+                            <option value='XXL'>XXL (44)</option>
+                            <option value='XXXL'>XXXL (46)</option>
                         </select>
                     </div>
                     <div className='mb-4'>
