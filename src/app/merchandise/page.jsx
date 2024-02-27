@@ -13,13 +13,19 @@ import Form from './components/Form'
 import GridBackground from './components/GridBackground'
 import OrderGuidelines from './components/OrderGuidelines'
 
+import { FaHandPointDown } from "react-icons/fa";
+
 export default function Merchendise() {
     const tshirts = useMemo(function () {
         return [
-            '/assets/merchandise/black_front.png',
-            '/assets/merchandise/black_back.png',
-            '/assets/merchandise/white_front.png',
-            '/assets/merchandise/white_back.png',
+            // '/assets/merchandise/black_front.png',
+            // '/assets/merchandise/black_back.png',
+            // '/assets/merchandise/white_front.png',
+            // '/assets/merchandise/white_back.png',
+            '/assets/merchandise/tshirt1.png',
+            '/assets/merchandise/tshirt2.png',
+            '/assets/merchandise/tshirt3.png',
+            '/assets/merchandise/tshirt4.png',
             // '/images/white_back.png',
         ]
     }, [])
@@ -120,9 +126,10 @@ export default function Merchendise() {
                         <div className='merchandiseNoteContainer'>
                             <div className='merchandiseNote'>
                                 <h2>Please Note:</h2>
-                                <li>Book your merchandise before <b>8th March</b> to receive it before Srijan'24. </li><li>Orders placed from <b>9th March</b> to <b>14th March</b> will be delivered during the Srijan'24 days. </li>
+                                <li>Book your merchandise by <b>7th March</b> to receive it before Srijan'24. </li><li>Orders placed from <b>8th March</b> to <b>14th March</b> will be delivered during the Srijan'24 days that is from 22nd - 24th March.</li>
                                 <li>Orders placed after <b>14th March</b> should be collected from the campus on a later date.</li>
-                                <li>Grab the early bird offer for the first 150 T-shirts at <b>Rs. 359</b>. Afterward, the price will be <b>Rs. 389</b>. Hurry up!</li>
+                                <li>Grab your tshirt under the early bird offer at <b>Rs. 359</b> that is only valid for the first <b>150</b> tshirt orders . Afterward, the price will be <b>Rs. 389</b>. Hurry up!</li>
+                                <li>Register below , the contact details will be given there in <FaHandPointDown /></li>
                             </div>
                         </div>
 

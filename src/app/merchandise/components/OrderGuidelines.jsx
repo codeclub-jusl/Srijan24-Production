@@ -29,7 +29,7 @@ export default function OrderGuidelines(props) {
                 <div className={'paymentScannerBox'}>
                     <div>
                         <Image
-                            src={'/assets/merchandise/jyotishman_qr.jpeg'}
+                            src={'/assets/merchandise/adipto_qr.jpg'}
                             height={300}
                             width={300}
                             alt='qr_image'
@@ -37,12 +37,12 @@ export default function OrderGuidelines(props) {
                             draggable={false}
                             priority={true}
                         />
-                        <h4>Jyotishman Sarkar</h4>
-                        <h5>jman19@axl</h5>
+                        <h4>Adipto Ghosh Dastidar</h4>
+                        <h5>adicrown54@okhdfcbank</h5>
                     </div>
                     <div>
                         <Image
-                            src={'/assets/merchandise/subhadip_qr.jpeg'}
+                            src={'/assets/merchandise/subhadip_qr.jpg'}
                             height={300}
                             width={300}
                             alt='qr_image'
@@ -126,7 +126,7 @@ export default function OrderGuidelines(props) {
                     <TfiHandPointRight className={'instructionBullets'} />{' '}
                     <span>
                         {' '}
-                        For any further queries, reach out to Jyotishman Sarkar [ 9674318486 ] or Subhadip De [ 8584038115 ] anytime
+                        For any further queries, reach out to Adipto Ghosh Dastidar [ 6290764395 ] or Subhadip De [ 8584038115 ] anytime
                     </span>
                 </div>
                 {/* please scan any one of the two QR codes shown above. If you choose 1st one, then at the time  */}
