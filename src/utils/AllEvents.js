@@ -332,6 +332,37 @@ const events = [
         },
     },
 
+    {
+        eventId: 'math-e-magician',
+        eventName: 'math-e-magician',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'brainstorming',
+        eventHashtags: ['brainstorming' , 'matholympiad'],
+        eventCoordinators: [
+            'Subha Bhattacharya [ 9073701438 ]',
+            'Shubhayan Ghosal  [ 9903297707 ]', 
+            'Subhajit Fadikar [ 9330377041 ]',
+        ],
+        prize: ["Prizepool of 3000"],
+        minMembers: 1,
+        maxMembers: 3,
+        eventPoster: '/images/events/math-e-magician.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Prelims will consist of a Terrific Brainstorming Math Olympiad and the Fi- nals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams`,
+        eventDescription: [`There will be 2 events in the MATH-E-MAGICIAN.
+        Prelims will consist of a Terrific Brainstorming Math Olympiad and the Finals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams on the APPLICATIONS OF MATHEMATICS IN YOUR FAVOURITE ENGINEERING SCIENCE`],
+        eventRules: {
+            "": [
+                "Each team can have a maximum of three members.",
+                "Participants must adhere to the given time limits for each round.",
+                "Topics in the second round should be well-formulated and challenging.",
+                ],
+        },
+    },
+
     // {
     //     eventId: 'robosoccer',
     //     eventName: 'ROBOSOCCER',
