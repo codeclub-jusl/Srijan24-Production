@@ -16,11 +16,11 @@ export default function Cards(){
           <Image src={"/images/events.jpg"} height={800} width={850} alt="cardImage" className="cardImage"/>
           <p>Events</p>
         </Link>
-        <div className="cardBox disabledCard">
+        <Link href="/merchandise" className="cardBox">
           <Image src={"/images/merchandise.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
           <p>Merchandise</p>
-          <div className="lockedCard">Locked</div>
-        </div>
+          {/* <div className="lockedCard">Locked</div> */}
+        </Link>
         <div className="cardBox disabledCard">
           <Image src={"/images/workshop.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
           <p>Workshop</p>
