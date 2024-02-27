@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { notification } from 'antd'
 
 const campusCollectors = {
-    'Jadavpur Campus': 'Jyotishman Sarkar (Jadavpur Campus)',
+    'Jadavpur Campus': 'Adipto Ghosh Dastidar (Jadavpur Campus)',
     'Saltlake Campus': 'Subhadip De (SaltLake Campus)',
 }
 
