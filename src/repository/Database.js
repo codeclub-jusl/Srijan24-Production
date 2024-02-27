@@ -1,4 +1,4 @@
-import {MongoClient, Db} from "mongodb"
+import {MongoClient, Db, ServerApiVersion} from "mongodb"
 
 
 /**
@@ -6,16 +6,30 @@ import {MongoClient, Db} from "mongodb"
  */
 let DB = null
 
+
+
 export async function GetDB() {
     if(!process.env.MONGO_URL) {
-        throw new Error('could not instantiate database connection')
+        throw new Error('could not instantiate database connection without mongodb url')
+    }
+    if(!process.env.MONGO_DATABASE_NAME) {
+        throw new Error('could not instantiate database connection without mongo database name')
     }
 
     if(DB) {
         return DB
     }
 
-    const client = await MongoClient.connect(process.env.MONGO_URL)
+    const client = new MongoClient(process.env.MONGO_URL, {
+        serverApi: {
+            version: ServerApiVersion.v1,
+            strict: true,
+            deprecationErrors: true,
+        }
+    }
+    );
+
+    await client.connect()
     DB = client.db(process.env.MONGO_DATABASE_NAME)
     return DB
 }

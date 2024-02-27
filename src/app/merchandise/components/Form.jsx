@@ -71,6 +71,7 @@ export default function Form() {
                 body: JSON.stringify(orderData),
             })
             const data = await resp.json()
+            console.log('data is', data)
             if (!resp.ok) {
                 throw data
             }
@@ -83,15 +84,16 @@ export default function Form() {
             ) {
                 const newAuthToken = await auth.currentUser.getIdToken(true)
                 dispatch(refreshUserToken(newAuthToken))
-                if (expiredCount < 3) {
-                    expiredCount++
-                    placeOrder()
-                } else {
-                    notification['error']({
-                        message: `Could not validate user, please login once again and retry...`,
-                        duration: 3,
-                    })
-                }
+                // if (expiredCount < 3) {
+                //     expiredCount++
+                //     placeOrder()
+                // } else {
+                notification['error']({
+                    message: `Auth Expired Due To Inactivity`,
+                    description: `Please relogin to our website and try once again.`,
+                    duration: 3,
+                })
+                // }
             } else if (e.code === 'duplicate-transaction-id') {
                 notification['error']({
                     message: `${e.message}`,
@@ -100,6 +102,8 @@ export default function Form() {
                         'Please pay and use a fresh transaction ID or if already paid, please contact the admin immediately.',
                 })
             } else {
+                console.log('Oops, e.code not known!')
+                console.log(e)
                 notification['error']({
                     message: `Could not place order, please try again!`,
                     duration: 3,

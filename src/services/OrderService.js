@@ -42,6 +42,8 @@ class OrderService {
             orderDetails.PaymentCollector,
             orderDetails.TransactionID
         )
+
+
         const objectID = await this.orderRepository.insertOrder(order)
         return objectID.toString("hex")
     }

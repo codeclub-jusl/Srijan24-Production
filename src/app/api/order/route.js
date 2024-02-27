@@ -10,19 +10,17 @@ export const runtime = 'nodejs'
 export async function POST(request) {
     const authTokenHeader = request.headers.get('Authorization')
     const authToken = authTokenHeader.split(' ')[1]
+
     try {
         const decodedToken = await defaultAuth.verifyIdToken(
             authToken,
             true,
         )
-
         const orderData = await request.json()
-        // console.log(orderData)
 
         if(decodedToken.email !== orderData['Email']) {
             throw new Error('user faking email...')
         }
-
         const id = await orderService.registerOrder(orderData)
 
         return NextResponse.json({"OrderID": id}, {status: 201})
