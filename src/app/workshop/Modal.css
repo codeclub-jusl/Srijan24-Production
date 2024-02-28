@@ -73,7 +73,7 @@ img {
     display: grid;
 }
 .login__content {
-    row-gap: 1.75rem;
+    row-gap: 2.2rem;
     margin-bottom: 1.5rem;
 }
 .login__box {
@@ -209,7 +209,7 @@ img {
     padding: 18px 40px;
     font-family: 'Exo', sans-serif;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border-radius: 30px;
     cursor: pointer;
     outline: none;
@@ -427,7 +427,7 @@ img {
     }
 }
 #modal {
-    max-height: 80%;
+    max-height: 90%;
     overflow-y: auto;
     overflow-x: hidden;
 }
