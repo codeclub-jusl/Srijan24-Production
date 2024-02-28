@@ -2042,3 +2042,77 @@ screen and (max-height: 380px) {
     cursor: not-allowed;
     filter: brightness(.6);
 }
+
+.merchandiseOrderContainer{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.merchandiseOrderContainer h2{
+    color: white;
+    margin-top: 50px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.merchBoxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.merchBox{
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 20px 20px;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.merchBox .merchRow{
+    display: flex;
+    align-items: center;
+}
+.merchRow .ques{
+    margin-right: 10px;
+    color: grey;
+}
+.merchRow .ans{
+
+}
+.merchStatusRow{
+    position: absolute;
+    right: -25px;
+    top: 15px;
+    font-size: .85rem;
+    padding: 2px 20px 2px 30px;
+    background: rgb(1, 86, 1);
+    color: white;
+    transform: rotate(45deg);
+}
+.ACCEPTED{
+    background-color: green;
+}
+.REJECTED{
+    background-color: darkred;
+}
+.PENDING{
+    background-color: dodgerblue;
+}
+.noMerchOrder{
+    color: white;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: grey;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 410px){
+    .merchBox{
+        font-size: .9rem;
+    }
+}
