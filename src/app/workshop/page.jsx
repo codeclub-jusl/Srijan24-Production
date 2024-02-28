@@ -2,9 +2,26 @@
 import { useEffect, useState } from 'react'
 import Modal from 'react-modal' // Importing Modal from a library like 'react-modal'
 import './Modal.css'
+import UserHOC from '@/hoc/UserHOC'
+import { useSelector } from 'react-redux'
+import Link from 'next/link'
+import OrderGuidelines from '../merchandise/components/OrderGuidelines'
 
-export default () => {
+const page = () => {
+    const user = useSelector(state => state.userReducer.user)
+    const [profileUpdated, setProfileUpdated] = useState(false)
+    const [visibleInstructionsModal, setVisibleInstructionsModal] =
+        useState(false)
+    // const []
     const [isModalOpen, setIsModalOpen] = useState(false)
+
+    useEffect(() => {
+        if (user && user.name && user.email && user.phone) {
+            setProfileUpdated(true)
+        } else {
+            setProfileUpdated(false)
+        }
+    }, [user])
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen)
@@ -43,31 +60,65 @@ export default () => {
                 </div>
                 <div className='max-w-screen-xl'>
                     <div class='mb-8 flex flex-col md:flex-row md:justify-evenly'>
-                        <div class='rounded-lg bg-opacity-50 p-6'>
+                        <div class='rounded-2xl bg-opacity-50 p-6'>
                             <img
                                 src='/images/workshop.jpg'
                                 alt='Image 1'
-                                class='mx-auto mb-6 h-auto max-w-full rounded-lg'
+                                class='mx-auto mb-6 h-auto max-w-full rounded-2xl'
                             />
                         </div>
 
-                        <div class='rounded-lg bg-opacity-50 p-6'>
+                        <div class='rounded-2xl bg-opacity-50 p-6'>
                             <img
                                 src='/images/workshop.jpg'
                                 alt='Image 2'
-                                class='mx-auto mb-6 h-auto max-w-full rounded-lg'
+                                class='mx-auto mb-6 h-auto max-w-full rounded-2xl'
                             />
                         </div>
                     </div>
                 </div>
 
-                <div className='flex w-full justify-center'>
+                <div className='guidlineButton'>
                     <button
-                        className='glow-on-hover rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
-                        onClick={toggleModal}
+                        onClick={() => {
+                            setVisibleInstructionsModal(
+                                visibleInstructionsModal =>
+                                    !visibleInstructionsModal,
+                            )
+                        }}
                     >
-                        Register Now
+                        How to make payment to book workshop?
                     </button>
+                </div>
+
+                <OrderGuidelines
+                    visibleInstructionsModal={visibleInstructionsModal}
+                    setVisibleInstructionsModal={setVisibleInstructionsModal}
+                />
+
+                <div className='flex w-full justify-center'>
+                    {user && profileUpdated ? (
+                        <button
+                            className='glow-on-hover rounded-3xl bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
+                            onClick={toggleModal}
+                        >
+                            Book Now
+                        </button>
+                    ) : user && !profileUpdated ? (
+                        <Link
+                            className='glow-on-hover rounded-3xl bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
+                            href='/profile'
+                        >
+                            Update profile to book now
+                        </Link>
+                    ) : (
+                        <Link
+                            className='glow-on-hover rounded-3xl bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
+                            href='/login'
+                        >
+                            Log in to book now
+                        </Link>
+                    )}
 
                     {/* Modal Component */}
                     <Modal
@@ -140,7 +191,7 @@ export default () => {
                                                     htmlFor='login-email'
                                                     className='login__label'
                                                 >
-                                                    Mobile
+                                                    Phone
                                                 </label>
                                             </div>
                                         </div>
@@ -275,3 +326,5 @@ export default () => {
         </div>
     )
 }
+
+export default UserHOC(page)
