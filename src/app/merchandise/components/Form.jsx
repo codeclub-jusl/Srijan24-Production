@@ -2,7 +2,7 @@
 
 import { auth } from '@/firebase/config'
 import '../styles/form.css'
-import { useState, FormEventHandler } from 'react'
+import { useState, FormEventHandler, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { refreshUserToken } from '@/store/userSlice'
 import { useRouter } from 'next/navigation'
@@ -30,6 +30,8 @@ export default function Form() {
     const [campus, setCampus] = useState('')
     const [paidTo, setPaidTo] = useState('')
 
+    const placeOrderButton = useRef(null);
+
     /**
      *
      * @type {FormEventHandler}
@@ -39,9 +41,17 @@ export default function Form() {
         event.preventDefault()
         if (!user || !user.authTokenID) {
             console.log('not authenticated, why send unnecessary requests?')
-            return
+            return;
         }
-        placeOrder()
+        if(phone.length!==10){
+            notification['error']({
+                message: `Phone Number should contain only 10 digits`,
+                duration: 3,
+            })
+            return;
+        }
+        placeOrderButton.current.disabled = true;
+        placeOrder();
     }
 
     async function placeOrder() {
@@ -444,8 +454,8 @@ export default function Form() {
                         )}
                     </div>
 
-                    <div className='flex justify-center items-center'>
-                        <button className='btn' type='submit'>
+                    <div className='flex justify-center items-center merchButton'>
+                        <button className='btn' type='submit' ref={placeOrderButton} >
                             Place Order
                         </button>
                     </div>

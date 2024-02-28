@@ -2038,3 +2038,7 @@ screen and (max-height: 380px) {
         font-size: .85rem;
     }
 }
+.merchButton button:disabled{
+    cursor: not-allowed;
+    filter: brightness(.6);
+}
