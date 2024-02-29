@@ -76,6 +76,8 @@ export default function Form() {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
+                    // 'Content-Type': 'application/json',
+                    // Authorization: `Bearer ${user.authTokenID}`,
                 },
                 body: JSON.stringify(orderData),
             })
@@ -93,11 +95,16 @@ export default function Form() {
             ) {
                 const newAuthToken = await auth.currentUser.getIdToken(true)
                 dispatch(refreshUserToken(newAuthToken))
+                // if (expiredCount < 3) {
+                //     expiredCount++
+                //     placeOrder()
+                // } else {
                 notification['error']({
                     message: `Auth Expired Due To Inactivity`,
                     description: `Please relogin to our website and try once again.`,
                     duration: 3,
                 })
+                // }
             } else if (e.code === 'duplicate-transaction-id') {
                 notification['error']({
                     message: `${e.message}`,
@@ -143,6 +150,21 @@ export default function Form() {
                             onChange={event => setName(event.target.value)}
                         />
                     </div>
+                    {/* <div className='mb-4'>
+                        <label htmlFor='email' className='block text-white'>
+                            Email
+                        </label>
+                        <input
+                            id='email'
+                            type='email'
+                            required
+                            placeholder='Enter the email'
+                            className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
+                            value={user && user.email}
+                            // onChange={handleEmailChange}
+                            disabled
+                        />
+                    </div> */}
                     <div className='mb-4'>
                         <label htmlFor='phone' className='block text-white'>
                             Phone
@@ -261,6 +283,40 @@ export default function Form() {
                     <div className='mb-4'>
                         <label className='block text-white'>Payment Mode</label>
                         <div className='flex items-center'>
+                            {/* <input
+                                type='radio'
+                                id='upi'
+                                name='payment-mode'
+                                value='upi'
+                                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                                checked={paymentMode === 'upi'}
+                                onChange={event =>
+                                    setPaymentMode(event.target.value)
+                                }
+                            />
+                            <label
+                                htmlFor='upi'
+                                className='w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+                            >
+                                UPI
+                            </label>
+                            <input
+                                type='radio'
+                                id='cash'
+                                name='payment-mode'
+                                value='cash'
+                                checked={paymentMode === 'cash'}
+                                className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                                onChange={event =>
+                                    setPaymentMode(event.target.value)
+                                }
+                            />
+                            <label
+                                htmlFor='cash'
+                                className='w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+                            >
+                                Cash
+                            </label> */}
                             <ul className='grid w-full gap-6 md:grid-cols-2'>
                                 <li>
                                     <input

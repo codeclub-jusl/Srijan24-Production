@@ -54,6 +54,24 @@ export default function OrderGuidelines(props) {
                         <h5>subhadipde.habra@okaxis</h5>
                     </div>
                 </div>
+                {/* <div className={'instructions'}>
+                        <TfiHandPointRight className={'instructionBullets'} />{' '}
+                        <span>
+                            {' '}
+                            You can order your merchandise in both - Offline &
+                            Online mode{' '}
+                        </span>
+                    </div> */}
+                {/* <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span> To order in offline mode: please contact with <strong>Trishit Pal</strong> [ 1234567890 ] or <strong>Ayush Mishra</strong> [ 9876543210 ] </span>
+            </div> */}
+                {/* <div className={'instructions'}>
+                        <TfiHandPointRight className={'instructionBullets'} />{' '}
+                        <span>
+                            At first, enter the details such as name, email,
+                            mobile, college, dept in the Merchandise Form
+                        </span>
+                    </div> */}
                 <div className={'instructions'}>
                     <TfiHandPointRight className={'instructionBullets'} />{' '}
                     <span>
