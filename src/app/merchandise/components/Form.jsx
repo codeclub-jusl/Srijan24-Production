@@ -265,19 +265,18 @@ export default function Form() {
                             htmlFor='tshirt-name'
                             className='block text-white'
                         >
-                            Name on T-Shirt ({10 - tshirtName.length})
+                            Name on T-Shirt
                         </label>
                         <input
                             id='tshirt-name'
                             type='text'
                             required
-                            placeholder='Write name to be printed on the tshirt (max 10)'
+                            placeholder='Write name to be printed on the tshirt'
                             className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
                             value={tshirtName}
                             onChange={e => {
                                 setTshirtName(e.target.value)
                             }}
-                            maxLength={10}
                         />
                     </div>
                     <div className='mb-4'>
@@ -454,14 +453,15 @@ export default function Form() {
                         {paidTo && paymentMode === 'upi' && (
                             <div className='mt-4 grid place-items-center'>
                                 <Image
-                            src={`/assets/merchandise/${campus === "Jadavpur Campus" ? 'adipto' : 'subhadip'}_qr.jpg`}
-                            height={300}
-                            width={300}
-                            alt='qr_image'
-                            className={'qrScannerImage'}
-                            draggable={false}
-                            priority={true}
-                        />
+                                    src={`/assets/merchandise/${campus === "Jadavpur Campus" ? 'adipto' : 'subhadip'}_qr.jpg`}
+                                    height={400}
+                                    width={400}
+                                    alt='qr_image'
+                                    className={'qrScannerImage'}
+                                    draggable={false}
+                                    priority={true}
+                                    style={{width : "220px" , height : "220px"}}
+                                />
                             </div>
                         )}
                     </div>
