@@ -21,11 +21,10 @@ export default function Cards(){
           <p>Merchandise</p>
           {/* <div className="lockedCard">Locked</div> */}
         </Link>
-        <div className="cardBox disabledCard">
+        <Link href={"/workshop"} className="cardBox">
           <Image src={"/images/workshop.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
           <p>Workshop</p>
-          <div className="lockedCard">Locked</div>
-        </div>
+        </Link>
 
       </div>
     </>
