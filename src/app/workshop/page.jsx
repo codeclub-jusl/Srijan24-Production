@@ -2,45 +2,18 @@ import React from 'react'
 import Link from 'next/link'
 
 import OverallNav from '@/components/OverallNav/OverallNav'
+import { getAllWorkshops } from '@/utils/workshop'
 
 const page = () => {
-    const Workshop=[
-        {
-            eventId:"Finance Workshop",
-            eventeventPoster:"/images/workshops/FinanceMa.png",
-            eventDescription:`Everything a newbie needs to know to get started with Trading and someone already in a field needs to know to consolidate his strategies
+    const workshops = getAllWorkshops()
 
-            Fundamental and technical Analysis and more 
-            
-            Hands on experience and learning about different tools like Screener and more 
-            
-            Financial Structuring of a company
-            
-            Deep Dive into personal and corporate finance`,
-            date:["March 9, 2024","11:00AM - 5:00 PM"],
-            fees : 450 ,
-            eventCoordinators: [
-                'Dipayan [ 7044836127 ]',
-                'Arindam [ 8697367852 ]', 
-            ],
-            venue: `Jadavpur University`,
-            
-        },
-        {
-
-        }
-        ,
-        {
-
-        }
-    ];
     const renderWorkshop = () =>{
-        return Workshop.map((eventData, index) => (
+        return workshops.map((workshopData, index) => (
             <div key={index} className='p-10 '>
-                <Link href={`/workshop/${eventData.eventId}`}>
+                <Link href={`/workshop/${workshopData.workshopId}`}>
                     <div className='cursor-pointer relative max-w-md overflow-hidden rounded-2xl shadow-lg group'>
                     <img
-                        src={eventData.eventeventPoster}
+                        src={workshopData.workshopPoster}
                         alt=''
                         className='w-full h-auto transition-opacity duration-500 group-hover:opacity-75'
                     />

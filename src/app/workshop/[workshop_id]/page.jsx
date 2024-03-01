@@ -12,77 +12,64 @@ import './styles/merchandisePage.css'
 import Form from './components/Form'
 import GridBackground from './components/GridBackground'
 import OrderGuidelines from './components/OrderGuidelines'
-
 import { FaHandPointDown } from 'react-icons/fa'
+import { getWorkshopById } from '@/utils/workshop'
+import UserHOC from '@/hoc/UserHOC'
 
-export default function Merchendise() {
-
-    const Workshop=[
-        {
-            eventId:"Finance Workshop",
-            eventeventPoster:"/images/workshops/FinanceMa.png",
-            eventDescription:`Everything a newbie needs to know to get started with Trading and someone already in a field needs to know to consolidate his strategies
-    
-            Fundamental and technical Analysis and more 
-            
-            Hands on experience and learning about different tools like Screener and more 
-            
-            Financial Structuring of a company
-            
-            Deep Dive into personal and corporate finance`,
-            date:["March 9, 2024","11:00AM - 5:00 PM"],
-            fees : 450 ,
-            eventCoordinators: [
-                'Dipayan [ 7044836127 ]',
-                'Arindam [ 8697367852 ]', 
-            ],
-            venue: `Jadavpur University`,
-            qrs: [
-                {
-                    name:'Arindam',
-                    qrCode:'/images/workshops/QRCodes/arindam.jpg',
-                    upiId:'mkarindam61-1@okaxis'
-                }
-                ,
-                {
-                    name:'Dipayan',
-                    qrCode:'/images/workshops/QRCodes/dipayan.jpg',
-                    upiId:'dipayan23102002@okhdfcbank'
-                }
-                ,
-            ],
-            
-        },
-        {
-    
-        }
-        ,
-        {
-    
-        }
-    ];
-    
-
-   
-    const [num, setNum] = useState(0)
-   
-
+const page = ({ params }) => {
+    const { workshop_id } = params
     const user = useSelector(state => state.userReducer.user)
-    const [merchOrders, setMerchOrders] = useState([])
+    const [profileUpdated, setProfileUpdated] = useState(false)
+    const [alreadyBooked, setAlreadyBooked] = useState(false)
+    const workshopData = getWorkshopById(workshop_id)
+
+    // console.log(workshopData);
 
     useEffect(() => {
-        if (user) {
-            fetch(`https://ordertrack-srijan24.onrender.com/orders/${user.email}`).then((res)=>{
-                    return res.json()
-                })
-                .then(res => {
-                    setMerchOrders(res)
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+        if (
+            user &&
+            user.name !== '' &&
+            user.eamil !== '' &&
+            user.phone !== '' &&
+            user.college !== '' &&
+            user.dept !== '' &&
+            user.year !== ''
+        ) {
+            setProfileUpdated(true)
+        } else {
+            setProfileUpdated(false)
+        }
+
+        // console.log(user);
+        if (user && user.workshops) {
+            setAlreadyBooked(
+                user.workshops.find(obj => obj.workshopId === workshop_id),
+            )
+        } else {
+            setAlreadyBooked(false)
         }
     }, [user])
+
+    // const [num, setNum] = useState(0)
+
+    // const [merchOrders, setMerchOrders] = useState([])
+
+    // useEffect(() => {
+    //     if (user) {
+    //         fetch(
+    //             `https://ordertrack-srijan24.onrender.com/orders/${user.email}`,
+    //         )
+    //             .then(res => {
+    //                 return res.json()
+    //             })
+    //             .then(res => {
+    //                 setMerchOrders(res)
+    //             })
+    //             .catch(err => {
+    //                 console.log(err)
+    //             })
+    //     }
+    // }, [user])
 
     const [visibleInstructionsModal, setVisibleInstructionsModal] =
         useState(false)
@@ -92,8 +79,7 @@ export default function Merchendise() {
             <OrderGuidelines
                 visibleInstructionsModal={visibleInstructionsModal}
                 setVisibleInstructionsModal={setVisibleInstructionsModal}
-                Cordinator={Workshop[0].qrs}
-
+                Cordinator={workshopData.qrs}
             />
 
             <div className=' h-screen w-full bg-gray-900 '>
@@ -105,7 +91,9 @@ export default function Merchendise() {
                     <div className='relative mb-10'>
                         <h2 className='text-4xl text-white font-extrabold mb-10 mt-10 merchandiseHeading text-center'>
                             Srijan'24 Presents{' '}
-                            <span className='text-purple-600'>{Workshop[0].eventId}</span>{' '}
+                            <span className='text-purple-600'>
+                                {workshopData.workshopId}
+                            </span>{' '}
                         </h2>
 
                         <div id='merchendise-main'>
@@ -126,7 +114,7 @@ export default function Merchendise() {
                                         />
                                     ))}
                                 </div> */}
-                                {/* <div id='picPositions'>
+                            {/* <div id='picPositions'>
                                     {tshirts.map((_, idx) => (
                                         <button
                                             onClick={() => setNum(idx)}
@@ -142,17 +130,26 @@ export default function Merchendise() {
                                     ))}
                                 </div> */}
                             {/* </div> */}
-                            <div style={{display: "flex", justifyContent: "center"}}>
-                                <img src='/images/workshops/FinanceMa.png' alt='' className="workImage"/>
-                            </div>      
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <img
+                                    src={workshopData.workshopPoster}
+                                    alt=''
+                                    className='workImage'
+                                />
+                            </div>
                             <div className='merchandisePrice'>
-                                <h4>Only for Rs. {Workshop[0].fees}/-</h4>
+                                <h4>Only for Rs. {workshopData.fees}/-</h4>
                             </div>
-                        <div className='merchandiseNoteContainer'>
-                            <div className='merchandiseNote'>
-                                {Workshop[0].eventDescription}
+                            <div className='merchandiseNoteContainer'>
+                                <div className='merchandiseNote'>
+                                    {workshopData.workshopDescription}
+                                </div>
                             </div>
-                        </div>
                             <div className={'offlinePaymentDetails'}>
                                 <button
                                     className={'merchandiseInstructionButton'}
@@ -168,25 +165,44 @@ export default function Merchendise() {
                             </div>
                         </div>
 
-
                         {user ? (
-                            <Form />
+                            profileUpdated ? (
+                                alreadyBooked ? (
+                                    <div className='flex justify-center items-center'>
+                                        <div className='btn'>
+                                            Booked
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <Form workshopId={workshop_id} />
+                                )
+                            ) : (
+                                <div className='flex justify-center items-center'>
+                                    <Link href={'/profile'} className='btn'>
+                                        Update profile to Order
+                                    </Link>
+                                </div>
+                            )
                         ) : (
                             <div className='flex justify-center items-center'>
                                 <Link href={'/login'} className='btn'>
-                                    Sign in to Order
+                                    Log in to Order
                                 </Link>
                             </div>
                         )}
                     </div>
-                    <div className='merchandiseOrderContainer'>
+
+                    {/* <div className='merchandiseOrderContainer'>
                         <h2>Workshop Orders</h2>
                         <div className='merchBoxes'>
                             {merchOrders &&
                                 merchOrders.length > 0 &&
                                 merchOrders.map(order => {
                                     return (
-                                        <div className='merchBox' key={order._id}>
+                                        <div
+                                            className='merchBox'
+                                            key={order._id}
+                                        >
                                             <div className='merchRow'>
                                                 <div className='ques'>
                                                     Order ID:
@@ -223,25 +239,33 @@ export default function Merchendise() {
                                                 <div className='ques'>
                                                     Dept:
                                                 </div>
-                                                <div className='ans'>{order.department}</div>
+                                                <div className='ans'>
+                                                    {order.department}
+                                                </div>
                                             </div>
                                             <div className='merchRow'>
                                                 <div className='ques'>
                                                     Name on Tshirt:
                                                 </div>
-                                                <div className='ans'>{order.tShirtName}</div>
+                                                <div className='ans'>
+                                                    {order.tShirtName}
+                                                </div>
                                             </div>
                                             <div className='merchRow'>
                                                 <div className='ques'>
                                                     Color of Tshirt:
                                                 </div>
-                                                <div className='ans'>{order.tShirtColor}</div>
+                                                <div className='ans'>
+                                                    {order.tShirtColor}
+                                                </div>
                                             </div>
                                             <div className='merchRow'>
                                                 <div className='ques'>
                                                     Tshirt Size:
                                                 </div>
-                                                <div className='ans'>{order.tShirtSize}</div>
+                                                <div className='ans'>
+                                                    {order.tShirtSize}
+                                                </div>
                                             </div>
                                             <div className='merchRow'>
                                                 <div className='ques'>
@@ -255,7 +279,9 @@ export default function Merchendise() {
                                                 <div className='ques'>
                                                     Mode of Payment:
                                                 </div>
-                                                <div className='ans'>{order.paymentMode}</div>
+                                                <div className='ans'>
+                                                    {order.paymentMode}
+                                                </div>
                                             </div>
                                             <div className='merchRow'>
                                                 <div className='ques'>
@@ -273,11 +299,17 @@ export default function Merchendise() {
                                         </div>
                                     )
                                 })}
-                                {merchOrders && merchOrders.length===0 && <div className='noMerchOrder'>No order placed yet</div>}
+                            {merchOrders && merchOrders.length === 0 && (
+                                <div className='noMerchOrder'>
+                                    No order placed yet
+                                </div>
+                            )}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </main>
     )
 }
+
+export default UserHOC(page)
