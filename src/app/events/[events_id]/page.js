@@ -390,13 +390,12 @@ const page = ({ params }) => {
                         {eventData && Object.entries(eventData.eventRules).map(
                             ([round, rules], roundIndex) => (
                                 <div key={roundIndex} className='mb-4'>
-                                    <p className='text-lg font-semibold'>
+                                    <p className='text-lg font-semibold ruleList'>
                                         {round}
                                     </p>
                                     <ul className='list-disc pl-6 text-sm md:text-base'>
                                         {rules.map((rule, index) => (
-                                            <li key={index} className='mb-2'>
-                                                {rule}
+                                            <li key={index} className='mb-2' dangerouslySetInnerHTML={{ __html: rule }}>
                                             </li>
                                         ))}
                                     </ul>

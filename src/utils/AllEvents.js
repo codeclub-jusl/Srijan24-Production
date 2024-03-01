@@ -293,7 +293,14 @@ const events = [
                 "Note: Foods, beverages will be provided to all team members in the onsite round."
             ],
             "Problem Statements": [
-                "The problem statements will be revealed soon..."
+                "<b>Empowering Sustainable Living:</b> Develop an eco-conscious app advocating sustainability and green habits. Encourage users to adopt eco-friendly practices through innovative features. Example: The application may include features like a waste management system, a carbon footprint tracker or gamified challenges to encourage environment-friendly behaviour etc.",
+                "<b>Smart Classroom Management System:</b> Develop a digital platform or mobile application to improve classroom organisation and student participation. Enhance classroom management and boost student engagement through innovative features. Example: This system can include features like attendance tracking, real-time polling, quizzes, assignment submission and grading, collaborative note-taking etc.",
+                "<b>Mental Health Support System:</b> Create an app focused on mental health support and well-being resources. Offer a range of features and resources to promote mental wellness. Example: This app can include features such as mood tracking, anonymous peer support chat or access to professional counselling services etc.",
+                "<b>Campus Safety and Security:</b> Create a robust safety and security app tailored for college campuses. Provide a comprehensive platform to ensure the safety and well-being of students. Example: This can include features such as emergency alert notifications, AI-based monitoring system, harassment reporting for students etc.",
+                "<b>Healthcare Innovation:</b> Identify the challenges and obstacles in the healthcare sector. Create an innovative application that deals with these challenges and helps individuals to maintain or boost their physical well-being. Example: This app can include features such as workout planners, nutrition tracking, or telemedicine platform connecting patients and doctors for remote consultations etc.",
+                "<b>Inclusive technologies:</b> Encourage inclusivity by developing technological solutions catering to individuals with disabilities. Participants will design applications and services with accessibility features to ensure a more inclusive digital experience. Example: This can include applications featuring real-time sign language translations during video calls etc.",
+                "<b>AI Innovation:</b> Develop a cutting-edge application leveraging AI technology to deliver innovative functionalities and enhance user experiences. Harness the capabilities of artificial intelligence to create a dynamic and engaging application.",
+                "<b>Open Innovation:</b> This is an open track. Identify the real world challenges and bring out the innovative genius inside you to create an application to tackle or address these challenges."
             ]
         },
         unstopRegistrationLink: "https://unstop.com/hackathons/hackforge-forging-the-future-srijan-2024-jadavpur-university-jadavpur-university-kolkata-912703",
@@ -349,7 +356,7 @@ const events = [
         prize: ["Prizepool of 3000"],
         minMembers: 1,
         maxMembers: 3,
-        eventPoster: '/images/events/math-e-magician.png',
+        eventPoster: '/images/events/math-e-magician.jpeg',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Prelims will consist of a Terrific Brainstorming Math Olympiad and the Fi- nals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams`,
         eventDescription: [`There will be 2 events in the MATH-E-MAGICIAN.
@@ -369,7 +376,7 @@ const events = [
             prelims: ['23rd March (Artificial Rock climbing Wall)'],
             finals: '24th March (Artificial Rock climbing Wall)',
         },
-        eventType: 'Climbing',
+        eventType: 'misc',
         eventHashtags: ['climbing', 'Adventure'],
         eventCoordinators: [
             'Abhijeet Nona [ 6289282196 ]', 
@@ -405,7 +412,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Circuits & Robotics',
+        eventType: 'circuits & robotics',
         eventHashtags: ["robo", "soccer", "football", "ball", "robots"],
         eventCoordinators: [
             'Sukalyan Bisui [ 8697488984 ]',
@@ -462,7 +469,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Circuits & Robotics',
+        eventType: 'circuits & robotics',
         eventHashtags: ['LineFollower', 'BotRace'],
         eventCoordinators: [
             'Borno Banerjee [ 7478054233 ]',
@@ -532,7 +539,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Innovative Modelling',
+        eventType: 'misc',
         eventHashtags: ['BridgingTheGap', 'StrongestBridgeWins'],
         eventCoordinators: [
             'Aritra Show [ 9748945722 ]',
@@ -573,7 +580,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Photography',
+        eventType: 'misc',
         eventHashtags: ['photography', 'themeophotography'],
         eventCoordinators: [
             'Debashis Mandal [ mandaldebashis48@gmail.com ]',
@@ -601,7 +608,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Photography',
+        eventType: 'misc',
         eventHashtags: ['reel', 'jupc'],
         eventCoordinators: [
             'Souvik Saha [ 8910398827 ]',
@@ -658,7 +665,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Gaming',
+        eventType: 'gaming',
         eventHashtags: ['NSGArena', 'Valorant'],
         eventCoordinators: [
             'Swapnil Saha [ 9123785487 ]',
@@ -688,7 +695,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Gaming',
+        eventType: 'gaming',
         eventHashtags: ['NSGArena', 'eafc24'],
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
@@ -718,7 +725,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Gaming',
+        eventType: 'gaming',
         eventHashtags: ['NSGArena', 'rocketleague'],
         eventCoordinators: [
             'Arka Sikder [ 79808 05318 ]',
@@ -748,7 +755,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Gaming',
+        eventType: 'gaming',
         eventHashtags: ['NSGArena', 'bgmi'],
         eventCoordinators: [
             'Kingshuk Kirtania [ 70037 36262 ]',
@@ -769,7 +776,7 @@ const events = [
                 "Refer to the document link provided above"
             ],
         },
-        documentLink: "https://drive.google.com/file/d/1ZFi4wU7zLWPg1-n6byhWdi3mgIqH8zHO/view?usp=sharing"
+        documentLink: "https://drive.google.com/file/d/1kWUVGw4jPP5VCdLTLWKJDn7nSsWh0jUB/view?usp=sharing"
     },
     {
         eventId: 'efootball-tournament',
@@ -778,7 +785,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Gaming',
+        eventType: 'gaming',
         eventHashtags: ['NSGArena', 'efootball','pes'],
         eventCoordinators: [
             'Subhranuj Podder [ 81004 64406 ]',
@@ -808,7 +815,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Business & Management',
+        eventType: 'business & management',
         eventHashtags: ['entrepreneurship', 'strategy','marketing'],
         eventCoordinators: [
             'Anurag Dey [ 8910178240 ]',

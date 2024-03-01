@@ -2116,3 +2116,6 @@ screen and (max-height: 380px) {
         font-size: .9rem;
     }
 }
+.ruleList{
+    color: yellow;
+}
