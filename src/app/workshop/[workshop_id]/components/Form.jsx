@@ -14,6 +14,7 @@ import {
     collection,
     doc,
     getDoc,
+    getDocs,
     query,
     setDoc,
     updateDoc,
@@ -409,7 +410,9 @@ export default function Form({ workshopId }) {
 
                     <div className='flex justify-center items-center merchButton'>
                         {loading ? (
-                            <BeatLoader color='#ffffff' />
+                            <div className='btn'>
+                                <BeatLoader color='#ffffff' />
+                            </div>
                         ) : (
                             <button
                                 className='btn'
