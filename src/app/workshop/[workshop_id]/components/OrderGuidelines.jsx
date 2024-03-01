@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Modal from 'react-modal'
-import { useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { TfiHandPointRight } from 'react-icons/tfi'
 // import { useEffect } from 'react/cjs/react.production.min'
 
@@ -13,8 +13,8 @@ export default function OrderGuidelines(props) {
             zIndex: '100',
         },
     }
-    const [Cordinator ,setCordinator]=useState([])
-    useEffect(()=> {
+    const [Cordinator, setCordinator] = useState([])
+    useEffect(() => {
         setCordinator(props.Cordinator)
     })
     return (
@@ -32,22 +32,27 @@ export default function OrderGuidelines(props) {
         >
             <div>
                 <h2>Important Guidelines</h2>
-                <div style={{display:"flex" ,justifyContent: "space-evenly"}} className={'paymentScannerBox'}>
-                    
-                        {Cordinator.map((item , index)=>{
-                            return <div><Image
-                            src={item.qrCode}
-                            height={300}
-                            width={300}
-                            alt='qr_image'
-                            className={'qrScannerImage'}
-                            draggable={false}
-                            priority={true}
-                        />
-                        <h4>{item.name}</h4>
-                        <h5>{item.upiId}</h5>
-                        </div>
-                        })}
+                <div
+                    style={{ display: 'flex', justifyContent: 'space-evenly' }}
+                    className={'paymentScannerBox'}
+                >
+                    {Cordinator.map((item, index) => {
+                        return (
+                            <div key={index}>
+                                <Image
+                                    src={item.qrCode}
+                                    height={300}
+                                    width={300}
+                                    alt='qr_image'
+                                    className={'qrScannerImage'}
+                                    draggable={false}
+                                    priority={true}
+                                />
+                                <h4>{item.name}</h4>
+                                <h5>{item.upiId}</h5>
+                            </div>
+                        )
+                    })}
                     {/* <div>
                         <Image
                             src={'/assets/merchandise/subhadip_qr.jpg'}
@@ -81,8 +86,8 @@ export default function OrderGuidelines(props) {
                         </span>
                     </div> */}
                 {/* <div className={'instructions'}> */}
-                    {/* <TfiHandPointRight className={'instructionBullets'} />{' '} */}
-                    {/* <span>
+                {/* <TfiHandPointRight className={'instructionBullets'} />{' '} */}
+                {/* <span>
                         Enter the name you want to print upon your SRIJAN
                         Merchandise. If you don't want any name printed upon the
                         Tshirt, write "NA"
@@ -134,7 +139,8 @@ export default function OrderGuidelines(props) {
                     <TfiHandPointRight className={'instructionBullets'} />{' '}
                     <span>
                         {' '}
-                        For any further queries, reach out to <b>Event Co-ordinators</b> anytime
+                        For any further queries, reach out to{' '}
+                        <b>Event Co-ordinators</b> anytime
                     </span>
                 </div>
                 {/* please scan any one of the two QR codes shown above. If you choose 1st one, then at the time  */}

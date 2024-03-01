@@ -1,126 +1,66 @@
 'use client'
 
-import { auth } from '@/firebase/config'
+import { auth, db } from '@/firebase/config'
 import '../styles/form.css'
 import { useState, FormEventHandler, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { refreshUserToken } from '@/store/userSlice'
 import { useRouter } from 'next/navigation'
 import { notification } from 'antd'
+import BeatLoader from 'react-spinners/BeatLoader'
+import { v4 as uuidv4 } from 'uuid'
+import { getWorkshopById } from '@/utils/workshop'
+import {
+    collection,
+    doc,
+    getDoc,
+    getDocs,
+    query,
+    setDoc,
+    updateDoc,
+    where,
+} from 'firebase/firestore'
 
 const campusCollectors = {
-    'Jadavpur Campus': 'Adipto Ghosh Dastidar (Jadavpur Campus)',
-    'Saltlake Campus': 'Subhadip De (SaltLake Campus)',
+    'Jadavpur Campus': 'Arindam Mukherjee (Jadavpur Campus)',
+    'Saltlake Campus': 'Dipayan Bhattacharya (Salt Lake Campus)',
 }
 
-export default function Form() {
+export default function Form({ workshopId }) {
     const user = useSelector(state => state?.userReducer?.user)
+    const workshopData = getWorkshopById(workshopId)
     const dispatch = useDispatch()
     const router = useRouter()
 
     const [paymentMode, setPaymentMode] = useState('upi')
     const [transactionId, setTransactionId] = useState('')
-    const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [department, setDepartment] = useState('')
-    const [college, setCollege] = useState('')
-    const [tshirtSize, setTshirtSize] = useState('')
-    const [tshirtColor, setTshirtColor] = useState('black')
-    const [tshirtName, setTshirtName] = useState('')
     const [campus, setCampus] = useState('')
     const [paidTo, setPaidTo] = useState('')
+    const [loading, setLoading] = useState(false)
 
-    const placeOrderButton = useRef(null);
+    const placeOrderButton = useRef(null)
 
     /**
      *
      * @type {FormEventHandler}
      */
-    const orderFormSubmitHandler = event => {
-        event.stopPropagation()
-        event.preventDefault()
-        if (!user || !user.authTokenID) {
-            console.log('not authenticated, why send unnecessary requests?')
-            return;
-        }
-        if(phone.length!==10){
-            notification['error']({
-                message: `Phone Number should contain only 10 digits`,
-                duration: 3,
-            })
-            return;
-        }
-        placeOrderButton.current.disabled = true;
-        placeOrder();
-    }
-
-    async function placeOrder() {
-        const orderData = {
-            Name: name,
-            Email: user.email,
-            PhoneNumber: phone,
-            College: college,
-            Department: department,
-            TShirtSize: tshirtSize,
-            TShirtColor: tshirtColor,
-            TShirtName: tshirtName,
-            PaymentMode: paymentMode,
-            Campus: campus,
-            PaymentCollector: paidTo,
-            TransactionID: transactionId,
-        }
-        let expiredCount = 0
-        try {
-            const resp = await fetch(`${process.env.NEXT_PUBLIC_ORDER_SERVER}/order`, {
-                method: 'POST',
-                cache: 'no-cache',
-                headers: {
-                    // 'Content-Type': 'application/json',
-                    // Authorization: `Bearer ${user.authTokenID}`,
-                },
-                body: JSON.stringify(orderData),
-            })
-            const data = await resp.json()
-            console.log('data is', data)
-            if (!resp.ok) {
-                throw data
-            }
-            const orderID = data['OrderID']
-            router.push(`/merchandise/success?orderID=${orderID}`)
-        } catch (e) {
-            if (
-                e.code === 'auth/id-token-revoked' ||
-                e.code === 'auth/id-token-expired'
-            ) {
-                const newAuthToken = await auth.currentUser.getIdToken(true)
-                dispatch(refreshUserToken(newAuthToken))
-                // if (expiredCount < 3) {
-                //     expiredCount++
-                //     placeOrder()
-                // } else {
-                notification['error']({
-                    message: `Auth Expired Due To Inactivity`,
-                    description: `Please relogin to our website and try once again.`,
-                    duration: 3,
-                })
-                // }
-            } else if (e.code === 'duplicate-transaction-id') {
-                notification['error']({
-                    message: `${e.message}`,
-                    duration: 8,
-                    description:
-                        'Please pay and use a fresh transaction ID or if already paid, please contact the admin immediately.',
-                })
-            } else {
-                console.log('Oops, e.code not known!')
-                console.log(e)
-                notification['error']({
-                    message: `Could not place order, please try again!`,
-                    duration: 3,
-                })
-            }
-        }
-    }
+    // const orderFormSubmitHandler = event => {
+    //     event.stopPropagation()
+    //     event.preventDefault()
+    //     if (!user || !user.authTokenID) {
+    //         console.log('not authenticated, why send unnecessary requests?')
+    //         return;
+    //     }
+    //     if(phone.length!==10){
+    //         notification['error']({
+    //             message: `Phone Number should contain only 10 digits`,
+    //             duration: 3,
+    //         })
+    //         return;
+    //     }
+    //     placeOrderButton.current.disabled = true;
+    //     placeOrder();
+    // }
 
     const handleCampusChange = event => {
         const selectedCampus = event.target.value
@@ -128,10 +68,126 @@ export default function Form() {
         setPaidTo(campusCollectors[`${selectedCampus}`])
     }
 
+    const updateUser = async userOrderObject => {
+        const userRef = doc(db, 'users', user.email)
+        const userSnap = await getDoc(userRef)
+
+        if (userSnap.exists()) {
+            let userData = userSnap.data()
+            const timeStamp = Date.now()
+            const notificationString =
+                'You placed an order the workshop: ' + workshopData.workshopId
+            userData.notifications.push({ notificationString, timeStamp })
+
+            if (userData.workshops) {
+                userData.workshops.push(userOrderObject)
+                await updateDoc(userRef, userData)
+            } else {
+                await setDoc(
+                    userRef,
+                    {
+                        ...userData,
+                        workshops: [userOrderObject],
+                    },
+                    { merge: true },
+                )
+            }
+
+            notification['success']({
+                message: `You have placed an order the workshop. Stay tuned for your order verification.`,
+                duration: 5,
+            })
+        }
+    }
+
+    const handleBook = async e => {
+        e.stopPropagation()
+        e.preventDefault()
+
+        if (paymentMode === '' || campus === '') {
+            notification['error']({
+                message: `All the fields are required`,
+                duration: 3,
+            })
+            return
+        }
+
+        if (paymentMode === 'upi' && transactionId === '') {
+            notification['error']({
+                message: `Please enter the transaction id`,
+                duration: 3,
+            })
+            return
+        }
+
+        setLoading(true)
+
+        try {
+            if (transactionId !== '') {
+                const q = query(
+                    collection(db, workshopId),
+                    where('transactionId', '==', transactionId),
+                )
+                const querySnapshot = await getDocs(q)
+
+                if (!querySnapshot.empty) {
+                    notification['error']({
+                        message: `An order has already been placed with the given transactionId`,
+                        duration: 3,
+                    })
+                    setLoading(false)
+                    return
+                }
+            }
+
+            const orderId = uuidv4()
+
+            const orderObject = {
+                orderId,
+                name: user.name,
+                email: user.email,
+                phone: user.phone,
+                college: user.college,
+                dept: user.dept,
+                year: user.year,
+                paymentMode,
+                transactionId,
+                campus,
+                paidTo,
+                status: 'pending',
+            }
+
+            await setDoc(doc(db, workshopId, orderId), { ...orderObject })
+
+            const userOrderObject = {
+                orderId,
+                workshopId,
+                paymentMode,
+                transactionId,
+                campus,
+                paidTo,
+                status: 'pending',
+            }
+            await updateUser(userOrderObject)
+
+            setLoading(false)
+
+            router.push(`/workshop/${workshopId}/success?orderID=${orderId}`)
+        } catch (err) {
+            console.log(err)
+            notification['error']({
+                message: `Something went wrong! Please try again later.`,
+                duration: 3,
+            })
+        }
+
+        setLoading(false)
+    }
+
     return (
         <form
             className='glassmorphism-container merchandiseFormContainer'
-            onSubmit={orderFormSubmitHandler}
+            onSubmit={handleBook}
         >
             <div className='relative h-auto overflow-hidden mt-5'>
                 <div className='mx-auto max-w-md merchandiseForm'>
@@ -142,28 +198,28 @@ export default function Form() {
                         <input
                             id='name'
                             type='text'
-                            required
-                            placeholder='Enter your full name'
+                            readOnly
+                            disabled
                             className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
-                            value={name}
-                            onChange={event => setName(event.target.value)}
+                            value={user && user.name}
                         />
                     </div>
-                    {/* <div className='mb-4'>
+
+                    <div className='mb-4'>
                         <label htmlFor='email' className='block text-white'>
                             Email
                         </label>
                         <input
                             id='email'
                             type='email'
-                            required
-                            placeholder='Enter the email'
+                            readOnly
                             className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
                             value={user && user.email}
                             // onChange={handleEmailChange}
                             disabled
                         />
-                    </div> */}
+                    </div>
+
                     <div className='mb-4'>
                         <label htmlFor='phone' className='block text-white'>
                             Phone
@@ -171,30 +227,13 @@ export default function Form() {
                         <input
                             id='phone'
                             type='tel'
-                            required
-                            placeholder='Enter the phone number'
+                            readOnly
+                            disabled
                             className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
-                            value={phone}
-                            onChange={event => setPhone(event.target.value)}
+                            value={user && user.phone}
                         />
                     </div>
-                    <div className='mb-4'>
-                        <label htmlFor='college' className='block text-white'>
-                            College
-                        </label>
-                        <input
-                            id='college'
-                            type='text'
-                            required
-                            placeholder='Enter your college'
-                            className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
-                            value={college}
-                            onChange={event => setCollege(event.target.value)}
-                        />
-                    </div>
-                   
-                    
-                   
+
                     <div className='mb-4'>
                         <label className='block text-white'>Payment Mode</label>
                         <div className='flex items-center'>
@@ -370,9 +409,19 @@ export default function Form() {
                     </div>
 
                     <div className='flex justify-center items-center merchButton'>
-                        <button className='btn' type='submit' ref={placeOrderButton} >
-                            Place Order
-                        </button>
+                        {loading ? (
+                            <div className='btn'>
+                                <BeatLoader color='#ffffff' />
+                            </div>
+                        ) : (
+                            <button
+                                className='btn'
+                                type='submit'
+                                ref={placeOrderButton}
+                            >
+                                Place Order
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>
