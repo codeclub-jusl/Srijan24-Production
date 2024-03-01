@@ -1,0 +1,415 @@
+#Image-Button-Container
+{
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 26px;
+}
+#ButtonContainer
+{
+    display : flex;
+    justify-content: center;
+    width: 100%;
+    gap: 70px;
+    align-items: center;
+}
+#cost
+{
+    width: 190px;
+    border-radius: 20px;
+    font-size: 23px;
+    border: none;
+    color: yellow;
+    animation: glow 1.5s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+#cost::before
+{
+    content: "";
+    background: linear-gradient(
+    45deg , #FF0000, #FF7300, #FFFB00, #48FF00, #00FFD5, #002BFF, #FF00C8, #FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing
+{
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+#cost::before
+{
+    opacity: 1;
+}
+#order
+{
+    background-color: #002BFF;
+    color: aliceblue;
+    border-radius: 20px;
+    font-size: 23px;
+    width: 200px;
+    padding: 4px;
+}
+#picPositions
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+}
+.tshirtPosition
+{
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+}
+body.active-modal
+{
+    overflow-y: hidden;
+}
+.modal, .overlay
+{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+.modal
+{
+    z-index: 4;
+    overflow-y: auto;
+}
+.overlay
+{
+    background: rgba(49,49,49,0.8);
+}
+.modal-content
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    width: 489px;
+    overflow: hidden;
+}
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+}
+#ImageHolder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ImageHolder img
+{
+    border: 1px solid black;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px;
+}
+#tshirt1
+{
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-274px);
+    height: 306px;
+}
+#tshirt2
+{
+    position: absolute;
+    z-index: 2;
+    transform: translateX(-169px);
+    height: 374px;
+}
+#tshirt3
+{
+    z-index: 3;
+    height: 431px;
+    width: 355px;
+}
+#tshirt4
+{
+    position: absolute;
+    z-index: 2;
+    transform: translateX(169px);
+    height: 374px;
+}
+#tshirt5
+{
+    position: absolute;
+    z-index: 1;
+    transform: translateX(274px);
+    height: 306px;
+}
+.workImage
+{
+    width: 500px;
+    height: 500px;
+}
+@media only screen and (width <=1093px)
+{
+    #merchendise-body header
+    {
+        font-size: 50px;
+    }
+}
+@media only screen and ( width <= 870px)
+{
+    #tshirt1
+    {
+        transform: translateX(-221px);
+    }
+    #tshirt2
+    {
+        transform: translateX(-130px);
+    }
+    #tshirt4
+    {
+        transform: translateX(130px);
+    }
+    #tshirt5
+    {
+        transform: translateX(221px);
+    }
+    #tshirt1 , #tshirt5
+    {
+        height: 284px;
+        width: 220px;
+    }
+    #tshirt2 , #tshirt4
+    {
+        height: 319px;
+        width: 255px;
+    }
+    #tshirt3
+    {
+        width: 300px;
+        height: 369px;
+    }
+}
+@media only screen and (width < 704px)
+{
+    #tshirt1 , #tshirt5
+    {
+        height: 207px;
+        width: 179px;
+    }
+    #tshirt2 , #tshirt4
+    {
+        height: 251px;
+        width: 213px;
+    }
+    #tshirt3
+    {
+        width: 241px;
+        height: 292px;
+    }
+    #tshirt1
+    {
+        transform: translateX(-188px);
+    }
+    #tshirt2
+    {
+        transform: translateX(-102px);
+    }
+    #tshirt4
+    {
+        transform: translateX(102px);
+    }
+    #tshirt5
+    {
+        transform: translateX(188px);
+    }
+}
+@media only screen and (width < 576px)
+{
+    #tshirt1 , #tshirt5
+    {
+        height: 156px;
+        width: 134px;
+    }
+    #tshirt2 , #tshirt4
+    {
+        height: 201px;
+        width: 176px;
+    }
+    #tshirt3
+    {
+        width: 207px;
+        height: 250px;
+    }
+    #tshirt1
+    {
+        transform: translateX(-157px);
+    }
+    #tshirt2
+    {
+        transform: translateX(-84px);
+    }
+    #tshirt4
+    {
+        transform: translateX(84px);
+    }
+    #tshirt5
+    {
+        transform: translateX(157px);
+    }
+    #merchendise-body header
+    {
+        font-size: 45px;
+    }
+    #cost , #order
+    {
+        font-size: 18px;
+        width: 150px;
+    }
+    #merchendise-main
+    {
+        margin-top: 53px;
+        gap: 40px;
+    }
+    #Image-Button-Container
+    {
+        gap: 35px;
+    }
+    .modal-content
+    {
+        width: 85%;
+    }
+    .workImage
+    {
+        width: 90%;
+        height: auto;
+    }
+}
+@media only screen and (width<473px)
+{
+    #merchendise-body header
+    {
+        font-size: 43px;
+    }
+    #tshirt1 , #tshirt5
+    {
+        height: 156px;
+        width: 134px;
+    }
+    #tshirt2 , #tshirt4
+    {
+        height: 201px;
+        width: 176px;
+    }
+    #tshirt3
+    {
+        width: 207px;
+        height: 250px;
+    }
+    #tshirt1
+    {
+        transform: translateX(-123px);
+    }
+    #tshirt2
+    {
+        transform: translateX(-65px);
+    }
+    #tshirt4
+    {
+        transform: translateX(65px);
+    }
+    #tshirt5
+    {
+        transform: translateX(123px);
+    }
+    .modal-content
+    {
+        width: 93%;
+    }
+}
+@media only screen and (width<398px)
+{
+    #tshirt1 , #tshirt5
+    {
+        display: none;
+    }
+    #tshirt2
+    {
+        transform: translateX(-65px);
+    }
+    #tshirt4
+    {
+        transform: translateX(65px);
+    }
+    #merchendise-body
+    {
+        padding: 10px;
+    }
+    #ButtonContainer
+    {
+        gap: 30px;
+    }
+}
+@media only screen and (width<330px)
+{
+    #merchendise-body
+    {
+        padding: 0px;
+    }
+    #tshirt2 , #tshirt4
+    {
+        display: none;
+    }
+    #merchendise-body header
+    {
+        word-spacing: 0px;
+        letter-spacing: 0px;
+    }
+    #cost , #order
+    {
+        width: 125px;
+    }
+    #picPositions
+    {
+        width: 100%;
+    }
+    #merch
+    {
+        word-break: break-all;
+    }
+}
+@media only screen and (width<289px)
+{
+    #ButtonContainer
+    {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

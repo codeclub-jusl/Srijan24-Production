@@ -5,6 +5,7 @@ import Link from 'next/link'
 import EventCenterpiece from '@/components/EventComponents/EventCenterpiece'
 import { getEventById } from '@/utils/event'
 import OverallNav from '../OverallNav/OverallNav'
+import page from '@/app/page'
 const EventPage = ({ eventsId, pageType, bgColor }) => {
     const [events, setEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([])
@@ -53,7 +54,7 @@ const EventPage = ({ eventsId, pageType, bgColor }) => {
         if (eventsToRender.length === 0) {
             return (
                 <div className='text-white text-center mt-4'>
-                    <p className='text-xl font-semibold'>No events found</p>
+                    <p className='text-xl font-semibold'>No {pageType} found</p>
                     <p className='text-base mt-2'>
                         Try exploring other categories or check back later.
                     </p>
@@ -102,7 +103,8 @@ const EventPage = ({ eventsId, pageType, bgColor }) => {
                 className='bg-[url(/images/about/about.png)] '
             >
                 <EventCenterpiece PageType={pageType} />
-                <div
+                
+                {pageType!=='Workshop' &&< div
                     id='event_categories'
                     className='text-[1rem] p-8 font-semibold font-chakra flex flex-wrap gap-4 md:gap-12 justify-center text-white'
                 >
@@ -122,7 +124,8 @@ const EventPage = ({ eventsId, pageType, bgColor }) => {
                             {category}
                         </span>
                     ))}
-                </div>
+                </div> }
+
                 <div
                     style={{
                         display: 'flex',
