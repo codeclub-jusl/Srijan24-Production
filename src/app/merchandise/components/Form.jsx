@@ -2,6 +2,7 @@
 
 import { auth } from '@/firebase/config'
 import '../styles/form.css'
+import Image from 'next/image'
 import { useState, FormEventHandler, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { refreshUserToken } from '@/store/userSlice'
@@ -25,7 +26,7 @@ export default function Form() {
     const [department, setDepartment] = useState('')
     const [college, setCollege] = useState('')
     const [tshirtSize, setTshirtSize] = useState('')
-    const [tshirtColor, setTshirtColor] = useState('black')
+    const [tshirtColor, setTshirtColor] = useState('')
     const [tshirtName, setTshirtName] = useState('')
     const [campus, setCampus] = useState('')
     const [paidTo, setPaidTo] = useState('')
@@ -228,7 +229,7 @@ export default function Form() {
                                 setTshirtSize(event.target.value)
                             }
                         >
-                            <option value='' disabled>
+                            <option value='' disabled hidden>
                                 Select T-shirt Size
                             </option>
                             <option value='S'>S (36)</option>
@@ -255,9 +256,7 @@ export default function Form() {
                                 setTshirtColor(event.target.value)
                             }
                         >
-                            <option value='' disabled>
-                                Select T-shirt Color
-                            </option>
+                            <option value='' disabled hidden>Select T-shirt Color</option>
                             <option value='black'>Black</option>
                             <option value='white'>White</option>
                         </select>
@@ -318,7 +317,6 @@ export default function Form() {
                             >
                                 Cash
                             </label> */}
-
                             <ul className='grid w-full gap-6 md:grid-cols-2'>
                                 <li>
                                     <input
@@ -424,7 +422,7 @@ export default function Form() {
                             value={campus}
                             onChange={handleCampusChange}
                         >
-                            <option value='' disabled>
+                            <option value='' disabled hidden>
                                 Select Campus
                             </option>
                             {Object.keys(campusCollectors).map(campusCode => {
@@ -450,6 +448,20 @@ export default function Form() {
                                     className='w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800'
                                     value={paidTo}
                                     readOnly
+                                />
+                            </div>
+                        )}
+                        {paidTo && paymentMode === 'upi' && (
+                            <div className='mt-4 grid place-items-center'>
+                                <Image
+                                    src={`/assets/merchandise/${campus === "Jadavpur Campus" ? 'adipto' : 'subhadip'}_qr.jpg`}
+                                    height={400}
+                                    width={400}
+                                    alt='qr_image'
+                                    className={'qrScannerImage'}
+                                    draggable={false}
+                                    priority={true}
+                                    style={{width : "220px" , height : "220px"}}
                                 />
                             </div>
                         )}

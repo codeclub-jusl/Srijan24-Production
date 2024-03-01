@@ -126,7 +126,7 @@ export default function Merchendise() {
                             <div className={'offlinePaymentDetails'}>
                                 <button
                                     className={'merchandiseInstructionButton'}
-                                    onClick={() =>
+                                    onClick={() => 
                                         setVisibleInstructionsModal(
                                             visibleInstructionsModal =>
                                                 !visibleInstructionsModal,
