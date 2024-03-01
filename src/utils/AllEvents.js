@@ -66,7 +66,7 @@ const events = [
                 "If a bot moves out of the track it will get -30. No driver will be allowed to enter the track. If so then their bot will get -50.",
                 "A bonus of 75 points will be awarded to the most innovative bot.",
                 "The bot with max points will be the winner.",
-                "The bots will have to be completely wireless",
+                "No power supply will be provided. Connection between the bot and controller may be wired or wireless. Wire must be slack at all times.",
                 "Bot dimensions: Max size is 30cm*30cm*30cm",
                 "Max weight: 4kg",
                 "Max voltage: 24V",
