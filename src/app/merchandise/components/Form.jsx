@@ -18,7 +18,7 @@ export default function Form() {
     const dispatch = useDispatch()
     const router = useRouter()
 
-    const [paymentMode, setPaymentMode] = useState('upi')
+    const [paymentMode, setPaymentMode] = useState('UPI')
     const [transactionId, setTransactionId] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
@@ -67,21 +67,22 @@ export default function Form() {
             PaymentMode: paymentMode,
             Campus: campus,
             PaymentCollector: paidTo,
-            TransactionID: transactionId,
+            Price: "389",
         }
-        let expiredCount = 0
+        if(paymentMode==="UPI"){
+            orderData["TransactionID"] = transactionId;
+        }
         try {
-            const resp = await fetch(`${process.env.NEXT_PUBLIC_ORDER_SERVER}/order`, {
+            const resp = await fetch(`https://ordertrack-srijan24.onrender.com/orders`, {
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
-                    // 'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                     // Authorization: `Bearer ${user.authTokenID}`,
                 },
                 body: JSON.stringify(orderData),
             })
             const data = await resp.json()
-            console.log('data is', data)
             if (!resp.ok) {
                 throw data
             }
@@ -326,8 +327,8 @@ export default function Form() {
                                         required
                                         id='payment-mode-upi'
                                         name='payment-mode'
-                                        value='upi'
-                                        checked={paymentMode === 'upi'}
+                                        value='UPI'
+                                        checked={paymentMode === 'UPI'}
                                         onChange={event =>
                                             setPaymentMode(event.target.value)
                                         }
@@ -364,8 +365,8 @@ export default function Form() {
                                         required
                                         id='payment-mode-cash'
                                         name='payment-mode'
-                                        value='cash'
-                                        checked={paymentMode === 'cash'}
+                                        value='CASH'
+                                        checked={paymentMode === 'CASH'}
                                         onChange={event =>
                                             setPaymentMode(event.target.value)
                                         }
@@ -398,7 +399,7 @@ export default function Form() {
                         </div>
                     </div>
 
-                    {paymentMode === 'upi' && (
+                    {paymentMode === 'UPI' && (
                         <div className='mb-4'>
                             <label className='block text-white'>
                                 Transaction ID

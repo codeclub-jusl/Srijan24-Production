@@ -121,7 +121,7 @@ export default function Merchendise() {
                             </div>
 
                             <div className='merchandisePrice'>
-                                <h4>Only for Rs. 359/-</h4>
+                                <h4>Only for Rs. 389/-</h4>
                             </div>
                             <div className={'offlinePaymentDetails'}>
                                 <button

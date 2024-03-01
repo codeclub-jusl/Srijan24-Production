@@ -372,8 +372,8 @@ const events = [
         eventType: 'Climbing',
         eventHashtags: ['climbing', 'Adventure'],
         eventCoordinators: [
-            'Aman Mahato [ 9832267430 ]',
             'Abhijeet Nona [ 6289282196 ]', 
+            'Aman Mahato [ 9832267430 ]',
             'Gunendra Singh [ 6200076728 ]',
         ],
         prize: ["prize pool of Rs.6000"],
