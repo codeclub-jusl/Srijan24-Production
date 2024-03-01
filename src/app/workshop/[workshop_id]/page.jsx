@@ -23,6 +23,8 @@ const page = ({ params }) => {
     const [alreadyBooked, setAlreadyBooked] = useState(false)
     const workshopData = getWorkshopById(workshop_id)
 
+    if (!workshopData) return <div>404 Not Found</div>
+
     // console.log(workshopData);
 
     useEffect(() => {
@@ -169,9 +171,7 @@ const page = ({ params }) => {
                             profileUpdated ? (
                                 alreadyBooked ? (
                                     <div className='flex justify-center items-center'>
-                                        <div className='btn'>
-                                            Booked
-                                        </div>
+                                        <div className='btn'>Booked</div>
                                     </div>
                                 ) : (
                                     <Form workshopId={workshop_id} />
