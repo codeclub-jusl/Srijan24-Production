@@ -398,101 +398,452 @@ const events = [
             ],
         },
     },
-
+    {
+        eventId: 'robosoccer',
+        eventName: 'ROBOSOCCER',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Circuits & Robotics',
+        eventHashtags: ["robo", "soccer", "football", "ball", "robots"],
+        eventCoordinators: [
+            'Sukalyan Bisui [ 8697488984 ]',
+            'Adipto Ghosh Dastidar [ 6290764395 ]',
+        ],
+        prize: ["prize pool of Rs.2000"],
+        minMembers: 1,
+        maxMembers: 5,
+        eventPoster: '/images/events/Robosoccer.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Robots playing soccer.`,
+        eventDescription: [`Climb On is a climbing competition for individuals who want to challenge themselves and compete with other climbers. 
+        The event is organized by Jadavpur University Mountaineering and Hiking Club (JUMHC). It is a great opportunity for climbers to
+        showcase their skills and stamina, and have a thrilling experience.
+        The event has two rounds: Prelims and Finals.
+        In the Prelims, the participants are divided into two categories: Men and Women. They have to climb as high as they can in five minutes, and their scores are based on height and time.
+        The top ten scorers from each category qualify for the Finals, where they have to climb in three minutes.
+        The top three scorers from each category win cash prizes and certificates. The event is open for all ages and levels of climbers.`],
+        eventRules: {
+            "INTRODUCTION": [
+                "Are you ready for a spectacle of wondrous magnitude, unlike any other, that will leave your heart racing with excitement? Experience the electrifying spectacle of the Robosoccer at SRIJAN'24 ! This thrilling game combines the excitement of match day with the world of robotics. This adrenaline-pumping game combines the high-energy atmosphere of match day with the thrilling world of robotics. Whether you're a tech aficionado or a soccer fanatic, the Robosoccer is an event you won't want to miss. The anticipation and energy in the air are palpable as you prepare to compete in the arena of the warriors.Showcase your skills by building bots, coding moves, and planning strategies. It's not just a game; it's an unforgettable experience. This is not just any game, my friends, it's an unforgettable experience. The thrill of the competition, the excitement of the crowd, and the camaraderie of your fellow competitors will leave you with memories that will last a lifetime. So don't wait - get in on the action and experience the excitement of the Robosoccer! Don't miss out - register now and be part of the most electrifying tech sports event of the year!"
+            ],
+            "General Rules": [
+                "Each team can consist of a maximum of 5 members.",
+                "The decision of the JUSC match officials is final and binding.",
+                "The competition will be bisected into wired and wireless categories. The prize money will be separate for the winners of these two categories."
+            ],
+            "Goals" : [
+                "The main goal of participating bot is to shoot the ball into the opponent's goal.",
+                "The ball is to be taken across the field only by pushing. It cannot be clamped or lifted in the air, and at no point in time should the ball be covered by all sides by the participant’s bot or any part of it.",
+                "Dribbling mechanisms can be used; however, the ball must have at least one direction for free motion.",
+                "A participant’s bot is not supposed to interact directly with the opponent’s bot when it is not in possession of the ball. If one of the bots is in possession of the ball, the other can attempt to dispossess it by attacking only the ball.",
+                "Physical interaction between the bots in this process will be tolerated if it is judged that the attacking bot went for the ball.",
+                "If a bot is found to commit a foul (directly hitting/obstructing the motion of the opponent’s bot), the opponent will be given a free–shot.",
+                "In case of entangling of the wires, there can be a restart, with the ball placed at the point where it was before the entangling of the wires, upon the discretion of the referee.",
+                "Damaging the arena in any form will lead to immediate disqualification.",
+                "After every goal is scored, the ball would be placed back in the center circle, and each bot shall restart from their respective D-lines.",
+                "There shall be red regions in the four corners. If a bot pushes its opponent to that area completely, it receives points (only applicable in Round 1).",
+                "Own goals are taken into account."
+            ],
+            "Robot Specification" : [
+                "High-Torque motors are allowed.",
+                "Maximum dimensions – 30cm × 30cm × 15cm.",
+                "Maximum weight of the bot - maximum 2.5 kg.",
+                "Planetary motors and Mecanum wheels are strictly not allowed.",
+                "Maximum diameter of wheels - 6cm",
+                "It is advised to all participants to have long wires. Stepping into the arena will fetch you negative points.",
+                "Violation of any above specified rule could mean direct disqualification of the team."
+            ]
+        },
+        documentLink : "https://docs.google.com/document/d/11T7RU_-vUNgSap0WcAMY0VL8hvi80Eqf-3RkAn7tRYg/edit?usp=sharing"
+    },
+    {
+        eventId: 'homecoming',
+        eventName: 'Homecoming',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Circuits & Robotics',
+        eventHashtags: ['LineFollower', 'BotRace'],
+        eventCoordinators: [
+            'Borno Banerjee [ 7478054233 ]',
+            'Rajobrata Dasgupta [ 7439319042 ]', 
+            'Souvik Saha [ 8910398827 ]',
+        ],
+        prize: ["prize pool of Rs.1000"],
+        minMembers: 1,
+        maxMembers: 5,
+        eventPoster: '/images/events/Homecoming.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Line follower bot race`,
+        eventDescription: [`In this event the participants are required to design a robocar in such a way that it can follow black lines and curves of a given track and try to finish the track as fast as possible while making the fewest of mistakes/skipping least amount of obstacles.`],
+        eventRules: {
+            "": [
+                "Individual or Team of participants both allowed.",
+                "Track would be BLACK in colour.",
+                "Robocars should be designed by the participants; both wired and wireless are allowed, power supply will be provided.",
+                "Scoring would be as follows: Total time taken + penalty added for each of the curve/obstacle skipped.",
+                "Lowest score wins."
+            ],
+        },
+    },
     // {
-    //     eventId: 'robosoccer',
-    //     eventName: 'ROBOSOCCER',
-    //     eventDate: {
-    //         prelims: ['22/3/24'],
-    //         finals: '23/3/24',
-    //     },
-    //     eventType: 'circuits & robotics',
-    //     eventHashtags: ["robo", "soccer", "football"],
-    //     eventCoordinators: [
-    //         'Sukalyan Bisui [ 8697488984 ]',
-    //         'Adipto Ghosh Dastidar [ 6290764395 ]', 
-    //     ],
-    //     prize: ["Prize pool of Rs.2000"],
-    //     minMembers: 1,
-    //     maxMembers: 5,
-    //     eventPoster: '/images/events/h42.png',
-    //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Robots playing soccer`,
-    //     eventDescription: [`Are you ready for a spectacle of wondrous magnitude, unlike any other, that will leave your heart racing with excitement? Experience the electrifying spectacle of the Robosoccer at SRIJAN'24 ! This thrilling game combines the excitement of match day with the world of robotics. This adrenaline-pumping game combines the high-energy atmosphere of match day with the thrilling world of robotics.
-    //     Whether you're a tech aficionado or a soccer fanatic, the Robosoccer is an event you won't want to miss. The anticipation and energy in the air are palpable as you prepare to compete in the arena of the warriors.Showcase your skills by building bots, coding moves, and planning strategies. It's not just a game; it's an unforgettable experience
-    //     This is not just any game, my friends, it's an unforgettable experience. The thrill of the competition, the excitement of the crowd, and the camaraderie of your fellow competitors will leave you with memories that will last a lifetime.
-    //     So don't wait - get in on the action and experience the excitement of the Robosoccer! Don't miss out - register now and be part of the most electrifying tech sports event of the year!`],
-    //     eventRules: {
-    //         "General Rules": [
-    //             "Each team can consist of a maximum of 5 members.",
-    //             "The decision of the JUSC match officials is final and binding.",
-    //             "The competition will be bisected into wired and wireless categories. The prize money will be separate for the winners of these two categories.",
-    //         ],
-    //         "Goals": [
-    //             "The main goal of participating bot is to shoot the ball into the opponent's goal.",
-    //             "The ball is to be taken across the field only by pushing. It cannot be clamped or lifted in the air and at no point of time should the ball be covered by all sides by the participant’s bot or any part of it.",
-    //             "Dribbling mechanisms can be used; however, the ball must have at least one direction for free motion.",
-    //             "A participant’s bot is not supposed to interact directly with the opponent’s bot when it is not in possession of the ball. If one of the bots is in possession of the ball, the other can attempt to dis-possess it by attacking only the ball.",
-    //             "Physical interaction between the bots in this process will be tolerated if it is judged that the attacking bot went for the ball.",
-    //             "If a bot is found to commit a foul (directly hitting/obstructing the motion of the opponent’s bot), the opponent will be given a free–shot.",
-    //             "In case of entangling of the wires, there can be a restart, with the ball placed at the point where it was before the entangling of the wires, upon the discretion of the referee.",
-    //             "Damaging the arena in any form will lead to immediate disqualification.",
-    //             "After every goal is scored the ball would be placed back in the centre circle and each bot shall restart from their respective D-lines.",
-    //             "There shall be red regions in the four corners. If a bot pushes its opponent to that area completely, it receives points (only applicable in Round 1).",
-    //             "Own goals are taken into account."
-    //         ],
-    //     },
-    //     documentLink: "https://docs.google.com/document/d/11T7RU_-vUNgSap0WcAMY0VL8hvi80Eqf-3RkAn7tRYg/edit#heading=h.c5rpsdy8g2ak",
-    // },
-
-    // {
-    //     eventId: 'ace-the-case',
-    //     eventName: 'Ace The Case',
+    //     eventId: 'snap-syntax',
+    //     eventName: 'SnapSyntax',
     //     eventDate: {
     //         prelims: ['TBD'],
     //         finals: 'TBD',
     //     },
-    //     eventType: 'business & management',
-    //     eventHashtags: ['#Case_Study', 'Problem_Solving'],
+    //     eventType: 'Coding',
+    //     eventHashtags: ['Coding', 'BrainStorming'],
     //     eventCoordinators: [
-    //         'Piyush Gupta [ 7439484942 ]',
-    //         'Raktim Banerjee [ 9569584047 ]', 
-    //         'Souptik Dasgupta [ 9007475778 ]',
+    //         'Anurag Jha [ 7044904397 ]',
+    //         'Aditya Mayukh Som [ 9874745176 ]', 
+    //         'Debabrata Mondal [ 7439901282 ]',
     //     ],
-    //     prize: ["TBD"],
-    //     minMembers: 1,
+    //     prize: ["Exciting Prizes for Winners"],
+    //     minMembers: 3,
     //     maxMembers: 3,
-    //     eventPoster: '/images/events/h42.png',
+    //     eventPoster: '/images/events/SnapSyntax.png',
     //     registrationType: `Srijan'24 Website`,
-    //     eventShortDescription: `Business case-study event to test everything, from your real-world problem solving to Pitching Skills, all under 24 hours!`,
-    //     eventDescription: [`Do you  have an astute proclivity for brainstorming and have a knack of finding solutions to problems?
-    //     We've got you covered!
-    //     Unleash your problem solving prowess in "Ace the Case"! Hop in for a thrilling opportunity to analyze real world challenges, develop innovative solutions and showcase your strategic acumen. Embrace the chance to network , interact and rise to the challenge!`],
+    //     eventShortDescription: `Snap, Code, Conquer: Memory meets mastery in web design.`,
+    //     eventDescription: [`Challenge memory and design skills! Recreate a web page from 
+    //     memory within a time limit, relying on recall. Strategic glimpses 
+    //     refine designs, showcasing memory prowess in this unique event. 
+    //     Welcome to the "Snap Syntax" where participants showcase their 
+    //     HTML and CSS skills by recreating a web page from memory. This 
+    //     event tests their ability to recall layout, elements, and design 
+    //     nuances without direct visual reference. As the challenge 
+    //     progresses, participants face intensified difficulty with 
+    //     intermittent glimpses of the initial web page, requiring strategic 
+    //     thinking and memory retention skills`],
     //     eventRules: {
-    //         "Event Rules": [
-    //             "Join the Group links sent via emails beforehand to avoid last minute hassle.",
-    //             "The event is to be conducted in two rounds : Selection Round and Finale",
-    //             "Prompts will be provided to you 2 days PRIOR to the event.",
-    //             "Strictly adhere to the slide limits in each Round.",
-    //         ],
-    //         "Selection Round": [
-    //             "Event to be Conducted Online",
-    //             "Each team needs to submit an Abstract Report of the case study provided to them within 24 hours",
-    //             "The timer will start IMMEDIATELY as the Prompt Release is mailed/sent to the team",
-    //             "Slide Limit: 1 SLIDE ONLY",
-    //         ],
-    //         "Finale": [
-    //             "Pitching Time is 4-5 mins",
-    //             "Judges Rebuttal time is 2-3 mins",
-    //             "Brownie points for sticking to the time limit.",
-    //             "Max. Slide limit: 4 Slides + 1 Slide for Team Name + 1 Concluding Slide",
-    //             "The Event details will be provided to you once you qualify the Selection Round."
+    //         "": [
+    //             "Participants will begin by observing an initial web page, which they must recreate from memory using HTML and CSS.",
+    //             "The challenge unfolds without direct visual reference, requiring participants to rely solely on memory for layout, elements, and design nuances.",
+    //             "During the design process, participants will be shown the initial web page 2-3 times, intensifying the challenge and demanding strategic thinking.",
+    //             "The time limit for recreating the web page will be strictly enforced to add an element of urgency and test participants' ability to work efficiently."
     //         ],
     //     },
-    //     // documentLink: "/pdf/ControlCraft@JUMTC.pdf",
     // },
-    
-    
+    {
+        eventId: 'btg24',
+        eventName: 'Bridge The Gap',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Innovative Modelling',
+        eventHashtags: ['BridgingTheGap', 'StrongestBridgeWins'],
+        eventCoordinators: [
+            'Aritra Show [ 9748945722 ]',
+            'Rohan Banik [ 7478915161 ]', 
+            'Nourin Akhter Neha [ 7679916989 ]',
+        ],
+        prize: ["Prizes Pool of Rs 3000"],
+        minMembers: 2,
+        maxMembers: 4,
+        eventPoster: '/images/events/Birdge the Gap.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `"Bridge the Gap" is a bridge modelling event where participants build a bridge model from scratch using materials such as popsicle sticks, planks, nails, glue, etc. utilising structural analysis and the fundamental load-transferring process.   Participants show team spirit as they race against time to build their structure. The bridges are scored based on a number of criteria, including their ability to support a load, economic sustainability and their aesthetic appeal.`,
+        eventDescription: [`The open web girder type bridge, centrally loaded and designed to support the highway surface, incorporates truss members as its basic structural components.
+
+        Using popsicles and a glue gun, these truss members are to be built by a team of minimum 2 and a maximum 4 participants to bear the design load as well as the structure's self-weight while staying within the organizers' specified parameters. 
+        
+        
+        Teams will be judged on the economic sustainability, aesthetics, functionality and practical design approach of the structure. Teams have to build the model within a stipulated time constraint of approx. 3 hours, which will be tested by applying varied loads on it. 
+        
+        
+        Students of all years, disciplines and educational institutions are welcomed to participate. There is no prerequisite skill besides critical thinking and creative problem solving. All the materials required for the construction of the bridge model will be provided by the organizers. The problem statement will include a detailed description of the design load and design constraints.`],
+        eventRules: {
+            "": [
+                "Once the structure has been weighed, you are not permitted to make any changes to it.",
+                "If any of these constraints are not met, the organizers may impose point deductions or disqualification at their sole discretion.",
+                "Any team that does not arrive on time will be disqualified immediately.",
+                "The decision of the judges shall be final and binding on all.",
+                "The organizers reserve the right to modify any or all of the preceding rules as they see fit.",
+                "Any changes to the rules will be highlighted on the website and emailed to all registered participants.",
+                "Participants cannot bring their own materials; all required materials will be provided by the organizers."
+            ],
+        },
+    },
+    {
+        eventId: 'pixellense',
+        eventName: 'Pixellense',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Photography',
+        eventHashtags: ['photography', 'themeophotography'],
+        eventCoordinators: [
+            'Debashis Mandal [ mandaldebashis48@gmail.com ]',
+            'Abhinaba Biswas [ abhinababiswas1232@gmail.com ]', 
+            'Supratim Sarkar [ supratimsarkar2002@gmail.com ]',
+        ],
+        prize: ["Prizes Pool of Rs 3000"],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/Pixellense.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `It is a photography competition in which the photos will be judged on the basis of theme which will be announced during the fest.`,
+        eventDescription: [`Photography competition, theme based and will be judged on the basis of how much it relates with the theme.`],
+        eventRules: {
+            "":[
+                "The photo must totally be based on the given theme.",
+                "Metadata must be present for the photo submitted."
+            ],
+        },
+    },
+    {
+        eventId: 'reelation',
+        eventName: 'REEL-A-TION',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Photography',
+        eventHashtags: ['reel', 'jupc'],
+        eventCoordinators: [
+            'Souvik Saha [ 8910398827 ]',
+            'Rupam Chatterjee [ 9830642871 ]', 
+            'Prattay Barua [ 8902081203 ]',
+        ],
+        prize: [
+            "1st: Gorilla Pod",
+            "2nd: Lens Cleaning Kit",
+            "3rd: Lens Cleaning Kit",
+            "Judge’s Choice: Gorilla Pod"
+        ],
+        minMembers: 1,
+        maxMembers: 2,
+        eventPoster: '/images/events/reel.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Create and post a creative reel on a given topic on Instagram using just a phone camera. Top 3 most appreciated reels win prizes.`,
+        eventDescription: [`This event is for everyone with access to
+        a phone with a camera, and a little bit of creativity
+        - that’s all that is needed. A topic will be provided
+        on the day of the event, and the participants must
+        create a reel on that topic and post it on their
+        Instagram within a given time period. The Top 3 reels
+        receiving the most appreciation will be awarded as
+        the winners, and a Judge’s choice winner will also be
+        awarded`],
+        eventRules: {
+            "": [
+                "A team must consist of 1-2 members to participate in the event. Teams must register with their team name, and the Instagram ID for the account from which the reel will be posted.",
+                "The topic for the reel will be declared at 11 am on the day of the event. Participants must create a reel of minimum 15 seconds, and maximum 30 seconds, on the given topic.",
+                "The reel must be recorded inside Jadavpur University Salt Lake Campus, AFTER commencement of the event. In case of any doubt, raw video files may be requested.",
+                "After it is created, participants must post the reel from the Instagram account with which the team has registered, following the rules mentioned below. The faster the reel is posted, the more time it will have to gather likes, shares, and comments.",
+                "Recording the reel, and posting it on Instagram, must be done by the end of Day 2. The number of likes, comments, and shares on each reel will be counted at 4 PM on Day 3."
+            ],
+            "RULES FOR THE POST" : [
+                "Post must be in the format of: Srijan 2024: Reel-a-tion - <team name> - <caption for reel> #srijan #srijan24 #reelation #jupc #montage24 (other hashtags may also be used, but the ones given above are a must) E.g. For a team named 'Red Dragon', their post may read: Srijan 2024: Reel-a-tion – Red Dragon – Joy, hope, devastation #srijan #srijan24 #reelation #jupc #montage24 #emotion #joy #sad",
+                "@jupconline and @srijan_ju must be invited for collaboration on the post. Failing to do so will lead to the entry not being considered during final judging.",
+                "Minimum duration: 15 seconds",
+                "Maximum duration: 30 seconds",
+                "The audio applied to the reel must be consistent with the subject matter and will be considered during judging. Using trending audios with no connection to the subject matter of the reel will lead to disqualification."
+            ],
+            "The top 3 reels that receive the maximum amount of appreciation on Instagram by 4 pm on Day 3 will be crowned winners. How it will be calculated:": [
+                "Likes: 1 point",
+                "Comments: 3 points",
+                "Shares: 5 points",
+                "An award will also be given for Judge’s Choice which will not be dependent on any social media."
+            ]
+        },
+    },
+    {
+        eventId: 'valorant-tournament',
+        eventName: `SRIJAN'24 Valorant Tournament`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Gaming',
+        eventHashtags: ['NSGArena', 'Valorant'],
+        eventCoordinators: [
+            'Swapnil Saha [ 9123785487 ]',
+            'Spandan Ghatak [ 8981579002 ]'
+        ],
+        prize: [
+            "1st place, each participant will receive: Cash Prize of Rs. 5000/- and Winner Trophy and certificates.",
+            "2nd place, each participant will receive: Runner’s Up Trophy and certificates."
+        ],
+        minMembers: 5,
+        maxMembers: 5,
+        eventPoster: '/images/events/Valorant.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Valorant LAN erupts! 30+ teams duel for glory in 3-day showdown. Only one team shines!`,
+        eventDescription: [`Gear up for three days of intense Valorant action in our 5v5 LAN tournament, featuring 30+ teams battling for the championship. Experience the thrill of live competition as players go head-to-head in a LAN environment, showcasing precision, strategy, and teamwork.This is not just a tournament; it's a gaming spectacle where every kill and objective captured reverberates through the room. Join us for the ultimate Valorant showdown and witness the champions emerge in this high-stakes LAN event.`],
+        eventRules: {
+            "":[
+                "Refer to the document link provided above"
+            ],
+        },
+        documentLink: "https://drive.google.com/file/d/1xSn91xis5Q1t4eNgyRl5MpZmZoKzhP8O/view?usp=sharing"
+    },
+    {
+        eventId: 'eafc-tournament',
+        eventName: `SRIJAN'24 EA Sports FC 24 LAN Tournament`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Gaming',
+        eventHashtags: ['NSGArena', 'eafc24'],
+        eventCoordinators: [
+            'Anurag Jha [ 7044904397 ]',
+            'Debabrata Mondal [ 7439901282 ]'
+        ],
+        prize: [
+            "1st place, each participant will receive: Cash Prize of Rs. 3000/- and Winner Trophy and certificates.",
+            "2nd place, each participant will receive: Runner’s Up Trophy and certificates."
+        ],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/FC.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `EAFC 24 ignites! 1v1 showdowns. 3 days. Solo brilliance. Esports glory awaits.`,
+        eventDescription: [`Dive into the heart of competition with our 1v1 EAFC 24 tournament. Over three days, witness the solo skills of participants as they engage in a fast-paced showdown. With strategic battles and precision moves, players vie for victory and the coveted championship title. This is the stage for individual excellence—be part of the excitement as esports mastery takes center stage in EAFC 24.`],
+        eventRules: {
+            "":[
+                "Refer to the document link provided above"
+            ],
+        },
+        documentLink: "https://drive.google.com/file/d/1RQyVEayFfdfjdSzILO2Smz88JtA3VoEA/view?usp=sharing"
+    },
+    {
+        eventId: 'rocket-league-tournament',
+        eventName: `SRIJAN'24 Rocket League Tournament`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Gaming',
+        eventHashtags: ['NSGArena', 'rocketleague'],
+        eventCoordinators: [
+            'Arka Sikder [ 79808 05318 ]',
+            'Subhadip De [ 85840 38115 ]'
+        ],
+        prize: [
+            "1st place, each participant will receive: Cash Prize of Rs. 3000/- and Winner Trophy and certificates.",
+            "2nd place, each participant will receive: Runner’s Up Trophy and certificates."
+        ],
+        minMembers: 2,
+        maxMembers: 2,
+        eventPoster: '/images/events/rocket league.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Rocket League 2v2 takes flight! 3 days. Aerial battles. Teamwork & glory soar.`,
+        eventDescription: [`Experience the thrill of Rocket League in our 2v2 tournament. Over three dynamic days, teams of two will soar through the arena, showcasing teamwork, coordination, and precision ball control.The Rocket League 2v2 tournament promises a visual spectacle of acrobatics and goal-scoring finesse. Join us for an exhilarating competition where duos battle for supremacy and the championship title.`],
+        eventRules: {
+            "":[
+                "Refer to the document link provided above"
+            ],
+        },
+        documentLink: "https://drive.google.com/file/d/1Z1w4viOFIzZMHfiHMHfyrJBWGQCvPSrV/view?usp=sharing"
+    },
+    {
+        eventId: 'bgmi-tournament',
+        eventName: `SRIJAN'24 BGMI Tournament`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Gaming',
+        eventHashtags: ['NSGArena', 'bgmi'],
+        eventCoordinators: [
+            'Kingshuk Kirtania [ 70037 36262 ]',
+            'Shyambhu Chaudhuri [ 79086 13718 ]'
+        ],
+        prize: [
+            "1st place, each participant will receive: Cash Prize of Rs. 2000/- and Winner Trophy and certificates.",
+            "2nd place, each participant will receive: Runner’s Up Trophy and certificates."
+        ],
+        minMembers: 4,
+        maxMembers: 4,
+        eventPoster: '/images/events/BGMI.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Welcome to the Battleground! 30+ teams clash for 3 days. Witness strategic warfare & champions rise.`,
+        eventDescription: [`Prepare for an adrenaline-fueled battleground experience in our BGMI Tournament, spanning three days of intense competition. With over 30 teams vying for supremacy, immerse yourself in the pulse-pounding action as players showcase their skills in precision shooting, tactical maneuvering, and unparalleled teamwork. This isn't just a tournament; it's a gaming extravaganza where every frag and objective captured resonates throughout the venue. Join us for the ultimate BGMI showdown and witness the rise of champions in this high-stakes offline event.`],
+        eventRules: {
+            "":[
+                "Refer to the document link provided above"
+            ],
+        },
+        documentLink: "https://drive.google.com/file/d/1ZFi4wU7zLWPg1-n6byhWdi3mgIqH8zHO/view?usp=sharing"
+    },
+    {
+        eventId: 'efootball-tournament',
+        eventName: `SRIJAN'24 eFootball Tournament`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Gaming',
+        eventHashtags: ['NSGArena', 'efootball','pes'],
+        eventCoordinators: [
+            'Subhranuj Podder [ 81004 64406 ]',
+            'Brotin Haldar [ 79081 42783 ]'
+        ],
+        prize: [
+            "1st place, each participant will receive: Cash Prize of Rs. 2000/- and Winner Trophy and certificates.",
+            "2nd place, each participant will receive: Runner’s Up Trophy and certificates."
+        ],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/eFootball.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `eFootball kicks off! 3 days. 1v1 battles. Witness solo mastery. Virtual glory beckons.`,
+        eventDescription: [`Dive into the heart of the beautiful game with our eFootball Tournament, featuring a thrilling 1v1 showdown over three days of exhilarating competition. Witness the solo brilliance of players as they showcase their skills in lightning-fast matches filled with strategic depth and precise execution. From skillful dribbling to breathtaking goals, experience the intensity of esports mastery as participants battle for glory and the coveted championship title. Join us for an electrifying display of virtual football excellence in eFootball, where every match is a testament to individual skill and competitive spirit.`],
+        eventRules: {
+            "":[
+                "Refer to the document link provided above"
+            ],
+        },
+        documentLink: "https://drive.google.com/file/d/1B72J0XPHkT4m566Bub2RvO0dGhKqOCHC/view?usp=sharing"
+    },
+    {
+        eventId: 'stratedgex',
+        eventName: `StratEdgeX`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Business & Management',
+        eventHashtags: ['entrepreneurship', 'strategy','marketing'],
+        eventCoordinators: [
+            'Anurag Dey [ 8910178240 ]',
+            'Gourav Kumar Rai [ 8335965255 ]',
+            'Jotiraditya Banerjee [ 6289867756 ]'
+        ],
+        prize: [
+            "Prize Pool of Rs. 3600",
+        ],
+        minMembers: 1,
+        maxMembers: 3,
+        eventPoster: '/images/events/StratEdgeX.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `StratEdgeX tests your skills in market analysis, design, and execution. You will have to balance quality and cost, and present your strategy in a convincing way.`,
+        eventDescription: [
+            "StratEdgeX: The Ultimate Strategy Challenge",
+            "Do you have what it takes to create the best product for the market? Do you want to test your skills in analysis, design, and execution? Do you dream of winning the glory of innovation and strategy?",
+            "If yes, then StratEdgeX is the competition for you. You and your team will be given a product to optimize according to the needs and wants of your target audience. You will have to balance quality and cost, and present your strategy in a convincing way.",
+            "StratEdgeX is not just a competition, it is a learning experience. You will get to explore new ideas, collaborate with others, and challenge yourself. You will also get feedback from experts and peers, and a chance to win exciting prizes.",
+            "Don't miss this opportunity to showcase your talent and creativity. Join StratEdgeX today and shape the future of strategic brilliance."
+        ],
+        eventRules: {
+            "":[
+                "Team Members – 1 to 3",
+                "Round-1 Prelims will be an online Round",
+                "Required documents will be sent 24 hours before Finals",
+                "Participants choose from a generic product (provided by us), create a 3-page presentation covering market analysis, target audience, creative marketing strategy, and implementation.",
+                "Round-2 Finals will be an offline Round and all members need not be present.",
+                "Presentation Structure: Craft a comprehensive presentation covering market analysis, marketing strategy, and an implementation plan (traction, conversion, future projections)."
+            ]
+        },
+    },    
 ]
 
 module.exports = events
