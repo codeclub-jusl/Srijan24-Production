@@ -417,13 +417,10 @@ const events = [
         eventPoster: '/images/events/Robosoccer.png',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Robots playing soccer.`,
-        eventDescription: [`Climb On is a climbing competition for individuals who want to challenge themselves and compete with other climbers. 
-        The event is organized by Jadavpur University Mountaineering and Hiking Club (JUMHC). It is a great opportunity for climbers to
-        showcase their skills and stamina, and have a thrilling experience.
-        The event has two rounds: Prelims and Finals.
-        In the Prelims, the participants are divided into two categories: Men and Women. They have to climb as high as they can in five minutes, and their scores are based on height and time.
-        The top ten scorers from each category qualify for the Finals, where they have to climb in three minutes.
-        The top three scorers from each category win cash prizes and certificates. The event is open for all ages and levels of climbers.`],
+        eventDescription: [`Are you ready for a spectacle of wondrous magnitude, unlike any other, that will leave your heart racing with excitement? Experience the electrifying spectacle of the Robosoccer at SRIJAN'24 ! This thrilling game combines the excitement of match day with the world of robotics. This adrenaline-pumping game combines the high-energy atmosphere of match day with the thrilling world of robotics.`,`
+        Whether you're a tech aficionado or a soccer fanatic, the Robosoccer is an event you won't want to miss. The anticipation and energy in the air are palpable as you prepare to compete in the arena of the warriors.Showcase your skills by building bots, coding moves, and planning strategies. It's not just a game; it's an unforgettable experience.`, `
+        This is not just any game, my friends, it's an unforgettable experience. The thrill of the competition, the excitement of the crowd, and the camaraderie of your fellow competitors will leave you with memories that will last a lifetime.`,`
+        So don't wait - get in on the action and experience the excitement of the Robosoccer! Don't miss out - register now and be part of the most electrifying tech sports event of the year!`],
         eventRules: {
             "INTRODUCTION": [
                 "Are you ready for a spectacle of wondrous magnitude, unlike any other, that will leave your heart racing with excitement? Experience the electrifying spectacle of the Robosoccer at SRIJAN'24 ! This thrilling game combines the excitement of match day with the world of robotics. This adrenaline-pumping game combines the high-energy atmosphere of match day with the thrilling world of robotics. Whether you're a tech aficionado or a soccer fanatic, the Robosoccer is an event you won't want to miss. The anticipation and energy in the air are palpable as you prepare to compete in the arena of the warriors.Showcase your skills by building bots, coding moves, and planning strategies. It's not just a game; it's an unforgettable experience. This is not just any game, my friends, it's an unforgettable experience. The thrill of the competition, the excitement of the crowd, and the camaraderie of your fellow competitors will leave you with memories that will last a lifetime. So don't wait - get in on the action and experience the excitement of the Robosoccer! Don't miss out - register now and be part of the most electrifying tech sports event of the year!"
