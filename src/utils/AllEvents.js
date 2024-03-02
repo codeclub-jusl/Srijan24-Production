@@ -847,7 +847,56 @@ const events = [
                 "Presentation Structure: Craft a comprehensive presentation covering market analysis, marketing strategy, and an implementation plan (traction, conversion, future projections)."
             ]
         },
-    },    
+    },  
+    {
+        eventId: 'lord_of_the_ring',
+        eventName: `Lord Of The Ring`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'circuits & robotics',
+        eventHashtags: ['battleitout', 'lordoftherings','whorulesthering'],
+        eventCoordinators: [
+            'Soumyadeep Dutta [ 9153039945 ]',
+            'Sauptik Maiti [ 6290366197 ]',
+            'Abhidipan Samanta [ 7908365529 ]'
+        ],
+        prize: [
+            "Prize Pool of Rs. 5000",
+        ],
+        minMembers: 2,
+        maxMembers: 5,
+        eventPoster: '/images/events/LordOfRings.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `An Intense competition of Wired and Wireless Bots struggling for supremacy in strategic battles of Innovation.`,
+        eventDescription: [
+            "Lord Of The Ring is a Srijan 2024 Robotics and IoT based Event where teams of up to 5 members each compete in wired and wireless categories. Guided by the IoTA Club J.U. in, participants maneuver robots in a circular arena, earning points by pushing opponents into a green zone or out of bounds. Each match consists of three one-minute rounds, aiming to win two rounds for victory. With a knockout-style format, losing teams exit. Detailed rules will be available in the event details portion and in the event brochure. Lord Of The Ring celebrates teamwork, innovation, and sportsmanship, promising an exciting showcase of technological prowess and strategic thinking."
+        ],
+        eventRules: {
+            "":[
+                "Teams, comprising up to 5 members, compete by making their own Remote Controlled Vehicle which can be wired or wireless. The bots must fall within defined parameters. Match officials exercise authority to ensure fairness and adherence to rules.",
+                "The competition is segregated into wired and wireless categories, each with distinct rewards.",
+                "Matches proceed through elimination rounds.",
+                "Three rounds, lasting a minute each, determine winners based on strategic moves.",
+                "The arena features a central red zone with a diameter of 4 feet, encircled by a special green zone, 1 foot in width. Beyond the green zone lies the elimination zone.",
+                "Points are awarded for specific achievements: 2 for the green zone, 5 for complete displacement.",
+                "Bot with maximum points wins the round.",
+                "Victory requires securing 2 rounds.",
+                "Violations may result in disqualification."
+            ],
+            "Bot Specifications" : [
+                "High-torque motors are permissible.",
+                "Maximum dimensions are set at 30cm × 30cm × 15cm.",
+                "Weight of the robot cannot exceed 2.5 kg.",
+                "Planetary motors and Mecanum wheels are prohibited.",
+                "Wheel diameter is capped at 6cm.",
+                "Wired bots are recommended to have extended wires.",
+                "Entering the arena incurs negative points."
+            ]
+        },
+        documentLink: "https://heyzine.com/flip-book/4b8906a45d.html"
+    },  
 ]
 
 module.exports = events
