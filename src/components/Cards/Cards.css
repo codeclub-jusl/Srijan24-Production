@@ -41,7 +41,7 @@
     transition: transform 0.35s cubic-bezier(.25, .1, 0, 2.05);
     border-radius: 3px;
     border-top-right-radius: 60px 60px;
-    margin: 30px 25px;
+    margin: 30px 55px;
 }
 .disabledCard{
     cursor: not-allowed !important;
@@ -108,3 +108,9 @@
     border-radius: 3px;
     border-top-right-radius: 60px 60px;
 }
+
+/* @media screen and (max-width: 965px) {
+    .cardsContainer .cardBox {
+        margin: 30px 25px;
+    }
+} */
