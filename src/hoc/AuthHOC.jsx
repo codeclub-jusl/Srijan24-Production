@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import isEqual from 'lodash/isEqual'
 
 const AuthHOC = Component => {
-    return () => {
+    return ({params}) => {
         const router = useRouter()
         const dispatch = useDispatch()
         const [user, setUser] = useState(null)
@@ -96,7 +96,7 @@ const AuthHOC = Component => {
             return null
         }
 
-        return <Component propsUser={user} />
+        return <Component propsUser={user} params={params}/>
     }
 }
 
