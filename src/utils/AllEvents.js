@@ -897,6 +897,34 @@ const events = [
         },
         documentLink: "https://heyzine.com/flip-book/4b8906a45d.html"
     },  
+
+    {
+        eventId: 'gaming-experience-zone',
+        eventName: 'GAMING EXPERIENCE ZONE',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'gaming',
+        eventHashtags: ['NSGArena', 'gaming', 'VR'],
+        eventCoordinators: [
+            'Debdut Hira [ 6290363929 ]',
+            'Arhana Kundu [ 8017422515 ]',
+            'Souradipto Sarkar [ 9460327686 ]',
+        ],
+        prize: ['Enjoy an immersive gaming experience'],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/GamingExperienceZone.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: 'Step into a world where reality meets imagination at our Virtual Reality Experience.',
+        eventDescription: [
+            'Step into a world where reality meets imagination at our Virtual Reality Experience. Explore interactive VR games, and immerse yourself in immersive storytelling. Discover the latest gaming consoles and features at our Next-Gen Console. Showcase, then unleash your gaming potential in our high-performance PC Gaming Arena, whether competing in esports tournaments or enjoying casual gameplay with friends.',
+        ],
+        eventRules: {
+            '': [],
+        },
+    },
 ]
 
 module.exports = events
