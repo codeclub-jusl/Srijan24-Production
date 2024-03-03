@@ -2,11 +2,7 @@ import OverallNav from '@/components/OverallNav/OverallNav'
 import React from 'react'
 
 const page = () => {
-    const images = [
-        // '/images/events/uncode.jpeg',
-        // '/images/events/sherlocked.png',
-        // '/images/events/sherlocked.png',
-    ]
+    const images = ['/images/speakers/GOURAV_SEN.png']
 
     return (
         <div
@@ -27,7 +23,7 @@ const page = () => {
                 }}
                 className='bg-[url(/images/about/about.png)] '
             >
-                <div className='w-full h-[15rem] md:h-[20rem] bg-gray-400 bg-opacity-5 backdrop-filter backdrop-blur-md text-white font-clash tracking-wide font-black flex flex-col items-center justify-center shadow-2xl'>
+                <div className='w-full h-[13rem] md:h-[18rem] bg-gray-400 bg-opacity-5 backdrop-filter backdrop-blur-md text-white font-clash tracking-wide font-black flex flex-col items-center justify-center shadow-2xl'>
                     <img
                         className=' top-0 left-0 right-0 bottom-0 w-[10rem] mb-4 md:w-[15rem] md:mb-6
                 '
