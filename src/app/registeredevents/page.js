@@ -1,11 +1,12 @@
 'use client'
 import EventPage from '@/components/EventComponents/EventPage'
+import AuthHOC from '@/hoc/AuthHOC'
 import UserHOC from '@/hoc/UserHOC'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 const Registered = () => {
     const user = useSelector(state => state.userReducer.user)
-    const userRegistered = user.events.registered
+    const userRegistered = user ? user.events.registered : [];
     const [eventsId, setEventsId] = useState([])
 
     useEffect(() => {
@@ -25,4 +26,4 @@ const Registered = () => {
     )
 }
 
-export default UserHOC(Registered)
+export default AuthHOC(Registered)
