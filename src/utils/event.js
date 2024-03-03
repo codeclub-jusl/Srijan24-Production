@@ -13,9 +13,10 @@ export const getAllEvents = () => {
 
 export const getEventsByOrganizerEmail = email => {
     const eventIds = []
-    for (const eventId in EventOrganizers) {
-        if (organizer[eventId].includes(email)) {
-            eventIds.push(eventId)
+    for (const data of EventOrganizers) {
+        // console.log(data);
+        if (data.organizers.includes(email)) {
+            eventIds.push(data.eventId)
         }
     }
     return eventIds

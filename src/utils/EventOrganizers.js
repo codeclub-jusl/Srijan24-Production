@@ -1,6 +1,6 @@
 const EventOrganizers = [
-    { sherlocked: ['tanmayroy81011@gmail.com'] },
-    { uncode: ['tanmayroy81011@gmail.com'] },
+    { eventId: 'sherlocked', organizers: ['tanmayroy81011@gmail.com'] },
+    { eventId: 'uncode', organizers: ['tanmayroy81011@gmail.com'] },
 ]
 
 module.exports = EventOrganizers
