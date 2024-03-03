@@ -27,15 +27,15 @@ export default function Cards(){
           <div className="lockedCard">Locked</div>
         </div>
 
-        <div className="cardBox disabledCard">
+        {/* <div className="cardBox disabledCard">
           <Image src={"/images/speakers.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
           <p>Speakers and Guests</p>
           <div className="lockedCard">Locked</div>
-        </div>
-        {/* <Link href={"/guests"} className="cardBox">
+        </div> */}
+        <Link href={"/speakers-and-guests"} className="cardBox">
           <Image src={"/images/speakers.jpg"} height={800} width={850} alt="cardImage" className="cardImage"/>
           <p>Speakers and Guests</p>
-        </Link> */}
+        </Link>
 
       </div>
     </>
