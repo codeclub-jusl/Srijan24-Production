@@ -169,7 +169,7 @@ const events = [
             'Soujash Mandal [ 9382929688 ]',
         ],
         prize: ['Exciting prizes(TBD) for the top 3 winners(teams)'],
-        minMembers: 3,
+        minMembers: 1,
         maxMembers: 3,
         eventPoster: '/images/events/h42.png',
         registrationType: `Srijan'24 Website`,
@@ -184,7 +184,7 @@ const events = [
         ],
         eventRules: {
             ' ': [
-                'This is a team event. Each team comprises 3 members. Inter-college teams are not allowed.',
+                'This is a team event. Each team comprises 1-3 members. Inter-college teams are also allowed.',
                 'There will be 2 rounds. Both the rounds will have 4 programming questions.',
                 'Only one prelims will be conducted which will be in Online mode.',
                 'The timing of the event will be notified later.',
