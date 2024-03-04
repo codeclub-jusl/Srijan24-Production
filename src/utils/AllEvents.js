@@ -44,7 +44,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventPoster: '/images/events/ROBORACE .png',
+        eventPoster: '/images/events/ROBORACE.png',
         eventType: `circuits & robotics`,
         eventHashtags: ['miniF1', 'racetoglory'],
         eventCoordinators: [
