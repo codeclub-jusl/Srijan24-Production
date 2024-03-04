@@ -199,20 +199,20 @@ const page = ({ params }) => {
                     </div>
                     <div className='flex flex-col gap-5 bg-opacity-50 p-6 rounded-lg md:col-span-1 '>
                         <div className='flex flex-col shadow-2xl p-3'>
-                            <div className='flex items-center mb-4'>
+                            {eventData && eventData.eventDate && eventData.eventDate.prelims && <div className='flex items-center mb-4'>
                                 <BsCalendar className='mr-2' />
                                 <p>
                                     <strong>Event Date (Prelims):</strong>{' '}
-                                    {eventData && eventData.eventDate.prelims.join(', ')}
+                                    {eventData.eventDate.prelims.join(', ')}
                                 </p>
-                            </div>
-                            <div className='flex items-center mb-4'>
+                            </div>}
+                            {eventData && eventData.eventDate && eventData.eventDate.finals && <div className='flex items-center mb-4'>
                                 <BsCalendar className='mr-2' />
                                 <p>
                                     <strong>Event Date (Finals):</strong>{' '}
-                                    {eventData && eventData.eventDate.finals}
+                                    {eventData.eventDate.finals}
                                 </p>
-                            </div>
+                            </div>}
                             <div className='flex items-center mb-4'>
                                 <BsPeople className='mr-2' />
                                 <p>
