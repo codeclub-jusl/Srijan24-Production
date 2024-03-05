@@ -183,7 +183,7 @@ const Hero = () => {
 
                                         {/* srijan text logo in red ------- */}
                                         <Image
-                                            src='/assets/Srijan logo.png'
+                                            src='/assets/Srijan_logo.png'
                                             alt=''
                                             className='overlay-image'
                                             draggable={false}
