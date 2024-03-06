@@ -11,7 +11,7 @@ export const getAllEvents = () => {
     return events
 }
 
-export const getEventsByOrganizerEmail = email => {
+export const getEventIdsByOrganizerEmail = email => {
     const eventIds = []
     for (const data of EventOrganizers) {
         // console.log(data);
