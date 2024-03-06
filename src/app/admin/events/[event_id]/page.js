@@ -166,7 +166,7 @@ const page = ({ params }) => {
                                                     </span>
                                                     <span
                                                         className={
-                                                            member.status
+                                                            member.accepted
                                                                 ? 'text-green-500'
                                                                 : 'text-red-500'
                                                         }
