@@ -233,6 +233,11 @@ const EventOrganizers = [
             'brahma.dwip.56@gmail.com',
         ],
     },
+
+    {
+        eventId: 'ptb',
+        organizers: ['vikash36905@gmail.com', 'theanupam1nonly@gmail.com'],
+    },
 ]
 
 module.exports = EventOrganizers
