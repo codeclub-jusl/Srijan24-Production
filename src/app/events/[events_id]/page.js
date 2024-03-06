@@ -14,6 +14,8 @@ import { getEventById } from '@/utils/event'
 import BeatLoader from 'react-spinners/BeatLoader'
 import UserHOC from '@/hoc/UserHOC'
 import InvitationModal from '@/components/EventComponents/InvitationModal'
+import { FaWhatsapp } from 'react-icons/fa';
+
 
 const page = ({ params }) => {
     const router = useRouter()
@@ -166,6 +168,12 @@ const page = ({ params }) => {
     const iconMap = {
         user: <BsPeople />,
     }
+    
+    //WhatsApp URL
+    const websiteUrl = `https://srijanju.in/events/${events_id}`;
+    const shareText = `Check out this event: ${eventData.eventName}\n\n ${eventData.eventDescription}\n\nHead over to: ${websiteUrl} for exploring it!`;
+    const shareUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+
 
     return (
         <div className='bg-gradient-to-br from-black via-sky-950 to-black text-white min-h-screen flex justify-center items-center font-body'>
@@ -295,13 +303,56 @@ const page = ({ params }) => {
                                 Click <Link href={eventData.documentLink} className='documentLink'>here</Link> to know more about this event
                             </p>
                         </div>}
+
+                             
+
                         {eventData && eventData.websiteLink && <div className='flex flex-col p-3 shadow-2xl '>
-                            <p className='text-sm md:text-base eventDesc webLinkContainer'>
-                                <Link href={eventData.websiteLink} className='websiteLink'>Access Website</Link>
-                            </p>
-                        </div>}
+                                <p className='text-sm md:text-base eventDesc webLinkContainer'>
+                                    <Link href={eventData.websiteLink} className='websiteLink'>Access Website</Link>
+                                </p>
+                            </div>}
+                        </div>
                     </div>
-                </div>
+
+                    
+                    <div>
+  <div className="flex items-center justify-center space-y-4">
+ {eventData && eventData.groupLink && user && profileUpdated && eventStatus !== 'not registered' && (
+  <div className='flex flex-col p-3 shadow-2xl border border-solid border-gray-300 rounded-md transition-all duration-500 ease-in-out hover:backdrop-blur-md'>
+    <p className='eventDesc text-sm md:text-base'>
+      Click{' '}
+      <Link
+        href={eventData.groupLink}
+        className='documentLink'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        here
+      </Link>{' '}
+      to join the official WhatsApp group for the event {eventData.eventName}
+    </p>
+  </div>
+)}
+
+
+  </div>
+
+  <div className="flex justify-center">
+  <div>
+    <a href={shareUrl} target='_blank' rel='noopener noreferrer' className="flex items-center text-blue-500 p-2">
+      <FaWhatsapp style={{ color: "#36d9a8" }} className="w-6 h-6" />
+      <span className="text-base ml-2 font-semibold">Share on WhatsApp</span>
+    </a>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+         
                 {user ? (
                     user && profileUpdated ? (
                         <div className='mt-4 flex justify-center registerNowButton'>
@@ -380,6 +431,7 @@ const page = ({ params }) => {
                     onClose={toggleInvitationModal}
                     eventId={eventData && eventData.eventId}
                 />
+                
                 <div className='bg-opacity-50 p-6 rounded-lg mt-6'>
                     <p className='mb-2'>
                         <strong className='text-lg md:text-xl'>

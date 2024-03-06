@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { set } from 'firebase/database';
 const montserrat = Montserrat({ subsets: ['latin'] })
-export default function OverallNav() {
+export default function OverallNav(props) {
     /*const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const controlNavbar = (e)=>{
@@ -47,9 +47,9 @@ export default function OverallNav() {
                 <Link href="/"><img src="/assets/Srijan_logo.png" alt="logo"></img></Link>
             </div>
             <div className={user ? styles.box1 : styles.box2}>
-                {user ? (
+                {user ?  ( props && props.pageType !== 'dashboard' ? (
                     <Link href="/dashboard"><p>Dashboard</p></Link>
-                ) : ""}
+                ) : <Link href="/events"><p>Events</p></Link> ): ""}
                 {user ? (
                     <Link href="/notifications"><p>Notifications</p></Link>
                 ) : ""}
