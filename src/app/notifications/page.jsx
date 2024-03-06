@@ -7,7 +7,9 @@ import { getEventById } from '@/utils/event'
 import { useRouter } from 'next/navigation'
 import AuthHOC from '@/hoc/AuthHOC'
 
+import OverallNav from '@/components/OverallNav/OverallNav';
 const Notification = () => {
+    
     const router = useRouter()
     const user = useSelector(state => state.userReducer.user)
     const [invitations, setInvitations] = useState([])
@@ -100,6 +102,7 @@ const Notification = () => {
 
     return (
         <>
+            <OverallNav></OverallNav>
             <div
                 id='notificationBody'
                 className='bg-gradient-to-br from-black via-sky-950 to-black text-white min-h-screen font-body'

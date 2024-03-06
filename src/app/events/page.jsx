@@ -11,7 +11,7 @@ const page = () => {
         let ids = []
         const events = getAllEvents()
 
-        for (let i = 0; i < events.length; i++) {
+        for (let i = events.length-1; i >=0 ; i--) {
             ids.push(events[i].eventId)
         }
         setEventsId(ids)
