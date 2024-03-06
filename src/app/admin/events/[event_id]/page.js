@@ -4,6 +4,7 @@ import { db } from '@/firebase/config'
 import { getEventById } from '@/utils/event'
 import { doc, collection, getDoc, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
+import EventIdAdminHOC from '@/hoc/EventIdAdminHOC'
 
 const page = ({ params }) => {
     const { event_id } = params
@@ -126,61 +127,62 @@ const page = ({ params }) => {
 
                 <div className='flex flex-wrap gap-2 p-10'>
                     {!showTeams && <h1 className='text-xl'>Loading...</h1>}
-                    
-                    {showTeams && showTeams.map((team, index) => (
-                        <div
-                            key={index}
-                            className='p-5 flex flex-col gap-3 rounded-lg bg-slate-900 bg-opacity-70 items-center justify-center'
-                        >
-                            <h1 className='text-xl font-extrabold text-lime-300'>
-                                {team.teamName}
-                            </h1>
 
-                            <div>
-                                <p>
-                                    <span className='font-bold text-orange-400 mr-2'>
-                                        Leader:{' '}
-                                    </span>
-                                    <span className='text-green-300'>
-                                        {team.leader}
-                                    </span>
-                                </p>
+                    {showTeams &&
+                        showTeams.map((team, index) => (
+                            <div
+                                key={index}
+                                className='p-5 flex flex-col gap-3 rounded-lg bg-slate-900 bg-opacity-70 items-center justify-center'
+                            >
+                                <h1 className='text-xl font-extrabold text-lime-300'>
+                                    {team.teamName}
+                                </h1>
 
-                                <p>
-                                    <span className='font-bold text-orange-400 mr-2'>
-                                        Leader Phone:{' '}
-                                    </span>
-                                    <span className='text-green-300'>
-                                        {team.leaderPhone}
-                                    </span>
-                                </p>
+                                <div>
+                                    <p>
+                                        <span className='font-bold text-orange-400 mr-2'>
+                                            Leader:{' '}
+                                        </span>
+                                        <span className='text-green-300'>
+                                            {team.leader}
+                                        </span>
+                                    </p>
 
-                                {team.members.map(
-                                    (member, index) =>
-                                        index > 0 && (
-                                            <p key={index}>
-                                                <span className='font-bold text-orange-400 mr-2'>
-                                                    Member {index}:{' '}
-                                                </span>
-                                                <span
-                                                    className={
-                                                        member.status
-                                                            ? 'text-green-500'
-                                                            : 'text-red-500'
-                                                    }
-                                                >
-                                                    {member.email}
-                                                </span>
-                                            </p>
-                                        ),
-                                )}
+                                    <p>
+                                        <span className='font-bold text-orange-400 mr-2'>
+                                            Leader Phone:{' '}
+                                        </span>
+                                        <span className='text-green-300'>
+                                            {team.leaderPhone}
+                                        </span>
+                                    </p>
+
+                                    {team.members.map(
+                                        (member, index) =>
+                                            index > 0 && (
+                                                <p key={index}>
+                                                    <span className='font-bold text-orange-400 mr-2'>
+                                                        Member {index}:{' '}
+                                                    </span>
+                                                    <span
+                                                        className={
+                                                            member.status
+                                                                ? 'text-green-500'
+                                                                : 'text-red-500'
+                                                        }
+                                                    >
+                                                        {member.email}
+                                                    </span>
+                                                </p>
+                                            ),
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
             </div>
         </div>
     )
 }
 
-export default page
+export default EventIdAdminHOC(page)

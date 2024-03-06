@@ -4,8 +4,9 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-const EventAdminHOC = Component => {
-    return () => {
+const EventIdAdminHOC = Component => {
+    return ({ params }) => {
+        const { event_id } = params
         const router = useRouter()
         const user = useSelector(state => state.userReducer.user)
 
@@ -13,7 +14,7 @@ const EventAdminHOC = Component => {
             if (user) {
                 const eventIds = getEventIdsByOrganizerEmail(user.email)
                 if (
-                    eventIds.length === 0 &&
+                    (eventIds.length === 0 || !eventIds.includes(event_id)) &&
                     !SuperAdmins.includes(user.email)
                 ) {
                     router.back()
@@ -23,8 +24,8 @@ const EventAdminHOC = Component => {
             }
         }, [])
 
-        return <Component />
+        return <Component params={params} />
     }
 }
 
-export default EventAdminHOC
+export default EventIdAdminHOC

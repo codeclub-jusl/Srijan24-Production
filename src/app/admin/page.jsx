@@ -1,10 +1,13 @@
+'use client'
+
+import EventAdminHOC from '@/hoc/EventAdminHOC'
+
 const Admin = () => {
-  return (
-    <>
-    <div>Admin page</div>
-    <div>Hello supratick mondal</div>
-  </>
-  )
+    return (
+        <>
+            <div>Admin page</div>
+        </>
+    )
 }
 
-export default Admin
+export default EventAdminHOC(Admin)
