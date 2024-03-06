@@ -360,7 +360,7 @@ const events = [
             'Tanmay Roy [ 8101159941 ]',
         ],
         prize: ['Exciting prizes(TBD) for the top 3 winning teams'],
-        minMembers: 3,
+        minMembers: 2,
         maxMembers: 3,
         eventPoster: '/images/events/sherlocked.jpg',
         registrationType: `Srijan'24 Website`,
