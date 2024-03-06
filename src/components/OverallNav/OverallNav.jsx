@@ -47,9 +47,11 @@ export default function OverallNav() {
                 <Link href="/"><img src="/assets/Srijan_logo.png" alt="logo"></img></Link>
             </div>
             <div className={user ? styles.box1 : styles.box2}>
-                <Link href="/events"><p>Events</p></Link>
                 {user ? (
                     <Link href="/dashboard"><p>Dashboard</p></Link>
+                ) : ""}
+                {user ? (
+                    <Link href="/notifications"><p>Notifications</p></Link>
                 ) : ""}
                 {user ? (
                     <button onClick={handleLogout}><p>Logout</p></button>
