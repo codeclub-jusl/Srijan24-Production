@@ -1260,6 +1260,189 @@ const events = [
             ],
         },
     },
+
+    {
+        eventId: 'logocity',
+        eventName: `Logocity`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Designing',
+        eventHashtags: ['LogoQuest', 'DesignBattle'],
+        eventCoordinators: [
+            'Nahir Md Nishad [ 8670509483 ]',
+            'Monoshwi Bandopadhay [ 96474993252 ]',
+            'Arka Sikdar [ 7980805318 ]',
+        ],
+        prize: ['Prize Pool of Rs. 1000'],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/logocity.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!  Srijan 2024 brings to you Logocity - where participants fire up their artistic geniuses and channel their aesthetic senses to craft the most impressive brand identities. Do you think you can capture your viewers with mere strokes of your pen? Then what are you waiting for? "Just do it!"`,
+        eventDescription: [
+            'Basically, this event has two stages, the first one will be a design submission round where the participants will be given a set of questions and criteria of design according to which they will be designing logos and after submission the panel of judges will be grading them accordingly. According to their score, the participants will progress to the next and final round which will be a quiz round where we will be asking them question and according to their answers the winners will be decided. The first round will be an online round whereas the final round will be in offline mode. The designing of the participants will be judged by their relevance, versatility, adherance and the aesthetic. ',
+        ],
+        eventRules: {
+            '': [
+                "Participants will be given points on the basis of relevance, versatility, adherence to design brief, how well the design is presented and the general look and feel of the design.",
+                "Participants need to submit their artwork along with the description in PDF or PNG format. Providing the source file (e.g., illustrator raw file) as proof of work will grant Bonus Points.",
+                "Any kind of Plagiarism will lead to Disqualification.",
+                "All shortlisted participants will have to appear for a quiz round on the day of finals at Jadavpur University Salt Lake Campus."
+            ],
+        },
+    },
+    {
+        eventId: 'ace-the-case',
+        eventName: `Ace The Case`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Business & Management',
+        eventHashtags: ['Case_Study', 'Problem_Solving'],
+        eventCoordinators: [
+            'Piyush Gupta [ 7439484942 ]',
+            'Raktim Banerjee [ 9569584047 ]',
+            'Souptik Dasgupta [ 9007475778 ]',
+        ],
+        prize: ['Exciting prizes for winners'],
+        minMembers: 1,
+        maxMembers: 3,
+        eventPoster: '/images/events/acethecase.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Business case-study event to test everything, from your real-world problem solving to Pitching Skills, all under 24 hours!`,
+        eventDescription:[
+            "Do you have an astute proclivity for brainstorming and have a knack for finding solutions to problems?",
+            "We've got you covered!",
+            "Unleash your problem-solving prowess in 'Ace the Case'!",
+            "Hop in for a thrilling opportunity to analyze real-world challenges, develop innovative solutions, and showcase your strategic acumen.",
+            "Embrace the chance to network, interact, and rise to the challenge!"
+        ],
+        eventRules: {
+            '':[
+                "Join the Group links sent via emails beforehand to avoid the last-minute hassle.",
+                "The event is to be conducted in two rounds: Selection Round and Finale.",
+                "Prompts will be provided to you 2 days PRIOR to the event.",
+                "Strictly adhere to the slide limits in each Round."
+            ],
+            'Selection Round:': [
+                "Event to be Conducted Online",
+                "Each team needs to submit an Abstract Report of the case study provided to them within 24 hours.",
+                "The timer will start IMMEDIATELY as the Prompt Release is mailed/sent to the team.",
+                "Slide Limit: 1 SLIDE ONLY"
+            ],
+            'Finale':[
+                "Pitching Time is 4-5 mins",
+                "Judges Rebuttal time is 2-3 mins",
+                "Brownie points for sticking to the time limit.",
+                "Max. Slide limit: 4 Slides + 1 Slide for Team Name + 1 Concluding Slide",
+                "The Event details will be provided to you once you qualify the Selection Round."
+            ]
+        },
+    },
+    {
+        eventId: 'rap-beatbox',
+        eventName: `Rap battle and Beatbox`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Art and Culture',
+        eventHashtags: ['rapbattle', 'beatbox'],
+        eventCoordinators: [
+            'Sauptik maiti [ 6290366197 ]',
+            'Sayandeep Pramanik [ 7872639252 ]',
+        ],
+        prize: ['Exciting prizes for winners'],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/rapbattle.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Rap Battle and Beatbox encourages everyone to showcase their rapping and beatboxing skills and battle it out with other participants.`,
+        eventDescription:[
+            "\"We sing for these kids who don't have a thing",
+            "Except for a dream and a f-ing rap magazine\"",
+            "- Sing For The Moment, Eminem",
+            "",
+            "Born out of house parties in 1970s South Bronx, Hip-hop has grown to be one of the most intricate and powerful artforms known to humanity. Today, Hip-Hop is a collection of several elements like rapping, graffiti art, deejaying, B-boying and Beatboxing.",
+            "With the popularity of the Hip-Hop culture rising and spreading like wildfire all over the world, we feel the need for providing aspiring MCs and beatboxers a platform for showcasing their talents, here at Srijan '24, JU.",
+            "",
+            "Sign up for one or both of the events Rap Battle and Beatbox and display your talent in form of a classic battle!"
+        ],
+        eventRules: {
+            'RAP BATTLE':[
+                "Registration for Rap Battle is open to any individual, college or otherwise.",
+                "This is an ON-STAGE competition.",
+                "This will be a SHOWCASE act of an original song and must be performed by the main artist only.",
+                "No hype man is allowed.",
+                "Each rapper is allowed a maximum of 2 minutes +/- 30 seconds, going beyond which will result in deduction of points.",
+                "Backing tracks will be allowed but no backing vocals should be present in the track.",
+                "The language of rap can be English, Hindi, and Bengali only."
+            ],
+            'Disqualification Criteria': [
+                "Any form of ghostwriting will lead to immediate disqualification.",
+                "Points will be awarded for performance and lyrical relevance, along with skillful use of rhyming schemes, punchlines, and flow.",
+                "Any form of cussing or usage of foul language in lyrics will result in immediate disqualification."
+            ],
+            'BEATBOXING':[
+                "Participants have to give solo beatbox performances on stage.",
+                "Participants will be given 1 minute +- 20sec.",
+                "Single-hand mike will be made available for the performance.",
+                "Participants may use a backing track brought by them in a pen drive (not compulsory).",
+                "Performers will be judged on the following criteria:-",
+                "  a. Originality",
+                "  b. Sense of Beats/Music",
+                "  c. Variation of beats",
+                "  d. Variety of sound",
+                "  e. Connect to the audience/Entertaining",
+                "Disqualification criteria:-",
+                "  a. Use of slang and cuss words.",
+                "  b. Misbehaving with judges, coordinators, and volunteers.",
+                "  c. Damaging of University Property"
+            ]
+        },
+    },
+    {
+        eventId: 'treasure-hunt',
+        eventName: `Treasure Hunt`,
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Miscellaneous',
+        eventHashtags: ['srijan_24', 'tech_enthusiasts_assemble'],
+        eventCoordinators: [
+            'Dipan Mandal [ 8250821406 ]',
+            'Anushka Tewari [ 9348121371 ]',
+            'Soumyadip Ghosh [ 8116221973 ]',
+        ],
+        prize: ['Certificates and medals for winners'],
+        minMembers: 3,
+        maxMembers: 5,
+        eventPoster: '/images/events/treasurehunt.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `“Remember that wherever your heart is, there you will find your treasure. You’ve got to find the treasure, so that everything you have learned along the way can make sense.” - The Alchemist`,
+        eventDescription:[
+            "Here you are, adventurer, at the portal of your dreams.",
+            "In order to conjure your personal legend, in the land of Srijan '24, you must follow the omens we've left for you along the path.",
+            "",
+            "Set your gaze on your goal, and the entire universe will conspire in helping you to achieve it.",
+            "",
+            "The principle of favorability must be on your side, as this year's 'Treasure Hunt' makes its way to you."
+        ],
+        eventRules: {
+            '':[
+                "Each team must have at least 3 members and no more than 5 members (at least 1 girl and 1 boy) with at least one member being from Jadavpur University.",
+                "Teams must stay together during the Treasure Hunt and teamwork is encouraged to solve the clues and retrieve the coins from each location. Team members must have their phones with active internet connection and Whatsapp.",
+                "Each team will be given a clue at the beginning of the treasure hunt. It will be up to the teams to decipher the clues and safely acquire the next clue from each of the locations. Each clue once solved will lead you to a location where you would find a clue.",
+                "Upon reaching the location, teams need to perform the assigned task.",
+                "Teams will be scored based on completion of the assigned task and the amount of time taken. Once all clues are collected, teams must return to the finish in order to be counted as finished.",
+                "The Treasure Hunt begins at 1:00 pm. Clue will be distributed to team members at that time and may be opened, and the teams may start solving the clues and begin their “Treasure Hunt”."
+            ]
+        },
+    },
 ]
 
 module.exports = events
