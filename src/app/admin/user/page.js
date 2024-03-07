@@ -1,20 +1,46 @@
 'use client'
 
-import React, { useState } from 'react'
+import { auth, db } from '@/firebase/config'
+import { collection, getDocs, limit, query } from 'firebase/firestore'
+import React, { useEffect, useState } from 'react'
 
 const page = () => {
     const [userToSearch, setUserToSearch] = useState('')
+    const [noOfUsers, setNoOfUsers] = useState(0)
+    const [fetchedUsers, setFetchedUsers] = useState(null)
 
-    const searchUser = e => {
+    // useEffect(() => {
+    //     const fetchUser = async () => {
+    //         const userRecords = await 
+    //         console.log(auth);
+    //         // setNoOfUsers(userRecords.length)
+
+    //         const q = query(collection(db, 'users'), limit(10))
+    //         const querySnapshot = await getDocs(q);
+
+    //         // let users = []
+    //         // querySnapshot.forEach(userDoc => {
+    //         //     users.push
+    //         // })
+    //     }
+
+    //     fetchUser()
+    // }, [])
+
+    const searchUser = async e => {
         e.preventDefault()
 
         console.log(userToSearch)
+
+        
+
+
     }
 
     return (
         <div
             style={{
-                background: `linear-gradient(to bottom right, black, ${'#0E2954'}, black)`,
+                background: `linear-gradient(to bottom right, black, ${'#35374B'}, black)`,
             }}
         >
             <div
@@ -29,6 +55,9 @@ const page = () => {
                 }}
                 className='bg-[url(/images/about/about.png)] '
             >
+                <h1 className=' text-[1.5rem] tracking-wider md:text-[2rem] '>
+                    User Database
+                </h1>
                 <form
                     className='flex items-center lg:w-1/3 md:w-3/4 sm:w-4/5 my-10 mx-auto opacity-80'
                     onSubmit={searchUser}
@@ -49,7 +78,7 @@ const page = () => {
                     </div>
                     <button
                         type='submit'
-                        className='p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                        className='p-2.5 ms-2 text-sm font-medium text-white bg-teal-500 rounded-lg border border-teal-500 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-blue-300'
                     >
                         <svg
                             className='w-4 h-4'
