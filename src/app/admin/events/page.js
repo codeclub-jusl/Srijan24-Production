@@ -1,6 +1,7 @@
 'use client'
 import EventAdminHOC from '@/hoc/EventAdminHOC'
-import { getEventById, getEventIdsByOrganizerEmail } from '@/utils/event'
+import SuperAdmins from '@/utils/SuperAdmins'
+import { getAllEvents, getEventById, getEventIdsByOrganizerEmail } from '@/utils/event'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
@@ -17,6 +18,10 @@ const page = () => {
             if (event) e.push(event)
         }
         setEvents(e)
+
+        if(SuperAdmins.includes(user.email)) {
+            setEvents(getAllEvents())
+        }
     }, [])
     // console.log(eventIds);
 

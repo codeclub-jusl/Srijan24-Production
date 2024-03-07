@@ -1443,6 +1443,73 @@ const events = [
             ]
         },
     },
+
+    {
+        eventId: 'data-drive',
+        eventName: 'Data Drift',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Data Analytics',
+        eventHashtags: ['TrafficInsights', 'SmartMobilityAnalytics'],
+        eventCoordinators: [
+            'Sudipta Dutta [ 9641141392 ]',
+            'Gaurav Bose [ 8017469943 ]',
+            'Shrobona De [ 9163821724 ]',
+        ],
+        prize: ['Prize pool of Rs. 2000'],
+        minMembers: 1,
+        maxMembers: 2,
+        eventPoster: '/images/events/datadrift.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Data Drift is a four-hour event in which a single participant or a team of up to two people analyzes vehicular traffic data in real time. Subsequently the participants must work with the data to put together overviews, create a dashboard, and use an engineering mentality to critically remark on the given dataset.`,
+        eventDescription:[
+            "Traffic data analytics refers to the process of acquiring and analyzing information on traffic flow, such as car, pedestrian, and bicycle movements. Decisions about urban planning and transportation management can be based on data insights into traffic patterns, congestion, and potential safety risks. Traffic data analytics can help transportation planners and engineers optimise traffic flow, reduce congestion, and improve road safety by leveraging cutting-edge analytical tools and methodologies. The goal of the event is to use the many data analytics tools in our engineering area to leverage our skills gained over the last four years in using these tools to derive engineering conclusions."
+        ],
+        eventRules: {
+            '':[
+                "The data analysis should be measured with respect to the original dataset and can be done in any software of choice, but must be finally presented in an EXCEL file.",
+                "The graphs/dashboarding/plots must be clearly distinguishable and aesthetically appealing.",
+                "The approach in calculating the parameters must be logical, and if there are any assumptions in doing so, that must be clearly mentioned beforehand.",
+                "The inferences drawn from the data analysis must be thought of in terms of improving the traffic flow parameters.",
+                "The conclusions drawn must be insightful and justifiable in terms of the problem statement and not abstract."
+            ]
+        },
+    },
+    {
+        eventId: 'quiztopia',
+        eventName: 'Quiztopia',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Quiz Competition',
+        eventHashtags: ['biztechquiz','techquiz', 'quiz'],
+        eventCoordinators: [
+            'Shrayan Mukhopadhyay [ 9748227211 ]',
+            'Sreejan Bose [ 9748877972 ]',
+        ],
+        prize: ['Exciting prizes for winners'],
+        minMembers: 1,
+        maxMembers: 3,
+        eventPoster: '/images/events/quizotopia.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `An intriguing event--where your knowledge of everything under the sun is going to be tested to the fullest extent. Business,technology and science shall remain the focal points.`,
+        eventDescription:[
+            "As the flagship quiz event of JU's techno-management fest, Quiztopia has always prided itself on the sheer quality of brainteasers put forth and the reservoir of knowledge that it rests its existence on.This year's event shall have 3 rounds--all adhering to the essence of business,technology and science.Top performing teams in the prelims shall take their place in the finals--and it promises to be a rewarding experience for all involved."
+        ],
+        eventRules: {
+            '':[
+                "The decision of the quizmasters is binding and final.",
+                "In the prelims, all ties will be settled by starred questions.",
+                "Maximum strength of 3 members per team shall be entertained.",
+                "Intra and inter college teams are welcome.",
+                "Strictly for college/university students.",
+                "On-spot registrations shall be allowed -- up to a maximum of 1 hour before the start of the quiz."
+            ]
+        },
+    },
 ]
 
 module.exports = events

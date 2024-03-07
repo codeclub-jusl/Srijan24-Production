@@ -181,7 +181,7 @@ const EventOrganizers = [
 
     {
         eventId: 'gaming-experience-zone',
-        organizers: [],
+        organizers: ['debduthira48@gmail.com', 'arhanakundu03@gmail.com'],
     },
 
     {
@@ -237,6 +237,52 @@ const EventOrganizers = [
     {
         eventId: 'ptb',
         organizers: ['vikash36905@gmail.com', 'theanupam1nonly@gmail.com'],
+    },
+
+    {
+        eventId: 'logocity',
+        organizers: [
+            'nahir.8768078796@gmail.com',
+            'monoshwi.03@gmail.com',
+            'arkasikdar@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'ace-the-case',
+        organizers: [
+            'piyushguptaju@gmail.com',
+            'raktimbanerjee81003@gmail.com',
+            'souptikdg1811@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'rap-beatbox',
+        organizers: ['sauptik999@gmail.com', 'pramaniksayandeep@gmail.com'],
+    },
+
+    {
+        eventId: 'treasure-hunt',
+        organizers: [
+            'idipan2003@gmail.com',
+            'anushkaaatewari@gmail.com',
+            'soumyadipghosh363@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'data-drive',
+        organizers: [
+            'sudiptadutta9153@gmail.com',
+            'simonwwe96@gmail.com',
+            'sdeshrobona@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'quiztopia',
+        organizers: ['mukhopadhyayshrayan@gmail.com', 'sreejanbose@gmail.com'],
     },
 ]
 
