@@ -13,14 +13,14 @@ const EventOrganizers = [
         ],
     },
 
-    {
-        eventId: 'roborace',
-        organizers: [
-            'hrishitavas@gmail.com',
-            'iamhritam2002@gmail.com',
-            'rumelalam7@gmail.com',
-        ],
-    },
+    // {
+    //     eventId: 'roborace',
+    //     organizers: [
+    //         'hrishitavas@gmail.com',
+    //         'iamhritam2002@gmail.com',
+    //         'rumelalam7@gmail.com',
+    //     ],
+    // },
 
     {
         eventId: 'ieee-cypher',
