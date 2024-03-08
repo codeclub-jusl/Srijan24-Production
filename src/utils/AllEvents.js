@@ -351,6 +351,8 @@ const events = [
         eventDate: {
             prelims: ['TBD'],
             finals: 'TBD',
+            // prelims: ['20th March (8:00 pm - 9:00 pm)'],
+            // finals: '24th March (3:00 pm - 5:00 pm)',
         },
         eventType: 'coding',
         eventHashtags: ['coding', 'brainstorming'],
@@ -1220,6 +1222,8 @@ const events = [
         eventDate: {
             prelims: ['TBD'],
             finals: 'TBD',
+            // prelims: ['19th March (7:30 pm - 9:30 pm)'],
+            // finals: '23th March (11:30 am - 2:00 pm)',
         },
         eventType: 'coding',
         eventHashtags: ['#Coding', '#TeamEvent', '#Competitive_Programming'],
@@ -1549,6 +1553,201 @@ const events = [
             ]
         },
         documentLink: "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing"
+    },
+
+    {
+        eventId: 'snap-syntax',
+        eventName: 'SnapSyntax',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'coding',
+        eventHashtags: ['Coding', 'BrainStorming'],
+        eventCoordinators: [
+            'Anurag Jha [ 7044904397 ]',
+            'Aditya Mayukh Som [ 9874745176 ]', 
+            'Debabrata Mondal [ 7439901282 ]',
+        ],
+        prize: ["Exciting Prizes for Winners"],
+        minMembers: 3,
+        maxMembers: 3,
+        eventPoster: '/images/events/snapsyntax.jpeg',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: 'Snap, Code, Conquer: Memory meets mastery in web design.',
+        eventDescription: [`Challenge memory and design skills! Recreate a web page from 
+        memory within a time limit, relying on recall. Strategic glimpses 
+        refine designs, showcasing memory prowess in this unique event. 
+        Welcome to the "Snap Syntax" where participants showcase their 
+        HTML and CSS skills by recreating a web page from memory. This 
+        event tests their ability to recall layout, elements, and design 
+        nuances without direct visual reference. As the challenge 
+        progresses, participants face intensified difficulty with 
+        intermittent glimpses of the initial web page, requiring strategic 
+        thinking and memory retention skills`],
+        eventRules: {
+            "": [
+                "Participants will begin by observing an initial web page, which they must recreate from memory using HTML and CSS.",
+                "The challenge unfolds without direct visual reference, requiring participants to rely solely on memory for layout, elements, and design nuances.",
+                "During the design process, participants will be shown the initial web page 2-3 times, intensifying the challenge and demanding strategic thinking.",
+                "The time limit for recreating the web page will be strictly enforced to add an element of urgency and test participants' ability to work efficiently."
+            ],
+        },
+    },
+
+    {
+        eventId: 'highway-to-hell',
+        eventName: 'HIGHWAY TO HELL',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'circuits & robotics',
+        eventHashtags: ['RoboCarChallenge','TrackMasters'],
+        eventCoordinators: [
+            'Rajobrata Dasgupta [ 7439319042 ]',
+            'Souvik Saha [ 89103 98827 ]',
+        ],
+        prize: ['Prize Pool of Rs. 2000'],
+        minMembers: 1,
+        maxMembers: 4,
+        eventPoster: '/images/events/highway.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Gear up for the ultimate test of robotic prowess in the "RoboRally Challenge" at our upcoming college fest! In this thrilling event, participants will design and build car-type robotic vehicles to navigate a custom-made track filled with diverse terrains and obstacles.`,
+        eventDescription:[
+            "Welcome to the adrenaline-pumping world of our Robotics and Car Challenge, where innovation meets excitement! Gear up for an electrifying event that will push your engineering prowess to the limits.",
+            "In this riveting competition, participants will engineer their own car-type marvels to conquer a dynamic track. The journey begins on a smooth pavement, but get ready to tackle challenges as the track throws in sandy stretches, muddy terrains, and heart-pounding inclines. The race against time and obstacles will separate the amateurs from the true engineering champions.",
+            "But wait, it doesn't end there! Prepare for strategic deductions as points are on the line for collisions with track boundaries, rollovers during daring jumps, and navigating through inclined planes. Precision is the key, and every move counts.",
+            "To spice things up, bonus points await those who can masterfully guide their cars to send balls soaring into the air, perfectly landing them inside glass bottles strategically placed along the track. It's not just a race; it's a test of skill, creativity, and strategy.",
+            "As the dust settles from the robust qualifying round, only the top 6-7 teams will advance to the ultimate showdown in the final round. Brace yourselves for heightened challenges and an intensified difficulty level in the track. The stakes are higher, the obstacles are tougher, and only the most resilient robots will emerge victorious.",
+            "Get ready to witness the fusion of technology and thrill as participants push the boundaries of robotics in a race against time and obstacles. The Robotics and Car Challenge is not just an event; it's an experience that will fuel your passion for innovation and leave you craving for more. May the best machine win!"
+        ],
+        eventRules: {
+            'General Rules':[
+                "Each team can consist of a maximum of 5 members.",
+                "The decision of the JUSC officials is final and abiding."
+            ],
+            'Event Rules':[
+                "If a participant crosses a specific obstacle in the arena, points will be given.",
+                "Each time the participant bot touches the boundary of the arena, points will be deducted. If the bot continues to touch the boundary for more than 5 seconds, it will be considered equivalent of two touches.",
+                "The robot can be wired or wireless.",
+                "Participants will have to arrange for any other power supplies required for bot.",
+                "No receiver and transmitter will be provided to the participant.",
+                "LEGO kits or spare mechanical parts are not allowed.",
+                "Participant can skip any obstacle, up to a certain limit, although for each time, points will be deducted.",
+                "Power supply at 220 volts for the bot will be provided. (Bring additional wires of sufficient length)"
+            ],
+            'Arena':[
+                "The arena of the competition is a race track with obstacles.",
+                "The obstacles may contain uneven surfaces, sand, grease, turns, various types of slopes up to 45 degrees.",
+                "The other obstacles shall be revealed on the day of the competition.",
+                "The arena of the competition is a race track with obstacles.",
+                "The obstacles may contain uneven surfaces, sand, grease, turns, various types of slopes up to 45 degrees.",
+                "The other obstacles shall be revealed on the day of the competition."
+            ],
+            'Robot Specifications':[
+                "Maximum dimensions (lxbxh) - 40cm x 40cm x 30cm",
+                "Maximum weight - 3 kg.",
+                "Minimum width of wheels – 3 cm.",
+                "Maximum RPM of motors - 500. (Planetary Motors are not allowed)",
+                "Wireless robots will gain an extra edge over the wired ones."
+            ],
+            'Task':["Complete the arena in the least amount of time."]
+        },
+        documentLink: "https://drive.google.com/drive/folders/1twsClu6yIQYCeo1ovYfLGOqBY4V1FaaB?usp=drive_link"
+    },
+    {
+        eventId: 'jal-astra',
+        eventName: 'JAL ASTRA',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'miscellaneous',
+        eventHashtags: ['aerodynamics','trajectory', 'water-rockets'],
+        eventCoordinators: [
+            'Himopravo Chowdhury [ 9475974209 ]',
+            'Srija Mondal [ 8851270470 ]',
+            'Aditya Mandal [ 9748270706 ]',
+        ],
+        prize: [
+            "Winning team will receive an exciting gift hamper and an exclusive E-certificate from Stratosphere, Aerospace Club.",
+            "Top 3 teams will receive a special shout-out on the club's social media channels for their outstanding performance.",
+            "All participants will be awarded participation E-certificates from the club for their efforts."
+        ],
+        minMembers: 2,
+        maxMembers: 3,
+        eventPoster: '/images/events/jalastra.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Design and construct a water rocket that can achieve maximum range and precise landing.`,
+        eventDescription:[
+            "Reach escape velocity with your Jal Astra",
+            "Design and construct a water rocket that can achieve maximum range and precise landing.",
+            "Consider enhancing aerodynamics and adjusting water-to-air ratio for optimal thrust.",
+            "Experiment with nozzle shapes, fins, and load distribution for improved stability during flight."
+        ],
+        eventRules: {
+            'General Rules':[
+                "Launcher will be provided to the teams.",
+                "Teams will be provided with water as fuel.",
+                "Team size is limited to a maximum of 3 members.",
+                "Teams can use a water bottle with a maximum capacity of 2L for the rocket design.",
+                "Ensure that the front part of the structure is blunt.",
+                "No metallic part should be used in making the structure.",
+                "Multi-stage rockets are allowed but in that case, the team can use a maximum of 2L water as fuel."
+            ],
+            'Round 1 - The Qualifiers':[
+                "Each team has two launch attempts. The average performance of the two attempts will be considered as the final range of the rocket.",
+                "Only the top 6 teams with the maximum average range will advance to the next stage of the competition."
+            ],
+            'Round 2 - The Finals':[
+                "Each team is allowed three launch attempts.",
+                "The maximum range among those attempts will be considered as the final range for the team.",
+                "Teams whose rocket lands within a 15° sector will get bonus points.",
+                "Teams whose rocket lands outside a 45° sector will get eliminated.",
+                "Winners will be decided based on a combination of bonus points and the travel range of their rockets."
+            ],
+            'Robot Specifications':[
+                "Maximum dimensions (lxbxh) - 40cm x 40cm x 30cm",
+                "Maximum weight - 3 kg.",
+                "Minimum width of wheels – 3 cm.",
+                "Maximum RPM of motors - 500. (Planetary Motors are not allowed)",
+                "Wireless robots will gain an extra edge over the wired ones."
+            ],
+            'Task':["Complete the arena in the least amount of time."]
+        },
+    },
+    {
+        eventId: 'game-of-drones',
+        eventName: 'Game Of Drones',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'circuits & bobotics',
+        eventHashtags: ['game-of-drones','drone-racing', 'water-rockets'],
+        eventCoordinators: [
+            'Abhinandan Roy [ 9903142457 ]',
+            'Rudrajit Deb [ 97480 10103 ]',
+            'Priyobroto Acharya [ 97492 27407 ]',
+        ],
+        prize: [
+            "Prize Pool of Rs. 70,000. Refer to the document."
+        ],
+        minMembers: 1,
+        maxMembers: 1,
+        eventPoster: '/images/events/gameofdrones.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Embark on an exhilarating journey into the future of technology at Game Of Drones Spectacle! Unleash the thrill of high-speed aerial acrobatics as cutting-edge drones defy gravity in a heart-pounding race to victory.`,
+        eventDescription:[
+            "Embark on an exhilarating journey into the future of technology at Game Of Drones Spectacle! Unleash the thrill of high-speed aerial acrobatics as cutting-edge drones defy gravity in a heart-pounding race to victory. Watch skilled pilots navigate daring obstacles, showcasing precision and agility in a mesmerizing display of skill and innovation. Join us for an electrifying experience that combines the excitement of speed with the awe-inspiring spectacle of futuristic technology. Don't miss the chance to witness the fusion of adrenaline and innovation at the forefront of the drone racing revolution, at Srijan'24 – where the sky is no longer the limit!"
+        ],
+        eventRules: {
+            '':[
+                "The event will be a drone racing event. Students need to bring their racing drones and other equipment as per rules mentioned in the document."
+            ]
+        },
+        documentLink: "https://drive.google.com/file/d/1Dw4JC2Hj-sMj1WhTbDqTcq87NBgi5Aex/view"
     },
 ]
 
