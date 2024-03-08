@@ -1510,6 +1510,46 @@ const events = [
             ]
         },
     },
+
+    {
+        eventId: 'flight-challenge-2024',
+        eventName: 'Flight Challenge 2024 in partnership with AIRBUS',
+        eventDate: {
+            prelims: ['Presentation submission would be live on and from 14th March'],
+            finals: 'Grand Finale to be taking place on 24th March',
+        },
+        eventType: 'Brainstorming',
+        eventHashtags: ['internship','industrychallenges'],
+        eventCoordinators: [
+            'Asmit Acharya [ 9433082213 ]',
+            'Swarnamoy Chatterjee [ 9733030635 ]'
+        ],
+        prize: ['Internship Offer at AIRBUS for the Winners and Prize Pool of Rs.30,000'],
+        minMembers: 3,
+        maxMembers: 4,
+        eventPoster: '/images/events/airbus.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: ` Flight Challenge 2024 is an Industry-inspired brainstorming event, where participants tackle real-world issues, devising innovative solutions for industrial challenges.`,
+        eventDescription:[
+            "Flight Challenge 2024 would be the exposure to real-time industrial circumstances for the participants.",
+            "An industry-based problem would be put up by AIRBUS.",
+            "Contestants would be a team of 3-4 who would deliberate to come to a fruitful solution to the given problem.",
+            "Respective teams have to present their solutions to AIRBUS on the given technical topic followed by a Q&A session.",
+            "The team presenting the best solution to the problem emerges victorious.",
+            "",
+            "The Problem Statement for the Flight Challenge is as follows-",
+            "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing"
+        ],
+        eventRules: {
+            '':[
+                "Aircraft Design is a multidisciplinary field, so define the scope of your interest accordingly. Local solutions are acceptable.",
+                "Make suitable assumptions regarding aircraft mission profile and loading. You are welcome to utilize open-source data, 3D models, and other tools to support your presentation.",
+                "Each group can have a maximum of 4 participants and gets a maximum of 10 minutes of presentation time followed by Q&As.",
+                "Priority would be given to students from Mechanical, Civil and Production Engineering Departments at Jadavpur University."
+            ]
+        },
+        documentLink: "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing"
+    },
 ]
 
 module.exports = events

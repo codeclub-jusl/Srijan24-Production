@@ -63,6 +63,16 @@ const page = ({ params }) => {
         else setShowTeams(registeredTeams)
     }
 
+    if(!eventData) 
+        return (
+            <div className='bg-gradient-to-br from-black via-sky-950 to-black text-white min-h-screen flex justify-center items-center font-body'>
+                <div className='noEventBox'>
+                    <h2>Event Not Found</h2>
+                    <p>Sorry, but we can't find the event you are looking for...</p>
+                </div>
+            </div>
+        )
+
     return (
         <div
             style={{

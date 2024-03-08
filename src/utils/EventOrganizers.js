@@ -284,6 +284,11 @@ const EventOrganizers = [
         eventId: 'quiztopia',
         organizers: ['mukhopadhyayshrayan@gmail.com', 'sreejanbose@gmail.com'],
     },
+
+    {
+        eventId: 'flight-challenge-2024',
+        organizers: ['asmitacharya24@gmail.com'],
+    },
 ]
 
 module.exports = EventOrganizers
