@@ -55,7 +55,7 @@ const page = () => {
                 }}
                 className='bg-[url(/images/about/about.png)] '
             >
-                <h1 className=' text-[1.5rem] tracking-wider md:text-[2rem] '>
+                <h1 className=' text-[1.5rem] tracking-wider md:text-[2rem] font-bold'>
                     User Database
                 </h1>
                 <form

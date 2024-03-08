@@ -1,3 +1,5 @@
+'use client'
+
 import SuperAdmins from '@/utils/SuperAdmins'
 import { getEventIdsByOrganizerEmail } from '@/utils/event'
 import { useRouter } from 'next/navigation'

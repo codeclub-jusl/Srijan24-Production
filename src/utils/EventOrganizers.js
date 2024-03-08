@@ -97,7 +97,7 @@ const EventOrganizers = [
 
     {
         eventId: 'robosoccer',
-        organizers: ['sukalyanbisui@gmail.com', 'adipto.exrtra47@gmail.com'],
+        organizers: ['sukalyanbisui@gmail.com', 'adipto.extra47@gmail.com'],
     },
 
     {
@@ -288,6 +288,38 @@ const EventOrganizers = [
     {
         eventId: 'flight-challenge-2024',
         organizers: ['asmitacharya24@gmail.com'],
+    },
+
+    {
+        eventId: 'snap-syntax',
+        organizers: [
+            'ajha8931@gmail.com',
+            'amsom.it.ug@jadavpuruniversity.in',
+            'debabratajr@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'highway-to-hell',
+        organizers: ['dasguptarajobrata@gmail.com', 'souviksaha871@gmail.com'],
+    },
+
+    {
+        eventId: 'jal-astra',
+        organizers: [
+            'himopravo@gmail.com',
+            'srija.mondal282@gmail.com',
+            'adimandal005@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'game-of-drones',
+        organizers: [
+            'roy635016@gmail.com',
+            'rudrajitdeb.ju.pow@gmail.com',
+            'priyobrotoacharya98@gmail.com',
+        ],
     },
 ]
 
