@@ -310,7 +310,8 @@ const page = ({ params }) => {
                                 </strong> */}
                             </p>
                             <p className='text-sm md:text-base eventDesc'>
-                                Click <Link href={eventData.documentLink} className='documentLink'>here</Link> to know more about this event
+                                <Link href={eventData.documentLink} className='documentLink'>Click here</Link> 
+                                {events_id === 'flight-challenge-2024' ? ' for Problem Statement' : ' to know more about this event'}
                             </p>
                         </div>}
 
