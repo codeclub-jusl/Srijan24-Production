@@ -1415,7 +1415,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Miscellaneous',
+        eventType: 'misc',
         eventHashtags: ['srijan_24', 'tech_enthusiasts_assemble'],
         eventCoordinators: [
             'Dipan Mandal [ 8250821406 ]',
@@ -1663,7 +1663,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'miscellaneous',
+        eventType: 'misc',
         eventHashtags: ['aerodynamics','trajectory', 'water-rockets'],
         eventCoordinators: [
             'Himopravo Chowdhury [ 9475974209 ]',

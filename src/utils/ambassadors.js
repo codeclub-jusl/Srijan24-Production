@@ -54,3 +54,7 @@ export function getAmbassadorByCode(code) {
     }
     return undefined;
 }
+
+export function getAllAmbassadors() {
+    return ambassadors
+}
