@@ -162,7 +162,7 @@ const events = [
             finals: 'TBD',
         },
         eventType: 'coding',
-        eventHashtags: ['Competitive Programming', 'Brainstorming'],
+        eventHashtags: ['Competitive Programming', 'brainstorming'],
         eventCoordinators: [
             'Dibyabrata Panja [ 8509184415 ]',
             'Ayush Sharma [ 9874180842 ]',
@@ -398,10 +398,10 @@ const events = [
         maxMembers: 3,
         eventPoster: '/images/events/math-e-magician.jpeg',
         registrationType: `Srijan'24 Website`,
-        eventShortDescription: `Prelims will consist of a Terrific Brainstorming Math Olympiad and the Fi- nals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams`,
+        eventShortDescription: `Prelims will consist of a Terrific brainstorming Math Olympiad and the Fi- nals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams`,
         eventDescription: [
             `There will be 2 events in the MATH-E-MAGICIAN.
-        Prelims will consist of a Terrific Brainstorming Math Olympiad and the Finals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams on the APPLICATIONS OF MATHEMATICS IN YOUR FAVOURITE ENGINEERING SCIENCE`,
+        Prelims will consist of a Terrific brainstorming Math Olympiad and the Finals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams on the APPLICATIONS OF MATHEMATICS IN YOUR FAVOURITE ENGINEERING SCIENCE`,
         ],
         eventRules: {
             '': [
@@ -553,7 +553,7 @@ const events = [
     //         finals: 'TBD',
     //     },
     //     eventType: 'Coding',
-    //     eventHashtags: ['Coding', 'BrainStorming'],
+    //     eventHashtags: ['Coding', 'brainstorming'],
     //     eventCoordinators: [
     //         'Anurag Jha [ 7044904397 ]',
     //         'Aditya Mayukh Som [ 9874745176 ]',
@@ -1518,7 +1518,7 @@ const events = [
             prelims: ['Presentation submission would be live on and from 14th March'],
             finals: 'Grand Finale to be taking place on 24th March',
         },
-        eventType: 'Brainstorming',
+        eventType: 'brainstorming',
         eventHashtags: ['internship','industrychallenges'],
         eventCoordinators: [
             'Asmit Acharya [ 9433082213 ]',
@@ -1537,8 +1537,8 @@ const events = [
             "Respective teams have to present their solutions to AIRBUS on the given technical topic followed by a Q&A session.",
             "The team presenting the best solution to the problem emerges victorious.",
             "",
-            "The Problem Statement for the Flight Challenge is as follows-",
-            "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing"
+            // "The Problem Statement for the Flight Challenge is as follows-",
+            // "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing"
         ],
         eventRules: {
             '':[

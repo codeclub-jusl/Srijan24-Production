@@ -99,7 +99,7 @@ const page = ({ params }) => {
                         <h2 className='text-4xl text-white font-extrabold mb-10 mt-10 merchandiseHeading text-center'>
                             Srijan'24 Presents{' '}
                             <span className='text-purple-600'>
-                                {workshopData.workshopId}
+                                {workshopData.workshopId.toUpperCase()}
                             </span>{' '}
                         </h2>
 
@@ -154,7 +154,12 @@ const page = ({ params }) => {
                             </div>
                             <div className='merchandiseNoteContainer'>
                                 <div className='merchandiseNote'>
-                                    {workshopData.workshopDescription}
+                                    {workshopData.workshopDescription &&
+                                        workshopData.workshopDescription.map(
+                                            (data, index) => (
+                                                <li key={index}>{data}</li>
+                                            ),
+                                        )}
                                 </div>
                             </div>
                             <div className={'offlinePaymentDetails'}>
