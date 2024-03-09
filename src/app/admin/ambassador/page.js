@@ -33,7 +33,10 @@ const page = () => {
                     })
                 }
             }
-
+            
+            data.sort((a, b) => {
+                return b.referrals - a.referrals
+            })
             setAmbassadorData(data)
         }
 

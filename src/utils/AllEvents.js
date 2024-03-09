@@ -1530,7 +1530,7 @@ const events = [
             'Swarnamoy Chatterjee [ 9733030635 ]'
         ],
         prize: ['Internship Offer at AIRBUS for the Winners and Prize Pool of Rs.30,000'],
-        minMembers: 3,
+        minMembers: 4,
         maxMembers: 4,
         eventPoster: '/images/events/airbus.png',
         registrationType: `Srijan'24 Website`,
@@ -1708,13 +1708,13 @@ const events = [
                 "Teams whose rocket lands outside a 45° sector will get eliminated.",
                 "Winners will be decided based on a combination of bonus points and the travel range of their rockets."
             ],
-            'Robot Specifications':[
-                "Maximum dimensions (lxbxh) - 40cm x 40cm x 30cm",
-                "Maximum weight - 3 kg.",
-                "Minimum width of wheels – 3 cm.",
-                "Maximum RPM of motors - 500. (Planetary Motors are not allowed)",
-                "Wireless robots will gain an extra edge over the wired ones."
-            ],
+            // 'Robot Specifications':[
+            //     "Maximum dimensions (lxbxh) - 40cm x 40cm x 30cm",
+            //     "Maximum weight - 3 kg.",
+            //     "Minimum width of wheels – 3 cm.",
+            //     "Maximum RPM of motors - 500. (Planetary Motors are not allowed)",
+            //     "Wireless robots will gain an extra edge over the wired ones."
+            // ],
             'Task':["Complete the arena in the least amount of time."]
         },
     },
@@ -1725,7 +1725,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'circuits & bobotics',
+        eventType: 'circuits & robotics',
         eventHashtags: ['game-of-drones','drone-racing', 'water-rockets'],
         eventCoordinators: [
             'Abhinandan Roy [ 9903142457 ]',
