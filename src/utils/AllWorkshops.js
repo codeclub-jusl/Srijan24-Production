@@ -52,6 +52,7 @@ const Workshop = [
         Incident Response and Recovery 
         And Much more.`,
             `All these topics along with hands on project based learning will be implemented and many other such topics will be covered in the Workshop.`,
+            `The registration fee encompasses food packets, participation certificates, and registration kits, with the added incentive of exciting prizes.`,
         ],
         date: ['March 15 & 16, 2024', '11:00AM - 5:00 PM'],
         fees: 669,

@@ -33,7 +33,7 @@ const EventOrganizers = [
 
     {
         eventId: 'capital-clash',
-        organizers: ['adicrown54@gmail.com'],
+        organizers: ['adicrown54@gmail.com', 'abirsen020402@gmail.com'],
     },
 
     {
@@ -204,7 +204,7 @@ const EventOrganizers = [
 
     {
         eventId: 'beat-the-market',
-        organizers: [''],
+        organizers: ['abirsen020402@gmail.com'],
     },
 
     {
