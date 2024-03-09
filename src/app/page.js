@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Cards from "@/components/Cards/Cards";
 import Gallery from '@/components/Gallery';
@@ -18,6 +17,10 @@ export default () => {
       <Cards />
       <Gallery />
       <Timeline2/>
+      <div style={{display : 'flex' , flexDirection : 'column' , alignItems : 'center' , justifyContent : 'center' , gap : '20px' , margin : '50px'}}>
+        <img src={'/images/Sponsors.png'} width={300} height={300} alt=''  style={{width : '75%'}}/>
+        <img src={'/images/PastSponsors.png'} width={300} height={300} alt=''  style={{width : '75%'}}/>
+      </div>
       <MobileTimeline/>
       <About />
       <Footer />
