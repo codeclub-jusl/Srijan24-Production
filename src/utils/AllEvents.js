@@ -1161,6 +1161,7 @@ const events = [
         eventDescription: [
             `Rook 'N' Roll would be a competitive chess event. The Prelims would be hosted in online mode a week prior to Srijan, as a Swiss Tourament. Top 8 performers would move to the Knockout stage with the quarter finals, semi-finals and final taking place in offline mode throughtout the course of the fest on its very days.`,
         ],
+        groupLink: 'https://chat.whatsapp.com/BBGglTYHvDB8ZXd33aRS3d',
         eventRules: {
             '': [
                 'Properly move all of the chess pieces.',

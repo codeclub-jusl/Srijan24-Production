@@ -19,7 +19,7 @@ const page = () => {
         }
         setEvents(e)
 
-        if(SuperAdmins.includes(user.email)) {
+        if(SuperAdmins.includes(user && user.email)) {
             setEvents(getAllEvents())
         }
     }, [])
@@ -43,7 +43,7 @@ const page = () => {
                 }}
                 className='bg-[url(/images/about/about.png)] '
             >
-                <h1 className=' text-[1.5rem] tracking-wider md:text-[2rem] '>
+                <h1 className=' text-[1.5rem] md:text-[2rem] font-bold'>
                     Your Events
                 </h1>
 
