@@ -639,9 +639,9 @@ const events = [
         eventType: 'misc',
         eventHashtags: ['photography', 'themeophotography'],
         eventCoordinators: [
-            'Debashis Mandal [ mandaldebashis48@gmail.com ]',
-            'Abhinaba Biswas [ abhinababiswas1232@gmail.com ]',
-            'Supratim Sarkar [ supratimsarkar2002@gmail.com ]',
+            'Debashis Mandal [ 83720 81033 ]',
+            'Abhinaba Biswas [ 97497 97641 ]',
+            'Supratim Sarkar [ 97492 58924 ]',
         ],
         prize: ['Prizes Pool of Rs 3000'],
         minMembers: 1,
@@ -823,7 +823,7 @@ const events = [
         eventHashtags: ['NSGArena', 'bgmi'],
         eventCoordinators: [
             'Kingshuk Kirtania [ 70037 36262 ]',
-            'Shyambhu Chaudhuri [ 79086 13718 ]',
+            'Shyambhu Chaudhuri [ 79086 13718 (Whatsapp only) ]',
         ],
         prize: [
             '1st place, each participant will receive: Cash Prize of Rs. 2000/- and Winner Trophy and certificates.',
@@ -888,7 +888,7 @@ const events = [
             'Gourav Kumar Rai [ 8335965255 ]',
             'Jotiraditya Banerjee [ 6289867756 ]',
         ],
-        prize: ['Prize Pool of Rs. 3600'],
+        prize: ['Prize Pool of Rs. 4000'],
         minMembers: 1,
         maxMembers: 3,
         eventPoster: '/images/events/StratEdgeX.png',
@@ -1029,7 +1029,7 @@ const events = [
             'Koustav Das [ 8348217647 ]',
             'Rounak Saha [ 7044450144 ]',
         ],
-        prize: ['Prize Pool of Rs. 4500'],
+        prize: ['Prize Pool of Rs. 4000'],
         minMembers: 1,
         maxMembers: 3,
         eventPoster: '/images/events/Biznez.png',
@@ -1142,8 +1142,8 @@ const events = [
         eventId: 'rook-n-roll',
         eventName: `ROOK 'N' ROLL`,
         eventDate: {
-            prelims: ['TBD'],
-            finals: 'TBD',
+            prelims: ['16th March, 2024'],
+            finals: '23rd March, 2024',
         },
         eventType: 'brainstorming',
         eventHashtags: ['chess', 'PositionalTactics'],
@@ -1172,6 +1172,7 @@ const events = [
                 'The penalty for an illegal move is the loss of one minute from the player’s clock.',
                 'The number of illegal moves a player may make in a game: 3',
             ],
+            'Last date of registration': ['14th March, 2024']
         },
     },
     {
@@ -1538,7 +1539,7 @@ const events = [
         eventDescription:[
             "Flight Challenge 2024 would be the exposure to real-time industrial circumstances for the participants.",
             "An industry-based problem would be put up by AIRBUS.",
-            "Contestants would be a team of 3-4 who would deliberate to come to a fruitful solution to the given problem.",
+            "Contestants would be a team of 4 who would deliberate to come to a fruitful solution to the given problem.",
             "Respective teams have to present their solutions to AIRBUS on the given technical topic followed by a Q&A session.",
             "The team presenting the best solution to the problem emerges victorious.",
             "",
@@ -1722,8 +1723,8 @@ const events = [
         eventId: 'game-of-drones',
         eventName: 'Game Of Drones',
         eventDate: {
-            prelims: ['TBD'],
-            finals: 'TBD',
+            trial: ['23rd March, 2024'],
+            heatAndFinals: '24th March, 2024',
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['game-of-drones','drone-racing', 'water-rockets'],
@@ -1733,7 +1734,12 @@ const events = [
             'Priyobroto Acharya [ 97492 27407 ]',
         ],
         prize: [
-            "Prize Pool of Rs. 70,000. Refer to the document."
+            '1st: 25,000',
+            '2nd: 20,000',
+            '3rd: 15,000',
+            '4th: 6,000',
+            '5th: 4,000',
+            'Medals and certificates for all top 10 performers',
         ],
         minMembers: 1,
         maxMembers: 1,
@@ -1748,7 +1754,78 @@ const events = [
                 "The event will be a drone racing event. Students need to bring their racing drones and other equipment as per rules mentioned in the document."
             ]
         },
-        documentLink: "https://drive.google.com/file/d/1Dw4JC2Hj-sMj1WhTbDqTcq87NBgi5Aex/view"
+        documentLink: "https://drive.google.com/file/d/1PumVzRyk1KhBV4uew-4dmaCQOq39yBpo/view?usp=drivesdk"
+    },
+
+    {
+        eventId: 'defy-the-debate',
+        eventName: 'Defy the Debate',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Oxford Debate',
+        eventHashtags: ['defytodefine', 'speaknow'],
+        eventCoordinators: [
+            'Somnath Chakraborty [ 9832936036 ]',
+            'Soham Das [ 8240885374 ]',
+        ],
+        prize: [
+            "Exciting Prizes for winners"
+        ],
+        minMembers: 2,
+        maxMembers: 2,
+        eventPoster: '/images/events/debate.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: 'Just-defy is a trilingual debate showdown with participants taking on their counterparts defending the fortress of their own opinions and decrepations to furnish a pioneering solution.',
+        eventDescription:[
+            "Defy the Debate will be a Lincoln-Douglas type Oxford Debate held in collaboration with Jadavpur University Debating Society at Srijan'24.",
+            "The Oxford-style debate format involves a debate on a predetermined statement – also called a “motion” – from two opposing perspectives.",
+            "The two sides either argue “for” or “against” the motion within a formalized structure.",
+            "The Open to Debate debate series favors the Oxford-style format because both sides have an equal opportunity to share their arguments and opinions.",
+            "This promotes intellectual diversity and curates thought-provoking discussions that inform, and sometimes sway, the audience.",
+            "So, are you ready to Reason, Retort and Resolve!!!"
+        ],
+        eventRules: {
+            '':[
+                "Each team would consist of two participants would be given a topic 24 hours ago for the Prelims and 12 hours before the Final round with team fixtures.",
+                "Eight teams would qualify for the Final round and the debate will be held in Lincoln-Douglas format (participants would be allotted alternate speaking time in favor or in opposition to the topic).",
+                "Each speaker would get 2+1 minute to speak (1 minute for rebuttals)."
+            ]
+        },
+    },
+
+    {
+        eventId: 'eggsplosion-24',
+        eventName: 'Eggsplosion',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'Brainstorming',
+        eventHashtags: ['engineering', 'eggsplosion'],
+        eventCoordinators: [
+            'Rumel Alam [ 8240998026 ]',
+            'Hritam Sarkar [ 8777262351 ]',
+        ],
+        prize: [
+            "Prize Pool of Rs. 2000"
+        ],
+        minMembers: 3,
+        maxMembers: 4,
+        eventPoster: '/images/events/eggplosion.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Construction of a parachute like contrapment to provide a soft landing ultimately preventing the egg from cracking. `,
+        eventDescription:[
+            "Construction of a parachute like contrapment to provide a soft landing ultimately preventing the egg from cracking. Points will be based on durability, innovation and ease of construction."
+        ],
+        eventRules: {
+            '':[
+                "Final materials to be provided by us.",
+                "The decision will be made on the basis of weight.",
+                "Decision of the jury is final."
+            ]
+        },
     },
 ]
 

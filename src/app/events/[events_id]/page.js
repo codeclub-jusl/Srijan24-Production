@@ -231,6 +231,22 @@ const page = ({ params }) => {
                                     {eventData.eventDate.finals}
                                 </p>
                             </div>}
+
+                            {eventData && eventData.eventDate && eventData.eventDate.trial && <div className='flex items-center mb-4'>
+                                <BsCalendar className='mr-2' />
+                                <p>
+                                    <strong>Event Date (Trial):</strong>{' '}
+                                    {eventData.eventDate.trial.join(', ')}
+                                </p>
+                            </div>}
+                            {eventData && eventData.eventDate && eventData.eventDate.heatAndFinals && <div className='flex items-center mb-4'>
+                                <BsCalendar className='mr-2' />
+                                <p>
+                                    <strong>Event Date (Heat and Finals):</strong>{' '}
+                                    {eventData.eventDate.heatAndFinals}
+                                </p>
+                            </div>}
+
                             <div className='flex items-center mb-4'>
                                 <BsPeople className='mr-2' />
                                 <p>

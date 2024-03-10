@@ -321,6 +321,19 @@ const EventOrganizers = [
             'priyobrotoacharya98@gmail.com',
         ],
     },
+
+    {
+        eventId: 'defy-the-debate',
+        organizers: [
+            'somnath2003chakraborty@gmail.com',
+            'soham21003@gmail.com',
+        ],
+    },
+
+    {
+        eventId: 'eggsplosion-24',
+        organizers: [],
+    },
 ]
 
 module.exports = EventOrganizers
