@@ -1742,7 +1742,7 @@ const events = [
             'Medals and certificates for all top 10 performers',
         ],
         minMembers: 1,
-        maxMembers: 1,
+        maxMembers: 5,
         eventPoster: '/images/events/gameofdrones.png',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Embark on an exhilarating journey into the future of technology at Game Of Drones Spectacle! Unleash the thrill of high-speed aerial acrobatics as cutting-edge drones defy gravity in a heart-pounding race to victory.`,
@@ -1752,7 +1752,8 @@ const events = [
         eventRules: {
             '':[
                 "The event will be a drone racing event. Students need to bring their racing drones and other equipment as per rules mentioned in the document."
-            ]
+            ],
+            'Venue': ['Football ground']
         },
         documentLink: "https://drive.google.com/file/d/1PumVzRyk1KhBV4uew-4dmaCQOq39yBpo/view?usp=drivesdk"
     },
