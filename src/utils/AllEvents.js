@@ -1274,7 +1274,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Designing',
+        eventType: 'misc',
         eventHashtags: ['LogoQuest', 'DesignBattle'],
         eventCoordinators: [
             'Nahir Md Nishad [ 8670509483 ]',
@@ -1306,7 +1306,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Business & Management',
+        eventType: 'business & management',
         eventHashtags: ['Case_Study', 'Problem_Solving'],
         eventCoordinators: [
             'Piyush Gupta [ 7439484942 ]',
@@ -1355,7 +1355,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Art and Culture',
+        eventType: 'misc',
         eventHashtags: ['rapbattle', 'beatbox'],
         eventCoordinators: [
             'Sauptik maiti [ 6290366197 ]',
@@ -1457,7 +1457,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Data Analytics',
+        eventType: 'misc',
         eventHashtags: ['TrafficInsights', 'SmartMobilityAnalytics'],
         eventCoordinators: [
             'Sudipta Dutta [ 9641141392 ]',
@@ -1490,7 +1490,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Quiz Competition',
+        eventType: 'misc',
         eventHashtags: ['biztechquiz','techquiz', 'quiz'],
         eventCoordinators: [
             'Shrayan Mukhopadhyay [ 9748227211 ]',
@@ -1765,7 +1765,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Oxford Debate',
+        eventType: 'misc',
         eventHashtags: ['defytodefine', 'speaknow'],
         eventCoordinators: [
             'Somnath Chakraborty [ 9832936036 ]',
@@ -1803,7 +1803,7 @@ const events = [
             prelims: ['TBD'],
             finals: 'TBD',
         },
-        eventType: 'Brainstorming',
+        eventType: 'brainstorming',
         eventHashtags: ['engineering', 'eggsplosion'],
         eventCoordinators: [
             'Rumel Alam [ 8240998026 ]',
@@ -1825,6 +1825,41 @@ const events = [
                 "Final materials to be provided by us.",
                 "The decision will be made on the basis of weight.",
                 "Decision of the jury is final."
+            ]
+        },
+    },
+
+    {
+        eventId: '2-minutes-to-frame',
+        eventName: '2 Minutes to Frame',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'misc',
+        // eventHashtags: ['engineering', 'eggsplosion'],
+        eventCoordinators: [
+            'Rounak Mukherjee [ 7439454364 ]',
+            'Saptarshi Koley [ 8617322403 ]',
+        ],
+        prize: [
+            "Exciting Prizes for the winners."
+        ],
+        minMembers: 1,
+        maxMembers: 4,
+        eventPoster: '/images/events/2minutes_to_frame.png',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Welcome to the vibrant stage of our talent extravaganza! Here, performers have a strict 2-minute window to showcase their skills, be it solo or in groups. Creativity knows no bounds, but remember, all acts must steer clear of offensive content. Planning something technically intricate? Just give us a heads-up! And remember, judges' rulings are the last word. Let the show begin!`,
+        eventDescription:[
+            "Welcome to the vibrant stage of our talent extravaganza! Here, performers have a strict 2-minute window to showcase their skills, be it solo or in groups. Creativity knows no bounds, but remember, all acts must steer clear of offensive content. Planning something technically intricate? Just give us a heads-up! And remember, judges' rulings are the last word. Let the show begin!"
+        ],
+        eventRules: {
+            '':[
+                "Each participant has a strict time limit of 2 minutes for their performance, exceeding which will draw penalties. ",
+                "Performances can be single or in group.",
+                "All performances should be free from offensive or inappropriate content.",
+                "Participants must inform organizers in advance if their performance requires specific technical requirements, which will be provided if available.",
+                "Judges' decisions are final."
             ]
         },
     },
