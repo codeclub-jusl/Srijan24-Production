@@ -33,7 +33,12 @@ const EventOrganizers = [
 
     {
         eventId: 'capital-clash',
-        organizers: ['akankchasingh20012004@gmail.com', 'abirsen020402@gmail.com', 'adipto.extra47@gmail.com'],
+        organizers: [
+            'adicrown54@gmail.com',
+            'abirsen020402@gmail.com',
+            'akankchasingh20012004@gmail.com',
+            'adipto.extra47@gmail.com',
+        ],
     },
 
     {
@@ -204,7 +209,11 @@ const EventOrganizers = [
 
     {
         eventId: 'beat-the-market',
-        organizers: ['akankchasingh20012004@gmail.com', 'abirsen020402@gmail.com', 'adipto.extra47@gmail.com'],
+        organizers: [
+            'abirsen020402@gmail.com',
+            'akankchasingh20012004@gmail.com',
+            'adipto.extra47@gmail.com',
+        ],
     },
 
     {
