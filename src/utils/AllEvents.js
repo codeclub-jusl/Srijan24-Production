@@ -554,7 +554,7 @@ const events = [
     //         prelims: ['TBD'],
     //         finals: 'TBD',
     //     },
-    //     eventType: 'Coding',
+    //     eventType: 'coding',
     //     eventHashtags: ['Coding', 'brainstorming'],
     //     eventCoordinators: [
     //         'Anurag Jha [ 7044904397 ]',
@@ -605,7 +605,7 @@ const events = [
         maxMembers: 4,
         eventPoster: '/images/events/Birdge the Gap.png',
         registrationType: `Srijan'24 Website`,
-        eventShortDescription: `"Bridge the Gap" is a bridge modelling event where participants build a bridge model from scratch using materials such as popsicle sticks, planks, nails, glue, etc. utilising structural analysis and the fundamental load-transferring process.   Participants show team spirit as they race against time to build their structure. The bridges are scored based on a number of criteria, including their ability to support a load, economic sustainability and their aesthetic appeal.`,
+        eventShortDescription: `"Bridge the Gap" is a bridge modelling event where participants build a bridge model from scratch using materials such as popsicle sticks, planks, nails, glue, etc. utilising structural analysis and the fundamental load-transferring process. Participants show team spirit as they race against time to build their structure.`,
         eventDescription: [
             `The open web girder type bridge, centrally loaded and designed to support the highway surface, incorporates truss members as its basic structural components.
 
@@ -1195,7 +1195,7 @@ const events = [
         maxMembers: 1,
         eventPoster: '/images/events/ColdCase.png',
         registrationType: `Srijan'24 Website`,
-        eventShortDescription: `In the thrilling two-round mystery-solving competition Cold Case, players assume the role of investigators. When they are handed a case, they have to look over it, understand the hints, and solve it quickly and accurately, playing the detective.  Like a sleuth, participants' wits are put to the test as they go through a series of intriguing and challenging problems at each level. Like in a game, one phase will lead to the next, and eventually the player will reach a conclusion. Remember that cleverness and efficiency are the keys to winning this game.`,
+        eventShortDescription: `In the thrilling two-round mystery-solving competition Cold Case, players assume the role of investigators. When they are handed a case, they have to look over it, understand the hints, and solve it quickly and accurately, playing the detective.  Like a sleuth, participants' wits are put to the test as they go through a series of intriguing and challenging problems at each level.`,
         eventDescription: [
             'Cold Case is a two-round exciting mystery-solving event in which participants take on the role of an investigator.',
             'When given a case, they must examine it, comprehend the clues, and crack it with precision and speed.',
@@ -1286,7 +1286,7 @@ const events = [
         maxMembers: 1,
         eventPoster: '/images/events/logocity.png',
         registrationType: `Srijan'24 Website`,
-        eventShortDescription: `Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!  Srijan 2024 brings to you Logocity - where participants fire up their artistic geniuses and channel their aesthetic senses to craft the most impressive brand identities. Do you think you can capture your viewers with mere strokes of your pen? Then what are you waiting for? "Just do it!"`,
+        eventShortDescription: `Are your lecture notes interjected with doodles? Do you have flair of translating your ideas into images? Do you think you can identify the most elusive logos whenever you see them? Wait no more!  Srijan 2024 brings to you Logocity - where participants fire up their artistic geniuses and channel their aesthetic senses to craft the most impressive brand identities.`,
         eventDescription: [
             'Basically, this event has two stages, the first one will be a design submission round where the participants will be given a set of questions and criteria of design according to which they will be designing logos and after submission the panel of judges will be grading them accordingly. According to their score, the participants will progress to the next and final round which will be a quiz round where we will be asking them question and according to their answers the winners will be decided. The first round will be an online round whereas the final round will be in offline mode. The designing of the participants will be judged by their relevance, versatility, adherance and the aesthetic. ',
         ],
