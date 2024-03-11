@@ -2119,3 +2119,22 @@ screen and (max-height: 380px) {
 .ruleList{
     color: yellow;
 }
+.eventBoxImage{
+    transition: .3s all ease-in-out;
+}
+.eventBoxAri:hover .eventBoxImage{
+    filter: brightness(.5);
+}
+.eventAdminBox{
+    width: 350px;
+}
+@media (max-width: 450px){
+    .eventAdminBox{
+        width: 310px;
+    }
+}
+@media (max-width: 395px){
+    .eventAdminBox{
+        width: 290px;
+    }
+}

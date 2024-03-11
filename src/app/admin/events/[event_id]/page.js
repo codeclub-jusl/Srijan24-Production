@@ -135,14 +135,14 @@ const page = ({ params }) => {
                     </span>
                 </div>
 
-                <div className='flex flex-wrap gap-2 p-10'>
+                <div className='flex justify-center flex-wrap gap-2 p-10'>
                     {!showTeams && <h1 className='text-xl'>Loading...</h1>}
 
                     {showTeams &&
                         showTeams.map((team, index) => (
                             <div
                                 key={index}
-                                className='p-5 flex flex-col gap-3 rounded-lg bg-slate-900 bg-opacity-70 items-center justify-center'
+                                className='p-5 flex flex-col gap-3 rounded-lg bg-slate-900 bg-opacity-70 items-center justify-center eventAdminBox'
                             >
                                 <h1 className='text-xl font-extrabold text-lime-300'>
                                     {team.teamName}
