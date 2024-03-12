@@ -341,7 +341,7 @@ const EventOrganizers = [
 
     {
         eventId: 'eggsplosion-24',
-        organizers: [],
+        organizers: ['rumelalam7@gmail.com', 'iamhritam2002@gmail.com'],
     },
 
     {
