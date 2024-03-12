@@ -1454,8 +1454,8 @@ const events = [
         eventId: 'data-drive',
         eventName: 'Data Drift',
         eventDate: {
-            prelims: ['TBD'],
-            finals: 'TBD',
+            // prelims: ['TBD'],
+            finals: '23rd March, 2024',
         },
         eventType: 'misc',
         eventHashtags: ['TrafficInsights', 'SmartMobilityAnalytics'],
@@ -1464,10 +1464,10 @@ const events = [
             'Gaurav Bose [ 8017469943 ]',
             'Shrobona De [ 9163821724 ]',
         ],
-        prize: ['Prize pool of Rs. 2000'],
+        prize: ['Prize pool of Rs. 3,000'],
         minMembers: 1,
         maxMembers: 2,
-        eventPoster: '/images/events/datadrift.png',
+        eventPoster: '/images/events/datadrift.jpeg',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Data Drift is a four-hour event in which a single participant or a team of up to two people analyzes vehicular traffic data in real time. Subsequently the participants must work with the data to put together overviews, create a dashboard, and use an engineering mentality to critically remark on the given dataset.`,
         eventDescription:[
@@ -1860,6 +1860,52 @@ const events = [
                 "All performances should be free from offensive or inappropriate content.",
                 "Participants must inform organizers in advance if their performance requires specific technical requirements, which will be provided if available.",
                 "Judges' decisions are final."
+            ]
+        },
+    },
+
+    {
+        eventId: 'sky-lens',
+        eventName: 'Sky Lens',
+        eventDate: {
+            prelims: ['TBD'],
+            finals: 'TBD',
+        },
+        eventType: 'misc',
+        eventCoordinators: [
+            'Rupam [ 9830642871 ]',
+            'Souvik Saha [ 8910398827 ]',
+            'Debasish Pal [ 9749493061 ]',
+        ],
+        prize: [
+            "1st: 4,000",
+            "2nd: 3,000",
+            "3rd: 2,000",
+        ],
+        minMembers: 1,
+        maxMembers: 3,
+        eventPoster: '/images/events/skylens.jpeg',
+        registrationType: `Srijan'24 Website`,
+        eventShortDescription: `Dive into the boundless skies with 'Skylens' – an enchanting rendezvous of drone photography at Srijan'24, Jadavpur University's pulsating techno-management fest. Embark on a voyage of ingenuity and vision as we redefine the art of aerial imagery. Elevate your perspective and capture the ethereal beauty above!`,
+        eventDescription:[
+            "Dive into the boundless skies with 'Skylens' – an enchanting rendezvous of drone photography at Srijan'24, Jadavpur University's pulsating techno-management fest. Embark on a voyage of ingenuity and vision as we redefine the art of aerial imagery. Elevate your perspective and capture the ethereal beauty above!"
+        ],
+        eventRules: {
+            'Criteria':[
+                "Photographs can be clicked using any drone.",
+                "Metadata of the photograph should be present. Absence of metadata will lead to disqualification of the entry.",
+                "The theme for the photograph is Open.",
+                "Minimum post-processing is allowed, including cropping, colour correction conversion to grayscale, reasonable exposure/contrast adjustments, etc.",
+                "Image manipulation of any kind, or use of Artificial Intelligence is strictly prohibited. Doing so will lead to disqualification.",
+                "The photograph should not contain a watermark. Entries will not be disqualified, but a watermark will be counted as a discredit.",
+                "There will be THREE entry per participant. All entries must be emailed by 9 AM of Day 2."
+            ], 
+            "Judging Scheme":[
+                "Top 30 photographs will be chosen by our judge by 4 pm of Day 2, and they will be printed and displayed in the exhibition area by end of day.",
+                "Each photograph will have a serial number written on it, along with a voting QR. People can vote for the best picture by scanning the QR code and typing the serial number of the picture. One person will be allowed one vote.",
+                "Voting will end on 4 PM of Day 3.",
+                "Weightage of 40% of votes and 60% of judges score will be considered when calculating the final score for the top 30 photographs.",
+                "Top 3 winners will be awarded a prize money on the basis of total score."
             ]
         },
     },
