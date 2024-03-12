@@ -343,6 +343,20 @@ const EventOrganizers = [
         eventId: 'eggsplosion-24',
         organizers: [],
     },
+
+    {
+        eventId: 'sky-lens',
+        organizers: [
+            'rupam.c1404@gmail.com',
+            'souviksaha871@gmail.com',
+            'Paldebasish51@gmail.com',
+        ],
+    },
+
+    {
+        eventId: '2-minutes-to-frame',
+        organizers: ['rounakmukherjee477@gmail.com', 'sapkoley2019@gmail.com'],
+    },
 ]
 
 module.exports = EventOrganizers
