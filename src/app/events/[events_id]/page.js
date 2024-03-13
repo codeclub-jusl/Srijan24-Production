@@ -379,73 +379,90 @@ const page = ({ params }) => {
 
 
 
-         
-                {user ? (
-                    user && profileUpdated ? (
-                        <div className='mt-4 flex justify-center registerNowButton'>
-                            {!eventData.unstopRegistrationLink && <button
+                {eventData && !eventData.registrationOpen ? 
+                    (<div className='mt-4 flex justify-center'>
+                        {user && eventStatus === 'registered' ? 
+                            (<button
                                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                                onClick={handleRegister} // toggleModal
+                                onClick={handleRegister}
                             >
-                                {registerButton}
-                            </button>}
-                            {eventData.unstopRegistrationLink && 
+                                Registered
+                            </button>) : 
+                            (<div
+                                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                            >
+                                Registration closed
+                            </div>)
+                        }
+                    </div>) :
+                    (user ? (
+                        user && profileUpdated ? (
+                            <div className='mt-4 flex justify-center registerNowButton'>
+                                {!eventData.unstopRegistrationLink && <button
+                                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                                    onClick={handleRegister} // toggleModal
+                                >
+                                    {registerButton}
+                                </button>}
+                                {eventData.unstopRegistrationLink && 
+                                    <Link
+                                        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover registerUnstopButton'
+                                        href={eventData.unstopRegistrationLink}
+                                    >
+                                        Register on Unstop
+                                    </Link>
+                                }
+
+                                {eventStatus === 'not registered' && (
+                                    <button
+                                        className='bg-[#000032]
+                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                                        onClick={handleWatchList}
+                                    >
+                                        {loading ? (
+                                            <BeatLoader color='#ffffff' />
+                                        ) : (
+                                            watchlistButton
+                                        )}
+                                    </button>
+                                )}
+                            </div>
+                        ) : (
+                            <div className='mt-4 flex justify-center'>
                                 <Link
-                                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover registerUnstopButton'
-                                    href={eventData.unstopRegistrationLink}
+                                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                                    href='/profile'
                                 >
-                                    Register on Unstop
+                                    Update profile to register
                                 </Link>
-                            }
 
-                            {eventStatus === 'not registered' && (
-                                <button
-                                    className='bg-[#000032]
-                         hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
-                                    onClick={handleWatchList}
+                                {eventStatus === 'not registered' && (
+                                    <button
+                                        className='bg-[#000032]
+                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                                        onClick={handleWatchList}
+                                    >
+                                        {loading ? (
+                                            <BeatLoader color='#ffffff' />
+                                        ) : (
+                                            watchlistButton
+                                        )}
+                                    </button>
+                                )}
+                            </div>
+                        )
+                        ) : (
+                            <div className='mt-4 flex justify-center'>
+                                <Link
+                                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
+                                    href='/login'
                                 >
-                                    {loading ? (
-                                        <BeatLoader color='#ffffff' />
-                                    ) : (
-                                        watchlistButton
-                                    )}
-                                </button>
-                            )}
-                        </div>
-                    ) : (
-                        <div className='mt-4 flex justify-center'>
-                            <Link
-                                className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                                href='/profile'
-                            >
-                                Update profile to register
-                            </Link>
-
-                            {eventStatus === 'not registered' && (
-                                <button
-                                    className='bg-[#000032]
-                         hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
-                                    onClick={handleWatchList}
-                                >
-                                    {loading ? (
-                                        <BeatLoader color='#ffffff' />
-                                    ) : (
-                                        watchlistButton
-                                    )}
-                                </button>
-                            )}
-                        </div>
+                                    Log in to register
+                                </Link>
+                            </div>
+                        )
                     )
-                ) : (
-                    <div className='mt-4 flex justify-center'>
-                        <Link
-                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover'
-                            href='/login'
-                        >
-                            Log in to register
-                        </Link>
-                    </div>
-                )}
+                }
                 <Modal
                     isOpen={isModalOpen}
                     onClose={toggleModal}
