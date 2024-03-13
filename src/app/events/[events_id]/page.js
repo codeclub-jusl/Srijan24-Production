@@ -331,6 +331,18 @@ const page = ({ params }) => {
                             </p>
                         </div>}
 
+                        {eventData && eventData.ideaSubmissionLink && <div className='flex flex-col p-3 shadow-2xl '>
+                            <p className='mb-2'>
+                                {/* <strong className='text-lg md:text-xl'>
+                                    Event Description:
+                                </strong> */}
+                            </p>
+                            <p className='text-sm md:text-base eventDesc'>
+                                <Link href={eventData.ideaSubmissionLink} className='documentLink'>Click here</Link> 
+                                {' '}to submit your idea.
+                            </p>
+                        </div>}
+
                              
 
                         {eventData && eventData.websiteLink && <div className='flex flex-col p-3 shadow-2xl '>
