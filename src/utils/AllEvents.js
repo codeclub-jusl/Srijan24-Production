@@ -8,6 +8,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['hackathon', 'machinelearning', 'ai', 'openaimer'],
+        registrationOpen: true,
         eventCoordinators: [
             'Rajdeep Khaskel [ 6290241875 ]',
             'Sounak Ghosh [ 8910272026 ]',
@@ -91,6 +92,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['cryptography', 'treasure_hunt', 'cyber-security'],
+        registrationOpen: true,
         eventCoordinators: [
             'Trisha Samanta [ 6290676528 ]',
             'Md. Azhaan [ 8637007433 ]',
@@ -129,6 +131,7 @@ const events = [
             'stock-market',
             'case-study',
         ],
+        registrationOpen: true,
         eventCoordinators: [
             'Abir Sen [ 6290764395 ]',
             'Soumyadeep Pal [ 9007475778 ]',
@@ -163,6 +166,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['Competitive Programming', 'brainstorming'],
+        registrationOpen: true,
         eventCoordinators: [
             'Dibyabrata Panja [ 8509184415 ]',
             'Ayush Sharma [ 9874180842 ]',
@@ -202,6 +206,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['ControlCraft', 'RoboticDomination'],
+        registrationOpen: true,
         eventCoordinators: [
             'Diptanshu Chakrabartty [ 9531681891 ]',
             'Sayan K. Sah [ 8927309046 ]',
@@ -258,6 +263,7 @@ const events = [
             'brainstorming',
             'puzzles',
         ],
+        registrationOpen: true,
         eventCoordinators: [
             'Farhan Ikbal [ 8967463602 ]',
             'Upayan De [ 9874589366 ]',
@@ -291,6 +297,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['hackathon', 'challenges'],
+        registrationOpen: true,
         eventCoordinators: [
             'Rajdeep Mallick [ 7029422038 ]',
             'Arindam Halder [ 8777712395 ]',
@@ -349,22 +356,26 @@ const events = [
         eventId: 'sherlocked',
         eventName: 'Sherlocked',
         eventDate: {
-            prelims: ['TBD'],
-            finals: 'TBD',
-            // prelims: ['20th March (8:00 pm - 9:00 pm)'],
-            // finals: '24th March (3:00 pm - 5:00 pm)',
+            prelims: ['20th March, 2024 (8:00 pm - 9:00 pm)'],
+            finals: '24th March, 2024 (3:00 pm - 5:00 pm)',
         },
         eventType: 'coding',
         eventHashtags: ['coding', 'brainstorming'],
+        registrationOpen: true,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Manas Pratim Biswas [ 8942981600 ]',
             'Tanmay Roy [ 8101159941 ]',
         ],
-        prize: ['Exciting prizes(TBD) for the top 3 winning teams'],
+        prize: [
+            '1st : 3,000',
+            '2nd : 2,000',
+            '3rd : 1,000',
+            'Best UG1 Beginners: Goodies',
+        ],
         minMembers: 2,
         maxMembers: 3,
-        eventPoster: '/images/events/sherlocked.jpg',
+        eventPoster: '/images/events/sherlocked.jpeg',
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `Sherlocked: A thrilling coding and puzzle-solving challenge. Prelims feature 10 puzzles and 2 coding questions. Top teams advance to a multi-level 2-hour Finals for ultimate victory.`,
         eventDescription: [
@@ -390,6 +401,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['brainstorming', 'matholympiad'],
+        registrationOpen: true,
         eventCoordinators: [
             'Subha Bhattacharya [ 9073701438 ]',
             'Shubhayan Ghosal  [ 9903297707 ]',
@@ -422,6 +434,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['climbing', 'Adventure'],
+        registrationOpen: true,
         eventCoordinators: [
             'Abhijeet Nona [ 6289282196 ]',
             'Aman Mahato [ 9832267430 ]',
@@ -460,6 +473,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['robo', 'soccer', 'football', 'ball', 'robots'],
+        registrationOpen: true,
         eventCoordinators: [
             'Sukalyan Bisui [ 8697488984 ]',
             'Adipto Ghosh Dastidar [ 6290764395 ]',
@@ -523,6 +537,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['LineFollower', 'BotRace'],
+        registrationOpen: true,
         eventCoordinators: [
             'Borno Banerjee [ 7478054233 ]',
             'Rajobrata Dasgupta [ 7439319042 ]',
@@ -595,6 +610,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['BridgingTheGap', 'StrongestBridgeWins'],
+        registrationOpen: true,
         eventCoordinators: [
             'Aritra Show [ 9748945722 ]',
             'Rohan Banik [ 7478915161 ]',
@@ -638,6 +654,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['photography', 'themeophotography'],
+        registrationOpen: true,
         eventCoordinators: [
             'Debashis Mandal [ 83720 81033 ]',
             'Abhinaba Biswas [ 97497 97641 ]',
@@ -650,12 +667,24 @@ const events = [
         registrationType: `Srijan'24 Website`,
         eventShortDescription: `It is a photography competition in which the photos will be judged on the basis of theme which will be announced during the fest.`,
         eventDescription: [
-            `Photography competition, theme based and will be judged on the basis of how much it relates with the theme.`,
+            `It is a photography competition in which the photos will be judged on the basis of a theme which will be announced during the fest. "It is an illusion that photos are made with the camera... they are made with the eye, heart, and head.”, said the pioneer of street photography, Henri-Cartier Bresson. So do not think twice about what type of device you own, as long as it is capable of capturing images. Be it a mobile camera, a point-and-shoot, a DSLR, or a mirrorless, we want to see your unique point of view and thought process captured in a frame. This event will consist of budding photographers capturing images on a certain given topic inside the campus. The top 30 images will be selected by the judge, and will be exhibited for public voting. A combination of the judge’s score and public voting will reveal the Top 3 winners.`,
+            `Create the most amazing frames and capture enthralling moments as you explore the beautiful art of photography!`,
         ],
         eventRules: {
             '': [
-                'The photo must totally be based on the given theme.',
-                'Metadata must be present for the photo submitted.',
+                'Photographs can be clicked using any device (mobile, DSLR, mirrorless, etc.)',
+                'The metadata of the photograph should be present. The absence of metadata will lead to disqualification of the entry.',
+                'The theme for the photograph will be given at 11 am on the event day. Participants will have to click relevant photos on the given theme.',
+                'All photographs must be clicked After the commencement of the event, inside Jadavpur University Salt Lake Campus.',
+                'Minimum post-processing is allowed, including cropping, color correction, conversion to grayscale, reasonable exposure/contrast adjustments, etc.',
+                'Image manipulation of any kind or the use of Artificial Intelligence is strictly prohibited. Doing so will lead to disqualification.',
+                'The photograph should not contain a watermark. Entries will not be disqualified, but a watermark will be counted as a discredit.',
+                'There will be One entry per participant. All entries must be emailed by 9 am on Day 2.',
+                'The top 30 photographs will be chosen by our judge by 4 pm on Day 2, and they will be printed and displayed in the exhibition area by the end of the day.',
+                'Each photograph will have a serial number written on it, along with a voting QR. People can vote for the best picture by scanning the QR code and typing the serial number of the picture. One person will be allowed one vote.',
+                'Voting will end at 4 pm on Day 3.',
+                `The weightage of 40% of the votes and 60% of the judges' scores will be considered when calculating the final score for the top 30 photographs.`,
+                'The top 3 winners will be selected on the basis of the total score.'
             ],
         },
     },
@@ -668,6 +697,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['reel', 'jupc'],
+        registrationOpen: true,
         eventCoordinators: [
             'Souvik Saha [ 8910398827 ]',
             'Rupam Chatterjee [ 9830642871 ]',
@@ -728,6 +758,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'Valorant'],
+        registrationOpen: true,
         eventCoordinators: [
             'Swapnil Saha [ 9123785487 ]',
             'Spandan Ghatak [ 8981579002 ]',
@@ -759,6 +790,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'eafc24'],
+        registrationOpen: true,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Debabrata Mondal [ 7439901282 ]',
@@ -790,6 +822,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'rocketleague'],
+        registrationOpen: true,
         eventCoordinators: [
             'Arka Sikder [ 79808 05318 ]',
             'Subhadip De [ 85840 38115 ]',
@@ -821,6 +854,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'bgmi'],
+        registrationOpen: false,
         eventCoordinators: [
             'Kingshuk Kirtania [ 70037 36262 ]',
             'Shyambhu Chaudhuri [ 79086 13718 (Whatsapp only) ]',
@@ -852,6 +886,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'efootball', 'pes'],
+        registrationOpen: true,
         eventCoordinators: [
             'Subhranuj Podder [ 81004 64406 ]',
             'Brotin Haldar [ 79081 42783 ]',
@@ -883,6 +918,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['entrepreneurship', 'strategy', 'marketing'],
+        registrationOpen: true,
         eventCoordinators: [
             'Anurag Dey [ 8910178240 ]',
             'Gourav Kumar Rai [ 8335965255 ]',
@@ -921,6 +957,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['battleitout', 'lordoftherings', 'whorulesthering'],
+        registrationOpen: true,
         eventCoordinators: [
             'Soumyadeep Dutta [ 9153039945 ]',
             'Sauptik Maiti [ 6290366197 ]',
@@ -969,6 +1006,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'gaming', 'VR'],
+        registrationOpen: true,
         eventCoordinators: [
             'Debdut Hira [ 6290363929 ]',
             'Arhana Kundu [ 8017422515 ]',
@@ -997,6 +1035,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['sustainibility', 'hvac'],
+        registrationOpen: true,
         eventCoordinators: [
             'Koustav Bhattacharjee [ 8584977088 ]',
             'Nilendu Dikshit [ 7797749574 ]',
@@ -1024,6 +1063,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['sharktank', 'business'],
+        registrationOpen: true,
         eventCoordinators: [
             'Sohini Hazra [ 9432209101 ]',
             'Koustav Das [ 8348217647 ]',
@@ -1074,6 +1114,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['finance', 'stockmarket'],
+        registrationOpen: true,
         eventCoordinators: [
             'Adipto Ghosh Dastidar [ 6290764395 ]',
             'Akancha Singh [ 7727954915 ]',
@@ -1106,6 +1147,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['wayout', 'presenceofmind'],
+        registrationOpen: true,
         eventCoordinators: [
             'Agnish Paul [ 8910499325 ]',
             'Ishani Sengupta [ 9007605835 ]',
@@ -1147,6 +1189,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['chess', 'PositionalTactics'],
+        registrationOpen: true,
         eventCoordinators: [
             'Subhranil Banerjee [ 9903006134 ]',
             'Arhana Kundu [ 8017422515 ]',
@@ -1184,6 +1227,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['mystery_unravel', 'SleuthSpectacle', 'Whodunit'],
+        registrationOpen: true,
         eventCoordinators: [
             'Shreyoshi De [ 8961800461 ]',
             'Shrobona De [ 9163821724 ]',
@@ -1222,22 +1266,21 @@ const events = [
         eventId: 'ptb',
         eventName: 'Pass The Baton',
         eventDate: {
-            prelims: ['TBD'],
-            finals: 'TBD',
-            // prelims: ['19th March (7:30 pm - 9:30 pm)'],
-            // finals: '23th March (11:30 am - 2:00 pm)',
+            prelims: ['19th March, 2024 (7:30pm - 9:30pm)'],
+            finals: '23rd March, 2024 (11:30pm - 1:30pm)',
         },
         eventType: 'coding',
         eventHashtags: ['#Coding', '#TeamEvent', '#Competitive_Programming'],
+        registrationOpen: true,
         eventCoordinators: [
             'Vikash Sangai [ 9432140409 ]',
             'Anupam Ghosh [ 7548005727 ]',
         ],
         prize: [
-            'First place – TBD',
-            'Second place – TBD',
-            'Third place – TBD',
-            'Best UG1 team – TBD',
+            '1st : 3,000',
+            '2nd : 2,000',
+            '3rd : 1,000',
+            'Best UG1 Beginners: Goodies',
         ],
         minMembers: 3,
         maxMembers: 3,
@@ -1276,6 +1319,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['LogoQuest', 'DesignBattle'],
+        registrationOpen: true,
         eventCoordinators: [
             'Nahir Md Nishad [ 8670509483 ]',
             'Monoshwi Bandopadhay [ 96474993252 ]',
@@ -1308,6 +1352,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['Case_Study', 'Problem_Solving'],
+        registrationOpen: true,
         eventCoordinators: [
             'Piyush Gupta [ 7439484942 ]',
             'Raktim Banerjee [ 9569584047 ]',
@@ -1357,6 +1402,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['rapbattle', 'beatbox'],
+        registrationOpen: true,
         eventCoordinators: [
             'Sauptik maiti [ 6290366197 ]',
             'Sayandeep Pramanik [ 7872639252 ]',
@@ -1419,6 +1465,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['srijan_24', 'tech_enthusiasts_assemble'],
+        registrationOpen: true,
         eventCoordinators: [
             'Dipan Mandal [ 8250821406 ]',
             'Anushka Tewari [ 9348121371 ]',
@@ -1459,6 +1506,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['TrafficInsights', 'SmartMobilityAnalytics'],
+        registrationOpen: true,
         eventCoordinators: [
             'Sudipta Dutta [ 9641141392 ]',
             'Gaurav Bose [ 8017469943 ]',
@@ -1492,6 +1540,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['biztechquiz','techquiz', 'quiz'],
+        registrationOpen: true,
         eventCoordinators: [
             'Shrayan Mukhopadhyay [ 9748227211 ]',
             'Sreejan Bose [ 9748877972 ]',
@@ -1526,6 +1575,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['internship','industrychallenges'],
+        registrationOpen: true,
         eventCoordinators: [
             'Asmit Acharya [ 9433082213 ]',
             'Swarnamoy Chatterjee [ 9733030635 ]'
@@ -1566,6 +1616,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['Coding', 'BrainStorming'],
+        registrationOpen: true,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Aditya Mayukh Som [ 9874745176 ]', 
@@ -1606,6 +1657,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['RoboCarChallenge','TrackMasters'],
+        registrationOpen: true,
         eventCoordinators: [
             'Rajobrata Dasgupta [ 7439319042 ]',
             'Souvik Saha [ 89103 98827 ]',
@@ -1667,6 +1719,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['aerodynamics','trajectory', 'water-rockets'],
+        registrationOpen: true,
         eventCoordinators: [
             'Himopravo Chowdhury [ 9475974209 ]',
             'Srija Mondal [ 8851270470 ]',
@@ -1728,6 +1781,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['game-of-drones','drone-racing', 'water-rockets'],
+        registrationOpen: true,
         eventCoordinators: [
             'Abhinandan Roy [ 9903142457 ]',
             'Rudrajit Deb [ 97480 10103 ]',
@@ -1767,6 +1821,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['defytodefine', 'speaknow'],
+        registrationOpen: true,
         eventCoordinators: [
             'Somnath Chakraborty [ 9832936036 ]',
             'Soham Das [ 8240885374 ]',
@@ -1805,6 +1860,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['engineering', 'eggsplosion'],
+        registrationOpen: true,
         eventCoordinators: [
             'Rumel Alam [ 8240998026 ]',
             'Hritam Sarkar [ 8777262351 ]',
@@ -1838,6 +1894,7 @@ const events = [
         },
         eventType: 'misc',
         // eventHashtags: ['engineering', 'eggsplosion'],
+        registrationOpen: true,
         eventCoordinators: [
             'Rounak Mukherjee [ 7439454364 ]',
             'Saptarshi Koley [ 8617322403 ]',
@@ -1872,6 +1929,7 @@ const events = [
             finals: 'TBD',
         },
         eventType: 'misc',
+        registrationOpen: true,
         eventCoordinators: [
             'Rupam [ 9830642871 ]',
             'Souvik Saha [ 8910398827 ]',
