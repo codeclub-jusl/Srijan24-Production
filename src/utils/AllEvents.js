@@ -1570,7 +1570,7 @@ const events = [
         eventId: 'flight-challenge-2024',
         eventName: 'Flight Challenge 2024 in partnership with AIRBUS',
         eventDate: {
-            prelims: ['Presentation submission would be live on and from 14th March'],
+            prelims: ['Presentation submission would be live on and from 14th March, 2024 till 17th March, 2024'],
             finals: 'Grand Finale to be taking place on 24th March',
         },
         eventType: 'brainstorming',
@@ -1604,7 +1604,8 @@ const events = [
                 "Priority would be given to students from Mechanical, Civil and Production Engineering Departments at Jadavpur University."
             ]
         },
-        documentLink: "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing"
+        documentLink: "https://drive.google.com/file/d/1aNd9SaVOUoMD34tDehop_-HfZxZQVzZR/view?usp=sharing",
+        ideaSubmissionLink: "https://forms.gle/ge5P1H9LptpgVjxH8",
     },
 
     {
@@ -1646,6 +1647,7 @@ const events = [
                 "The time limit for recreating the web page will be strictly enforced to add an element of urgency and test participants' ability to work efficiently."
             ],
         },
+        documentLink: "https://drive.google.com/file/d/1lMV-u-8utteYa6hkXBLKL6aVWfC16C9_/view?usp=sharing"
     },
 
     {
