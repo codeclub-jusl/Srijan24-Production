@@ -13,7 +13,7 @@ const SuperAdminHOC = Component => {
         useEffect(() => {
             if (user) {
                 if (!SuperAdmins.includes(user.email)) {
-                    router.back()
+                    router.push('/')
                 }
             } else {
                 router.push('/login')

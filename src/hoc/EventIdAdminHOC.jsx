@@ -19,7 +19,7 @@ const EventIdAdminHOC = Component => {
                     (eventIds.length === 0 || !eventIds.includes(event_id)) &&
                     !SuperAdmins.includes(user.email)
                 ) {
-                    router.back()
+                    router.push('/')
                 }
             } else {
                 router.push('/login')

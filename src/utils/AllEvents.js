@@ -1189,7 +1189,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['chess', 'PositionalTactics'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Subhranil Banerjee [ 9903006134 ]',
             'Arhana Kundu [ 8017422515 ]',
