@@ -5,9 +5,13 @@ import { getEventById } from '@/utils/event'
 import { doc, collection, getDoc, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import EventIdAdminHOC from '@/hoc/EventIdAdminHOC'
+// import BeatLoader from 'react-spinners/BeatLoader'
+// import { useSelector } from 'react-redux'
+// import SuperAdmins from '@/utils/SuperAdmins'
 
 const page = ({ params }) => {
     const { event_id } = params
+    // const user = useSelector(state => state.userReducer.user)
     const eventData = getEventById(event_id)
     const categories = ['ALL', 'PENDING', 'REGISTERED']
     const [selectedCategory, setSelectedCategory] = useState('all')
@@ -15,7 +19,9 @@ const page = ({ params }) => {
     const [pendingTeams, setPendingTeams] = useState([])
     const [allTeams, setAllTeams] = useState([])
     const [showTeams, setShowTeams] = useState(null)
+    // const [showGenerate, setShowGenerate] = useState(false)
     // const [loading, setLoading] = useState(false)
+    // const [downloadLink, setDownloadLink] = useState(null)
 
     useEffect(() => {
         let all = [],
@@ -53,6 +59,12 @@ const page = ({ params }) => {
         }
 
         fetchData()
+
+        // if (user && SuperAdmins.includes(user.email)) {
+        //     setShowGenerate(true)
+        // } else {
+        //     setShowGenerate(false)
+        // }
     }, [])
 
     const handleCategoryChange = category => {
@@ -63,12 +75,19 @@ const page = ({ params }) => {
         else setShowTeams(registeredTeams)
     }
 
-    if(!eventData) 
+    // const generateJSON = async () => {
+    //     setLoading(true)
+    // }
+
+    if (!eventData)
         return (
             <div className='bg-gradient-to-br from-black via-sky-950 to-black text-white min-h-screen flex justify-center items-center font-body'>
                 <div className='noEventBox'>
                     <h2>Event Not Found</h2>
-                    <p>Sorry, but we can't find the event you are looking for...</p>
+                    <p>
+                        Sorry, but we can't find the event you are looking
+                        for...
+                    </p>
                 </div>
             </div>
         )
@@ -99,6 +118,29 @@ const page = ({ params }) => {
                     id='event_categories'
                     className='text-[1rem] p-8 font-semibold font-chakra flex flex-wrap gap-4 md:gap-12 justify-center text-white'
                 >
+                    {/* {showGenerate &&
+                        allTeams.length > 0 &&
+                        (loading ? (
+                            <BeatLoader color='#ffffff' />
+                        ) : downloadLink ? (
+                            <a
+                                className='bg-[#000032]
+                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                                href={downloadLink}
+                                download='data.json'
+                            >
+                                Download JSON file
+                            </a>
+                        ) : (
+                            <button
+                                className='bg-[#000032]
+                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
+                                onClick={generateJSON}
+                            >
+                                Generate JSON file
+                            </button>
+                        ))} */}
+
                     <span
                         className={`rounded-full cursor-pointer px-4 py-[.3rem] hover:bg-white/20 transition-all duration-500 ease-in-out ${
                             selectedCategory === 'all' ? 'bg-white/20' : ''

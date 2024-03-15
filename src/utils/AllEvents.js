@@ -1421,7 +1421,8 @@ const events = [
             "Born out of house parties in 1970s South Bronx, Hip-hop has grown to be one of the most intricate and powerful artforms known to humanity. Today, Hip-Hop is a collection of several elements like rapping, graffiti art, deejaying, B-boying and Beatboxing.",
             "With the popularity of the Hip-Hop culture rising and spreading like wildfire all over the world, we feel the need for providing aspiring MCs and beatboxers a platform for showcasing their talents, here at Srijan '24, JU.",
             "",
-            "Sign up for one or both of the events Rap Battle and Beatbox and display your talent in form of a classic battle!"
+            "Sign up for one or both of the events Rap Battle and Beatbox and display your talent in form of a classic battle!",
+            "Depending on the rate of participation, the competition will either be a showcase or a one-on-one event. If we receive significant interest in any domain, it will be a one-on-one battle or a showcase event."
         ],
         eventRules: {
             'RAP BATTLE':[
@@ -1465,7 +1466,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['srijan_24', 'tech_enthusiasts_assemble'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Dipan Mandal [ 8250821406 ]',
             'Anushka Tewari [ 9348121371 ]',
