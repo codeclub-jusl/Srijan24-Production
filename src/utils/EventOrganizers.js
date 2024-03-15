@@ -28,6 +28,7 @@ const EventOrganizers = [
             'trishasamanta2403@gmail.com',
             'mdazhaan.anwar@gmail.com',
             'haimioff@gmail.com',
+            'roy635016@gmail.com',
         ],
     },
 
@@ -350,6 +351,7 @@ const EventOrganizers = [
             'rupam.c1404@gmail.com',
             'souviksaha871@gmail.com',
             'Paldebasish51@gmail.com',
+            'roy635016@gmail.com',
         ],
     },
 
