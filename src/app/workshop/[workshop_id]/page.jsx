@@ -177,27 +177,33 @@ const page = ({ params }) => {
                             </div>
                         </div>
 
-                        {user ? (
-                            profileUpdated ? (
-                                alreadyBooked ? (
-                                    <div className='flex justify-center items-center'>
-                                        <div className='btn'>Booked</div>
-                                    </div>
+                        {workshopData && workshopData.registrationOpen ? (
+                            user ? (
+                                profileUpdated ? (
+                                    alreadyBooked ? (
+                                        <div className='flex justify-center items-center'>
+                                            <div className='btn'>Booked</div>
+                                        </div>
+                                    ) : (
+                                        <Form workshopId={workshop_id} />
+                                    )
                                 ) : (
-                                    <Form workshopId={workshop_id} />
+                                    <div className='flex justify-center items-center'>
+                                        <Link href={'/profile'} className='btn'>
+                                            Update profile to Order
+                                        </Link>
+                                    </div>
                                 )
                             ) : (
                                 <div className='flex justify-center items-center'>
-                                    <Link href={'/profile'} className='btn'>
-                                        Update profile to Order
+                                    <Link href={'/login'} className='btn'>
+                                        Log in to Order
                                     </Link>
                                 </div>
                             )
                         ) : (
                             <div className='flex justify-center items-center'>
-                                <Link href={'/login'} className='btn'>
-                                    Log in to Order
-                                </Link>
+                                <div className='btn'>Registration Closed</div>
                             </div>
                         )}
                     </div>
