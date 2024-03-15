@@ -61,6 +61,7 @@ const Workshop = [
             'Arindam [ 8697367852 ]',
         ],
         venue: `Teqip, Jadavpur University`,
+        registrationOpen: false,
         qrs: [
             {
                 name: 'Arindam Mukherjee',
