@@ -389,6 +389,7 @@ const events = [
                 'Teams advance by clearing levels, aiming to finish all as quickly as possible.',
                 'Fastest team clearing all levels will be declared the ultimate winner.',
             ],
+            'Last date of registration': ['19th March 2024, 11:59 pm']
         },
     },
 
@@ -610,7 +611,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['BridgingTheGap', 'StrongestBridgeWins'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Aritra Show [ 9748945722 ]',
             'Rohan Banik [ 7478915161 ]',
