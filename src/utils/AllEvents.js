@@ -161,12 +161,12 @@ const events = [
         eventId: 'h42',
         eventName: 'H42',
         eventDate: {
-            prelims: ['TBD'],
-            finals: 'TBD',
+            prelims: ['18 March 2024, 8:00 pm - 10:00 pm'],
+            finals: '24 March 2024, 11:00 am - 2:00 pm',
         },
         eventType: 'coding',
         eventHashtags: ['Competitive Programming', 'brainstorming'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Dibyabrata Panja [ 8509184415 ]',
             'Ayush Sharma [ 9874180842 ]',
@@ -1267,7 +1267,7 @@ const events = [
         eventId: 'ptb',
         eventName: 'Pass The Baton',
         eventDate: {
-            prelims: ['19th March, 2024 (7:30pm - 9:30pm)'],
+            prelims: ['19th March, 2024 (8:00pm - 10:00pm)'],
             finals: '23rd March, 2024 (11:30pm - 1:30pm)',
         },
         eventType: 'coding',
