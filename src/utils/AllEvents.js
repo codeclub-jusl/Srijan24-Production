@@ -1064,7 +1064,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['sharktank', 'business'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Sohini Hazra [ 9432209101 ]',
             'Koustav Das [ 8348217647 ]',

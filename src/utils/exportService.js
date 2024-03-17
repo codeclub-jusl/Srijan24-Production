@@ -22,14 +22,16 @@ export const exportTeamsToExcel = (
 ) => {
     const data = teams.map(team => {
         return [
-            team.name,
-            team.leader,
+            team.teamName,
+            team.leaderName,
+            team.leaderEmail,
             team.leaderPhone,
+            team.leaderCollege,
+            team.leaderYear,
             team.members,
             team.status,
         ]
     })
 
-    console.log(data);
     exportExcel(data, workSheetColumnNames, workSheetName, filePath)
 }

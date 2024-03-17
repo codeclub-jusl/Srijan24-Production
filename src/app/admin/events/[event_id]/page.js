@@ -6,7 +6,7 @@ import { doc, collection, getDoc, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import EventIdAdminHOC from '@/hoc/EventIdAdminHOC'
 import { exportTeamsToExcel } from '@/utils/exportService'
-import BeatLoader from 'react-spinners/BeatLoader'
+// import BeatLoader from 'react-spinners/BeatLoader'
 import { useSelector } from 'react-redux'
 import SuperAdmins from '@/utils/SuperAdmins'
 
@@ -14,15 +14,14 @@ const page = ({ params }) => {
     const { event_id } = params
     const user = useSelector(state => state.userReducer.user)
     const eventData = getEventById(event_id)
-    const categories = ['ALL', 'PENDING', 'REGISTERED']
+    // const categories = ['ALL', 'PENDING', 'REGISTERED']
     const [selectedCategory, setSelectedCategory] = useState('all')
     const [registeredTeams, setRegisteredTeams] = useState([])
     const [pendingTeams, setPendingTeams] = useState([])
     const [allTeams, setAllTeams] = useState([])
     const [showTeams, setShowTeams] = useState(null)
-    const [showGenerate, setShowGenerate] = useState(false)
-    const [loading, setLoading] = useState(false)
-    const [downloadLink, setDownloadLink] = useState(null)
+    // const [loading, setLoading] = useState(false)
+    // const [downloadLink, setDownloadLink] = useState(null)
 
     useEffect(() => {
         let all = [],
@@ -43,8 +42,14 @@ const page = ({ params }) => {
                 const leaderSnap = await getDoc(leaderRef)
 
                 if (leaderSnap.exists()) {
-                    const leaderPhone = leaderSnap.data().phone
-                    all[i] = { ...all[i], leaderPhone }
+                    const leaderData = leaderSnap.data()
+                    all[i] = {
+                        ...all[i],
+                        leaderPhone: leaderData.phone,
+                        leaderName: leaderData.name,
+                        leaderCollege: leaderData.college,
+                        leaderYear: leaderData.year,
+                    }
                 }
 
                 if (all[i].status === 'pending') pending.push(all[i])
@@ -60,12 +65,6 @@ const page = ({ params }) => {
         }
 
         fetchData()
-
-        if (user && SuperAdmins.includes(user.email)) {
-            setShowGenerate(true)
-        } else {
-            setShowGenerate(false)
-        }
     }, [])
 
     const handleCategoryChange = category => {
@@ -77,38 +76,40 @@ const page = ({ params }) => {
     }
 
     const generateJSON = async () => {
-        setLoading(true)
-
         let data = []
-        for(let i=0; i<allTeams.length; i++) {
+        for (let i = 0; i < allTeams.length; i++) {
             let singleTeam = {
                 teamName: allTeams[i].teamName,
-                leader: allTeams[i].leader,
+                leaderName: allTeams[i].leaderName,
+                leaderEmail: allTeams[i].leader,
                 leaderPhone: allTeams[i].leaderPhone,
+                leaderCollege: allTeams[i].leaderCollege,
+                leaderYear: allTeams[i].leaderYear,
                 members: '',
                 status: allTeams[i].status,
             }
 
-            singleTeam.members = allTeams[i].members.map(obj => obj.email).join(', ');
+            singleTeam.members = allTeams[i].members
+                .map(obj => obj.email)
+                .join(', ')
 
             data.push(singleTeam)
         }
 
         const workSheetColumnName = [
-            "Team Name",
-            "Leader",
-            "Leader Phone",
-            "Members",
-            "Status",
+            'Team Name',
+            'Leader Name',
+            'Leader Email',
+            'Leader Phone',
+            'Leader College',
+            'Leader Year',
+            'Members',
+            'Status',
         ]
 
-        const filePath = `./public/${event_id}.xlsx`;
+        const filePath = `./${event_id}.xlsx`
 
-        exportTeamsToExcel(data, workSheetColumnName, event_id, filePath);
-
-        setDownloadLink(filePath);
-
-        setLoading(false);
+        exportTeamsToExcel(data, workSheetColumnName, event_id, filePath)
     }
 
     if (!eventData)
@@ -146,33 +147,20 @@ const page = ({ params }) => {
                     {eventData.eventName}
                 </h1>
 
+                {allTeams.length > 0 && (
+                    <button
+                        className='bg-[#000032]
+                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover mt-10'
+                        onClick={generateJSON}
+                    >
+                        Generate Excel Sheet
+                    </button>
+                )}
+
                 <div
                     id='event_categories'
                     className='text-[1rem] p-8 font-semibold font-chakra flex flex-wrap gap-4 md:gap-12 justify-center text-white'
                 >
-                    {/* {showGenerate &&
-                        allTeams.length > 0 &&
-                        (loading ? (
-                            <BeatLoader color='#ffffff' />
-                        ) : downloadLink ? (
-                            <a
-                                className='bg-[#000032]
-                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
-                                href={downloadLink}
-                                download='data.xlsx'
-                            >
-                                Download JSON file
-                            </a>
-                        ) : (
-                            <button
-                                className='bg-[#000032]
-                            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
-                                onClick={generateJSON}
-                            >
-                                Generate JSON file
-                            </button>
-                        ))} */}
-
                     <span
                         className={`rounded-full cursor-pointer px-4 py-[.3rem] hover:bg-white/20 transition-all duration-500 ease-in-out ${
                             selectedCategory === 'all' ? 'bg-white/20' : ''
