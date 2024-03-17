@@ -214,6 +214,7 @@ const EventOrganizers = [
             'abirsen020402@gmail.com',
             'akankchasingh20012004@gmail.com',
             'adipto.extra47@gmail.com',
+            'lipsa@stockgro.com',
         ],
     },
 

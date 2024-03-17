@@ -5,13 +5,14 @@ import { getEventById } from '@/utils/event'
 import { doc, collection, getDoc, getDocs } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import EventIdAdminHOC from '@/hoc/EventIdAdminHOC'
-// import BeatLoader from 'react-spinners/BeatLoader'
-// import { useSelector } from 'react-redux'
-// import SuperAdmins from '@/utils/SuperAdmins'
+import { exportTeamsToExcel } from '@/utils/exportService'
+import BeatLoader from 'react-spinners/BeatLoader'
+import { useSelector } from 'react-redux'
+import SuperAdmins from '@/utils/SuperAdmins'
 
 const page = ({ params }) => {
     const { event_id } = params
-    // const user = useSelector(state => state.userReducer.user)
+    const user = useSelector(state => state.userReducer.user)
     const eventData = getEventById(event_id)
     const categories = ['ALL', 'PENDING', 'REGISTERED']
     const [selectedCategory, setSelectedCategory] = useState('all')
@@ -19,9 +20,9 @@ const page = ({ params }) => {
     const [pendingTeams, setPendingTeams] = useState([])
     const [allTeams, setAllTeams] = useState([])
     const [showTeams, setShowTeams] = useState(null)
-    // const [showGenerate, setShowGenerate] = useState(false)
-    // const [loading, setLoading] = useState(false)
-    // const [downloadLink, setDownloadLink] = useState(null)
+    const [showGenerate, setShowGenerate] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [downloadLink, setDownloadLink] = useState(null)
 
     useEffect(() => {
         let all = [],
@@ -60,11 +61,11 @@ const page = ({ params }) => {
 
         fetchData()
 
-        // if (user && SuperAdmins.includes(user.email)) {
-        //     setShowGenerate(true)
-        // } else {
-        //     setShowGenerate(false)
-        // }
+        if (user && SuperAdmins.includes(user.email)) {
+            setShowGenerate(true)
+        } else {
+            setShowGenerate(false)
+        }
     }, [])
 
     const handleCategoryChange = category => {
@@ -75,9 +76,40 @@ const page = ({ params }) => {
         else setShowTeams(registeredTeams)
     }
 
-    // const generateJSON = async () => {
-    //     setLoading(true)
-    // }
+    const generateJSON = async () => {
+        setLoading(true)
+
+        let data = []
+        for(let i=0; i<allTeams.length; i++) {
+            let singleTeam = {
+                teamName: allTeams[i].teamName,
+                leader: allTeams[i].leader,
+                leaderPhone: allTeams[i].leaderPhone,
+                members: '',
+                status: allTeams[i].status,
+            }
+
+            singleTeam.members = allTeams[i].members.map(obj => obj.email).join(', ');
+
+            data.push(singleTeam)
+        }
+
+        const workSheetColumnName = [
+            "Team Name",
+            "Leader",
+            "Leader Phone",
+            "Members",
+            "Status",
+        ]
+
+        const filePath = `./public/${event_id}.xlsx`;
+
+        exportTeamsToExcel(data, workSheetColumnName, event_id, filePath);
+
+        setDownloadLink(filePath);
+
+        setLoading(false);
+    }
 
     if (!eventData)
         return (
@@ -127,7 +159,7 @@ const page = ({ params }) => {
                                 className='bg-[#000032]
                             hover:bg-blue-700 text-white font-bold py-2 px-4 rounded glow-on-hover ml-4'
                                 href={downloadLink}
-                                download='data.json'
+                                download='data.xlsx'
                             >
                                 Download JSON file
                             </a>
