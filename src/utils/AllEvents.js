@@ -8,7 +8,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['hackathon', 'machinelearning', 'ai', 'openaimer'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Rajdeep Khaskel [ 6290241875 ]',
             'Sounak Ghosh [ 8910272026 ]',
@@ -759,7 +759,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'Valorant'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Swapnil Saha [ 9123785487 ]',
             'Spandan Ghatak [ 8981579002 ]',
@@ -791,7 +791,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'eafc24'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Debabrata Mondal [ 7439901282 ]',
@@ -823,7 +823,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'rocketleague'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Arka Sikder [ 79808 05318 ]',
             'Subhadip De [ 85840 38115 ]',
@@ -887,7 +887,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'efootball', 'pes'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Subhranuj Podder [ 81004 64406 ]',
             'Brotin Haldar [ 79081 42783 ]',
@@ -1007,7 +1007,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'gaming', 'VR'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Debdut Hira [ 6290363929 ]',
             'Arhana Kundu [ 8017422515 ]',
@@ -1272,7 +1272,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['#Coding', '#TeamEvent', '#Competitive_Programming'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Vikash Sangai [ 9432140409 ]',
             'Anupam Ghosh [ 7548005727 ]',
@@ -1353,7 +1353,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['Case_Study', 'Problem_Solving'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Piyush Gupta [ 7439484942 ]',
             'Raktim Banerjee [ 9569584047 ]',
