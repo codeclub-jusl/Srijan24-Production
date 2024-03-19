@@ -395,6 +395,7 @@ const events = [
             ],
             'Last date of registration': ['19th March 2024, 11:59 pm']
         },
+        groupLink: "https://chat.whatsapp.com/KuCAdkZqvzbDUyep7UR3Qn",
     },
 
     {
