@@ -1853,6 +1853,7 @@ const events = [
                 "Each speaker would get 2+1 minute to speak (1 minute for rebuttals)."
             ]
         },
+        groupLink: "https://chat.whatsapp.com/C2NJ7uMqdp81rYnYkMDsEe",
     },
 
     {
