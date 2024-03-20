@@ -8,7 +8,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['hackathon', 'machinelearning', 'ai', 'openaimer'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Rajdeep Khaskel [ 6290241875 ]',
             'Sounak Ghosh [ 8910272026 ]',
