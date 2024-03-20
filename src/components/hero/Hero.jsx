@@ -221,7 +221,7 @@ const Hero = () => {
                                 21st March - 24th March
                             </h2>
                         </div>
-                        <Countdown />
+                        {/* <Countdown /> */}
                     </section>
                 </div>
 
