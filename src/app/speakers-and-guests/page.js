@@ -2,7 +2,12 @@ import OverallNav from '@/components/OverallNav/OverallNav'
 import React from 'react'
 
 const page = () => {
-    const images = ['/images/speakers/Amitabh_singh.jpeg', '/images/speakers/GOURAV_SEN.png']
+    const images = [
+        '/images/speakers/Amitabh_singh.jpeg',
+        '/images/speakers/GOURAV_SEN.png',
+        '/images/speakers/shibaji.jpeg',
+        '/images/speakers/cizzy.jpeg',
+    ]
 
     return (
         <div

@@ -365,7 +365,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['coding', 'brainstorming'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Manas Pratim Biswas [ 8942981600 ]',
@@ -395,6 +395,7 @@ const events = [
             ],
             'Last date of registration': ['19th March 2024, 11:59 pm']
         },
+        groupLink: "https://chat.whatsapp.com/KuCAdkZqvzbDUyep7UR3Qn",
     },
 
     {
