@@ -1624,7 +1624,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['Coding', 'BrainStorming'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Aditya Mayukh Som [ 9874745176 ]', 
