@@ -365,7 +365,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['coding', 'brainstorming'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Manas Pratim Biswas [ 8942981600 ]',
