@@ -92,7 +92,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['cryptography', 'treasure_hunt', 'cyber-security'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Trisha Samanta [ 6290676528 ]',
             'Md. Azhaan [ 8637007433 ]',
@@ -131,7 +131,7 @@ const events = [
             'stock-market',
             'case-study',
         ],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Abir Sen [ 6290764395 ]',
             'Soumyadeep Pal [ 9007475778 ]',
@@ -209,7 +209,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['ControlCraft', 'RoboticDomination'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Diptanshu Chakrabartty [ 9531681891 ]',
             'Sayan K. Sah [ 8927309046 ]',
@@ -407,7 +407,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['brainstorming', 'matholympiad'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Subha Bhattacharya [ 9073701438 ]',
             'Shubhayan Ghosal  [ 9903297707 ]',
@@ -440,7 +440,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['climbing', 'Adventure'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Abhijeet Nona [ 6289282196 ]',
             'Aman Mahato [ 9832267430 ]',
@@ -543,7 +543,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['LineFollower', 'BotRace'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Borno Banerjee [ 7478054233 ]',
             'Rajobrata Dasgupta [ 7439319042 ]',
@@ -616,7 +616,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['BridgingTheGap', 'StrongestBridgeWins'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Aritra Show [ 9748945722 ]',
             'Rohan Banik [ 7478915161 ]',
@@ -660,7 +660,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['photography', 'themeophotography'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Debashis Mandal [ 83720 81033 ]',
             'Abhinaba Biswas [ 97497 97641 ]',
@@ -703,7 +703,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['reel', 'jupc'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Souvik Saha [ 8910398827 ]',
             'Rupam Chatterjee [ 9830642871 ]',
@@ -828,7 +828,7 @@ const events = [
         },
         eventType: 'gaming',
         eventHashtags: ['NSGArena', 'rocketleague'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Arka Sikder [ 79808 05318 ]',
             'Subhadip De [ 85840 38115 ]',
@@ -924,7 +924,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['entrepreneurship', 'strategy', 'marketing'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Anurag Dey [ 8910178240 ]',
             'Gourav Kumar Rai [ 8335965255 ]',
@@ -963,7 +963,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['battleitout', 'lordoftherings', 'whorulesthering'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Soumyadeep Dutta [ 9153039945 ]',
             'Sauptik Maiti [ 6290366197 ]',
@@ -1041,7 +1041,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['sustainibility', 'hvac'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Koustav Bhattacharjee [ 8584977088 ]',
             'Nilendu Dikshit [ 7797749574 ]',
@@ -1069,7 +1069,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['sharktank', 'business'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Sohini Hazra [ 9432209101 ]',
             'Koustav Das [ 8348217647 ]',
@@ -1153,7 +1153,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['wayout', 'presenceofmind'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Agnish Paul [ 8910499325 ]',
             'Ishani Sengupta [ 9007605835 ]',
@@ -1233,7 +1233,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['mystery_unravel', 'SleuthSpectacle', 'Whodunit'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Shreyoshi De [ 8961800461 ]',
             'Shrobona De [ 9163821724 ]',
@@ -1325,7 +1325,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['LogoQuest', 'DesignBattle'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Nahir Md Nishad [ 8670509483 ]',
             'Monoshwi Bandopadhay [ 96474993252 ]',
@@ -1358,7 +1358,7 @@ const events = [
         },
         eventType: 'business & management',
         eventHashtags: ['Case_Study', 'Problem_Solving'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Piyush Gupta [ 7439484942 ]',
             'Raktim Banerjee [ 9569584047 ]',
@@ -1408,7 +1408,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['rapbattle', 'beatbox'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Sauptik maiti [ 6290366197 ]',
             'Sayandeep Pramanik [ 7872639252 ]',
@@ -1472,7 +1472,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['srijan_24', 'tech_enthusiasts_assemble'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Dipan Mandal [ 8250821406 ]',
             'Anushka Tewari [ 9348121371 ]',
@@ -1513,7 +1513,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['TrafficInsights', 'SmartMobilityAnalytics'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Sudipta Dutta [ 9641141392 ]',
             'Gaurav Bose [ 8017469943 ]',
@@ -1547,7 +1547,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['biztechquiz','techquiz', 'quiz'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Shrayan Mukhopadhyay [ 9748227211 ]',
             'Sreejan Bose [ 9748877972 ]',
@@ -1624,7 +1624,7 @@ const events = [
         },
         eventType: 'coding',
         eventHashtags: ['Coding', 'BrainStorming'],
-        registrationOpen: true,
+        registrationOpen: false,
         eventCoordinators: [
             'Anurag Jha [ 7044904397 ]',
             'Aditya Mayukh Som [ 9874745176 ]', 
@@ -1666,7 +1666,7 @@ const events = [
         },
         eventType: 'circuits & robotics',
         eventHashtags: ['RoboCarChallenge','TrackMasters'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Rajobrata Dasgupta [ 7439319042 ]',
             'Souvik Saha [ 89103 98827 ]',
@@ -1830,7 +1830,7 @@ const events = [
         },
         eventType: 'misc',
         eventHashtags: ['defytodefine', 'speaknow'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Somnath Chakraborty [ 9832936036 ]',
             'Soham Das [ 8240885374 ]',
@@ -1870,7 +1870,7 @@ const events = [
         },
         eventType: 'brainstorming',
         eventHashtags: ['engineering', 'eggsplosion'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Rumel Alam [ 8240998026 ]',
             'Hritam Sarkar [ 8777262351 ]',
@@ -1904,7 +1904,7 @@ const events = [
         },
         eventType: 'misc',
         // eventHashtags: ['engineering', 'eggsplosion'],
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Rounak Mukherjee [ 7439454364 ]',
             'Saptarshi Koley [ 8617322403 ]',
@@ -1939,7 +1939,7 @@ const events = [
             finals: 'TBD',
         },
         eventType: 'misc',
-        registrationOpen: false,
+        registrationOpen: true,
         eventCoordinators: [
             'Rupam [ 9830642871 ]',
             'Souvik Saha [ 8910398827 ]',
