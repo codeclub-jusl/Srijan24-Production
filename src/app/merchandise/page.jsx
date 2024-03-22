@@ -166,6 +166,9 @@ export default function Merchendise() {
                                     Register below , the contact details will be
                                     given there in <FaHandPointDown />
                                 </li>
+                                <li>
+                                    Srijan 2024 T-shirts will be available from 22nd March through 24th March at Jadavpur University Salt Lake Campus. Collect your T-shirts in case you have ordered.
+                                </li>
                             </div>
                         </div>
 
