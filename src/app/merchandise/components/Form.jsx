@@ -52,7 +52,7 @@ export default function Form() {
             return;
         }
         placeOrderButton.current.disabled = true;
-        placeOrder();
+        // placeOrder();
     }
 
     async function placeOrder() {
@@ -467,9 +467,14 @@ export default function Form() {
                         )}
                     </div>
 
-                    <div className='flex justify-center items-center merchButton'>
+                    {/* <div className='flex justify-center items-center merchButton'>
                         <button className='btn' type='submit' ref={placeOrderButton} >
                             Place Order
+                        </button>
+                    </div> */}
+                    <div className='flex justify-center items-center merchButton'>
+                        <button className='btn' type='submit' disabled>
+                            Order Closed
                         </button>
                     </div>
                 </div>
