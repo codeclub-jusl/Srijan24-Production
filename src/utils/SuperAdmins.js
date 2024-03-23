@@ -4,6 +4,7 @@ const SuperAdmins = [
     'harsham.jitendra@gmail.com',
     'halderritwick8@gmail.com',
     'manaspb2405@gmail.com',
+    'ankush2020kedia@gmail.com'
 ]
 
 module.exports = SuperAdmins
