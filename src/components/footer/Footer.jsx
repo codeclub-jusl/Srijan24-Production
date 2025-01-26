@@ -138,55 +138,11 @@ const Footer = () => {
                     </div>
 
                     <div className='footerBottom'>
-                        <div className='newsLetter'>
-                            <h2>Join our Newsletter</h2>
-                            <div className='newsLetterForm'>
-                                <ReactTyped
-                                    strings={[
-                                        'Enter your email',
-                                        'Get latest updates',
-                                    ]}
-                                    typeSpeed={40}
-                                    backSpeed={50}
-                                    attr='placeholder'
-                                    loop
-                                >
-                                    <input type='text' value={email} onChange={(e) => {setEmail(e.target.value); }} />
-                                </ReactTyped>
-                                <button onClick={handleClick}>{buttonText}</button>
-                            </div>
-                            <p>
-                                * will send you updates when new features will be
-                                unlocked
-                            </p>
-                        </div>
+                        
                     </div>
                 </div>
-                <div className='footerBottom2'>
-                    <div className='newsLetter'>
-                        <h2>Join our Newsletter</h2>
-                        <div className='newsLetterForm'>
-                            <ReactTyped
-                                strings={[
-                                    'Enter your email',
-                                    'Get latest updates',
-                                ]}
-                                typeSpeed={40}
-                                backSpeed={50}
-                                attr='placeholder'
-                                loop
-                            >
-                                <input type='text' value={email} onChange={(e) => {setEmail(e.target.value); }} />
-                            </ReactTyped>
-                            <button onClick={handleClick}>{buttonText}</button>
-                        </div>
-                        <p>
-                            * will send you updates when new things will be
-                            unlocked
-                        </p>
-                    </div>
-                </div>
-                <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">© 2024 - F.E.T.S.U. Presents Srijan, Jadavpur University, Kolkata. All rights reserved.</div>
+                
+                <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">© 2025 - F.E.T.S.U. Presents Srijan, Jadavpur University, Kolkata. All rights reserved.</div>
             </div>
         </>
     )

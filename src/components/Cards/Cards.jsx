@@ -1,42 +1,79 @@
 import Link from "next/link";
-import "./Cards.css";
 import Image from "next/image";
 
-export default function Cards(){
+const Cards = () => {
+  const cards = [
+    {
+      image: "/images/ambassador.jpeg",
+      title: "Campus Ambassador",
+      locked: false,
+      href: "https://forms.gle/TUUZX1gZfJG627jdA"
+    },
+    {
+      image: "/images/events.jpg",
+      title: "Events",
+      locked: true,
+      href: "/events"
+    },
+    {
+      image: "/images/merchandise.jpg",
+      title: "Merchandise",
+      locked: true,
+      href: "/merchandise"
+    },
+    {
+      image: "/images/workshop.jpg",
+      title: "Workshop",
+      locked: true,
+      href: "/workshop"
+    },
+    {
+      image: "/images/speakers.jpg",
+      title: "Speakers and Guests",
+      locked: true,
+      href: "/speakers-and-guests"
+    }
+  ];
+
   return (
-    <>
-      <div className="cardsContainer font-Montserrat">
-        <Link href={"/ambassador"} className="cardBox">
-          <Image src={"/images/ambassador.jpeg"} height={800} width={850} alt="cardImage" className="cardImage"/>
-          <p>Campus Ambassador</p>
-        </Link>
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto p-4">
+      {cards.map((card, index) => (
+        card.locked ? (
+          <div 
+            key={index}
+            className="relative overflow-hidden rounded-lg shadow-md cursor-not-allowed h-48"
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                className="object-cover filter blur-[2px]"
+              />
+              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
+                <p className="text-white text-base mb-1">{card.title}</p>
+                <p className="text-white/90 text-sm">Coming Soon...</p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Link key={index} href={card.href} className="relative overflow-hidden rounded-lg shadow-md h-48">
+            <div className="relative h-full w-full">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <p className="text-white text-base">{card.title}</p>
+              </div>
+            </div>
+          </Link>
+        )
+      ))}
+    </div>
+  );
+};
 
-
-        <Link href={"/events"} className="cardBox">
-          <Image src={"/images/events.jpg"} height={800} width={850} alt="cardImage" className="cardImage"/>
-          <p>Events</p>
-        </Link>
-        <Link href="/merchandise" className="cardBox">
-          <Image src={"/images/merchandise.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
-          <p>Merchandise</p>
-          {/* <div className="lockedCard">Locked</div> */}
-        </Link>
-        <Link href={"/workshop"} className="cardBox">
-          <Image src={"/images/workshop.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
-          <p>Workshop</p>
-        </Link>
-
-        {/* <div className="cardBox disabledCard">
-          <Image src={"/images/speakers.jpg"} height={800} width={850} alt="cardImage" className="cardImage object-cover"/>
-          <p>Speakers and Guests</p>
-          <div className="lockedCard">Locked</div>
-        </div> */}
-        <Link href={"/speakers-and-guests"} className="cardBox">
-          <Image src={"/images/speakers.jpg"} height={800} width={850} alt="cardImage" className="cardImage"/>
-          <p>Speakers and Guests</p>
-        </Link>
-
-      </div>
-    </>
-  )
-}
+export default Cards;

@@ -4,6 +4,7 @@ import React from 'react'
 import { useRef, useEffect } from 'react'
 import './style.css'
 import TextAnimation from './Animation/TextAnimation'
+import ComingSoon from './Animation/ComingSoon'
 import { gsap } from 'gsap'
 // import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -215,11 +216,12 @@ const Hero = () => {
                                 </div> */}
                             </div>
 
-                            <TextAnimation />
-
-                            <h2 className='relative -top-4 mb-6 text-center text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl srijanDate'>
+                            {/* <TextAnimation /> */}
+                            <ComingSoon className='pt-60'/>
+                            
+                            {/* <h2 className='relative mb-6 text-center text-4xl font-bold inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#FF0099] to-[#FF7A00] md:text-3xl srijanDate'>
                                 21st March - 24th March
-                            </h2>
+                            </h2> */}
                         </div>
                         {/* <Countdown /> */}
                     </section>
@@ -260,7 +262,7 @@ const Hero = () => {
                     <div id='mascot-front'>
                             <ReactTyped
                                 strings={[
-                                    "Hey, Welcome to Srijan'24",
+                                    "Hey, Welcome to Srijan'25",
                                     'I am Kalpana...',
                                     'Are you guys excited?',
                                 ]}

@@ -16,12 +16,12 @@ export default () => {
       <div className='mascotGap' />
       <Cards />
       <Gallery />
-      <Timeline2/>
+      {/* <Timeline2/> */}
       <div style={{display : 'flex' , flexDirection : 'column' , alignItems : 'center' , justifyContent : 'center' , gap : '20px' , margin : '30px'}}>
-        <img src={'/images/Sponsors.png'} width={300} height={300} alt=''  style={{width : '75%'}}/>
-        <img src={'/images/PastSponsors.png'} width={300} height={300} alt=''  style={{width : '75%'}}/>
+        <img src={'/images/Sponsors.png'} width={300} height={300} alt=''  style={{width : '80%'}}/>
+        <img src={'/images/PastSponsors.png'} width={300} height={300} alt=''  style={{width : '80%'}}/>
       </div>
-      <MobileTimeline/>
+      {/* <MobileTimeline/> */}
       <About />
       <Footer />
       <OverallNav></OverallNav>

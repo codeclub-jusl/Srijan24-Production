@@ -277,7 +277,7 @@ function appendChildren(parent, children) {
   });
 }
 
-var date21032024 = new Date(2024, 2, 21).getTime() / 1000
+var date21032024 = new Date(2025, 2, 21).getTime() / 1000
 
 var flipdown = new FlipDown(date21032024).start()
 document.getElementById('flipdown').classList.toggle('flipdown__theme-light');
