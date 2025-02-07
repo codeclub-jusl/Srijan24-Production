@@ -19,13 +19,13 @@ const Cards = () => {
       image: "/images/merchandise.jpg",
       title: "Merchandise",
       locked: true,
-      href: "https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform"
+      href: "/merchandise"
     },
     {
       image: "/images/workshop.jpg",
       title: "Workshop",
       locked: false,
-      href: "/workshop"
+      href: "https://docs.google.com/forms/d/e/1FAIpQLScaGsa7rJHbWpdAjYpkRlDERtwvnZzR-1ocx3HIQi03S4GxUw/viewform"
     },
     {
       image: "/images/speakers.jpg",
