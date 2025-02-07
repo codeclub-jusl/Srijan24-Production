@@ -7,8 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: "SRIJAN'24 | Jadavpur University",
-    description: "Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University",
+    title: "SRIJAN'25 | Jadavpur University",
+    description: "Official Website for Srijan'25 - The Annual Techno-Management Fest Jadavpur University",
     metadataBase: new URL('https://srijanju.in'),
     manifest: "/manifest.json",
     keywords: ['srijan', 'cultural', 'ju', 'fest', 'srijanju', 'technology', 'events', 'games', 'coding', 'srijan25', 'techfest', 'ai', 'management', 'jadavpur university'],
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
                 <meta
                     property="og:image"
                     itemProp="image"
-                    content="https://srijan24.vercel.app/website_preview.png"
+                    content="https://srijan25.vercel.app/website_preview.png"
                 />
                 <link
                     rel='shortcut icon'
