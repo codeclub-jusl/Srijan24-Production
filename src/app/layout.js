@@ -11,15 +11,15 @@ export const metadata = {
     description: "Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University",
     metadataBase: new URL('https://srijanju.in'),
     manifest: "/manifest.json",
-    keywords: ['srijan', 'cultural', 'ju', 'fest', 'srijanju', 'technology', 'events', 'games', 'coding', 'srijan24', 'techfest', 'ai', 'management', 'jadavpur university'],
+    keywords: ['srijan', 'cultural', 'ju', 'fest', 'srijanju', 'technology', 'events', 'games', 'coding', 'srijan25', 'techfest', 'ai', 'management', 'jadavpur university'],
     authors: [{ name: 'FETSU', url: 'https://srijanju.in' }],
     creator: 'FETSU',
     publisher: 'FETSU',
     openGraph: {
-        title: "SRIJAN'24 | Jadavpur University",
-        description: "Official Website for Srijan'24 - The Annual Techno-Management Fest of Jadavpur University",
+        title: "SRIJAN'25 | Jadavpur University",
+        description: "Official Website for Srijan'25 - The Annual Techno-Management Fest of Jadavpur University",
         url: 'https://srijanju.in',
-        siteName: "SRIJAN'24 | Jadavpur University",
+        siteName: "SRIJAN'25 | Jadavpur University",
         images: [
           {
             url: 'https://srijanju.in/website_preview.png', // Must be an absolute URL
@@ -38,11 +38,11 @@ export default function RootLayout({ children }) {
             <Head>
                 <meta
                     name='description'
-                    content="Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University"
+                    content="Official Website for Srijan'25 - The Annual Techno-Management Fest Jadavpur University"
                 />
                 <meta
                     name='keywords'
-                    content='srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan24, techfest, ai, management, jadavpur university'
+                    content='srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan25, techfest, ai, management, jadavpur university'
                 />
                 <meta name='author' content='FETSU' />
 
@@ -50,16 +50,16 @@ export default function RootLayout({ children }) {
                 <meta property='og:type' content='article' />
                 <meta
                     property='og:title'
-                    content="SRIJAN'24 | Jadavpur University"
+                    content="SRIJAN'25 | Jadavpur University"
                 />
                 <meta
                     property='og:description'
-                    content="Official Website for Srijan'24 - The Annual Techno-Management Fest Jadavpur University"
+                    content="Official Website for Srijan'25 - The Annual Techno-Management Fest Jadavpur University"
                 />
                 <meta property='og:url' content='https://srijanju.in' />
                 <meta
                     property='og:site_name'
-                    content="SRIJAN'24 | Jadavpur University"
+                    content="SRIJAN'25 | Jadavpur University"
                 />
                 <meta
                     property="og:image"
